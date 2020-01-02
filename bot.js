@@ -162,6 +162,16 @@ bot.on('message', message=> {
             message.channel.bulkDelete(args[1]);
             break;
 
+        case 'changeAvatar':
+            if (args[1] != undefined){
+            bot.user.setAvatar(args[1]);
+            message.channel.sendMessage("I'm diggin' the new look!");
+            }
+            else (
+                message.channel.sendMessage("Can't find the URL. Did you post one?")
+            )
+        break;
+
         case 'me':
             const embed = new Discord.RichEmbed()
                 .setAuthor("About You", message.author.avatarURL)
