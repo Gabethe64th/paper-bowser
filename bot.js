@@ -2,12 +2,8 @@ const Discord = require('discord.js');
 const { Client, Attachment, Message } = require('discord.js');
 const bot = new Discord.Client();
 
-//Me
-//const token = 'MTc4NTM5NDc5ODI3NjExNjQ4.XaoLGA.Y33DBCFXNPNE1kETUrScUrSvilg';
-//Virus
-//const token = 'MjYyNTg5ODM4OTU4NTI2NDY3.XalLzg.7NvD0pN9Tw52cUTH2ofIu4N4XLk';
-//bot
-const token = 'NjM0NTAyODAwODcyODMzMDMz.XgywwQ.z1PlG5TjGUZHs8Cb1_gTjA1v7zo';
+
+const token = 'NjM0NTAyODAwODcyODMzMDMz.Xg1BVw.na3rIkyySbi7FCFknk5p7gV2fRg';
 const PREFIX = 'v!';
 
 
