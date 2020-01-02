@@ -10,7 +10,7 @@ const PREFIX = 'v!';
 //const channel = client.channels.find('roleplay-off-topic', channelName)
 //channel.send(message)
 
-var version = 'Version 1.5.0';
+var version = 'Version 1.6.0 [BETA]';
 var pass;
 var int, key = 0;
 /*
@@ -101,15 +101,13 @@ bot.on('message', message=> {
                 .setAuthor("Requested by "+message.author.username, message.author.avatarURL)
                 .setColor('#DC143C')
                 .setTitle("VirusBot "+version+" Changelog")
-                .setDescription("SURPRIIIIIISE! VB Ver. 1.5 is LIVE! Welcome to the new age! 😎")
+                .setDescription("SURPRIIIIIISE! VB Ver. 1.6 is now in beta!")
                 .addBlankField()
-                .addField("Embeds!", "We're slicker, better, and a bit more pleasing to the eyes! The whole world could use this kinda beauty...")
+                .addField("Beep, boop.", "I'm a bot! Now things are gettin' interesting!")
                 .addBlankField()
-                .addField("Tweaks!", "A few commands have been reviewed and tweaked a bit. I just want peace!")
+                .addField("Ring! Huh?", "A few tweaks to the call command! It's not ready yet, so tuned!")
                 .addBlankField()
-                .addField("Writing and Reading!", "Commands like 'count' and 'todaysong' won't reset if the bot reboots anymore! The Storage Room took a while to build.")
-                .addBlankField()
-                .addField('Code Tweaks!', "Questions have never been simplier to add!\n[On version 1.5.2, the VirusGames should also be up-to-date! Stay tuned! ;)]")
+                .addField("Spreading the Joy", "All commands which deals with multiple servers aren't ready until VB has been fully replaced. We're almost home!")
                 .addBlankField()
                 .setFooter("VirusDaBot", bot.users.get('262589838958526467').avatarURL);
                 message.channel.send(embed);
