@@ -286,7 +286,7 @@ bot.on('message', message=> {
         case 'bruh':
             bruhs = 7;
                 bruhNumber = Math.floor (Math.random() * (bruhs - 1 + 1)) +1;
-                message.channel.send ( { files: ["./bruh (" + bruhNumber + ").jpg"]})
+                message.channel.send ( { files: ["./bruh/bruh (" + bruhNumber + ").jpg"]})
             break;
 
         case 'knux':
