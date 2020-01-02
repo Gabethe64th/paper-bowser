@@ -39,6 +39,7 @@ var pinarr = [];
 var pined;
 const fs = require("fs");
 bot.afile = require ("./afile.json");
+const BotID = '634502800872833033';
 
 bot.on('ready', () =>{
     console.log('Let er rip!');
@@ -77,7 +78,7 @@ bot.on('message', message=> {
                 .setColor('#00FA9A')
                 .setTitle("Current Bot Version")
                 .setDescription("I'm on "+version+ "!")
-                .setFooter("VirusDaBot", bot.users.get('262589838958526467').avatarURL);
+                .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                 message.channel.send(embed);
             }
             else if(args[1] === 'nupdate'){
@@ -89,7 +90,7 @@ bot.on('message', message=> {
                 .setTitle("Upcoming Update Information")
                 .setDescription(botup)
                 .setTimestamp()
-                .setFooter("VirusDaBot", bot.users.get('262589838958526467').avatarURL);
+                .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                 message.channel.send(embed);
             }
             else if(args[1] === 'oldies'){
@@ -109,7 +110,7 @@ bot.on('message', message=> {
                 .addBlankField()
                 .addField("Spreading the Joy", "All commands which deals with multiple servers aren't ready until VB has been fully replaced. We're almost home!")
                 .addBlankField()
-                .setFooter("VirusDaBot", bot.users.get('262589838958526467').avatarURL);
+                .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                 message.channel.send(embed);
             }
             else if(args[1] === 'bot'){
@@ -118,7 +119,7 @@ bot.on('message', message=> {
                 .setColor('#00FF00')
                 .setTitle("Who am I?")
                 .setDescription("VirusBot is a bot. Get your facts straight.")
-                .setFooter("VirusDaBot", bot.users.get('262589838958526467').avatarURL);
+                .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                 message.channel.send(embed);
             }
             else {
@@ -128,7 +129,7 @@ bot.on('message', message=> {
                 .setColor('#00BFFF')
                 .setTitle("Information Command's Options")
                 .setDescription(_info)
-                .setFooter("VirusDaBot", bot.users.get('262589838958526467').avatarURL);
+                .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                 message.channel.send(embed);
             }
         break;    
@@ -171,7 +172,7 @@ bot.on('message', message=> {
                 .addBlankField()
                 .addField('User ID', message.author.id)
                 .addField('Nickname in this server', message.member.nickname)
-                .setFooter("VirusDaBot", bot.users.get('262589838958526467').avatarURL);
+                .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                 message.channel.send(embed);
         break;
 
@@ -511,7 +512,7 @@ bot.on('message', message=> {
                 if (user !== undefined && user.id === message.author.id){
                     message.channel.sendMessage("Oh...you hugged yourself? Damn, you're lonely...")
                 }
-                else if (user !== undefined && user.id === '262589838958526467') {
+                else if (user !== undefined && user.id === BotID) {
                     if (message.author.id === '356389068634062848') {
                         gifNumber = Math.floor (Math.random() * (hugs - 1 + 1)) +1;
                     message.channel.sendMessage("*Hugs "+message.author.username+" back!* 💙");
@@ -770,7 +771,7 @@ bot.on('message', message=> {
                 .addField('Guild ID', gid)
                 .addField('Created At', message.guild.createdAt)
                 .addField('People in this server', message.guild.memberCount)
-                .setFooter("VirusDaBot", bot.users.get('262589838958526467').avatarURL);
+                .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                 message.channel.send(serverembed);
         break;
 
@@ -888,7 +889,7 @@ bot.on('message', message=> {
             .setColor(0xFF0000)
             .setTitle("Report Submission")
             .setDescription(rep + '   \n[Jump to Message](https://discordapp.com/channels/'+message.guild.id+'/'+message.channel.id+'/'+message.id+')')
-            .setFooter("VirusDaBot", bot.users.get('262589838958526467').avatarURL);
+            .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
             bot.users.get("178539479827611648").send(reportEmbed);
             break;
 
@@ -900,7 +901,7 @@ bot.on('message', message=> {
                     .setColor(0xFF0000)
                     .setTitle("Suggestion Submission")
                     .setDescription(sug + '   \n[Jump to Message](https://discordapp.com/channels/'+message.guild.id+'/'+message.channel.id+'/'+message.id+')')
-                    .setFooter("VirusDaBot", bot.users.get('262589838958526467').avatarURL);
+                    .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                     bot.users.get("178539479827611648").sendMessage(suggestEmbed);
                     break;
 
@@ -986,7 +987,7 @@ bot.on('message', message=> {
                 .addField('• heylook', 'Hey look buddy...', true)
                 .addBlankField()
                 .addField("End of page.", "Please use [v!commands2] to view the next page.")
-                .setFooter("VirusDaBot", bot.users.get('262589838958526467').avatarURL);
+                .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                 message.channel.send(embed1);
             break;
         
@@ -1021,7 +1022,7 @@ bot.on('message', message=> {
                 .addField('• facts', "Gotta note 'em down.", true)
                 .addBlankField()
                 .addField("End of page.", "Please use [v!commands3] to view the next page.")
-                .setFooter("VirusDaBot", bot.users.get('262589838958526467').avatarURL);
+                .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                 message.channel.send(embed2);
             break;
 
@@ -1057,7 +1058,7 @@ bot.on('message', message=> {
                 .addField('• thouthefuck', 'BY THE POPE!', true)
                 .addBlankField()
                 .addField("End of page.", "Please use [v!commands4] to view the next page.")
-                .setFooter("VirusDaBot", bot.users.get('262589838958526467').avatarURL);
+                .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                 message.channel.send(embed3);
             break;
 
@@ -1082,7 +1083,7 @@ bot.on('message', message=> {
                         .addField('The following people have their own commands:', '• dru\n• moon\n• pkoby\n• kirB\n• ender\n• korbs\n• prince\n• eliz\n• nokobo\n• jasper\n• jacob\n• ghost\n• goat\n• name\n• izzle\n• ethan\n• cain\n• kevin\n• snoop\n• jet\n• rowlet\n• irri\n• pip\n• mimik\n• reun\n• knux\n• dyst', true)
                         .addBlankField()
                         .addField("End of page.", "Please use [v!commands5] to view the next page.")
-                        .setFooter("VirusDaBot", bot.users.get('262589838958526467').avatarURL);
+                        .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                         message.channel.send(embed4);
             break;
 
@@ -1106,7 +1107,7 @@ bot.on('message', message=> {
                         .addField('The following reactions are user-specific:', '• :joystick: - Only Gabe can use this.\n• :guitar: - Only Snoop and Reun can use this.')
                         .addBlankField()
                         .addField("End of page.", "Please use [v!commands] to view the first page.")
-                        .setFooter("VirusDaBot", bot.users.get('262589838958526467').avatarURL);
+                        .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                         message.channel.send(embed5);
             break;
     
@@ -1129,21 +1130,21 @@ bot.on('message', message=> {
 
 
 
-   if (message.channel.id === callA && callkey === true && message.author.id !== '262589838958526467'){
+   if (message.channel.id === callA && callkey === true && message.author.id !== BotID){
     bot.channels.get(callids[callB]).send(message.author.tag +": "+message);
 }
 
-if (message.channel.id === callids[callB] && callkey === true && message.author.id !== '262589838958526467'){
+if (message.channel.id === callids[callB] && callkey === true && message.author.id !== BotID){
     bot.channels.get(callA).send(message.author.tag +": "+message);
 }
 
 
-    if (message.content.includes("LET ROCK") && message.author.id !== '262589838958526467') {
+    if (message.content.includes("LET ROCK") && message.author.id !== BotID) {
         
         message.channel.send('!youtube SPICY CALAMARI INKANTION');
     }
 
-    if (message.content.includes("HOL UP") && message.author.id !== '262589838958526467') {
+    if (message.content.includes("HOL UP") && message.author.id !== BotID) {
         
         message.channel.send('*Holding...*');
     }
