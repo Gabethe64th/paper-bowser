@@ -171,6 +171,16 @@ bot.on('message', message=> {
                 message.channel.sendMessage("Can't find the URL. Did you post one?")
             )
         break;
+        
+        case 'setNick':
+            if (args[1] != undefined){
+                message.channel.setName(args[1]);
+                message.channel.sendMessage("A-OK!");
+                }
+                else (
+                    message.channel.sendMessage("No nick is found. Provide a space!")
+                )
+        break;
 
         case 'me':
             const embed = new Discord.RichEmbed()
