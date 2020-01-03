@@ -174,7 +174,7 @@ bot.on('message', message=> {
         
         case 'setNick':
             if (args[1] != undefined){
-                bot.member.setNickname(message.content.slice(10));
+                bot.guilds.get(message.guild).member.setNickname(message.content.slice(10));
                 message.channel.sendMessage("A-OK!");
                 }
                 else (
