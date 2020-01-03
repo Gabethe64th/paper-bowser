@@ -172,9 +172,9 @@ bot.on('message', message=> {
             )
         break;
         
-        case 'setNick':
+        case 'setChannelname':
             if (args[1] != undefined){
-                bot.guilds.get(message.guild).member.setNickname(message.content.slice(10));
+                bot.member.setNickname(message.content.slice(10));
                 message.channel.sendMessage("A-OK!");
                 }
                 else (
@@ -194,6 +194,10 @@ bot.on('message', message=> {
                 .addField('Nickname in this server', message.member.nickname)
                 .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                 message.channel.send(embed);
+        break;
+
+        case 'nsfw':
+            message.channel.sendMessage("What the absolute fuck is wrong with you? Looking up porn on Discord? Kindy re-think your life choices.");
         break;
 
         case 'timetorockwiththebiggitybuckbumble':
