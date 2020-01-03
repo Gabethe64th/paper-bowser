@@ -172,13 +172,13 @@ bot.on('message', message=> {
             )
         break;
         
-        case 'setUser':
+        case 'setNick':
             if (args[1] != undefined){
-                bot.user.setUsername(message.content.slice(10));
+                message.channel.setName(message.content.slice(10));
                 message.channel.sendMessage("A-OK!");
                 }
                 else (
-                    message.channel.sendMessage("No name is found. Provide a space!")
+                    message.channel.sendMessage("No nick is found. Provide a space!")
                 )
         break;
 
