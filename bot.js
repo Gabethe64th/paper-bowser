@@ -106,6 +106,8 @@ bot.on('message', message=> {
                 .addBlankField()
                 .addField("Beep, boop.", "I'm a bot! Now things are gettin' interesting!")
                 .addBlankField()
+                .addField("The Games are Here!", "Added all the stuff from VirusGames into this bot! WE ARE ONE!")
+                .addBlankField()
                 .addField("Hmm...", "Some modifications are being added piece by piece. We hope to keep VB as smooth as possible!")
                 .addBlankField()
                 .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
