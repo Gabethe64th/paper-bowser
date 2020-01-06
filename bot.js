@@ -560,8 +560,8 @@ bot.on('message', message=> {
             break;
 
             case 'call':
-                message.channel.sendMessage("We're still preparing this function, so stay tuned!");
-                /*if (callkey === true) {
+                
+                if (callkey === true) {
                     message.channel.sendMessage("A call is already in session! It'd be rude to interrupt them...")
                 }
                 else {
@@ -610,7 +610,7 @@ bot.on('message', message=> {
                     else {
                         message.channel.sendMessage("**No one has been called!**")
                     }
-                    */
+                    
                     break;
                     
                 case 'sAsk':
@@ -1157,10 +1157,16 @@ bot.on('message', message=> {
 
    if (message.channel.id === callA && callkey === true && message.author.id !== BotID){
     bot.channels.get(callids[callB]).send(message.author.tag +": "+message);
+    if (message.attachments.first() != undefined){
+        bot.channels.get(callids[callB]).send(message.attachments.first());
+    }
 }
 
 if (message.channel.id === callids[callB] && callkey === true && message.author.id !== BotID){
     bot.channels.get(callA).send(message.author.tag +": "+message);
+    if (message.attachments.first() != undefined){
+        bot.channels.get(callA).send(message.attachments.first());
+    }
 }
 
 
