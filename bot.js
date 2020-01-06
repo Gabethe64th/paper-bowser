@@ -610,8 +610,9 @@ bot.on('message', message=> {
                     else {
                         message.channel.sendMessage("**No one has been called!**")
                     }
+                    */
                     break;
-
+                    
                 case 'sAsk':
                     questionmessage = message.content.slice(7);
                     QA = Math.floor((Math.random() * questionchannels.length));
@@ -648,7 +649,7 @@ bot.on('message', message=> {
                         message.channel.sendMessage("Answer Sent!")
                         QQ = false;
                     }
-                    */
+                    
                 break;
                 
 
