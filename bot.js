@@ -10,7 +10,7 @@ const PREFIX = 'v!';
 //const channel = client.channels.find('roleplay-off-topic', channelName)
 //channel.send(message)
 
-var version = 'Version 1.6.0 [BETA]';
+var version = 'Version 1.6.1 [BETA]';
 var pass;
 var int, key = 0;
 /*
@@ -102,13 +102,11 @@ bot.on('message', message=> {
                 .setAuthor("Requested by "+message.author.username, message.author.avatarURL)
                 .setColor('#DC143C')
                 .setTitle("VirusBot "+version+" Changelog")
-                .setDescription("SURPRIIIIIISE! VB Ver. 1.6 is now in beta!")
+                .setDescription("VB Ver. 1.6 is now in beta!")
                 .addBlankField()
                 .addField("Beep, boop.", "I'm a bot! Now things are gettin' interesting!")
                 .addBlankField()
-                .addField("Ring! Huh?", "A few tweaks to the call command! It's not ready yet, so tuned!")
-                .addBlankField()
-                .addField("Spreading the Joy", "All commands which deals with multiple servers aren't ready until VB has been fully replaced. We're almost home!")
+                .addField("Hmm...", "Some modifications are being added piece by piece. We hope to keep VB as smooth as possible!")
                 .addBlankField()
                 .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                 message.channel.send(embed);
@@ -1343,5 +1341,1321 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         }
 
         });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        var int, emoques = 0;
+        var int, triv = 0;
+        var emoid;
+        var quid;
+        var slotfruits = ["🍎", "🍐", "🍊", "🍋", "🍇", "🍓", "🍒"];
+        //dicegame
+        var d6 = [1, 2, 3, 4, 5, 6];
+        var d8 = [1, 2, 3, 4, 5, 6, 7, 8];
+        var d10 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        var d12 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+        var d20 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+        var high = 0;
+        var highname = "Virus";
+        var dgid;
+        var int, dgprogress = 0;
+        var player1name;
+        var player2name;
+        var int, player1score = 0;
+        var int, player2score = 0;
+        var p1die;
+        var p2die;
+        var int, rounds;
+        var int, roundcounter = 0;
+        //mmtrivia
+        var mmoquests = ["`What is the name of the game that is featured on a Nintendo Switch, contains Mario sfx, but is NOT from Nintendo?`", "`Who is the composer of Megalovania?`", "`What was the text which normally appeared with the dancing roach meme?`" , "`Who once roleplayed as a Novakid?`" , "`Fill in the blanks: 'For his neutral special, Mario wields ____'`" , "`Fill in the blanks: 'Hey all, _____ ____.'`" , "`What's the name of the Mario spinoff that has Pac-Man as a playable character?`" , "`Is Pip pure?`" , "`True or False: Moon once had a username called 'Mooncake Festival' in Nintendo Discord.`" , "`True or False: The 3DS game: Super Mario 3D Land has a feature that asks you to take a break every once in a while.`" , "`Who is Irri's wife?`" , "`What is the name of the teacher in Chapter 3 of Parappa the Rapper 2?`" , "`What is the name of the fictional character both Korbs and Name are in love with?`" , "`What is the name of the command which requires you to get 10 fruits in a row to win?`" , "`Relating to jokes like 'Joe', 'Yuri', and 'Ligma', which joke is the LEAST offensive to the victim?`" , "`In the show 'Hazbin Hotel' which character is a crossdresser?`" , "`Jasmin is an OC from whom?`" , "`Who is the ONLY discord user that can hug VirusBot, with the bot hugging them back?`" , "`Which cartoon show has a theme song with the lyrics 'No time for relaxation'?`" , "`True or False: Reun has the ability to manage the Roleplay community.`"];
+        var mmoans = ["just shapes and beats", "toby fox", "hoes mad", "snoop", "fire", "scott here", "mario kart arcade gp", "yes", "false", "true", "cain", "guru ant", "mym", "imposslots", "updog", "angel dust", "izzle", "jet", "sonic x", "true"];
+        var mmids = ["636573475993288734", "635683701987999804", "634821648385572883", "640725111397285888", "607676160234618889"];
+        var mmA;
+        var mmB;
+        var boolean, mmgame = false;
+        var int, mmnum = 0;
+        var boolean, mmchat = false;
+        var mmans;
+        var mmpicked;
+        var int, mmAscore = 0;
+        var int, mmBscore = 0;
+        //trivia
+        questions1 = ["`Instead of singing, Dru messes around with an instrument you can't fit in your pocket. What is it?`", "`What's the indie rhythm game that both Gabe and Reun can be seen gushing over?`", "`Other than bees, there is another animal which, if seen in a meme, you could say 'Oh yeah, that's a meme for Cain.' What is that animal?`", "`What was the name of the roleplay arc that featured a pen as a bad guy?`", "`Other than Pip, who else is the purest of them all?`", "`What is the name of the bird that made its debut in Angry Birds 2, and is mentioned as Chuck's sister in the game's second movie?`", "`What activity does Dru, Moon, Izzle, Hatless, Pip, Pkoby and Irri have in common? (Other than Roleplay!)`", "`Who's the person that requested the 'v!slot' command?`", "`Who's the only child from Irri and Cain's family that is NOT in Jerry's Server?`", "`Despite having a role for it in a server, what's the word Izzle hates to be called, unless she calls herself the word?`", "`What's the subheading for the Mario spinoff that once had an innuendo in one of its ads?`", "`Irri's Birthday is near the end of which month?`", "`Before Reun changed his name, what nickname was he referred to as?`", "`Who was the person who had their first custom status as an animated emoji followed by the words 'love you all'?`", "`Who once had a nickname titled 'Moody Girl' in Jerry's Server?`", "`Who was the female discord user that brung the most joy in VCs when paired with Kir b in the older days?`", "`What was the name of the fictional character that owns the Inn?`", "`Fill in the blanks: 'Dys' character, known as 'Dyshero' was formerly called _______ Hero before his sprite got updated to what we know today.'`", "`What is the name of the cartoon that was shown on Disney Channel which had over 300 songs?`", "`What is the subheading for the Smash game which had a gliding mechanic for winged characters?`"]
+        
+        ladderA = [2, 7, 8, 15, 21, 28, 36, 51, 71, 78, 87];
+        ladderB = [38, 14, 31, 26, 42, 84, 44, 67, 91, 98, 94];
+        snekA = [16, 46, 49, 62, 64, 74, 89, 92, 95, 99];
+        snekB = [6, 25, 11, 19, 60, 53, 68, 88, 75, 80];
+        start = 0;
+        path = 0;
+        
+        
+        bot.on('message', message=> {
+            
+            let args = message.content.substring(PREFIX.length).split(" ");
+            if (message.author.bot) return;
+        
+            if (message.content.startsWith(PREFIX)){
+                switch (args[0]){
+        
+                    case 'list':
+                        message.channel.sendMessage("```May the Games Begin! \n \nCURRENT GAME LIST\n\nemoji - Guess that Emoji!\ngayslots - The gayest of slots, it makes sense to be here...kinda.\ntrivia - You think you're a true Discord boomer? Try out these questions about the past!```");
+                        break;
+        
+                    case 'emoji':
+                            emoid = message.channel.id;
+                        message.channel.sendMessage("Let's go! Can you guess what this means?")
+                            emogi = 35;
+                            var emo = Math.floor (Math.random() * (emogi - 1 + 1)) +1;
+                            switch (emo) {
+                                case 1:
+                                     message.channel.sendMessage("🎸 ✅");
+                                     message.channel.sendMessage("`---- ------`");
+                                     emoques = 1;
+                                     break;
+        
+                                case 2:
+                                    message.channel.sendMessage("💥🔫🐉");
+                                    message.channel.sendMessage("`---- -----`");
+                                    emoques = 2;
+                                    break;
+        
+                                case 3:
+                                    message.channel.sendMessage("🍕 🕰");
+                                    message.channel.sendMessage("`----- ----`");
+                                    emoques = 3;
+                                    break;
+        
+                                case 4:
+                                    message.channel.sendMessage("🌈 🛣");
+                                    message.channel.sendMessage("`------- ----`");
+                                    emoques = 4;
+                                    break;
+        
+                                case 5:
+                                     message.channel.sendMessage("🌍🛣, 🏠⬅🚶");
+                                     message.channel.sendMessage("`---- --------`");
+                                     emoques = 5;
+                                     break;
+        
+                                case 6:
+                                     message.channel.sendMessage("⛰🍓💙");
+                                     message.channel.sendMessage("`-------`");
+                                     emoques = 6;
+                                     break;
+        
+                                case 7:
+                                     message.channel.sendMessage("☁🎵☁");
+                                     message.channel.sendMessage("`------ ------`");
+                                     emoques = 7;
+                                     break;
+        
+                                case 8:
+                                     message.channel.sendMessage("☕");
+                                     message.channel.sendMessage("`---`");
+                                     emoques = 8;
+                                     break;
+        
+                                case 9:
+                                    message.channel.sendMessage("🍽🎮");
+                                    message.channel.sendMessage("`------ -----`");
+                                    emoques = 9;
+                                    break;
+        
+                                case 10:
+                                     message.channel.sendMessage("💥🕛💥");
+                                     message.channel.sendMessage("`----- -- --- ----`");
+                                     emoques = 10;
+                                     break;
+        
+                                case 11:
+                                    message.channel.sendMessage("🐱🕰");
+                                    message.channel.sendMessage("`-------- ----`");
+                                    emoques = 11;
+                                    break;
+        
+                                    case 12:
+                                    message.channel.sendMessage("🚶🎸");
+                                    message.channel.sendMessage("`---- -----`");
+                                    emoques = 12;
+                                    break;
+        
+                                    case 13:
+                                    message.channel.sendMessage(":punch: :negative_squared_cross_mark: :laughing: ");
+                                    message.channel.sendMessage("`-------- --- ----------`");
+                                    emoques = 13;
+                                    break;
+        
+                                    case 14:
+                                    message.channel.sendMessage(":penguin: :loud_sound: ");
+                                    message.channel.sendMessage("`--------- -------`");
+                                    emoques = 14;
+                                    break;
+        
+                                    case 15:
+                                    message.channel.sendMessage(":grin: :bee:");
+                                    message.channel.sendMessage("`----- ---`");
+                                    emoques = 15;
+                                    break;
+        
+                                    case 16:
+                                    message.channel.sendMessage(":bee: :cake: :bee:");
+                                    message.channel.sendMessage("`------- ----`");
+                                    emoques = 16;
+                                    break;
+        
+                                    case 17:
+                                    message.channel.sendMessage(":crab: :crab: :crab:");
+                                    message.channel.sendMessage("`---- ----`");
+                                    emoques = 17;
+                                    break;
+        
+                                    case 18:
+                                    message.channel.sendMessage(":fork_knife_plate: :watermelon:");
+                                    message.channel.sendMessage("`--------`");
+                                    emoques = 18;
+                                    break;
+        
+                                    case 19:
+                                    message.channel.sendMessage(":goat: :octopus: :love_letter: :heart_eyes_cat:");
+                                    message.channel.sendMessage("`---------`");
+                                    emoques = 19;
+                                    break;
+        
+                                    case 20:
+                                    message.channel.sendMessage(":tomato: :shallow_pan_of_food:");
+                                    message.channel.sendMessage("`------ ----`");
+                                    emoques = 20;
+                                    break;
+        
+                                    case 21:
+                                    message.channel.sendMessage(":dancer: :alarm_clock: :arrow_forward: :skull_crossbones:");
+                                    message.channel.sendMessage("`----- ----- --- --- ----`");
+                                    emoques = 21;
+                                    break;
+        
+                                    case 22:
+                                    message.channel.sendMessage(":sheep: :zzz:");
+                                    message.channel.sendMessage("`------ ------`");
+                                    emoques = 22;
+                                    break;
+        
+                                    case 23:
+                                    message.channel.sendMessage(":tophat: :hourglass:");
+                                    message.channel.sendMessage("`- --- -- ----`");
+                                    emoques = 23;
+                                    break;
+        
+                                    case 24:
+                                    message.channel.sendMessage(":raised_hand: :neutral_face: :raised_hand:");
+                                    message.channel.sendMessage("`--- ----- ---'-- ----?`");
+                                    emoques = emo;
+                                    break;
+        
+                                    case 25:
+                                    message.channel.sendMessage(":one: :one: :crown:");
+                                    message.channel.sendMessage("`------ ----`");
+                                    emoques = emo;
+                                    break;
+        
+                                    case 26:
+                                    message.channel.sendMessage(":ballot_box: :left_right_arrow: :ballot_box:");
+                                    message.channel.sendMessage("`---- ---`");
+                                    emoques = emo;
+                                    break;
+        
+                                    case 27:
+                                    message.channel.sendMessage(":checkered_flag: :snail:");
+                                    message.channel.sendMessage("`-----`");
+                                    emoques = emo;
+                                    break;
+        
+                                    case 28:
+                                    message.channel.sendMessage(":star: :mushroom: :japanese_castle:");
+                                    message.channel.sendMessage("`----- ----- --`");
+                                    emoques = emo;
+                                    break;
+        
+                                    case 29:
+                                    message.channel.sendMessage(":sunrise_over_mountains: :clock9: :calendar_spiral:");
+                                    message.channel.sendMessage("`--'- - -'----- -- - --------`");
+                                    emoques = emo;
+                                    break;
+        
+                                    case 30:
+                                    message.channel.sendMessage(":pensive: :sunny: :point_right: :shopping_bags:");
+                                    message.channel.sendMessage("`- --- -------- -- - ---`");
+                                    emoques = emo;
+                                    break;
+        
+                                    case 31:
+                                    message.channel.sendMessage(":cross: :cloud_rain: :earth_africa:");
+                                    message.channel.sendMessage("`- ----- --- ----- ---- -- ------`");
+                                    emoques = emo;
+                                    break;
+        
+                                    case 32:
+                                    message.channel.sendMessage(":mushroom: :shopping_bags: :book:");
+                                    message.channel.sendMessage("`---- ---- -----`");
+                                    emoques = emo;
+                                    break;
+        
+                                    case 33:
+                                    message.channel.sendMessage(":newspaper: :mushroom: :calendar: :door:");
+                                    message.channel.sendMessage("`----- -----: --- -------- ---- ----`");
+                                    emoques = emo;
+                                    break;
+        
+                                    case 34:
+                                    message.channel.sendMessage(":apple: :peach: :jeans:");
+                                    message.channel.sendMessage("`----- ------ -----`");
+                                    emoques = emo;
+                                    break;
+        
+                                    case 35:
+                                    message.channel.sendMessage(":sunglasses: :one: :two: :video_game: :computer:");
+                                    message.channel.sendMessage("`-------------.---`");
+                                    emoques = emo;
+                                    break;
+        
+        
+                                    
+                                 }
+                            break;
+        
+                        
+        
+        
+                        case 'emojilost':
+                            emoquest = 0;
+                            message.channel.sendMessage("Too bad!");
+                        break;
+        
+                        case 'trivialost':
+                            triv = 0;
+                            message.channel.sendMessage("Too bad...");
+                        break;
+        
+                        
+        
+        
+        
+        
+        
+                            case 'gayslots':
+        
+                                    imos1 = Math.floor ((Math.random() * slotfruits.length));
+                                    imos2 = Math.floor ((Math.random() * slotfruits.length));
+                                    imos3 = Math.floor ((Math.random() * slotfruits.length));
+                                    imos4 = Math.floor ((Math.random() * slotfruits.length));
+                                    imos5 = Math.floor ((Math.random() * slotfruits.length));
+                                    imos6 = Math.floor ((Math.random() * slotfruits.length));
+                                    imos7 = Math.floor ((Math.random() * slotfruits.length));
+                                    imos8 = Math.floor ((Math.random() * slotfruits.length));
+                                    imos9 = Math.floor ((Math.random() * slotfruits.length));
+                                    imos10 = Math.floor ((Math.random() * slotfruits.length));
+                                    imos11 = Math.floor ((Math.random() * slotfruits.length));
+                                    imos12 = Math.floor ((Math.random() * slotfruits.length));
+                                    imos13 = Math.floor ((Math.random() * slotfruits.length));
+                                    imos14 = Math.floor ((Math.random() * slotfruits.length));
+                                    imos15 = Math.floor ((Math.random() * slotfruits.length));
+                                    imos16 = Math.floor ((Math.random() * slotfruits.length));
+                                    imos17 = Math.floor ((Math.random() * slotfruits.length));
+                                    imos18 = Math.floor ((Math.random() * slotfruits.length));
+                                    imos19 = Math.floor ((Math.random() * slotfruits.length));
+                                    imos20 = Math.floor ((Math.random() * slotfruits.length));
+                                    message.channel.sendMessage("🎰 `Welcome to Jack's Hell!` 🎰 \n**" +message.author.username+"** rolled the impossible slots...\n   ["+slotfruits[imos1]+" "+slotfruits[imos2]+" "+slotfruits[imos3]+" "+slotfruits[imos4]+" "+slotfruits[imos5]+" "+slotfruits[imos6]+" "+slotfruits[imos7]+" "+slotfruits[imos8]+" "+slotfruits[imos9]+" "+slotfruits[imos10]+" "+slotfruits[imos11]+" "+slotfruits[imos12]+" "+slotfruits[imos13]+" "+slotfruits[imos14]+" "+slotfruits[imos15]+" "+slotfruits[imos16]+" "+slotfruits[imos17]+" "+slotfruits[imos18]+" "+slotfruits[imos19]+" "+slotfruits[imos20]+"]")
+                                    if (slotfruits[imos1] === slotfruits[imos2] === slotfruits[imos3] === slotfruits[imos4] === slotfruits[imos5] === slotfruits[imos6] === slotfruits[imos7] === slotfruits[imos8] === slotfruits[imos9] === slotfruits[imos10] === slotfruits[imos11] === slotfruits[imos12] === slotfruits[imos13] === slotfruits[imos14] === slotfruits[imos15] === slotfruits[imos16] === slotfruits[imos17] === slotfruits[imos18] === slotfruits[imos19] === slotfruits[imos20]) {
+                                        message.channel.sendMessage("YOU'VE ***GOTTA BE KIDDING ME!***\nYou should prob ping Gabe for a reward. This wasn't expected to happen.")
+                                    }
+                                    else {
+                                        message.channel.sendMessage("Nice! You lost! That was expected...")
+                                    }
+                                    break;
+        
+                                    case 'snek':
+                                        /*
+                                        ladders:
+                                        2 -> 38
+                                        7 -> 14
+                                        8 -> 31
+                                        15 -> 26
+                                        21 -> 42
+                                        28 -> 84
+                                        36 -> 44
+                                        51 -> 67
+                                        71 -> 91
+                                        78 -> 98
+                                        87 -> 94
+                                    
+                                        sneks:
+                                        16 -> 6
+                                        46 -> 25
+                                        49 -> 11
+                                        62 -> 19
+                                        64 -> 60
+                                        74 -> 53
+                                        89 -> 68
+                                        92 -> 88
+                                        95 -> 75
+                                        99 -> 80
+                                    
+                                        */
+                                    message.channel.sendMessage("**"+message.member.nickname+"** takes the lead and the gang follows...");
+                                    sp = Math.floor ((Math.random() * d6.length));
+                                    path += d6[sp];
+        
+                                    for (i = 0; i < ladderA.length; i++){
+                                        if (path == ladderA[i]){
+                                            message.channel.sendMessage("WHOA! The gang found a ladder! They go from **"+ladderA[i]+"** to **"+ladderB[i]+"**!!")
+                                            path = ladderB[i];
+                                        }
+                                        
+                                    }
+        
+                                    for (i = 0; i < snekA.length; i++){
+                                        if (path == snekA[i]){
+                                            message.channel.sendMessage("**HOLY CRAP!** IT'S A SNEK! The gang gets ambushed at **"+snekA[i]+"** and got yeeted to **"+snekB[i]+"**!!")
+                                            path = snekB[i];
+                                        }
+                                    }
+        
+                                    if (path >= 100){
+                                        message.channel.sendMessage("WOOOO! The gang successfully made it out alive! Let's do it again...")
+                                        path = 0;
+                                    }
+                                    else{
+                                        message.channel.sendMessage("The gang stops at **"+path+"** for a lovely campfire.")
+                                    }
+                                        
+                                    
+                                       break;
+        
+        
+        
+        
+        
+                            case 'trivia':
+                                    quid = message.channel.id;
+                                message.channel.sendMessage("Alright! Let's see how much you know.")
+                                questions = 41;
+                            var quests = Math.floor (Math.random() * (questions - 1 + 1)) +1;
+                            switch (quests) {
+        
+                                case 1:
+                                    message.channel.sendMessage("`Instead of singing, Dru messes around with an instrument you can't fit in your pocket. What is it?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 2:
+                                    message.channel.sendMessage("`What's the indie rhythm game that both Gabe and Reun can be seen gushing over?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 3:
+                                    message.channel.sendMessage("`Other than bees, there is another animal which, if seen in a meme, you could say 'Oh yeah, that's a meme for Cain.' What is that animal?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 4:
+                                    message.channel.sendMessage("`What was the name of the roleplay arc that featured a pen as a bad guy?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 5:
+                                    message.channel.sendMessage("`Other than Pip, who else is the purest of them all?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 6:
+                                    message.channel.sendMessage("`What is the name of the bird that made its debut in Angry Birds 2, and is mentioned as Chuck's sister in the game's second movie?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 7:
+                                    message.channel.sendMessage("`What activity does Dru, Moon, Izzle, Hatless, Pip, Pkoby and Irri have in common? (Other than Roleplay!)`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 8:
+                                    message.channel.sendMessage("`Who's the person that requested the 'v!slot' command?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 9:
+                                    message.channel.sendMessage("`Who's the only child from Irri and Cain's family that is NOT in Jerry's Server?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 10:
+                                    message.channel.sendMessage("`Despite having a role for it in a server, what's the word Izzle hates to be called, unless she calls herself the word?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 11:
+                                    message.channel.sendMessage("`What's the subheading for the Mario spinoff that once had an innuendo in one of its ads?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 12:
+                                    message.channel.sendMessage("`Irri's Birthday is near the end of which month?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 13:
+                                    message.channel.sendMessage("`Before Reun changed his name, what nickname was he referred to as?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 14:
+                                    message.channel.sendMessage("`Who was the person who had their first custom status as an animated emoji followed by the words 'love you all'?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 15:
+                                    message.channel.sendMessage("`Who once had a nickname titled 'Moody Girl' in Jerry's Server?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 16:
+                                    message.channel.sendMessage("`Who was the female discord user that brung the most joy in VCs when paired with Kir b in the older days?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 17:
+                                    message.channel.sendMessage("`What was the name of the fictional character that owns the Inn?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 18:
+                                    message.channel.sendMessage("`Fill in the blanks: 'Dys' character, known as 'Dyshero' was formerly called _______ Hero before his sprite got updated to what we know today.'`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 19:
+                                    message.channel.sendMessage("`What is the name of the cartoon that was shown on Disney Channel which had over 300 songs?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 20:
+                                    message.channel.sendMessage("`What is the subheading for the Smash game which had a gliding mechanic for winged characters?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 21:
+                                    message.channel.sendMessage("`What is the nickname for the roleplayer who disagrees with the off-topic rule more than the others?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 22:
+                                    message.channel.sendMessage("`Fill in the blank: 'What does Mr. Game and Watch, Lucina, and Paper Mario have in common? Well, for one thing, they're all ____.'`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 23:
+                                    message.channel.sendMessage("`During the time when Mimik first changed his name to Reun, he also changed the name of his endless to encourage everyone else to mention him by the name 'Reun'. What was the name of his endless channel at that time?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 24:
+                                    message.channel.sendMessage("`What is the name of the Mario spinoff that contained an underwater section for Bowser's Castle?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 25:
+                                    message.channel.sendMessage("`In the Mario Kart Wii's Instruction Booklet, at the last page which shows a picture of the gang in a race, what item is Bowser holding?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 26:
+                                    message.channel.sendMessage("`Who is 'Gerald' in Jerry's Server?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 27:
+                                    message.channel.sendMessage("`Who has an endless channel with the discription saying 'I guess this is kinda the unofficial Smash channel? Working on backlog though so it isn't fully smash stuff.'?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 28:
+                                    message.channel.sendMessage("`Other than 'pure', what's another adjective people use for Pip, even though she sometimes doesn't like to be called that word?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 29:
+                                    message.channel.sendMessage("`Who's birthday is on the day before Halloween?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 30:
+                                    message.channel.sendMessage("`What is the item that is seen on a Pixar logo?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 31:
+                                    message.channel.sendMessage("`Who was the female discord user that once got Dru upset (When he was known as the Galactic Nova) because the chat exploded on her appearance?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 32:
+                                    message.channel.sendMessage("`Who is the discord user that has the word 'waifu' in a strikethrough in their personal command?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 33:
+                                    message.channel.sendMessage("`Fill in the blank: 'Despite not being the official name, the Nintendo Discord server can be mentioned as Irri's _____.'`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 34:
+                                    message.channel.sendMessage("`Izzle's roleplay character can be argued to be similar to TruDru because she can be seen holding an art supply. What is it?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 35:
+                                    message.channel.sendMessage("`Other than Gabe, who else is planning the creation of a game in Jerry's Server?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 36:
+                                    message.channel.sendMessage("`What is the name of the command that requires you to get 20 fruits in a row to win?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 37:
+                                    message.channel.sendMessage("`What weapon does Joker use in his neutral special in Smash?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 38:
+                                    message.channel.sendMessage("`On the Nintendo Music Stream, which character gif isn't taken from an official Nintendo game?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 39:
+                                    message.channel.sendMessage("`What is the subheading for the WarioWare game which included both Tilting and Touching as game input?`");
+                                    triv = quests;
+                                    break;
+        
+                                    case 40:
+                                    message.channel.sendMessage("`Other than doors, what method of travel in the same subarea is available in Super Mario 3D World's theme in Super Mario Maker 2?`");
+                                    triv = quests;
+                                    break;
+                                    
+                                    case 41:
+                                    message.channel.sendMessage("`What song did Jimbo sing that was then shown in Jerry's YouTube Channel?`");
+                                    triv = quests;
+                                    break;
+        
+                                
+        
+        
+        
+                            }
+                            break;
+        
+                            case 'mmtrivia':
+                                if (mmgame === true) {
+                                    message.channel.sendMessage("A game is already in session!");
+                                }
+                                else{
+                                 message.channel.sendMessage("Searching via VirusNet...")
+                                mmA = message.channel.id;
+                                mmB = Math.floor ((Math.random() * mmids.length));
+        
+                                while (mmids[mmB] === mmA){
+                                    mmB = Math.floor ((Math.random() * mmids.length));
+                                }
+        
+        
+                                bot.channels.get(mmA).send("`Opponent found! Waiting for response...`")
+                                bot.channels.get(mmids[mmB]).send("```This channel has been picked for a round of trivia! Do you accept? \n\n(Type 'v!accept to accept the challenge)\n(Type 'v!decline' to decline the challenge.)```");
+                                mmchat = true;
+                            }
+        
+                            break;
+        
+                            case 'decline':
+                                if (mmA !== undefined && mmids[mmB] !== undefined) {
+                                    if (message.channel.id === mmids[mmB]){
+                                    bot.channels.get(mmA).send("`The second party has declined!`");
+                                    bot.channels.get(mmids[mmB]).send("`You have declined the challenge!`")
+                                }
+                                else if (message.channel.id === mmA) {
+                                    bot.channels.get(mmA).send("`You have canceled the challenge!`");
+                                    bot.channels.get(mmids[mmB]).send("`Nevermind...the challenge was canceled`")
+                                }
+                                
+                            }
+                            break;
+        
+                            case 'accept':
+                                if (mmA !== undefined && mmids[mmB] !== undefined) {
+                                    if (message.channel.id === mmids[mmB]){
+                                    bot.channels.get(mmA).send("`Challenge accepted! Let's begin!`");
+                                    bot.channels.get(mmids[mmB]).send("`Alright! Let's begin!`")  
+                                    mmgame = true;
+                                    mmnum = 0;
+                                    bot.channels.get('640979991328456714').send("Next Question...")
+                                }}
+                                break;
+        
+                            case 'endmatch':
+                                    bot.channels.get(mmA).send("`The match has been canceled.`");
+                                    bot.channels.get(mmids[mmB]).send("`The match has been canceled.`");
+                                    mmchat = false;
+                                    mmgame = false;
+                                    mmnum = 11;
+                                    break;
+        
+        
+        
+        
+                           
+        
+                }
+        
+        
+        
+                 
+        
+        
+        
+                
+            }
+        
+            if (message.channel.id === mmA && mmchat === true && message.author.id !== BotID && !message.content.includes(mmoans[mmans])){
+                bot.channels.get(mmids[mmB]).send("[CHAT] "+message.author.tag +": "+message);
+            }
+            
+            if (message.channel.id === mmids[mmB] && mmchat === true && message.author.id !== BotID){
+                bot.channels.get(mmA).send("[CHAT] "+message.author.tag +": "+message);
+            }
+        
+            if ((message.content.includes("Next Question...")) && mmA !== undefined && mmids[mmB] !== undefined){
+                if (message.author.id === BotID) {
+                    if(mmnum < 10) {
+                        mmpicked = Math.floor ((Math.random() * mmoquests.length));
+                        bot.channels.get(mmA).send(mmoquests[mmpicked]);
+                        bot.channels.get(mmids[mmB]).send(mmoquests[mmpicked]);
+                        mmans = mmpicked;
+                    }
+                }
+            }
+        
+            if (message.content.toLowerCase().includes(mmoans[mmans]) && mmA !== undefined && mmids[mmB] !== undefined && mmgame === true) {
+                if (message.channel.id === mmA && message.author.id !== BotID) {
+                    bot.channels.get(mmA).send("**"+message.author.username+"** got the correct answer!")
+                    bot.channels.get(mmids[mmB]).send("**"+message.author.username+"** got the correct answer!")
+                    mmAscore++;
+                }
+                else if (message.channel.id === mmids[mmB] && message.author.id !== BotID) {
+                    bot.channels.get(mmA).send("**"+message.author.username+"** got the correct answer!")
+                    bot.channels.get(mmids[mmB]).send("**"+message.author.username+"** got the correct answer!")
+                    mmBscore++;
+                }
+        
+                mmans = 0;
+                mmnum++;
+                bot.channels.get('640979991328456714').send("Next Question...")
+            }
+        
+            if (mmnum >= 10 && mmgame === true){
+                bot.channels.get(mmA).send("`The results are in! The challenge is over.`")
+                bot.channels.get(mmids[mmB]).send("`The results are in! The challenge is over.`")
+                if (mmAscore > mmBscore) {
+                    bot.channels.get(mmA).send("`This channel wins!` :tada:")
+                    bot.channels.get(mmids[mmB]).send("`The opposing party wins...Too bad!`")
+                }
+                if (mmAscore < mmBscore) {
+                    bot.channels.get(mmA).send("`The opposing party wins...Too bad!`")
+                    bot.channels.get(mmids[mmB]).send("`This channel wins!` :tada:")
+                }
+                if (mmAscore === mmBscore) {
+                    bot.channels.get(mmA).send("`It's a draw! GG!`")
+                    bot.channels.get(mmids[mmB]).send("`It's a draw! GG!`")
+                }
+        
+                bot.channels.get(mmA).send("`The game has ended. Thanks for playing! Logging off...`")
+                bot.channels.get(mmids[mmB]).send("`The game has ended. Thanks for playing! Logging off...`")
+        
+                mmchat = false;
+                mmgame = false;
+                mmnum = 11;
+        
+        
+            }
+        
+        
+        
+            //emoji
+            if (emoid === message.channel.id && message.author.id !== BotID){
+                if (message.content.toLowerCase().includes("okay guitar") && emoques === 1) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found it out!")
+                   emoques = 0;
+               }
+           
+               if (message.content.toLowerCase().includes("onix shots") && emoques === 2) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found it out, you RP bommer!")
+                   emoques = 0;
+               }
+           
+               if (message.content.toLowerCase().includes("pizza time") && emoques === 3) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words! Now, it's Pizza Time!")
+                   emoques = 0;
+               }
+           
+               if (message.content.toLowerCase().includes("rainbow road") && emoques === 4) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words! MK8's is the worst, tho.")
+                   emoques = 0;
+               }
+           
+               if (message.content.toLowerCase().includes("west virginia") && emoques === 5) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the song! MOUNTAIN MAMAAAAAA")
+                   emoques = 0;
+               }
+           
+               if (message.content.toLowerCase().includes("celeste") && emoques === 6) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the word! What a great indie...")
+                   emoques = 0;
+               }
+           
+               if (message.content.toLowerCase().includes("rhythm heaven") && emoques === 7) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words! This series is underrated.")
+                   emoques = 0;
+               }
+           
+               if (message.content.toLowerCase().includes("jet") && emoques === 8) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the word! Poor Jet...")
+                   emoques = 0;
+               }
+           
+               if (message.content.toLowerCase().includes("hunger games") && emoques === 9) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words! WHEN IS THE NEXT ONE?")
+                   emoques = 0;
+               }
+           
+               if (message.content.toLowerCase().includes("lobby of the gods") && emoques === 10) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words! Nova needs a nurf.")
+                   emoques = 0;
+               }
+           
+               if (message.content.toLowerCase().includes("galactic nova") && emoques === 11) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words! What a neko clock.")
+                   emoques = 0;
+               }
+           
+               if (message.content.toLowerCase().includes("vibe check") && emoques === 12) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words! Time for a vibe check!")
+                   emoques = 0;
+               }
+           
+               if (message.content.toLowerCase().includes("knuckles the unchuckled") && emoques === 13) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words! Oh no.")
+                   emoques = 0;
+               }
+           
+               if (message.content.toLowerCase().includes("vibrating penguin") && emoques === 14) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words!")
+                   emoques = 0;
+               }
+           
+               if (message.content.toLowerCase().includes("happy bee") && emoques === 15) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words! What a happy boi...")
+                   emoques = 0;
+               }
+           
+               if (message.content.toLowerCase().includes("beesday cake") && emoques === 16) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words!")
+                   emoques = 0;
+               }
+           
+               if (message.content.toLowerCase().includes("crab role") && emoques === 17) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words! Now, let's leave Reun alone.")
+                   emoques = 0;
+               }
+           
+               if (message.content.toLowerCase().includes("eatmelon") && emoques === 18) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the emoji from emojis!")
+                   emoques = 0;
+               }
+           
+               if (message.content.toLowerCase().includes("samfuller") && emoques === 19) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the legend!")
+                   emoques = 0;
+               }
+           
+               if (message.content.toLowerCase().includes("tomato soup") && emoques === 20) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words! Irri sure does love her soup...")
+                   emoques = 0;
+               }
+           
+               if (message.content.toLowerCase().includes("dance until you are dead") && emoques === 21) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words! Dance break!")
+                   emoques = 0;
+               }
+           
+               if (message.content.toLowerCase().includes("sleepy sheepy") && emoques === 22) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words! Night, Night, sheepy...")
+                   emoques = 0;
+               }
+           
+               if (message.content.toLowerCase().includes("a hat in time") && emoques === 23) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words! What a great game...")
+                   emoques = 0;
+               }
+        
+               if ((message.content.toLowerCase().includes("you think you're safe?") || message.content.toLowerCase().includes("you think youre safe")) && emoques === 24) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found it out! But I have unfortunate news. You failed the vibe check.")
+                   emoques = 0;
+               }
+        
+               if (message.content.toLowerCase().includes("double king") && emoques === 25) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found it out! Now I'm hungry...")
+                   emoques = 0;
+               }
+        
+               if (message.content.toLowerCase().includes("warp box") && emoques === 26) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found it out! Thank gosh it's not a Mystery Box!")
+                   emoques = 0;
+               }
+        
+               if (message.content.toLowerCase().includes("turbo") && emoques === 27) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found it out! What a fast boi")
+                   emoques = 0;
+               }
+        
+               if (message.content.toLowerCase().includes("super mario 64") && emoques === 28) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found it out! Here we go! :star:")
+                   emoques = 0;
+               }
+        
+               if ((message.content.toLowerCase().includes("it's 9 o'clock on a saturday") || message.content.toLowerCase().includes("its 9 oclock on a saturday")) && emoques === 29) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found it out! What, you don't know the song?")
+                   emoques = 0;
+               }
+        
+               if (message.content.toLowerCase().includes("i got sunshine in a bag") && emoques === 30) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found it out! Ah...depression amirite?")
+                   emoques = 0;
+               }
+        
+               if (message.content.toLowerCase().includes("i bless the rains down in africa") && emoques === 31) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found it out!")
+                   emoques = 0;
+               }
+        
+               if ((message.content.toLowerCase().includes("mega mall story")) && emoques === 32) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found it out!")
+                   emoques = 0;
+               }
+        
+               if ((message.content.toLowerCase().includes("paper mario: the thousand year door") || message.content.toLowerCase().includes("paper mario the thousand year door") || message.content.toLowerCase().includes("ttyd")) && emoques === 33) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found it out! Great Game.")
+                   emoques = 0;
+               }
+        
+               if (message.content.toLowerCase().includes("apple bottom jeans") && emoques === 34) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found it out! Shorty got them-")
+                   emoques = 0;
+               }
+        
+               if ((message.content.toLowerCase().includes("coolmathgames.com") || message.content.toLowerCase().includes("Coolmathgamescom")) && emoques === 35) {
+                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found it out! Let's play some!")
+                   emoques = 0;
+               }
+           }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+           //trivia
+           if (quid === message.channel.id && message.author.id !== BotID){
+                   if (message.content.toLowerCase().includes("piano") && triv === 1){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("rhythm doctor") && triv === 2){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("duck") && triv === 3){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("ultimate arc") && triv === 4){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("pkoby") && triv === 5){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("silver") && triv === 6){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("drawing") && triv === 7){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("korbs") && triv === 8){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("jimbo") && triv === 9){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("furry") && triv === 10){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("strikers") && triv === 11){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("november") && triv === 12){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("mimik") && triv === 13){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("ender") && triv === 14){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("jet") && triv === 15){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("maeva") && triv === 16){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("vis") && triv === 17){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("gameboy") && triv === 18){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("phineas and ferb") && triv === 19){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("brawl") && triv === 20){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("arrow") && triv === 21){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("flat") && triv === 22){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("call-me-reun") && triv === 23){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("mario kart 7") && triv === 24){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("blue shell") && triv === 25){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("mee6") && triv === 26){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("rb") && triv === 27){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("cute") && triv === 28){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("dru") && triv === 29){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("lamp") && triv === 30){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("florp") && triv === 31){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("moon") && triv === 32){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("harem") && triv === 33){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("paintbrush") && triv === 34){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("pip") && triv === 35){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("gayslots") && triv === 36){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("gun") && triv === 37){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("yoshi") && triv === 38){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("gold") && triv === 39){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("warp box") && triv === 40){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+               
+                   if (message.content.toLowerCase().includes("photograph") && triv === 41){
+                       message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                       triv = 0;
+                   }
+        
+               }
+        
+               //dicegame
+               
+        
+        
+               
+        
+            
+        
+            
+            
+        }
+        );
+        
+        
+        
 
 bot.login(process.env.BOT_TOKEN);
