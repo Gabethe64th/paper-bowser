@@ -652,7 +652,7 @@ bot.on('message', message=> {
                     
                 break;
                 
-
+            case 'slots':
             case 'slot':
 
                 emonum0 = Math.floor ((Math.random() * fruits.length));
