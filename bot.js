@@ -40,6 +40,10 @@ var pined;
 const fs = require("fs");
 bot.afile = require ("./afile.json");
 const BotID = '634502800872833033';
+var word1 = ["You", "Name", "Dru", "Irri", "Poochy", "Jet", "Mario", "Luigi", "Reun", "Cain", "Sayori", "Ghost", "Yuri", "Knux", "Y'all", "Sonic", "Minecraft"];
+var word2 = ["is", "is gonna be", "is about to be", "is thinking of", "wants to be"];
+var word3 = ["hecking", "fucking", "playing", "imitating", "buying", "promoting", "sponsoring"];
+var word4 = [" ", "you", "Raid Shadow Legends", "Name", "Dru", "Irri", "Poochy", "Jet", "Mario", "Luigi", "Reun", "Cain", "Sayori", "Ghost", "Yuri", "Knux", "Y'all", "Sonic", "Minecraft", "me", "gay", "appropriate", "Spider-Man", "here", "Celeste", "a hat in time", "a perv", "Squidward", "communism"];
 
 bot.on('ready', () =>{
     console.log('Let er rip!');
@@ -516,7 +520,15 @@ bot.on('message', message=> {
             break;
             
         
-            
+            case 'generate':
+                message.channel.sendMessage("Your generated sentence is: \n");
+                w1 = Math.floor ((Math.random() * word1.length));
+                w2 = Math.floor ((Math.random() * word2.length));
+                w3 = Math.floor ((Math.random() * word3.length));
+                w4 = Math.floor ((Math.random() * word4.length));
+
+                message.channel.sendMessage(word1[w1]+" "+word2[w2]+" "+word3[w3]+" "+word4[w4]+".");
+            break;
 
            case 'dedmeme':
             
