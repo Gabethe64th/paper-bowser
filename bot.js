@@ -114,6 +114,8 @@ bot.on('message', message=> {
                 .addBlankField()
                 .addField("Hmm...", "Some modifications are being added piece by piece. We hope to keep VB as smooth as possible!")
                 .addBlankField()
+                .addField("New Command!", "'v!generate' is here! Have fun with some rng!")
+                .addBlankField()
                 .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                 message.channel.send(embed);
             }
@@ -1114,6 +1116,7 @@ bot.on('message', message=> {
                         .addField('• list', 'Enter the VirusGames!', true)
                         .addField('• ts', 'Tells a story.', true)
                         .addField('• druxwario', 'What the hell even is this?', true)
+                        .addField('• generate', 'Get a cool sentence!', true)
                         .addBlankField()
                         .addField('**Personal Commands** 👤', 'Commands about friends, for friends.')
                         .addBlankField()
