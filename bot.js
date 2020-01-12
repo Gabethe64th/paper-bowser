@@ -771,7 +771,7 @@ bot.on('message', message=> {
 
         case 'post':
             if (message.attachments.first() != undefined) {
-                postatt = message.attachments.first();
+                postatt = new Attachment (message.attachments.first().url); 
                 message.channel.send(postatt);
             }
             else {
