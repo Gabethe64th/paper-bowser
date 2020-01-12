@@ -814,6 +814,24 @@ bot.on('message', message=> {
                 message.channel.send(serverembed);
         break;
 
+        case 'IDvatar':
+                if (args[1] != undefined){
+                    Idget = args[1];
+                    const IDaembed = new Discord.RichEmbed()
+                    .setAuthor("Avatar of user "+Idget)
+                    .setColor('#00BFFF')
+                    .setTitle(bot.users.get(Idget).username)
+                    .setImage(bot.users.get(Idget).avatarURL)
+                    .setDescription(bot.users.get(Idget).tag)
+                    .addBlankField()
+                    
+                    
+                    .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
+
+                }
+                else {message.channel.sendMessage("This command posts the profile picture of a user using their ID. To use it, send `v!IDvatar [User ID here]`.")}
+        break;
+
         case 'noswears':
             message.channel.sendMessage("Ok, bud. That's enough swearing for now. Go sit in the corner and think about what you did.")
             break;
