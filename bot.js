@@ -769,19 +769,7 @@ bot.on('message', message=> {
             message.react('👍')
             break;
 
-        case 'post':
-            if (message.attachments.first() != undefined) {
-                postatt = new Attachment (message.attachments.first().url); 
-                message.channel.send(postatt);
-            }
-            else {
-                message.channel.send("Sorry, can't find it!")
-            }
-        break;
 
-        //case 'repost':
-
-        ///break;
 
         case 'announce':
                 user = message.mentions.users.first();
@@ -1185,14 +1173,16 @@ bot.on('message', message=> {
    if (message.channel.id === callA && callkey === true && message.author.id !== BotID){
     bot.channels.get(callids[callB]).send(message.author.tag +": "+message);
     if (message.attachments.first() != undefined){
-        bot.channels.get(callids[callB]).send(message.attachments.first());
+        callattach = new Attachment (message.attachments.first().url);
+        bot.channels.get(callids[callB]).send(callattach);
     }
 }
 
 if (message.channel.id === callids[callB] && callkey === true && message.author.id !== BotID){
     bot.channels.get(callA).send(message.author.tag +": "+message);
-    if (message.attachments.first() != undefined){
-        bot.channels.get(callA).send(message.attachments.first());
+    if (message.attachments.first() != undefined){        
+        callattach = new Attachment (message.attachments.first().url);
+        bot.channels.get(callA).send(callattach);
     }
 }
 
