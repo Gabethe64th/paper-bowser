@@ -827,6 +827,7 @@ bot.on('message', message=> {
                     
                     
                     .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
+                    message.channel.send(IDaembed);
 
                 }
                 else {message.channel.sendMessage("This command posts the profile picture of a user using their ID. To use it, send `v!IDvatar [User ID here]`.")}
