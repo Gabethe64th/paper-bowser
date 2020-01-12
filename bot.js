@@ -771,7 +771,8 @@ bot.on('message', message=> {
 
         case 'post':
             if (message.attachments.first() != undefined) {
-                message.channel.send(message.attachments.first());
+                postatt = message.attachments.first();
+                message.channel.send(postatt);
             }
             else {
                 message.channel.send("Sorry, can't find it!")
