@@ -769,7 +769,18 @@ bot.on('message', message=> {
             message.react('👍')
             break;
 
-        
+        case 'post':
+            if (message.attachments.first() != undefined) {
+                message.channel.send(message.attachments.first());
+            }
+            else {
+                message.channel.send("Sorry, can't find it!")
+            }
+        break;
+
+        //case 'repost':
+
+        ///break;
 
         case 'announce':
                 user = message.mentions.users.first();
