@@ -1190,19 +1190,29 @@ bot.on('message', message=> {
 
 
    if (message.channel.id === callA && callkey === true && message.author.id !== BotID){
+       if (message.content.includes("@everyone") || message.content.includes("@here")){
+        message.channel.sendMessage("Please refrain from raiding through calls. \n(Thanks to all my friends who found this oversight. I'm not angry at y'all <3)")
+       }
+       else {
     bot.channels.get(callids[callB]).send(message.author.tag +": "+message);
     if (message.attachments.first() != undefined){
         callattach = new Attachment (message.attachments.first().url);
         bot.channels.get(callids[callB]).send(callattach);
     }
 }
+}
 
 if (message.channel.id === callids[callB] && callkey === true && message.author.id !== BotID){
+    if (message.content.includes("@everyone") || message.content.includes("@here")){
+        message.channel.sendMessage("Please refrain from raiding through calls. \n(Thanks to all my friends who found this oversight. I'm not angry at y'all <3)")
+       }
+       else {
     bot.channels.get(callA).send(message.author.tag +": "+message);
     if (message.attachments.first() != undefined){        
         callattach = new Attachment (message.attachments.first().url);
         bot.channels.get(callA).send(callattach);
     }
+}
 }
 
 
