@@ -963,6 +963,16 @@ bot.on('message', message=> {
                     bot.users.get("178539479827611648").sendMessage(suggestEmbed);
                     break;
 
+            case 'striveonV':
+                bot.users.get(message.author.id).sendMessage("In a way, people can just stab you in the back when you least expect it. It's kinda creepy.\nUPDATE COMPLETE.");
+                break;
+
+
+            case 'easteregg':
+                message.channel.sendMessage("What, you wanted one? Nah, too lazy.");
+                break;
+
+                
             case 'trailtoggle':
                 if (trail === 0){
                     trail = 1;
