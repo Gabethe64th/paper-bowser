@@ -977,6 +977,14 @@ bot.on('message', message=> {
                 Övw”fAäõpÌlhN£ü nØó4@¼zú¥!"" ¿†¼^›c-´ÝzÁ@D$"""2ôý€É=ÜÚ—"-éjYÏ7©S³ˆˆˆÈÑÀUÐmã†ÙP2ÐáˆˆˆŒh*r&bÕîËº[w½î°}ûòÔ‹JDDddR›†ác=œù°1á¦z8ÖpF`)
                 break;
 
+            case 'doesIzzleisGay':
+                message.channel.sendMessage("Never trust a senpai.");
+                break;
+
+            case 'fuck':
+                message.channel.sendMessage("You cannot use that command. Please try another.");
+                break;
+
 
             case 'trailtoggle':
                 if (trail === 0){
