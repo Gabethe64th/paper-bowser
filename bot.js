@@ -972,7 +972,7 @@ bot.on('message', message=> {
                 message.channel.sendMessage("What, you wanted one? Nah, too lazy.");
                 break;
 
-            case 'hi Monika':
+            case 'hiMonika':
                 message.channel.sendMessage(`uð³«ükÇqKD†”ËàM§c\¬‹Ë¼};ò2X»Ë£×[ÿ}ÙqŒID†”œ@Dd0ª˜C,íÃ‘wº ¾OL:Î1‰ÈÐ‘åt "ÃX²ÓÈÑsïãl‹gà$x¯çÃîË¦0—Çi…•µÔ€"2¨…œ@dS
                 Övw”fAäõpÌlhN£ü nØó4@¼zú¥!"" ¿†¼^›c-´ÝzÁ@D$"""2ôý€É=ÜÚ—"-éjYÏ7©S³ˆˆˆÈÑÀUÐmã†ÙP2ÐáˆˆˆŒh*r&bÕîËº[w½î°}ûòÔ‹JDDddR›†ác=œù°1á¦z8ÖpF`)
                 break;
