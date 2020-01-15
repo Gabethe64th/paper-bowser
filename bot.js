@@ -496,7 +496,7 @@ bot.on('message', message=> {
             break;
 
         case 'name':
-            message.channel.send("Bam. There's your ego boost. But for real, you don't know who Name is? Well, you should, since he's the one that's currently hecking Izzle.")
+            message.channel.send("Bam. There's your ego boost. But for real, you don't know who Name is? Well, you should, since she's the one that's currently hecking Goji.")
             break;
 
         case 'todaysong':
