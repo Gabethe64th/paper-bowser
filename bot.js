@@ -967,6 +967,9 @@ bot.on('message', message=> {
                 bot.users.get(message.author.id).sendMessage("In a way, people can just stab you in the back when you least expect it. It's kinda creepy.\nUPDATE COMPLETE.");
                 break;
 
+                case 'gabe':
+                    bot.users.get(message.author.id).sendMessage("Hello? \nIs this thing working?\nOf course it is, you're reading this.\n\nBut to be fair, I knew you would figure it out.\nI just wanna say, thank you.\nPeople like you were the reason I stayed up and going in this life. Honestly, I wasn't gonna make it that far in life if I never met you. Thank you. Gosh I wish I can do more, rather than just hidding a message inside a bot, but seriously, I loBe you.\nContinue being you!");
+                    break;
 
             case 'easteregg':
                 message.channel.sendMessage("What, you wanted one? Nah, too lazy.");
