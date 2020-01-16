@@ -544,6 +544,12 @@ bot.on('message', message=> {
                         message.channel.send ( { files: ["./wtf/wtf (" + imageNumber2 + ").jpg"]})
                         break;
 
+                        case 'hoesMad':
+                            hoe = 3;
+                            imageNumber3 = Math.floor (Math.random() * (hoe - 1 + 1)) +1;
+                            message.channel.send ( { files: ["./hoes/hoes (" + imageNumber3 + ").jpg"]})
+                            break;
+
             case 'hug':
                 hugs = 8;
                 user = message.mentions.users.first();
