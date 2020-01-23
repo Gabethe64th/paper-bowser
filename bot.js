@@ -1192,7 +1192,7 @@ bot.on('message', message=> {
                         .addField('The following quotes are user-specific:', '• owo - Only Izzle and Moon can use this.\n• Drizzle - Only Jet can use this.\n• Joe - Only Reun can use this.')
                         .addBlankField()
                         .addField('**Reaction Commands** 👀', "I saw that.")
-                        .addField("Adding any of these reactions to a message will make the bot react to it:", "• :herb: - Join the support gang! (If there is spam, use 'v!herbbreak')\n• :magnet: - Sends the reacted message to Virus' Channel.")
+                        .addField("Adding any of these reactions to a message will make the bot react to it:", "• :herb: - Join the support gang! (If there is spam, use 'v!herbbreak')\n• :moneybag: - Makes Virus DM you the selected pic/video that was posted.")
                         .addBlankField()
                         .addField('**Personal Commands** 🦀', "Huh.")
                         .addField('The following reactions are user-specific:', '• :joystick: - Only Gabe can use this.\n• :guitar: - Only Snoop and Reun can use this.')
