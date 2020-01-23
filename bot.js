@@ -1004,43 +1004,7 @@ bot.on('message', message=> {
                 message.react("👍")}
                 break;
 
-            case 'doit':
-                message.member.voiceChannel.join();
-                comPre = args[1];
-                song = message.content.slice(9);
-                if (song != undefined){
-                    message.channel.sendMessage(comPre +"play "+song);
-                setTimeout(function(){
-                    message.channel.sendMessage(comPre+"1")
-                    setTimeout(function(){
-                        message.member.voiceChannel.leave();
-                        }, 1500);
-                }, 3000);
-                }
-                else {
-                message.channel.sendMessage(comPre +"play Cock and ball torture");
-                setTimeout(function(){
-                    message.channel.sendMessage(comPre+"1")
-                    setTimeout(function(){
-                        message.member.voiceChannel.leave();
-                        }, 1500);
-                }, 3000);
-            }
-                
-                break;
-
-            /*case 'waitsong':
-                    message.member.voiceChannel.join();
-                    setTimeout(function(){
-                        //connection.playFile('./wait.mp3');
-                        message.member.voiceChannel.connection.playFile('C:/Users/wende/Desktop/Discordbotte/wait.mp3');
-                        }, 1500);
-                        break;
-                        */
-                    
-            case 'getout':
-                    message.member.voiceChannel.leave();
-                    break;
+            
                 
 
 
