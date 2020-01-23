@@ -1228,6 +1228,7 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
     }
 
     if (message.content.startsWith("@someone")){
+        message.channel.send("1");
         uusers = bot.guilds.get(message.guild).members.array();
         uwusers = Math.floor ((Math.random() * uusers.length));
         thisone = bot.users.get(uusers[uwusers]);
