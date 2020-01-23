@@ -1227,6 +1227,14 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
         message.channel.send('UwU *nuzzles you*');
     }
 
+    if (message.content.startsWith("@someone")){
+        uusers = bot.guilds.get(message.guild).members.array();
+        uwusers = Math.floor ((Math.random() * uusers.length));
+        thisone = bot.users.get(uusers[uwusers]);
+
+        message.channel.send("<@"+thisone.id+">");
+    }
+
     if (message.content.includes("Drizzle")){
         if (message.author.id === '356389068634062848'){
             message.channel.sendMessage("Okay, Jet. You need to face the facts. **The ship is dead.**")
