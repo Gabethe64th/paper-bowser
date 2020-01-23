@@ -1235,12 +1235,6 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
         message.channel.send("<@"+thisone.id+">");
     }
 
-    if (message.content.startsWith("@test")){
-        message.channel.send("test");
-        uuusers = bot.guilds.get(message.guild);
-
-        uuusers.members.forEach(member => message.channel.send(member.user.username));
-    }
 
     if (message.content.includes("Drizzle")){
         if (message.author.id === '356389068634062848'){
