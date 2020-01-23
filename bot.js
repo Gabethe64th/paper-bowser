@@ -1407,6 +1407,12 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             }
             }
 
+        if (emoji.name === "💰") {
+            stolenmeme = new Attachment (message.attachments.first().url);
+            message.channel.send("This is a message to alert that "+user.username+" has stolen "+message.author.username+"'s meme. No further action is required.");
+            bot.users.get(user.id).send(stolenmeme);
+        }
+
         
 
         if (emoji.name === "🕹") {
