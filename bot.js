@@ -1603,6 +1603,14 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         snekB = [6, 25, 11, 19, 60, 53, 68, 88, 75, 80];
         start = 0;
         path = 0;
+
+        cards9 = [0, 1, 2, 3];
+        players9 = [];
+        p1cardpile = [];
+        p2cardpile = [];
+        p3cardpile = [];
+        p4cardpile = [];
+        var a9match = false;
         
         
         bot.on('message', message=> {
@@ -1947,7 +1955,61 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                        break;
         
         
-        
+                            case '9+':
+                                message.channel.send("Welcome to 9+! A simple card card where you cannot exceed the number 9!\nThis game is currently in testing as a bot command before it is used elsewhere.");
+                                break;
+
+                            case '9+create':
+                                if (a9match = true){
+                                    message.channel.sendMessage("Oops! It seems like a room is already created!")
+                                }
+                                else {
+                                    message.channel.sendMessage("Alright! Creating a room!")
+                                }
+                                addPlayerto9match(message.author)
+                                break;
+
+                            case '9+join':
+                                addPlayerto9match(message.author);
+                                break;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            function addPlayerto9match(user){
+                                tester = false;
+                                for (i = 0; i <= players9.length; i++){
+                                    if (players9[i] == user){
+                                        tester = true;
+                                    }
+                                }
+                                if (tester == true){
+                                    message.channel.sendMessage("You're already added to the list!");
+                                }
+                                else{
+                                    players9.push(user);
+                                    message.channel.sendMessage("[/////PLAYERS/////]");
+                                    for (i = 0; i <= players9.length; i++){
+                                        message.channel.sendMessage(user[i].username+"\n");
+                                    }
+
+                                }
+                            }
+
+
+
+
         
         
                             case 'trivia':
