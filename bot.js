@@ -551,7 +551,7 @@ bot.on('message', message=> {
                             break;
 
             case 'hug':
-                hugs = 8;
+                hugs = 16;
                 user = message.mentions.users.first();
                 if (user !== undefined && user.id === message.author.id){
                     message.channel.sendMessage("Oh...you hugged yourself? Damn, you're lonely...")
