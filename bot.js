@@ -571,6 +571,12 @@ bot.on('message', message=> {
                     gifNumber = Math.floor (Math.random() * (hugs - 1 + 1)) +1;
                     message.channel.sendMessage("*"+message.author.username+" gives "+user.username+" a hug!* 💙");
                     message.channel.send ( { files: ["./hugs/hugif (" + gifNumber + ").gif"]})
+                    suplexChance = Math.floor (Math.random() * (10 - 1 + 1)) +1;
+                    if (suplexChance <= 1){
+                        const suplex = new Attachment('https://cdn6.omidoo.com/sites/default/files/imagecache/1200x630/images/headline/201803/thesuplex2.jpg');
+                        message.channel.send("But surprise! It turned into a hecking suplex!")
+                        message.channel.send(suplex);
+                    }
                 }
                 
                 
