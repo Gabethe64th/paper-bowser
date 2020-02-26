@@ -997,7 +997,7 @@ bot.on('message', message=> {
                 break;
 
             case 'fuck':
-                message.channel.sendMessage("You cannot use that command. Please try another.");
+                message.channel.sendMessage("You don't have permission to use that command. Please try another.");
                 break;
 
 
