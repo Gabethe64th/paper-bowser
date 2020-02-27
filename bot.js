@@ -496,7 +496,7 @@ bot.on('message', message=> {
             break;
 
         case 'name':
-            message.channel.send("Bam. There's your ego boost. But for real, you don't know who Name is? Well, you should, since she's the one that's currently hecking Goji.")
+            message.channel.send("Bam. There's your ego boost. But for real, you don't know who Name is? Well, you should, since she's the cutest one.")
             break;
 
         case 'todaysong':
@@ -975,9 +975,7 @@ bot.on('message', message=> {
                     bot.users.get("178539479827611648").sendMessage(suggestEmbed);
                     break;
 
-            case 'striveonV':
-                bot.users.get(message.author.id).sendMessage("In a way, people can just stab you in the back when you least expect it. It's kinda creepy.\nUPDATE COMPLETE.");
-                break;
+            
 
                 case 'gabe':
                     bot.users.get(message.author.id).sendMessage("Hello? \nIs this thing working?\nOf course it is, you're reading this.\n\nBut to be fair, I knew you would figure it out.\nI just wanna say, thank you.\nPeople like you were the reason I stayed up and going in this life. Honestly, I wasn't gonna make it that far in life if I never met you. Thank you. Gosh I wish I can do more, rather than just hidding a message inside a bot, but seriously, I loBe you.\nContinue being you!");
@@ -990,10 +988,6 @@ bot.on('message', message=> {
             case 'hiMonika':
                 message.channel.sendMessage(`uð³«ükÇqKD†”ËàM§c\¬‹Ë¼};ò2X»Ë£×[ÿ}ÙqŒID†”œ@Dd0ª˜C,íÃ‘wº ¾OL:Î1‰ÈÐ‘åt "ÃX²ÓÈÑsïãl‹gà$x¯çÃîË¦0—Çi…•µÔ€"2¨…œ@dS
                 Övw”fAäõpÌlhN£ü nØó4@¼zú¥!"" ¿†¼^›c-´ÝzÁ@D$"""2ôý€É=ÜÚ—"-éjYÏ7©S³ˆˆˆÈÑÀUÐmã†ÙP2ÐáˆˆˆŒh*r&bÕîËº[w½î°}ûòÔ‹JDDddR›†ác=œù°1á¦z8ÖpF`)
-                break;
-
-            case 'doesIzzleisGay':
-                message.channel.sendMessage("Never trust a senpai.");
                 break;
 
             case 'fuck':
@@ -1017,6 +1011,8 @@ bot.on('message', message=> {
         case 'commands':
             //General and Fun
             //message.channel.send("``` 《《 VIRUS COMMANDS 》》 \n\nPAGE 1. \n\n────────\n\n☆ The following commands have to be prefaced with [ v! ] .\n\n-> General Commands:\ncommands[number] - Brings up that number's page of commands.\nhi - Says hello.\nbye - Says goodbye.\nhelp - Gives help.\ninfo - Gives info.\nping - Pings you!\nme - Gives information about the command-user. \ntodaysong - Posts Today's Song \n\n-> Fun Commands:\nlove - Virus loves you back!\nhug - Hug someone! \ncall - Call a random server! [To hang up, use 'v!hang'.]\ncount - Virus starts counting - let's see how far we can go!\ntimetorockwiththebiggitybuckbumble - Virus sings the best song known to man! (Do not do this in public channels.)\nbored - Virus will cure your boredom.\nfuckyou - Why the hate? \nfacts - Virus will tell you a fact, then redact it after a while. \nslot - Feeling lucky? Take a roll in the slot machine!\nimopsslots - Feeling MORE lucky? HA! This should kill the mood...\nvibecheck - Time for a vibe check. \ndruxwario - Virus will you a story about a heartwarming event. \nts - Virus will tell you a story. Follow the initial command with a number to read the next part of the story!\nweeb - Gets Virus excited!\njoe - Joe who? \ndiscotime - It's time to pray! \npurewars - Begin the Pure Wars! \npurestandings - Shows the current standings for the Pure Wars. \nboomerpass - Get the boomer-pass, but other people can steal it.\nboomerbreak - Throw away the boomer-pass!\ndead - Did you die?\ngamestop - What will you buy?\ngay - You're looking kinda fresh doe...\nnoswears - For the one dude who keeps on swearing\ngluck - Virus wishes you good luck!\nbluck - Now you're just a horrible person...\nanalyse - Analyses a post \nBK - A command that supports trans people. \nbottomtext - Virus provides you with a bottom-text - fresh off the iron!\nedgy - Sup, ma son? \nsco - Virus will act gay for a bit. \nheylook - Hey look buddy. \nannounce - Virus has a special announcement!\n\n──────\n\nPLEASE USE [ v!commands2 ] TO VIEW THE NEXT PAGE.```");
+            message.channel.send("Gotcha! Posting the commands vis DMs...");
+            
             const embed1 = new Discord.RichEmbed()
                 .setAuthor("Requested by "+message.author.username, message.author.avatarURL)
                 .setColor('#FF1493')
@@ -1048,10 +1044,9 @@ bot.on('message', message=> {
                 .addBlankField()
                 .addField("End of page.", "Please use [v!commands2] to view the next page.")
                 .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
-                message.channel.send(embed1);
-            break;
-        
-        case 'commands2':
+                
+                bot.users.get(message.author.id).send(embed1);
+            
             //People and Image
             //message.channel.send("``` 《《 VIRUS COMMANDS 》》 \n\nPAGE 2. \n\n────────\n\n☆ The following commands have to be prefaced with [ v! ] .\n\n-> People Commands:\ndru - Do it Dru!\nmoon - Bring it in, Moon!\npkoby - The pure lad.\nkirB - Whoa, a Kirby?\nender - A wild Ender appears!\nkorbs - my boi korbs.\nprince - Please don't say the n word.\neliz - Where's Ellie Bean?\nnokobo - Some random boomer I know.\njasper - Hyper...critical?.\njacob - Hot lad.\nghost - Spoookkkkyyyyy.....\ngoat - What? An epic gamer? \nname - Just an ego booster. \nizzle - What happens if I say 'furry' here? \nethan - You all know who he is!\ncain - Channel-indeed. \nkevin - Everyone...bow? \nsnoop - Ugh, Persona...\njet - Pings Jet. That's all.\nrowlet - Oh my. \nirri - Save us Irri!\npip - The purest person. So, so pure.\nmimik - Who's that?\nreun - The best boy!\nknux - You don't have one yet?!\n\n-> Image Commands:\nclown - Virus will provide you with the most important item of clothing for a clown.\nclown2 - Virus will bring you up for an interview.\nbruh - Bruh.\nwtf - Reacts with a 'Wtf' picture. Most are offensive, do be careful.\nmoonuwu - Virus gives you a shiney uwu!\najoke - A joke is a joke, Budtard.\nbuddy - Ok, Buddy.\nwhatcanIsay - A magical gif. \noldie - Posts a picture from the Glory Days...\ndedmeme - Posts a dead meme from Gabe's one year old folder.\nsad - Virus will provide an image for the saddened.\nnice - Virus will react with a 'Nice' image. \ndong - Where's the dong? \nfunky - Funky got that sicko I need. \ntoxicegg - Dru, get out. \nWAHOO - Mario for the PS4 cancels KH3\negirl - SHUT UP, E-GIRL! \nthouthefuck - BY THE POPE!\n\n──────\n\nPLEASE USE [ v!commands3 ] TO VIEW THE NEXT PAGE.```")
             const embed2 = new Discord.RichEmbed()
@@ -1083,10 +1078,9 @@ bot.on('message', message=> {
                 .addBlankField()
                 .addField("End of page.", "Please use [v!commands3] to view the next page.")
                 .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
-                message.channel.send(embed2);
-            break;
-
-        case 'commands3':
+                
+                bot.users.get(message.author.id).send(embed2);
+           
             //Replies and Reactions
             //message.channel.send("``` 《《 VIRUS COMMANDS 》》 \n\nPAGE 3.\n\n────────\n\n☆ The following commands do not have to be prefaced with [ v! ] .\n\n-> Fun Commands:\nLET ROCK - Start a party!\nboomer - Shut up. This command can only be used if you have the boomer-pass (see Page 1).\nHOL UP - Virus will hold for you.\n\n-> User-Specific Commands:\nowo - uwu? - [ Only Izzle and Moon can use this command. ] \nDrizzle - Excuse me? - [ Only Jet can use this command. ]\nJoe - Joe Who? - [ Only Reun can use this command. ] \n\n────────\n\n☆ Adding the following reactions to any message will trigger Virus to send the correlated response!\n\n-> General Commands:\n:herb: - Join the support gang! (In case of spam, type 'v!herbbreak')\n\n-> User-Specific Commands:\njoystick - For the downed gamer. - [ This response can only be triggered by Gabe. ] \nguitar - Quick! Vibe Check. - [ This response can only be triggered by Snoop and Reun. ]\n\n────────\n\nEND OF COMMAND LIST.```");
             const embed3 = new Discord.RichEmbed()
@@ -1119,10 +1113,9 @@ bot.on('message', message=> {
                 .addBlankField()
                 .addField("End of page.", "Please use [v!commands4] to view the next page.")
                 .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
-                message.channel.send(embed3);
-            break;
-
-            case 'commands4':
+                
+                bot.users.get(message.author.id).send(embed3);
+            
                     const embed4 = new Discord.RichEmbed()
                     .setAuthor("Requested by "+message.author.username, message.author.avatarURL)
                         .setColor('#FF1493')
@@ -1145,10 +1138,9 @@ bot.on('message', message=> {
                         .addBlankField()
                         .addField("End of page.", "Please use [v!commands5] to view the next page.")
                         .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
-                        message.channel.send(embed4);
-            break;
-
-            case 'commands5':
+                        
+                        bot.users.get(message.author.id).send(embed4);
+            
                     const embed5 = new Discord.RichEmbed()
                     .setAuthor("Requested by "+message.author.username, message.author.avatarURL)
                         .setColor('#FF1493')
@@ -1169,7 +1161,8 @@ bot.on('message', message=> {
                         .addBlankField()
                         .addField("End of page.", "Please use [v!commands] to view the first page.")
                         .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
-                        message.channel.send(embed5);
+                        
+                        bot.users.get(message.author.id).send(embed5);
             break;
     
 
