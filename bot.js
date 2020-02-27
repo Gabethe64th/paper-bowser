@@ -428,7 +428,7 @@ bot.on('message', message=> {
 
                 switch (args[1]){
                     case '0':
-                            message.channel.sendMessage('**Tomato Soup** is an ongoing series about a girl named Irri who is on a quest to find the mythical tomato soup, a legendary food that has been rumoured to cure any cold. During her quest, she will meet many different friends and take a crap ton of detours from her main goal. The series is well praised for having a determined yet lovable main character alongside an unexpected plot for each episode.');
+                            message.channel.sendMessage('**Tomato Soup** is an ongoing (kinda) series about a girl named Irri who is on a quest to find the mythical tomato soup, a legendary food that has been rumoured to cure any cold. During her quest, she will meet many different friends and take a crap ton of detours from her main goal. The series is well praised for having a determined yet lovable main character alongside an unexpected plot for each episode.');
                             break;
                     
                             case '1':
