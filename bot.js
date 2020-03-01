@@ -106,15 +106,15 @@ bot.on('message', message=> {
                 .setAuthor("Requested by "+message.author.username, message.author.avatarURL)
                 .setColor('#DC143C')
                 .setTitle("VirusBot "+version+" Changelog")
-                .setDescription("VB Ver. 1.6 is now in beta!")
+                .setDescription("VB's March Update is here!")
                 .addBlankField()
-                .addField("Beep, boop.", "I'm a bot! Now things are gettin' interesting!")
+                .addField("Quality over quantity", "Virus will now DM the commands list to you instead of taking up channel space! Good for us!")
                 .addBlankField()
-                .addField("The Games are Here!", "Added all the stuff from VirusGames into this bot! WE ARE ONE!")
+                .addField("Obama hecked..what?", "Some new words were added to the generate command! Time for some fun!")
                 .addBlankField()
-                .addField("Hmm...", "Some modifications are being added piece by piece. We hope to keep VB as smooth as possible!")
+                .addField("...?", "oldies will eventually come back...EVENTUALLY. But it's not forgotten!")
                 .addBlankField()
-                .addField("New Command!", "'v!generate' is here! Have fun with some rng!")
+                .addField("Hello there.", "New reaction command! It's a bold one.")
                 .addBlankField()
                 .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                 message.channel.send(embed);
@@ -1219,6 +1219,11 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
     if (message.content.includes("HOL UP") && message.author.id !== BotID) {
         
         message.channel.send('*Holding...*');
+    }
+
+    if (message.content.toLowerCase().includes("hello there") && message.author.id !== BotID) {
+        
+        message.channel.send("General Kenobi. You are a bold one");
     }
 
     if (message.content.includes("owo")) {
