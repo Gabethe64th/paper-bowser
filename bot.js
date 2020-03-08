@@ -1344,11 +1344,13 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
     }
     */
 
-    if (message.mentions.users.first().id == BotID)
+    if (message.mentions.users.first().id != undefined)
     {
+        if (message.mentions.users.first().id == BotID){
         pingmes = true;
         message.channel.sendMessage("wHAT?!");
         pingmeschannel = message.channel.id;
+        }
     }
 
     if (pingmes == true && message.content.toLowerCase().includes("help") && message.author.id != BotID && message.channel.id == pingmeschannel){
