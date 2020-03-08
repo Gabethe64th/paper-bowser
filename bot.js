@@ -1344,7 +1344,7 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
     }
     */
 
-    if (message.mentions.users.first().id != undefined)
+    if (message.mentions.users.first() != undefined)
     {
         if (message.mentions.users.first().id == BotID){
         pingmes = true;
