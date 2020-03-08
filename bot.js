@@ -20,6 +20,7 @@ var int, key = 0;
 */
 var boolean, war = false;
 var boolean, rpnotif = true;
+var pingmes;
 olds = 129;
 deds = 485;
 var trail = 0;
@@ -1343,6 +1344,29 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
     }
     */
 
+    if (message.mentions.users.first().id == BotID)
+    {
+        pingmes = true;
+        message.channel.sendMessage("wHAT?!");
+        pingmeschannel = message.channel.id;
+    }
+
+    if (pingmes == true && message.content.toLowerCase().includes("help") && message.author.id != BotID && message.channel.id == pingmeschannel){
+        message.channel.sendMessage("Looking for help? To see a list of commands, type 'v!commands', or to see other information, type 'v!info' to see a list of available options");
+        pingmes = false;
+    }
+
+    if (pingmes == true && message.content.toLowerCase().includes("commands") && message.author.id != BotID && message.channel.id == pingmeschannel){
+        message.channel.sendMessage("Looking for a command list? To see a list of commands, type 'v!commands'");
+        pingmes = false;
+    }
+
+    if (pingmes == true && (message.content.toLowerCase().includes("hi") || message.content.toLowerCase().includes("hello") || message.content.toLowerCase().includes("hey")) && message.author.id != BotID && message.channel.id == pingmeschannel){
+        message.channel.sendMessage("Hello, "+message.author.username);
+        pingmes = false;
+    }
+
+    
     
 
 })
