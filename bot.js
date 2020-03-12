@@ -238,7 +238,7 @@ bot.on('message', message=> {
             break;
 
         case 'dru':
-            message.channel.send("PUT ME IN THE COMMUNITY ART 2.0 YOU FRICKIN' NERD!!!");
+            message.channel.send("A horny/somewhat confused stickman who now has the form of a anime man. Everyone basically knows who Dru is nowadays either by his old form, 'The Galactic Nova' or his new form, 'That guy who draws pretty good'. He's also a Twitter boomer. \n\n**Example:** \nGuy 1: Hey, have you seen Dru's new drawing? \nGuy 2: Indeed I have! He draws so good! \nGuy 1: I know, right? I want Maki to step on me. \nGuy 2: Okay pal that's enough of you.");
             break
 
         case 'dyst':
@@ -305,6 +305,10 @@ bot.on('message', message=> {
 
         case 'reun':
             message.channel.send("Don't worry, "+ message.author.username+". You're as fucked as the rest of "+message.channel.name+" if you ask who Joe is. To save yourself, please post an rp cap into <#396838771108085760> so we can either all laugh or all remind Reun that he has a fucking job as a rp manager. (Also please, don't swear in off topic. You did? What's wrong with you?) In all seriousness, I love this boi, and he's prob my fav bro to ever exist...or fav sis? :O! **PLOT TWIST!**");
+            break;
+
+        case 'phobos':
+            message.channel.send("Some weird clone that took over Jet some time ago. To know who Jet is, do 'v!jet' instead.")
             break;
         
         case 'gluck':
