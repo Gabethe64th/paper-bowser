@@ -334,7 +334,7 @@ bot.on('message', message=> {
             break;
 
         case 'knux':
-                message.channel.send("An artist in training that likes woke music and is a great companion to all. Unless you're some bitch to the community, which in that case, seek medical help. \n\n**Example:** \nGuy 1: Yo dude. I read your message. \nGuy 2: Ye, so did Knux. He even give a heart-warming response. \nGuy 1: Oshit he did? Damn that guy's good.");
+                message.channel.send("An artist in training that likes woke music and is a great companion to all. Unless you're some bitch to the community, which in that case, seek medical help. \n\n**Example:** \nGuy 1: Yo dude. I read your message. \nGuy 2: Ye, so did Knux. He even gave a heart-warming response. \nGuy 1: Oshit he did? Damn that guy's good.");
                 break;
 
         case 'moonuwu':
