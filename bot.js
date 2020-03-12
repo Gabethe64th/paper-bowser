@@ -251,7 +251,7 @@ bot.on('message', message=> {
             break
 
         case 'snoop':
-            message.channel.send("A scientific experiment gone wrong that escaped from his lab after he destroyed it to pieces. No, I'm not talking about Mewtwo. This one's a persona weeb, and loves to hunt down simps for fun. (Despite being one for SCP-173) \n\n**Example** \nGuy 1: *breathes* \nSnoop: *busts down door* SIMP! *nukes island*");
+            message.channel.send("A scientific experiment gone wrong that escaped from his lab after he destroyed it to pieces. No, I'm not talking about Mewtwo. This one's a persona weeb, and loves to hunt down simps for fun. (Despite being one for SCP-173) \n\n**Example:** \nGuy 1: *breathes* \nSnoop: *busts down door* SIMP! *nukes island*");
             break;
 
         
@@ -282,7 +282,7 @@ bot.on('message', message=> {
 
             
         case 'irri':
-                message.channel.sendMessage("Please don't bully Irri. They deserve more love for all they've done. <3");
+                message.channel.sendMessage("A fucking STALLION of a man that decided to take up the responsibilities of leading a server full of 1000+ people after the virgin Dys was banned. This absolute chad is also a best friend to many people, and is basically a walking Skillshare.com. \n\n**Example:** \nGuy 1: Hey, I need some help to draw a hand. Can anyone help? \nGuy 2: Ask Irri. \nGuy 1: Isn't he currently busy in a server of 500+ people? \nIrri: You called?");
                 break;
 
         case 'gamestop':
@@ -300,15 +300,19 @@ bot.on('message', message=> {
                 break;
 
         case 'mimik':
-                message.channel.send('Please, no off-topic in the roleplay. 🍵');
+                message.channel.send("Some Pokemon who dislikes off-topic in rp. \n\n**Example:** \nArrow: (no, don't no that.) \nMimik: You've fucking crossed the line.");
                 break;
 
         case 'reun':
-            message.channel.send("Don't worry, "+ message.author.username+". You're as fucked as the rest of "+message.channel.name+" if you ask who Joe is. To save yourself, please post an rp cap into <#396838771108085760> so we can either all laugh or all remind Reun that he has a fucking job as a rp manager. (Also please, don't swear in off topic. You did? What's wrong with you?) In all seriousness, I love this boi, and he's prob my fav bro to ever exist...or fav sis? :O! **PLOT TWIST!**");
+            message.channel.send("[ARCHIVED] \nDon't worry, "+ message.author.username+". You're as fucked as the rest of "+message.channel.name+" if you ask who Joe is. To save yourself, please post an rp cap into <#396838771108085760> so we can either all laugh or all remind Reun that he has a fucking job as a rp manager. (Also please, don't swear in off topic. You did? What's wrong with you?) In all seriousness, I love this boi, and he's prob my fav bro to ever exist...or fav sis? :O! **PLOT TWIST!**");
+            break;
+
+        case 'reni':
+                message.channel.send("A cute and loveable person who's afraid to share their wonderful ideas to everyone. Previously known as 'Mimik' or 'Reun', and if he changes his name once more I swear to gosh I'm just gonna rename this command to 'v!silvester' and call it a day. \n\n**Example:** \nReni: Hey, Jet! \nPhobos: Who's Jet, Reun? \nReni: Who's Reun, Jet? \nKir b: (oh my fucking gosh...)")
             break;
 
         case 'phobos':
-            message.channel.send("Some weird clone that took over Jet some time ago. To know who Jet is, do 'v!jet' instead.")
+            message.channel.send("Some weird clone that took over Jet some time ago. The difference between these two is that one wants to kill you less than the other (Also some other noticeable things, but I can't say them rn.). \n\n**Example:** \nSnoop: Hello. \nJet: Fuck off. \n\n**One week later...**\nSnoop: Hello. \nPho: Hi, Snoop. Now fuck off.")
             break;
         
         case 'gluck':
@@ -330,9 +334,7 @@ bot.on('message', message=> {
             break;
 
         case 'knux':
-                const attachment = new Attachment('https://cdn.discordapp.com/attachments/606957183900450864/623665053047980082/EEWzuAuUYAI2ibf.png');
-                message.channel.send("Everyone: Oh boy! I can't wait to go skiing! \nKnuckles: ");
-                message.channel.send(attachment);
+                message.channel.send("An artist in training that likes woke music and is a great companion to all. Unless you're some bitch to the community, which in that case, seek medical help. \n\n**Example:** \nGuy 1: Yo dude. I read your message. \nGuy 2: Ye, so did Knux. He even give a heart-warming response. \nGuy 1: Oshit he did? Damn that guy's good.");
                 break;
 
         case 'moonuwu':
@@ -397,7 +399,7 @@ bot.on('message', message=> {
                 break;
 
         case 'jet':
-                message.channel.send("Ok, so you know those movies which has that ONE villain you love to hate, and then suddenly the villain joins the good side and now you're just straight up in love with the person? (Not LOVE love ofc cuz you can't be with a fictional character.) Meet Jet. \nJet's that kind of person you might be scared of at first, but as you get to meet them, you can't leave them alone. One of her 'special abilities' is that she can be an entire mood at times. She even had a nickname for it! She's also pretty tough and sarcastic, but the times she breaks out into a playful mood can be arguably considered to be pretty cute. (but ***DO NOT CALL HER CUTE***, or else you might end up with a gun pointed at your face.) She's no Izzle, no Moon, no Pip, nor an Irri. She's *Jet*, and I'm glad she's in the gang. Once a mood, always a mood!");
+                message.channel.send("[ARCHIVED] \nOk, so you know those movies which has that ONE villain you love to hate, and then suddenly the villain joins the good side and now you're just straight up in love with the person? (Not LOVE love ofc cuz you can't be with a fictional character.) Meet Jet. \nJet's that kind of person you might be scared of at first, but as you get to meet them, you can't leave them alone. One of her 'special abilities' is that she can be an entire mood at times. She even had a nickname for it! She's also pretty tough and sarcastic, but the times she breaks out into a playful mood can be arguably considered to be pretty cute. (but ***DO NOT CALL HER CUTE***, or else you might end up with a gun pointed at your face.) She's no Izzle, no Moon, no Pip, nor an Irri. She's *Jet*, and I'm glad she's in the gang. Once a mood, always a mood!");
                 const attachment13 = new Attachment('https://cdn.discordapp.com/attachments/607654317079396410/638828874129604608/unknown.png');
                 message.channel.send(attachment13);
                 break;
@@ -503,11 +505,11 @@ bot.on('message', message=> {
             break;
 
         case 'ghost':
-            message.channel.send('Senko died and I still have no idea why.')
+            message.channel.send("A guy who will calmly check your health to see if you are both mentally and emotionally stable, then will fucking grab you and punch the shit out of you to Mars while fire erupts from his fucking fists. There, I described two of his main pfps: Senko and Terry. But this doesn't fully describe who Ghost is. In all honesty, he's just a friend you can laugh at dumb shit with, and with the help of Discord VCs and his crappy modem, you can do that in 33674399dB! \n\n**Example:** \nThe latest Ghost review was a good read.")
             break;
 
         case 'name':
-            message.channel.send("Bam. There's your ego boost. But for real, you don't know who Name is? Well, you should, since she's the cutest one.")
+            message.channel.send("A living definition of 'cute'. \n\n**Example:** \nName is cute.")
             break;
 
         case 'todaysong':
@@ -770,16 +772,11 @@ bot.on('message', message=> {
             break;
 
         case 'ethan':
-            if (message.author.id === '373231385512640513'){
-                message.channel.send("Perfection. There's the least faveourite guy we know and love!")
-            }
-            else {
-            message.channel.send("You bitch. You absolute fucking madlad. Who do you think you are? Piss off. I prefer for this command to be used by the REAL legend.")
-            }
+            message.channel.send("1. The kid named 'school' in the sentence: 'Fuck school.'\n2. A word Dru can say to avoid Kyu's horniness. \n\n**Example:**\nKyu: Hi Dru. \nDru: ETHAN! \nKyu: ...what? \nEthan: What?")
             break;
 
         case 'pip':
-            message.channel.send("Ah, I see you too are a person of culture, "+message.author.username+". Indeed, Pip is the purest princess of them all. She also likes to step in channels at it's lewdest times :^). Be sure to check out <#475017241344344107> for the best FE art and support her ideas! [NOT SPONSORED]")
+            message.channel.send("1. A type of post that is pure in every way\n2. A Roleplayer/DnD Player/Storyteller/Game Dev(?)/Sailor Moon Fan/Purist that can cleanse your sins from discord just by clicking on her channel. \n\n**Example:**\nGuy 1: My eyes are burning! \nGuy 2: Here, have a pip post from Pip. \nGuy 1: Oooh, that's nice, but how does it out the fire?")
             break;
 
         case 'boomerpass':
