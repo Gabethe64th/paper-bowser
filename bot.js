@@ -48,8 +48,8 @@ var word4 = ["h", "you", "Kir b", "TruthTomato", "the big iron on Truth's hip", 
 
 bot.on('ready', () =>{
     console.log('Let er rip!');
-    //bot.channels.get('636573475993288734').sendMessage("`VirusBot has been rebooted.`")
-    bot.user.setActivity("VirusBot is online! >:)");
+    bot.channels.get('607654317079396410').sendMessage("`VirusBot has been rebooted.`")
+    bot.user.setActivity("lmao who's Corona? Never heard of 'em.");
 })
 
 
@@ -73,7 +73,7 @@ bot.on('message', message=> {
         break
 
         case 'help':
-            message.channel.sendMessage('There is no help. Only chaos.');
+            message.channel.sendMessage('There is no help. Only chaos. \n \n ||(v!commands)||');
             break;
         
         case 'info':
@@ -109,11 +109,11 @@ bot.on('message', message=> {
                 .setTitle("VirusBot "+version+" Changelog")
                 .setDescription("VB's March Update is here!")
                 .addBlankField()
-                .addField("Quality over quantity", "Virus will now DM the commands list to you instead of taking up channel space! Good for us!")
+                .addField("Quantity over quality", "Virus will now DM the commands list to you instead of taking up channel space! Good for us!")
                 .addBlankField()
                 .addField("Obama hecked..what?", "Some new words were added to the generate command! Time for some fun!")
                 .addBlankField()
-                .addField("...?", "oldies will eventually come back...EVENTUALLY. But it's not forgotten!")
+                .addField("Huh?", "A new easter egg has been added.")
                 .addBlankField()
                 .addField("Hello there.", "New reaction command! It's a bold one.")
                 .addBlankField()
@@ -125,12 +125,12 @@ bot.on('message', message=> {
                 .setAuthor("Requested by "+message.author.username, message.author.avatarURL)
                 .setColor('#00FF00')
                 .setTitle("Who am I?")
-                .setDescription("VirusBot is a bot. Get your facts straight.")
+                .setDescription("VirusBot is a bot created as a test project. For some reason, I'm still here.")
                 .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                 message.channel.send(embed);
             }
             else {
-                _info = "Current info available: \n\n-version: The current version of the bot.\n-nupdate: Provides little information about the next upcoming update.\n-bot: Gives info on the bot. \n-oldies: Shows how many pictures are in the 'oldie' command.\n-changelog: See what new features got added to the bot! \n\n[Please leave a space between the command and the selected word.]";
+                _info = "Current info available: \n\n-version: The current version of the bot.\n-nupdate: Provides little information about the next upcoming update.\n-bot: Gives info on the bot. \n-oldies: Shows how many pictures are in the 'oldie' command.\n-changelog: See what new features got added to the bot! \n\n[Please leave a space between the command and the selected word.]\nEg. 'v!info bot'";
                 const embed = new Discord.RichEmbed()
                 .setAuthor("Requested by "+message.author.username, message.author.avatarURL)
                 .setColor('#00BFFF')
@@ -164,10 +164,6 @@ bot.on('message', message=> {
             }
         break;
 
-        case 'clear':
-            if(!args[1]) return message.reply('Too much clutter? I gotcha. Just give me a number next time.')
-            message.channel.bulkDelete(args[1]);
-            break;
 
         case 'changeAvatar':
             if (args[1] != undefined){
@@ -181,12 +177,22 @@ bot.on('message', message=> {
         
         case 'setChannelname':
             if (args[1] != undefined){
-                bot.member.setNickname(message.content.slice(10));
+                bot.member.setNickname(message.content.slice(17));
                 message.channel.sendMessage("A-OK!");
                 }
                 else (
                     message.channel.sendMessage("No nick is found. Provide a space!")
                 )
+        break;
+
+        case 'changeNick':
+            if (args[1] != undefined){
+                bot.guilds.get(message.guild.id).member(BotID).nickname = (message.content.slice(13))
+                message.channel.sendMessage("A-OK!");
+            }
+            else (
+                message.channel.sendMessage("No nick was found.")
+            )
         break;
 
         case 'me':
