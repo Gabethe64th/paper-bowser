@@ -869,55 +869,59 @@ bot.on('message', message=> {
             break;
 
         case 'goat':
-            message.channel.send("This guy's a real epik gaymer. Just spittin' facts.")
+            message.channel.send("Wario, but sexy. \n\n**Example:** \nGuy 1: I wanna Mount Wario. \nGuy 2: You mean 'Mount Goat'? \nGuy 1: Yeah, that too. \nIrri: ...what?")
+            break;
+
+        case 'mon':
+            message.channel.sendMessage("[ARCHIVED] \nNice choice. Moon is one of those friends you didn't know at first existed and now you're happy to have in your life. She's also a big mood. But be careful, Moon has an edgy side you might not want to generally encounter at times. ~~That's why she's perfect for a waifu!~~ Three cheers for Moon! (And someone, please give her a hug when necessary.)")
             break;
 
         case 'moon':
-            message.channel.sendMessage("Nice choice. Moon is one of those friends you didn't know at first existed and now you're happy to have in your life. She's also a big mood. But be careful, Moon has an edgy side you might not want to generally encounter at times. ~~That's why she's perfect for a waifu!~~ Three cheers for Moon! (And someone, please give her a hug when necessary.)")
+            message.channel.sendMessage("1. The reason why you can rest peacefully at night. \n2. v!mon \n\n**Example:** \nGuy 1: I'm going to bed. \nMoon: Okay, rest well. \nGod to the angels: You heard Moon, protect that boy.")
             break;
 
         case 'pkoby':
-            message.channel.sendMessage("Now THIS is one pure guy, including as a male! That's rare these days! You keep being you, Pkoby. You're saving the world one DM at a time.")
+            message.channel.sendMessage("1. A pure child who we slowly corrupt without noticing. \n2. An echo fighter of Pip. \n\n**Example:** \nPkoby: Hey! Check this out! \nMoon: Where'd you find that? It's kinda creepy. \nPkoby: Gabe DMed it to me. \nMoon: Of course, I'll fucking kill him in the morning.")
             break;
 
         case 'ender':
-            message.channel.sendMessage("We need to help Ender! He made a weird deal with the devil, and now he's dying multiple times due to a hecking candy girl with a gingerbread castle! Somebody just EAT it already!")
+            message.channel.sendMessage("Izzle's rival with no context. \n\n**Example:** \nDid Ender defeat that cuphead boss yet?")
             break;
 
         case 'korbs':
-            message.channel.sendMessage("It's our boi, Korbs! Who never stopped being epic from Day 1. Sure, he's a furry now, and I blame Izzle for that even though that joke was made *way* before she joined Irri's Harem, but you just can't resist from wanting to hug this madlad! COME 'ERE, KORBS! LET ME SQUEEZE YOU!")
+            message.channel.sendMessage("Meowser with drawing skills. \n\n**Example:** \nDru: Kirbs, what are you doing? \nKorbs: :3")
             break;
 
         case 'prince':
-            message.channel.sendMessage("Prince has earned the achievement of making it through Chapter 3's B-Side. I bet you can't do THAT first try! Don't worry, neither could he. :^). \nLoBe ya, Prince.")
+            message.channel.sendMessage("Perfection. \n\n**Example:** \nThere's nothing else, he's just perfect.")
             break;
 
         case 'eliz':
-            message.channel.sendMessage("It's highly unlikely this command would be used by Ellie herself, so lemme spill some beans. Eliz deserves a hecka ton of credit for going through a crap ton of stuff on Discord and STILL being very active on the platform. That requires some massive balls. Ellie, along wih her redacted E2, are a huge bundle of joy when it comes to simply nerding out about Nintendo and AHIT stuff. Sure, she might be a bit aggressive at times, but it's worth it when you realise how much of a hecking fool you are with your wrong gaming facts. Get outta here! Sometimes you just gotta give E a bigge hug (If you can, heh.) for all she has survived through. <3")
+            message.channel.sendMessage("1. Longer version of saying 'E' \n2. Shorter version of saying 'Elizabeth' \n3. Alternative version of saying 'Ellie' \n4. 'Your Mom.' \n\n**Example:** \nEliz kicked my ass at Smash again...")
             break;
 
         case 'nokobo':
-            message.channel.sendMessage("Well, well, well. If it isn't the boomer himself... You may be a rusty nail, Nokbok, but you still are a fantastic addition to the family! There's no one else Gabe would rather joke about Cain then die because she walked in on us other than with you! Also, please don't cancel Hobo Thursdays. Where are you gonna live after that?")
+            message.channel.sendMessage("1. The Icon used for Hobo Thursdays. \n2. A lovely uncle. \n\n**Example:** \nGuy 1: Where's my beer? \nNokobo: Fug off!")
             break;
 
         case 'jasper':
-            message.channel.sendMessage("You just asked for a very hot dutch boi. I'd be gay for him myself, but he keeps fucking dashing through my love requests with a golden strawberry.")
+            message.channel.sendMessage("E's horny licence. \n\n**Example:** \nJasper's a very loveable person.")
             break;
 
         case 'jacob':
-            message.channel.sendMessage(":gun: BACK OFF! HE'S MINE! \n \n \n ||I mean wut no I'm not gay.||")
+            message.channel.sendMessage("Hotness. \n\n**Example:** \nGirl 1: Yo! Jacob just looked at my general direction! \nGirl 2: Holy shit! Really? I'd do anything to be with that guy.")
             break;
 
         case 'izzle':
-            message.channel.sendMessage("Izzle is a waifu. I think...meh. It's complicated. Best not to ask.")
+            message.channel.sendMessage("1. A mood. \n2. A young teen who starts a simp war in her school. \n\n**Example:** \nGuy 1: Dude, Izzle's pretty cute. \nGuy 2: Don't say that out loud!")
             break;
 
         case 'rowlet':
-            message.channel.sendMessage("Well, what do we have here? A ROWLET? Bruh, this ain't Litten. Change save file.")
+            message.channel.sendMessage("The result of Dru porn. \n\n**Example:** \nHow's your day, Rowlet?")
             break;
 
         case 'kirB':
-            message.channel.sendMessage("This guy kicks Gabe's ass at Mario Maker. WHAT IS THIS TECH?!")
+            message.channel.sendMessage("1. A cool lad who will comfort you in VCs, and FredBoat's rival. \n2. A demonic madlad who will cream yo ass in both Smash and SMM2. \n\n**Example:** \nGuy 1: Woo! My first smash torney! Who am I fighting? \nKnux: Kir b. \nGuy 1: ...oh fuck.")
             break;
 
         case 'herbbreak':
@@ -1142,7 +1146,7 @@ bot.on('message', message=> {
                         .addBlankField()
                         .addField('**Personal Commands** 👤', 'Commands about friends, for friends.')
                         .addBlankField()
-                        .addField('The following people have their own commands:', '• dru\n• moon\n• pkoby\n• kirB\n• ender\n• korbs\n• prince\n• eliz\n• nokobo\n• jasper\n• jacob\n• ghost\n• goat\n• name\n• izzle\n• ethan\n• cain\n• kevin\n• snoop\n• jet\n• rowlet\n• irri\n• pip\n• mimik\n• reun\n• knux\n• dyst', true)
+                        .addField('The following people have their own commands:', '• dru\n• moon\n• pkoby\n• kirB\n• ender\n• korbs\n• prince\n• eliz\n• nokobo\n• jasper\n• jacob\n• ghost\n• goat\n• name\n• izzle\n• ethan\n• cain\n• kevin\n• snoop\n• jet\n• rowlet\n• irri\n• pip\n• mimik\n• reun\n• knux\n• dyst\n• reni\n• phobos', true)
                         .addBlankField()
                         .addField("End of page.", "Please use [v!commands5] to view the next page.")
                         .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
