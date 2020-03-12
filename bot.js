@@ -238,20 +238,20 @@ bot.on('message', message=> {
             break;
 
         case 'dru':
-            message.channel.send("A horny/somewhat confused stickman who now has the form of a anime man. Everyone basically knows who Dru is nowadays either by his old form, 'The Galactic Nova' or his new form, 'That guy who draws pretty good'. He's also a Twitter boomer. \n\n**Example:** \nGuy 1: Hey, have you seen Dru's new drawing? \nGuy 2: Indeed I have! He draws so good! \nGuy 1: I know, right? I want Maki to step on me. \nGuy 2: Okay pal that's enough of you.");
+            message.channel.send("A horny/somewhat confused stickman who now has the form of an anime man. Everyone basically knows who Dru is nowadays either by his old form, 'The Galactic Nova' or his new form, 'That guy who draws pretty good'. He's also a Twitter boomer. \n\n**Example:** \nGuy 1: Hey, have you seen Dru's new drawing? \nGuy 2: Indeed I have! He draws so good! \nGuy 1: I know, right? I want Maki to step on me. \nGuy 2: Okay pal that's enough of you.");
             break
 
         case 'dyst':
-            message.channel.sendMessage("Hey guys,\n\nas you might have noticed, my main Discord account has been disabled, and is currently under investigation. There is a high chance it will be permanently disabled.\n\nWhat about this Discord?\nIf I really get banned, @Deleted User and my other alt accounts will be banned from Discord. Creating any further accounts would be seen as ban evasion, so they will be banned as well. I am basically gone from Discord then. I will not return most likely. Might visit once in a while.\nI will give admin powers to Soulavenger, after that he will be able to claim ownership of the server. He and the mods will lead this community equally. Anything beyond that is nothing I could do anything about. They're in your hands then, and I think it will be okay. If you're worried about the community disappearing I would advise you to make little servers with your best friends yourself.\nI do not think this discord will have any relation to the stream anymore then, however.\n\nWhat about the stream?\nThat's the big question here. Discord is very essential for my work, for communication/organization, and so on. I think many of you would like to see me continue doing the stream, but I am not sure how feasible it would be. However, I have no plans to turn it off anytime soon, so don't worry about that. I am also not sure what the mods think about modding the stream at this point. I know some of them already do not want anything to do with me anymore, unfortunately. I would like to keep it running for as long as possible, but I just don't know how I could do it without Discord... I'll continue thinking about this.\nI'm sorry I'm not talking much more about why I'm getting banned, as it is a fairly private issue.\n\nI know a statement like this doesn't really make anything better. I'm sorry for that. I feel like this account could be disabled at any time, so I wanted to at least say something.");
-            message.channel.sendMessage("I apologize to all of you for letting things turn out this way. \n\nIf you have any questions I'll be in #ask-mods for a while.")
+            message.channel.sendMessage("A former person of the community who made the 24/7 music stream that started it all. Now, he's just a laughing stock that triggers a few people just by saying his nickname. He also ruined Minish Cap with peanut butter. \n\n**Example:** \nGuy 1: Hey, what happened to Dys? \nGuy 2: Gone. Reduced to atoms. \nGuy 1: Why? \nAll Mods: Ah shit, here we go again.");
+            
             break
 
         case 'cain':
-            message.channel.send(message.channel + " indeed.");
+            message.channel.send("Reni's Mom (along with a few others). Also feared by many for...whatever reason.\n\n**Example:** \nReni: MOOOOOOOOOOOOM! \nCain: whAT?! \nReni: hi. \nCain: Hello.");
             break
 
         case 'snoop':
-            message.channel.send("persona sucks lmao.");
+            message.channel.send("A scientific experiment gone wrong that escaped from his lab after he destroyed it to pieces. No, I'm not talking about Mewtwo. This one's a persona weeb, and loves to hunt down simps for fun. (Despite being one for SCP-173) \n\n**Example** \nGuy 1: *breathes* \nSnoop: *busts down door* SIMP! *nukes island*");
             break;
 
         
