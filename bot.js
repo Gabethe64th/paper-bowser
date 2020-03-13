@@ -936,6 +936,18 @@ bot.on('message', message=> {
             message.channel.sendMessage("A tomato from Brazil. Don't get close, or you'll get shot. \n\n**Example:** \nOi, tomato of truths, what is your wisdom?")
             break;
 
+        case 'sushi':
+            message.channel.sendMessage("A racial slur that normally means 'banging your mom.' \n\n**Example:** \nSushi go bang someone's mom.")
+            break;
+
+        case 'kyu':
+            message.channel.sendMessage("1. The word used to reference the Friday night simp war of '20. \n2. A female Gabe that somehow appears when people talk about DDLC.\n\n**Example:** \nKyu: *breathes* \nEthan: Oh shit, hi.")
+            break;
+
+        case 'goji':
+            message.channel.sendMessage("QT\n\n**Example:** \nGoji's pretty hot.")
+            break;
+
 
 
         case 'herbbreak':
