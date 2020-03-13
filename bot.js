@@ -924,6 +924,20 @@ bot.on('message', message=> {
             message.channel.sendMessage("1. A cool lad who will comfort you in VCs, and FredBoat's rival. \n2. A demonic madlad who will cream yo ass in both Smash and SMM2. \n\n**Example:** \nGuy 1: Woo! My first smash torney! Who am I fighting? \nKnux: Kir b. \nGuy 1: ...oh fuck.")
             break;
 
+            case 'rb':
+                message.channel.sendMessage("An eagle that can smash your mom better than Sushi. \n\n**Example:** \nGuy 1: Where's RB? \nGuy 2: Prob banging your mom again. \nGuy 1: DAMMIT! Always happens. >:(")
+                break;
+
+         case 'generic':
+            message.channel.sendMessage("1. Walking communism. \n2. A Jedi that dies to rats. \n\n**Example:** \nBless the world, Generic!")
+         break;
+
+         case 'truth':
+            message.channel.sendMessage("A tomato from Brazil. Don't get close, or you'll get shot. \n\n**Example:** \nOi, tomato of truths, what is your wisdom?")
+            break;
+
+
+
         case 'herbbreak':
             key = 2;
             message.react('👍')
@@ -1146,7 +1160,7 @@ bot.on('message', message=> {
                         .addBlankField()
                         .addField('**Personal Commands** 👤', 'Commands about friends, for friends.')
                         .addBlankField()
-                        .addField('The following people have their own commands:', '• dru\n• moon\n• pkoby\n• kirB\n• ender\n• korbs\n• prince\n• eliz\n• nokobo\n• jasper\n• jacob\n• ghost\n• goat\n• name\n• izzle\n• ethan\n• cain\n• kevin\n• snoop\n• jet\n• rowlet\n• irri\n• pip\n• mimik\n• reun\n• knux\n• dyst\n• reni\n• phobos', true)
+                        .addField('The following people have their own commands:', '• dru\n• moon\n• pkoby\n• kirB\n• ender\n• korbs\n• prince\n• eliz\n• nokobo\n• jasper\n• jacob\n• ghost\n• goat\n• name\n• izzle\n• ethan\n• cain\n• kevin\n• snoop\n• jet\n• rowlet\n• irri\n• pip\n• mimik\n• reun\n• knux\n• dyst\n• reni\n• phobos\n• rb\n• generic\n• truth', true)
                         .addBlankField()
                         .addField("End of page.", "Please use [v!commands5] to view the next page.")
                         .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
