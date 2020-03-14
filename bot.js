@@ -24,6 +24,7 @@ var pingmes;
 olds = 129;
 deds = 485;
 var trail = 0;
+var strail = 0;
 var fruits = ["🍎", "🍐", "🍊", "🍋", "🍇", "🍓", "🍒"];
 //635602329927811113, 353201224142684160, 607676160234618889
 var callids = ["636573475993288734", "635683701987999804", "634821648385572883", "640725111397285888", "643100072988639242", "353324382208131073"];
@@ -915,7 +916,7 @@ bot.on('message', message=> {
             break;
 
         case 'jasper':
-            message.channel.sendMessage("E's horny licence. \n\n**Example:** \nJasper's a very loveable person.")
+            message.channel.sendMessage("E's horny license. \n\n**Example:** \nJasper's a very loveable person.")
             break;
 
         case 'jacob':
@@ -1051,6 +1052,15 @@ bot.on('message', message=> {
                 else {trail = 0;
                 message.react("👍")}
                 break;
+
+                case 'simptoggle':
+                    if (strail === 0){
+                        strail = 1;
+                        message.react("📝");
+                    }
+                    else {strail = 0;
+                    message.react("👍")}
+                    break;
 
             
                 
@@ -1322,6 +1332,10 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
 
     if ((message.author.id === "536306768351985670" || message.author.id === "485252094509449237") && (trail === 1)){
         message.channel.send("https://cdn.discordapp.com/attachments/635591464201486366/638214220915408907/unknown_5.png")
+    }
+
+    if ((message.author.id === "374042150083756042") && (strail === 1)){
+        message.channel.send("https://cdn.discordapp.com/attachments/686423110198624266/688530989240418368/Untitled12_20200314193248.png")
     }
 
     
