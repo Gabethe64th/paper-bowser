@@ -545,6 +545,16 @@ bot.on('message', message=> {
                 message.channel.sendMessage(word1[w1]+" "+word2[w2]+" "+word3[w3]+" "+word4[w4]+".");
             break;
 
+            case 'generatw':
+                
+                w1 = Math.floor ((Math.random() * word1.length));
+                w2 = Math.floor ((Math.random() * word2.length));
+                w3 = Math.floor ((Math.random() * word3.length));
+                w4 = Math.floor ((Math.random() * word4.length));
+
+                message.channel.sendMessage(word2[w2]+" "+word3[w3]+" "+word4[w4]+" "+word1[w1]);
+            break;
+
            case 'dedmeme':
             
                 imageNumber1 = Math.floor (Math.random() * (deds - 1 + 1)) +1;
