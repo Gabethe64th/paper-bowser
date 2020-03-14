@@ -552,7 +552,7 @@ bot.on('message', message=> {
                 w3 = Math.floor ((Math.random() * word3.length));
                 w4 = Math.floor ((Math.random() * word4.length));
 
-                message.channel.sendMessage(word2[w2]+" "+word3[w3]+" "+word4[w4]+" "+word1[w1]);
+                message.channel.sendMessage(word2[w2]+" "+word4[w4]+" "+word3[w3]+" "+word1[w1]);
             break;
 
            case 'dedmeme':
