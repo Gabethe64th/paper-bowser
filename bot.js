@@ -60,6 +60,7 @@ bot.on('ready', () =>{
 bot.on('message', message=> {
     
     let args = message.content.substring(PREFIX.length).split(" ");
+    let choices = message.content.substring(PREFIX.length).split(" ");
 
     
     
@@ -163,6 +164,11 @@ bot.on('message', message=> {
 
 
             }
+        break;
+
+        case 'choose':
+            choos = Math.floor ((Math.random() * choices.length));
+            message.channel.sendMessage("I pick **"+choices[choos]+"**");
         break;
 
 
