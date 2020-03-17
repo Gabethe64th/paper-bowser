@@ -169,6 +169,10 @@ bot.on('message', message=> {
         break;
 
         case 'choose':
+            if (args[1] == undefined){
+                message.channel.sendMessage("To properly use this command, please include at least two choices seperated by ' | '.\n\nExample:\n```v!choose (choice 1) | (choice 2)```")
+            }
+            else{
             cm = Math.floor ((Math.random() * choicemes.length));
             choos = Math.floor ((Math.random() * choices.length));
             thechoice = choices[choos];
@@ -179,6 +183,7 @@ bot.on('message', message=> {
             else{
             message.channel.sendMessage(choicemes[cm]+"**"+thechoice+"**");
             }
+        }
         break;
 
 
