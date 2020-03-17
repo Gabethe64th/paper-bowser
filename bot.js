@@ -169,14 +169,15 @@ bot.on('message', message=> {
         break;
 
         case 'choose':
+            cm = Math.floor ((Math.random() * choicemes.length));
             choos = Math.floor ((Math.random() * choices.length));
             thechoice = choices[choos];
             if (choos == 0){
                 thechoice = choices[0].slice(7);
-                message.channel.sendMessage("I pick **"+thechoice+"**");
+                message.channel.sendMessage(cm+"**"+thechoice+"**");
             }
             else{
-            message.channel.sendMessage("I pick **"+thechoice+"**");
+            message.channel.sendMessage(cm+"**"+thechoice+"**");
             }
         break;
 
