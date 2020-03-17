@@ -172,7 +172,7 @@ bot.on('message', message=> {
             choos = Math.floor ((Math.random() * choices.length));
             thechoice = choices[choos];
             if (choos == 1){
-                thechoice = thechoice.content.slice(7);
+                thechoice = choices[1].slice(7);
                 message.channel.sendMessage("I pick **"+thechoice+"**");
             }
             else{
