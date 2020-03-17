@@ -174,10 +174,10 @@ bot.on('message', message=> {
             thechoice = choices[choos];
             if (choos == 0){
                 thechoice = choices[0].slice(7);
-                message.channel.sendMessage(cm+"**"+thechoice+"**");
+                message.channel.sendMessage(choicemes[cm]+"**"+thechoice+"**");
             }
             else{
-            message.channel.sendMessage(cm+"**"+thechoice+"**");
+            message.channel.sendMessage(choicemes[cm]+"**"+thechoice+"**");
             }
         break;
 
