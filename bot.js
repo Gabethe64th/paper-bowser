@@ -953,7 +953,7 @@ bot.on('message', message=> {
             break;
 
         case 'kirB':
-            message.channel.sendMessage("1. A cool lad who will comfort you in VCs, and FredBoat's rival. \n2. A demonic madlad who will cream yo ass in both Smash and SMM2. \n\n**Example:** \nGuy 1: Woo! My first smash torney! Who am I fighting? \nKnux: Kir b. \nGuy 1: ...oh fuck.")
+            message.channel.sendMessage("1. A cool lad who will comfort you in VCs. \n2. A demonic madlad who will cream yo ass in both Smash and SMM2. \n\n**Example:** \nGuy 1: I heard that Izzle died.\nKir b: Good.")
             break;
 
             case 'rb':
@@ -1322,6 +1322,14 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
     if (message.content.includes("Drizzle")){
         if (message.author.id === '356389068634062848'){
             message.channel.sendMessage("Okay, Jet. You need to face the facts. **The ship is dead.**")
+        }
+    }
+
+    if (message.content.includes("RIP AND TEAR")){
+        if (message.author.id === '356389068634062848'){
+            tears = 4;
+                        gifNumber = Math.floor (Math.random() * (tears - 1 + 1)) +1;
+                        message.channel.send ( { files: ["./tears/tear (" + gifNumber + ").gif"]})
         }
     }
 
@@ -2036,7 +2044,12 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                         99 -> 80
                                     
                                         */
-                                    message.channel.sendMessage("**"+message.member.nickname+"** takes the lead and the gang follows...");
+                                    me = message.member.nickname;
+                                    if (me == null){
+                                        me = message.author.username;
+                                    }
+
+                                    message.channel.sendMessage("**"+me+"** takes the lead and the gang follows...");
                                     sp = Math.floor ((Math.random() * d6.length));
                                     path += d6[sp];
         
