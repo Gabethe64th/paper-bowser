@@ -1521,7 +1521,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
         if (emoji.name == "🤗"){
         hugs = 16;
-                user1 = message.mentions.users.first();
+                user1 = message.author;
                 if (user1 !== undefined && user1.id === user.author.id){
                     message.channel.sendMessage("Oh...you hugged yourself? Damn, you're lonely...")
                 }
