@@ -1516,8 +1516,43 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             }
 
         if (emoji.name === "🌭"){
-            message.react(":one:");
+            message.channel.send("+:one:");
         }
+
+        if (emoji.name == "🤗"){
+        hugs = 16;
+                user1 = message.mentions.users.first();
+                if (user1 !== undefined && user1.id === user.author.id){
+                    message.channel.sendMessage("Oh...you hugged yourself? Damn, you're lonely...")
+                }
+                else if (user1 !== undefined && user1.id === BotID) {
+                    if (user.author.id === '356389068634062848') {
+                        gifNumber = Math.floor (Math.random() * (hugs - 1 + 1)) +1;
+                    message.channel.sendMessage("*Hugs "+user.author.username+" back!* 💙");
+                    message.channel.send ( { files: ["./hugs/hugif (" + gifNumber + ").gif"]})
+                    }
+                    else {
+
+                    message.channel.sendMessage("Nope! You ain't hugging me ya crap! Hug someone else!")
+                }
+            }
+                else if (user !== undefined){
+                    gifNumber = Math.floor (Math.random() * (hugs - 1 + 1)) +1;
+                    message.channel.sendMessage("*"+user.author.username+" gives "+user1.username+" a hug!* 💙");
+                    message.channel.send ( { files: ["./hugs/hugif (" + gifNumber + ").gif"]})
+                    suplexChance = Math.floor (Math.random() * (10 - 1 + 1)) +1;
+                    if (suplexChance <= 1){
+                        const suplex = new Attachment('https://cdn6.omidoo.com/sites/default/files/imagecache/1200x630/images/headline/201803/thesuplex2.jpg');
+                        message.channel.send("But surprise! It turned into a hecking suplex!")
+                        message.channel.send(suplex);
+                    }
+                }
+                
+                
+                else {
+            message.channel.sendMessage("...but there's no one to hug! How pitiful...");
+                }
+            }
 
         });
 
