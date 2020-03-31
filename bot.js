@@ -1522,13 +1522,13 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         if (emoji.name == "🤗"){
         hugs = 16;
                 user1 = message.author;
-                if (user1 !== undefined && user1.id === user.author.id){
+                if (user1 !== undefined && user1.id === user.id){
                     message.channel.sendMessage("Oh...you hugged yourself? Damn, you're lonely...")
                 }
                 else if (user1 !== undefined && user1.id === BotID) {
                     if (user.author.id === '356389068634062848') {
                         gifNumber = Math.floor (Math.random() * (hugs - 1 + 1)) +1;
-                    message.channel.sendMessage("*Hugs "+user.author.username+" back!* 💙");
+                    message.channel.sendMessage("*Hugs "+user.username+" back!* 💙");
                     message.channel.send ( { files: ["./hugs/hugif (" + gifNumber + ").gif"]})
                     }
                     else {
@@ -1538,7 +1538,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             }
                 else if (user !== undefined){
                     gifNumber = Math.floor (Math.random() * (hugs - 1 + 1)) +1;
-                    message.channel.sendMessage("*"+user.author.username+" gives "+user1.username+" a hug!* 💙");
+                    message.channel.sendMessage("*"+user.username+" gives "+user1.username+" a hug!* 💙");
                     message.channel.send ( { files: ["./hugs/hugif (" + gifNumber + ").gif"]})
                     suplexChance = Math.floor (Math.random() * (10 - 1 + 1)) +1;
                     if (suplexChance <= 1){
