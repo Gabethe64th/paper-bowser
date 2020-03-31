@@ -2183,6 +2183,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                 questions = questions1.length;
                             var quests = Math.floor (Math.random() * (questions - 1 + 1)) +1;
                             message.channel.send(questions1[quests]);
+                            trivans = answers1[quests];
                             
                             
                             break;
@@ -2512,8 +2513,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         
            //trivia
            if (quid === message.channel.id && message.author.id !== BotID){
-               trivans = answers1[quests]
-                if (message.content.toLowerCase().toString().includes(trivans))
+                if (message.content.toLowerCase().includes(trivans))
                 {
                     message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
                     quests = 99999999;
