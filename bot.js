@@ -2513,7 +2513,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
            //trivia
            if (quid === message.channel.id && message.author.id !== BotID){
                trivans = answers1[quests]
-                if (message.content.toLowerCase().includes(trivans))
+                if (message.content.toLowerCase().toString().includes(trivans))
                 {
                     message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
                     quests = 99999999;
