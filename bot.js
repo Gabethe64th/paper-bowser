@@ -1526,7 +1526,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     message.channel.sendMessage("Oh...you hugged yourself? Damn, you're lonely...")
                 }
                 else if (user1 !== undefined && user1.id === BotID) {
-                    if (user.author.id === '356389068634062848') {
+                    if (user.id === '356389068634062848') {
                         gifNumber = Math.floor (Math.random() * (hugs - 1 + 1)) +1;
                     message.channel.sendMessage("*Hugs "+user.username+" back!* 💙");
                     message.channel.send ( { files: ["./hugs/hugif (" + gifNumber + ").gif"]})
