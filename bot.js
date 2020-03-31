@@ -1516,7 +1516,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             }
 
         if (emoji.name === "🌭"){
-            message.channel.send("+:one:");
+            message.react(":one:");
         }
 
         if (emoji.name == "🤗"){
