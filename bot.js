@@ -2654,7 +2654,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 if (message.content.toLowerCase().includes(trivans))
                 {
                     message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
-                    quests = 99999999;
+                    trivans = "Phobos, you are correct!";
                 }
         
                }
