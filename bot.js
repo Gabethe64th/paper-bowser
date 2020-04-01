@@ -1310,7 +1310,7 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
 
     if (battle == true){
         if (isf1turn == true && message.author.username == fighter1) {
-            if (message.author.id == "178539479827611648" && message.content.toLowerCase().startsWith("Ban Hammer")) {
+            if (message.author.id == "178539479827611648" && message.content.toLowerCase().startsWith("ban hammer")) {
                 damagePlayer(2, 100);
             }
             else {
@@ -1323,7 +1323,7 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
         }
 
         else if (isf1turn == false && message.author.username == fighter2) {
-            if (message.author.id == "178539479827611648" && message.content.toLowerCase().startsWith("Ban Hammer")) {
+            if (message.author.id == "178539479827611648" && message.content.toLowerCase().startsWith("ban hammer")) {
                 damagePlayer(1, 100);
             }
             else {
