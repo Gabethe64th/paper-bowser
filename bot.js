@@ -1343,7 +1343,7 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
             break;
 
             case "ban hammer":
-                dam = Math.floor ((Math.random() * 78));
+                dam = Math.floor ((Math.random() * 75));
                 message.channel.send("**"+fighter+"** uses a weaker ban hammer! \n"+fightie+" takes "+dam+" damage!")
                 damagePlayer(towhom, dam);
             break;
@@ -1356,6 +1356,18 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
                 else {
                     damagePlayer(1, -5);
                 }
+            break;
+
+            case "https://youtu.be/dQw4w9WgXcQ":
+                dam = Math.floor ((Math.random() * 100));
+                message.channel.send(fightie+" got rick rolled! **"+fighter+"** deals "+dam+" damage and gains 10 hp!")
+                if (towhom = 1){
+                    damagePlayer(2, -10);
+                }
+                else {
+                    damagePlayer(1, -10);
+                }
+                damagePlayer(towhom, dam);
             break;
 
         }
