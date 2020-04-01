@@ -1081,6 +1081,7 @@ bot.on('message', message=> {
                     battle = true;
                     isf1turn = true;
                 }
+            break;
 
 
             case 'trailtoggle':
@@ -1350,10 +1351,14 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
         if (fighter1hp <= 0){
             message.channel.send(fighter1+" has been defeated! **"+fighter2+"** WINS! :tada:");
             battle = false;
+            fighter1hp = 100;
+            fighter2hp = 100;
         }
         else if (fighter2hp <= 0){
             message.channel.send(fighter2+" has been defeated! **"+fighter1+"** WINS! :tada:");
             battle = false;
+            fighter1hp = 100;
+            fighter2hp = 100;
         }
     }
 
