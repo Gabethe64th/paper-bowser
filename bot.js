@@ -47,6 +47,10 @@ var word2 = ["is", "is gonna be", "is about to be", "is thinking of", "wants to 
 var word3 = ["hecking", "fucking", "playing", "imitating", "buying", "promoting", "sponsoring", "hanging out with", "having a crush on", "fighting", "smashing", "buying a Mario Amiibo for", "reporting", "warning Irri about", "banning", "dying for", "taking a shower with"];
 var word4 = ["h", "you", "Kir b", "TruthTomato", "the big iron on Truth's hip", "Moonlite, the pussy destroyer", "Raid Shadow Legends", "Name", "Dru", "Irri", "Poochy", "Phobos", "Mario", "Luigi", "Reni", "Obama", "free coochie", "the 15% discount from GEICO", "some gamer", "an e-girl...the horny shit.", "the man in Lego City", "Cheems", "some simp called Dru", "both Izzle and Moon", "Cain", "Sayori", "Ghost", "Yuri", "Knux", "Y'all", "Sonic", "Minecraft", "me", "gay", "something inappropriate", "Spider-Man", "here", "Celeste", "a hat in time", "a perv", "Squidward", "communism", "Ellie", "Sushi", "Izzle", "Moon", "Moon's oddly advertised dick", "Ellie's will to be a god", "Dru, but not really", "Izzle, and Gabe agrees", "Virus, but Virus doesn't care", "Dys, but thank god he's gone", "Earthbound", "Gabe, and he hates you for that", "Monika, but she refuses", "Monika, who sang a song for them", "Nutella, but that's gay", "a gay guy", "a freaking bag", "Generic", "Jet, but she'll most likely sue you before it happens", "Name, but that's a crime", "Dru, but [sexual joke here]", "Barry...wait. Who's Barry?", "a loli", "Snoop, who screams during the event", "Arrowsden, but it didnt work", "Link, the princess", "Gabe, but he loves them too much for that to happen", "Irri, but please, buy Mother 3", "your reality", "the n word", "Vessel, but why would that happen", "us for soup", "TwoSoup", "Reni, but I don't recommend it"];
 var choicemes = ["I pick ", "Gonna go with ", "I'll go with ","Definitely, ","I'll personally go with "]
+var fighter1, fighter2;
+var fighter1hp = 100, fighter2hp = 100;
+var isf1turn = false, battle = false;
+
 
 
 bot.on('ready', () =>{
@@ -1064,6 +1068,20 @@ bot.on('message', message=> {
                 message.channel.sendMessage("You don't have permission to use that command. Please try another.");
                 break;
 
+            case 'deathbattle':
+                if (message.mentions.users.first() == undefined){
+                    message.channel.send("You must mention/ping a user to do that.")
+                }
+                else {
+                    fighter1 = message.author.username;
+                    fighter2 = message.mentions.users.first().username;
+
+                    message.channel.send("A battle between **"+message.author.username+"** and **"+fighter2+"** has begun!")
+                    message.channel.send(fighter1+", it's your turn!")
+                    battle = true;
+                    isf1turn = true;
+                }
+
 
             case 'trailtoggle':
                 if (trail === 0){
@@ -1288,6 +1306,56 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
     }
 }
 }
+
+    if (battle == true){
+        if (isf1turn == true && message.author.username == fighter1) {
+            if (message.author.id == "178539479827611648" && message.content.toLowerCase().startsWith("Ban Hammer")) {
+                damagePlayer(2, 100);
+            }
+            else {
+                attack = message.content.toString();
+                dam = Math.floor ((Math.random() * 50));
+                message.channel.send("**"+fighter1+"** uses **"+attack+"!** \n"+fighter2+" takes "+dam+" damage!");
+                damagePlayer(2, dam);
+                isf1turn = false;
+            }
+        }
+
+        else if (isf1turn == false && message.author.username == fighter2) {
+            if (message.author.id == "178539479827611648" && message.content.toLowerCase().startsWith("Ban Hammer")) {
+                damagePlayer(1, 100);
+            }
+            else {
+                attack = message.content.toString();
+                dam = Math.floor ((Math.random() * 50));
+                message.channel.send("**"+fighter2+"** uses **"+attack+"!** \n"+fighter1+" takes "+dam+" damage!");
+                damagePlayer(1, dam);
+                isf1turn = true;
+            }
+        }
+    }
+
+    function damagePlayer(player, damage){
+        if (player == 1){
+            fighter1hp -= damage;
+        }
+        else if (player == 2){
+            fighter2hp -= damage;
+        }
+
+        checkTheHealths();
+    }
+
+    function checkTheHealths(){
+        if (fighter1hp <= 0){
+            message.channel.send(fighter1+" has been defeated! **"+fighter2+"** WINS! :tada:");
+            battle = false;
+        }
+        else if (fighter2hp <= 0){
+            message.channel.send(fighter2+" has been defeated! **"+fighter1+"** WINS! :tada:");
+            battle = false;
+        }
+    }
 
 
     if (message.content.includes("LET ROCK") && message.author.id !== BotID) {
