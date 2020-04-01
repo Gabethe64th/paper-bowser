@@ -1081,6 +1081,14 @@ bot.on('message', message=> {
                 }
             break;
 
+            case 'pair':
+                if (message.mentions.users[2] != undefined){
+                    message.channel.send("*Reading the pair scores of "+message.mentions.users[1].username+" and "+message.mentions.users[2].username+"...*")
+                    pairscore = Math.floor ((Math.random() * 100));
+                    message.channel.send("And the score is...**"+pairscore+"!**")
+                }
+            break;
+
 
             case 'trailtoggle':
                 if (trail === 0){
