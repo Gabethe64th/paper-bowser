@@ -1316,9 +1316,8 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
             }
             else if (!message.content.startsWith("v!deathbattle")){
                 attack = message.content.toString();
-                dam = Math.floor ((Math.random() * 50));
-                message.channel.send("**"+fighter1+"** uses **"+attack+"!** \n"+fighter2+" takes "+dam+" damage!");
-                damagePlayer(2, dam);
+                attacklow = attack.toLowerCase();
+                useThisQuote(attacklow, fighter1, fighter2, 2)
                 isf1turn = false;
             }
         }
@@ -1330,11 +1329,37 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
             }
             else if (!message.content.startsWith("v!deathbattle")){
                 attack = message.content.toString();
-                dam = Math.floor ((Math.random() * 50));
-                message.channel.send("**"+fighter2+"** uses **"+attack+"!** \n"+fighter1+" takes "+dam+" damage!");
-                damagePlayer(1, dam);
+                attacklow = attack.toLowerCase();
+                useThisQuote(attacklow, fighter2, fighter1, 1)
                 isf1turn = true;
             }
+        }
+    }
+
+    function useThisQuote(attacklow, fighter, fightie, towhom) {
+        switch (attacklow) {
+            default:
+                dam = Math.floor ((Math.random() * 50));
+                message.channel.send("**"+fighter+"** uses **"+attack+"!** \n"+fightie+" takes "+dam+" damage!");
+                damagePlayer(towhom, dam);
+            break;
+
+            case "ban hammer":
+                dam = Math.floor ((Math.random() * 78));
+                message.channel.send("**"+fighter+" uses a weaker ban hammer! \n"+fightie+" takes "+dam+" damage!")
+                damagePlayer(towhom, dam);
+            break;
+
+            case "hentai":
+                message.channel.send("**"+fighter+" watches hentai! \n"+fighter+" recovers 5 hp!")
+                if (towhom = 1){
+                    damagePlayer(2, -5);
+                }
+                else {
+                    damagePlayer(1, -5);
+                }
+            break;
+
         }
     }
 
