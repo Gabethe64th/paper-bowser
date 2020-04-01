@@ -1344,12 +1344,12 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
 
             case "ban hammer":
                 dam = Math.floor ((Math.random() * 78));
-                message.channel.send("**"+fighter+" uses a weaker ban hammer! \n"+fightie+" takes "+dam+" damage!")
+                message.channel.send("**"+fighter+"** uses a weaker ban hammer! \n"+fightie+" takes "+dam+" damage!")
                 damagePlayer(towhom, dam);
             break;
 
             case "hentai":
-                message.channel.send("**"+fighter+" watches hentai! \n"+fighter+" recovers 5 hp!")
+                message.channel.send("**"+fighter+"** watches hentai! \n"+fighter+" recovers 5 hp!")
                 if (towhom = 1){
                     damagePlayer(2, -5);
                 }
