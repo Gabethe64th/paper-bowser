@@ -1368,7 +1368,7 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
             break;
 
             case "ban hammer":
-                dam = Math.floor ((Math.random() * 75));
+                dam = Math.floor ((Math.random() * 95));
                 message.channel.send("**"+fighter+"** uses a weaker ban hammer! \n"+fightie+" takes "+dam+" damage!")
                 damagePlayer(towhom, dam);
             break;
