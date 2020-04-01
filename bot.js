@@ -1082,8 +1082,8 @@ bot.on('message', message=> {
             break;
 
             case 'pair':
-                if (message.mentions.users[1] != undefined){
-                    message.channel.send("*Reading the pair scores of "+message.mentions.users[0].username+" and "+message.mentions.users[1].username+"...*")
+                if (message.mentions.users.first(1) != undefined){
+                    message.channel.send("*Reading the pair scores of "+message.mentions.users.first().username+" and "+message.mentions.users.first(1).username+"...*")
                     pairscore = Math.floor ((Math.random() * 100));
                     message.channel.send("And the score is...**"+pairscore+"!**")
                 }
