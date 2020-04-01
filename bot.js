@@ -1315,7 +1315,19 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
             else if (!message.content.startsWith("v!deathbattle")){
                 attack = message.content.toString();
                 attacklow = attack.toLowerCase();
-                useThisQuote(attacklow, fighter1, fighter2, 2)
+                switch (attack){
+                    default:
+                        useThisQuote(attacklow, fighter1, fighter2, 2)
+                    break; 
+                    
+                    case "https://youtu.be/dQw4w9WgXcQ":
+                        dam = Math.floor ((Math.random() * 100));
+                        message.channel.send(fighter2+" got rick rolled! **"+fighter1+"** deals "+dam+" damage and gains 10 hp!")
+                        
+                        damagePlayer(1, -10)
+                        damagePlayer(2, dam);
+                    break; 
+                }
                 isf1turn = false;
             }
         }
@@ -1328,7 +1340,20 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
             else if (!message.content.startsWith("v!deathbattle")){
                 attack = message.content.toString();
                 attacklow = attack.toLowerCase();
-                useThisQuote(attacklow, fighter2, fighter1, 1)
+                switch (attack){
+                    default:
+                        useThisQuote(attacklow, fighter2, fighter1, 1)
+                    break; 
+                    
+                    case "https://youtu.be/dQw4w9WgXcQ":
+                        dam = Math.floor ((Math.random() * 100));
+                        message.channel.send(fighter1+" got rick rolled! **"+fighter2+"** deals "+dam+" damage and gains 10 hp!")
+                        
+                        damagePlayer(2, -10)
+                        damagePlayer(1, dam);
+                    break; 
+                }
+                
                 isf1turn = true;
             }
         }
@@ -1358,18 +1383,7 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
                 }
             break;
 
-            case "https://youtu.be/dQw4w9WgXcQ":
-                dam = Math.floor ((Math.random() * 100));
-                message.channel.send(fightie+" got rick rolled! **"+fighter+"** deals "+dam+" damage and gains 10 hp!")
-                if (towhom = 1){
-                    damagePlayer(2, -10);
-                }
-                else {
-                    damagePlayer(1, -10);
-                }
-                damagePlayer(towhom, dam);
-            break;
-
+        
         }
     }
 
