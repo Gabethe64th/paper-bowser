@@ -1360,6 +1360,13 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
     }
 
     function useThisQuote(attacklow, fighter, fightie, towhom) {
+        if (towhom == 1){
+            theother = 2;
+        }
+        else if (towhom == 2){
+            theother = 1;
+        }
+        
         switch (attacklow) {
             default:
                 dam = Math.floor ((Math.random() * 50));
@@ -1375,12 +1382,20 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
 
             case "hentai":
                 message.channel.send("**"+fighter+"** watches hentai! \n"+fighter+" recovers 5 hp!")
-                if (towhom = 1){
-                    damagePlayer(2, -5);
-                }
-                else {
-                    damagePlayer(1, -5);
-                }
+                damagePlayer(theother, -5)
+            break;
+
+            case "waluigi launcher":
+                dam = Math.floor ((Math.random() * 30));
+                dam = dam * 2
+                message.channel.send("**"+fighter+"** uses a freaking WAHluigi Launcher! \n"+fightie+" takes double damage! ("+dam+" DMG)")
+                damagePlayer(towhom, dam);
+            break;
+
+            case "no u":
+                message.channel.send(fightie+"'s attack was countered! **"+fighter+"** gains back thier hp, and deals back half the damage!")
+                damagePlayer(theother, (dam * -1))
+                damagePlayer(towhom, (dam / 2))
             break;
 
         
