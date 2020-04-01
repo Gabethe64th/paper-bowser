@@ -117,13 +117,11 @@ bot.on('message', message=> {
                 .setTitle("VirusBot "+version+" Changelog")
                 .setDescription("VB's April Update is here!")
                 .addBlankField()
-                .addField("Removed Herobrine", "Finally! He's gone!")
+                .addField("We'll ask again!", "There are more questions in the trivia command! How much do you actually know?")
                 .addBlankField()
-                .addField("Water and water", "And water water water and water and water water")
+                .addField("I'LL KILL YOU", "A new command approaches! 'v!deathbattle' is here!")
                 .addBlankField()
-                .addField("H", "ello. It's me.")
-                .addBlankField()
-                .addField("Minecraft 2 was added!", "It's about time!")
+                .addField("[UNADDED NEWS]", "[INCOMPLETE COMMAND, PLEASE HOLD...]")
                 .addBlankField()
                 .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                 message.channel.send(embed);
