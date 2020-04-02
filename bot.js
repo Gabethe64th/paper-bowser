@@ -1091,29 +1091,68 @@ bot.on('message', message=> {
                     message.channel.send("*Reading the pair score of "+pair1.user.username+" and "+pair2.user.username+"...*")
                 }
                 else if (message.mentions.members.size == 1){
-                    pair1 = message.mentions.members.first()
+                    pair1 = message.mentions.members.first();
                     
                     uusers = bot.guilds.get(message.guild.id).members.array();
                     uwusers = Math.floor ((Math.random() * uusers.length));
-                    pair2 = bot.users.get(uusers[uwusers].user.username);
+                    pair2 = bot.users.get(uusers[uwusers].id);
                     
                     message.channel.send("*Reading the pair score of "+pair1.user.username+" and "+pair2+"...*")
                 }
                 else {
                     uusers = bot.guilds.get(message.guild.id).members.array();
                     uwusers = Math.floor ((Math.random() * uusers.length));
-                    pair1 = bot.users.get(uusers[uwusers].user.username);
+                    pair1 = bot.users.get(uusers[uwusers].id);
 
                     uusers = bot.guilds.get(message.guild.id).members.array();
                     uwusers = Math.floor ((Math.random() * uusers.length));
-                    pair2 = bot.users.get(uusers[uwusers].user.username);
+                    pair2 = bot.users.get(uusers[uwusers].id);
 
                     message.channel.send("*Reading the pair score of "+pair1+" and "+pair2+"...*")
                 }
                     
                     message.channel.send("And the score is...**"+pairscore+"!**")
+                    giveScoreResults(pairscore);
             break;
 
+            function giveScoreResults(score){
+                if (score == 100){
+                    message.channel.send("WHOA! You guys should just date at this point!");
+                }
+                else if (score > 89 && score < 100){
+                    message.channel.send("An unbreakable bond...");
+                }
+                else if (score > 79 && score < 90){
+                    message.channel.send("The bestest of friends!");
+                }
+                else if (score > 69 && score < 80){
+                    message.channel.send("You guys trust each other pretty well!");
+                }
+                else if (score > 59 && score < 70){
+                    message.channel.send("A passable friendship.");
+                }
+                else if (score > 49 && score < 60){
+                    message.channel.send("Getting along, I see.");
+                }
+                else if (score > 39 && score < 50){
+                    message.channel.send("Not quite there as yet...");
+                }
+                else if (score > 29 && score < 40){
+                    message.channel.send("Alright, who stole who's girl?");
+                }
+                else if (score > 19 && score < 30){
+                    message.channel.send("Ouch!");
+                }
+                else if (score > 9 && score < 20){
+                    message.channel.send("Meh.");
+                }
+                else if (score > 0 && score < 10){
+                    message.channel.send("Do you guys even know each other...?");
+                }
+                else if (score == 0){
+                    message.channel.send("YIKES! Okay, back to phase one.");
+                }
+            }
 
             case 'trailtoggle':
                 if (trail === 0){
