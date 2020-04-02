@@ -1079,11 +1079,39 @@ bot.on('message', message=> {
             break;
 
             case 'pair':
-                if (message.mentions.users[1] != undefined){
-                    message.channel.send("*Reading the pair scores of "+message.mentions.users.first().username+" and "+message.mentions.users[1].username+"...*")
-                    pairscore = Math.floor ((Math.random() * 100));
-                    message.channel.send("And the score is...**"+pairscore+"!**")
+                pairscore = Math.floor ((Math.random() * 100));
+                
+                if (message.mentions.members.size > 2){
+                    message.channel.send("*Reading the pair scores of multiple users...*")
                 }
+                else if (message.mentions.members.size == 2){
+                    pairguys = message.mentions.members.first(2)
+                    pair1 = pairguys[0]
+                    pair2 = pairguys[1]
+                    message.channel.send("*Reading the pair score of "+pair1.user.username+" and "+pair2.user.username+"...*")
+                }
+                else if (message.mentions.members.size == 1){
+                    pair1 = message.mentions.members.first()
+                    
+                    uusers = bot.guilds.get(message.guild.id).members.array();
+                    uwusers = Math.floor ((Math.random() * uusers.length));
+                    pair2 = bot.users.get(uusers[uwusers].username);
+                    
+                    message.channel.send("*Reading the pair score of "+pair1.user.username+" and "+pair2+"...*")
+                }
+                else {
+                    uusers = bot.guilds.get(message.guild.id).members.array();
+                    uwusers = Math.floor ((Math.random() * uusers.length));
+                    pair1 = bot.users.get(uusers[uwusers].username);
+
+                    uusers = bot.guilds.get(message.guild.id).members.array();
+                    uwusers = Math.floor ((Math.random() * uusers.length));
+                    pair2 = bot.users.get(uusers[uwusers].username);
+
+                    message.channel.send("*Reading the pair score of "+pair1+" and "+pair2+"...*")
+                }
+                    
+                    message.channel.send("And the score is...**"+pairscore+"!**")
             break;
 
 
