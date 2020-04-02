@@ -1501,7 +1501,7 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
 
             case "babybabybaby":
                 if (message.author.id == "350802851964125184"){
-                    if (bab = 0){
+                    if (bab == 0){
                     message.channel.send("**YEEEAAAAAAAAAAAAAHH!** \n"+fightie+" gets mass destructed! (78 DMG)")
                     damagePlayer(towhom, 78)
                     bab = 1}
