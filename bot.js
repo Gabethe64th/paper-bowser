@@ -50,6 +50,7 @@ var choicemes = ["I pick ", "Gonna go with ", "I'll go with ","Definitely, ","I'
 var fighter1, fighter2;
 var fighter1hp = 100, fighter2hp = 100;
 var isf1turn = false, battle = false;
+var wisequouts = ["*I'm outta here!* -Sonic", "*It's no use!* -Silver", "*Find the computer room!* -Vector", "*Aww yeah, this is happening!* -Sonic", "*Even without wings, I can still fly!* -Sonic", "*Snooping as usual, I see?* -Robotnik", "*No copyright law in the universe is going to stop me!* -Sonic", "*Don't touch it!* -Shadow", "*You may know everything I'm gonna do, but that's not gonna help you since I know everything you're gonna do! STRANGE, ISN'T IT!?* -Sonic", "*SHUT UP TAILS!* -Sonic", "*Where's that DAMN fourth chaos emerald?* -Shadow", "*Hey, I'll play with you some other time.* -Sonic", "*Sonic will never again be a pain in my eeeeegggggg* -Eggman", "*True dat.* -Tails", "*Get a load of this!* -Eggman", "*Oh no!* -Knuckles", "*I'm the coolest.* -Shadow", "*That's Eggman! I wonder what happened to Sonic?* -Tails", "*Watch out! You're gonna crash! AH!* -Sonic", "*Take this!* -Silver", "*Number one, Stay in school! Number two, Stay in school! Number three, Don't forget one and two!* -Sonic", "*GAMMA!* -Eggman", "*Disappear!* -Shadow", "*Shut up!* -Knuckles", "*Now we'll........finish it!* -??? (Sonic the Hedgehog series)", "*You're smart.* -??? (Sonic the Hedgehog series)", "*Good. Great! Awesome! Outstanding! AMAZING!* -Nintendo Wii while you play Sonic Colors", "*Hey guys. Take care.* -Sonic", "*We're on our way to the ark, so I guess that means we're going too!* -Sonic", "*I'm not a rat! I'm a hedgehog!* -Sonic", "*Ahhh! I'm afraid of lightning!* -Tails", "*Use your head! Don't end up dead!* -Sonic", "*Hasta la bye bye, suckers!* -Eggman", "*Knock Knock it's Knuckles* -Knuckles", "*You're lying! It won't take that long to figure out.* -??? (Sonic the Hedgehog series)", "*I've been looking for you Baldy McNosehair!* -Sonic", "*Can never grab too many rings.* -Sonic", "*Spindash time!* -Sonic", "*RIINGS!* -Sonic", "*Want some moooore?* -Tails", "*Man up, Tails.* -Eggman", "*That tornado's carrying a car!* -Sonic", "*You finally had all chaos emeralds....and you threw it away?* -Shadow(?)", "*What have you done to Sonic? I'll never forgive you for this!* -Tails", "*Get ready to be schooled!* -Eggman", "*I don't like the way you attacked Chris and Cosmo!* -Sonic", "*Ramps! We can use these as ramps!* -??? (Sonic the Hedgehog series)", "*Cool, it's raining fire!* -Sonic", "*That was tight!* -Sonic", "*Thrust increasing.* -Robot from Sonic 06", "*I thought your middle name was 'The'.* -Knuckles", "*Capable is my middle name.* -Sonic"]
 
 
 
@@ -116,9 +117,9 @@ bot.on('message', message=> {
                 .addBlankField()
                 .addField("We'll ask again!", "There are more questions in the trivia command! How much do you actually know?")
                 .addBlankField()
-                .addField("I'LL KILL YOU", "A new command approaches! 'v!deathbattle' is here!")
+                .addField("I'LL KILL YOU! LIGHTNING FIST!", "A new command approaches! 'v!deathbattle' is here!")
                 .addBlankField()
-                .addField("[UNADDED NEWS]", "[INCOMPLETE COMMAND, PLEASE HOLD...]")
+                .addField("How fond are you two?", "'v!pair' is finally ready for use! Test the relationships of people you barely even know!")
                 .addBlankField()
                 .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                 message.channel.send(embed);
@@ -1078,6 +1079,12 @@ bot.on('message', message=> {
                 }
             break;
 
+            case 'quote':
+                message.channel.send("As a wise man once said...")
+                wq = Math.floor ((Math.random() * wisequouts.length));
+                message.channel.send(wisequouts[wq]);
+            break;
+
             case 'pair':
                 pairscore = Math.floor ((Math.random() * 100));
                 
@@ -1209,8 +1216,6 @@ bot.on('message', message=> {
                 .addField('• purewars', 'Starts a war.', true)
                 .addField('• purestandings', 'Shows the war.', true)
                 .addField('• heylook', 'Hey look buddy...', true)
-                .addBlankField()
-                .addField("End of page.", "Please use [v!commands2] to view the next page.")
                 .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                 
                 bot.users.get(message.author.id).send(embed1);
@@ -1243,8 +1248,6 @@ bot.on('message', message=> {
                 .addField('• vibecheck', 'Vibe Check.', true)
                 .addField('• fuckyou', 'Why the hate?', true)
                 .addField('• facts', "Gotta note 'em down.", true)
-                .addBlankField()
-                .addField("End of page.", "Please use [v!commands3] to view the next page.")
                 .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                 
                 bot.users.get(message.author.id).send(embed2);
@@ -1278,8 +1281,6 @@ bot.on('message', message=> {
                 .addField('• WAHOO', 'PS4s suck.', true)
                 .addField('• egirl', 'SHUT IT!', true)
                 .addField('• thouthefuck', 'BY THE POPE!', true)
-                .addBlankField()
-                .addField("End of page.", "Please use [v!commands4] to view the next page.")
                 .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                 
                 bot.users.get(message.author.id).send(embed3);
@@ -1303,8 +1304,6 @@ bot.on('message', message=> {
                         .addField('**Personal Commands** 👤', 'Commands about friends, for friends.')
                         .addBlankField()
                         .addField('The following people have their own commands:', '• dru\n• moon\n• pkoby\n• kirB\n• ender\n• korbs\n• prince\n• eliz\n• nokobo\n• jasper\n• jacob\n• ghost\n• goat\n• name\n• izzle\n• ethan\n• cain\n• kyu\n• sushi\n• goji\n• snoop\n• jet\n• rowlet\n• irri\n• pip\n• mimik\n• reun\n• knux\n• dyst\n• reni\n• phobos\n• rb\n• generic\n• truth', true)
-                        .addBlankField()
-                        .addField("End of page.", "Please use [v!commands5] to view the next page.")
                         .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                         
                         bot.users.get(message.author.id).send(embed4);
@@ -1326,8 +1325,6 @@ bot.on('message', message=> {
                         .addBlankField()
                         .addField('**Personal Commands** 🦀', "Huh.")
                         .addField('The following reactions are user-specific:', '• :joystick: - Only Gabe can use this.\n• :guitar: - Only Snoop and Reun can use this.')
-                        .addBlankField()
-                        .addField("End of page.", "Please use [v!commands] to view the first page.")
                         .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                         
                         bot.users.get(message.author.id).send(embed5);
