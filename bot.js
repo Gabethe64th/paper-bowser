@@ -50,6 +50,7 @@ var choicemes = ["I pick ", "Gonna go with ", "I'll go with ","Definitely, ","I'
 var fighter1, fighter2;
 var fighter1hp = 100, fighter2hp = 100;
 var isf1turn = false, battle = false;
+var bab = 0;
 var wisequouts = ["*I'm outta here!* -Sonic", "*It's no use!* -Silver", "*Find the computer room!* -Vector", "*Aww yeah, this is happening!* -Sonic", "*Even without wings, I can still fly!* -Sonic", "*Snooping as usual, I see?* -Robotnik", "*No copyright law in the universe is going to stop me!* -Sonic", "*Don't touch it!* -Shadow", "*You may know everything I'm gonna do, but that's not gonna help you since I know everything you're gonna do! STRANGE, ISN'T IT!?* -Sonic", "*SHUT UP TAILS!* -Sonic", "*Where's that DAMN fourth chaos emerald?* -Shadow", "*Hey, I'll play with you some other time.* -Sonic", "*Sonic will never again be a pain in my eeeeegggggg* -Eggman", "*True dat.* -Tails", "*Get a load of this!* -Eggman", "*Oh no!* -Knuckles", "*I'm the coolest.* -Shadow", "*That's Eggman! I wonder what happened to Sonic?* -Tails", "*Watch out! You're gonna crash! AH!* -Sonic", "*Take this!* -Silver", "*Number one, Stay in school! Number two, Stay in school! Number three, Don't forget one and two!* -Sonic", "*GAMMA!* -Eggman", "*Disappear!* -Shadow", "*Shut up!* -Knuckles", "*Now we'll........finish it!* -??? (Sonic the Hedgehog series)", "*You're smart.* -??? (Sonic the Hedgehog series)", "*Good. Great! Awesome! Outstanding! AMAZING!* -Nintendo Wii while you play Sonic Colors", "*Hey guys. Take care.* -Sonic", "*We're on our way to the ark, so I guess that means we're going too!* -Sonic", "*I'm not a rat! I'm a hedgehog!* -Sonic", "*Ahhh! I'm afraid of lightning!* -Tails", "*Use your head! Don't end up dead!* -Sonic", "*Hasta la bye bye, suckers!* -Eggman", "*Knock Knock it's Knuckles* -Knuckles", "*You're lying! It won't take that long to figure out.* -??? (Sonic the Hedgehog series)", "*I've been looking for you Baldy McNosehair!* -Sonic", "*Can never grab too many rings.* -Sonic", "*Spindash time!* -Sonic", "*RIINGS!* -Sonic", "*Want some moooore?* -Tails", "*Man up, Tails.* -Eggman", "*That tornado's carrying a car!* -Sonic", "*You finally had all chaos emeralds....and you threw it away?* -Shadow(?)", "*What have you done to Sonic? I'll never forgive you for this!* -Tails", "*Get ready to be schooled!* -Eggman", "*I don't like the way you attacked Chris and Cosmo!* -Sonic", "*Ramps! We can use these as ramps!* -??? (Sonic the Hedgehog series)", "*Cool, it's raining fire!* -Sonic", "*That was tight!* -Sonic", "*Thrust increasing.* -Robot from Sonic 06", "*I thought your middle name was 'The'.* -Knuckles", "*Capable is my middle name.* -Sonic"]
 
 
@@ -1075,6 +1076,8 @@ bot.on('message', message=> {
                     fighter2 = message.mentions.users.first().username;
 
                     message.channel.send("A battle between **"+message.author.username+"** and **"+fighter2+"** has begun!")
+                    fighter1hp = 100;
+                    fighter2hp = 100;
                     message.channel.send(fighter1+", it's your turn!")
                     battle = true;
                     isf1turn = true;
@@ -1381,7 +1384,7 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
         if (isf1turn == true && message.author.username == fighter1) {
             if (message.author.id == "178539479827611648" && message.content.toLowerCase().startsWith("ban hammer")) {
                 message.channel.send(fighter2+" got banned!")
-                damagePlayer(2, 100);
+                damagePlayer(2, 999);
             }
             else if (!message.content.startsWith("v!deathbattle")){
                 attack = message.content.toString();
@@ -1406,7 +1409,7 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
         else if (isf1turn == false && message.author.username == fighter2) {
             if (message.author.id == "178539479827611648" && message.content.toLowerCase().startsWith("ban hammer")) {
                 message.channel.send(fighter1+" got banned!")
-                damagePlayer(1, 100);
+                damagePlayer(1, 999);
             }
             else if (!message.content.startsWith("v!deathbattle")){
                 attack = message.content.toString();
@@ -1417,6 +1420,7 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
                     break; 
                     
                     case "https://youtu.be/dQw4w9WgXcQ":
+                    case "https://www.youtube.com/watch?v=dQw4w9WgXcQ":
                         dam = Math.floor ((Math.random() * 100));
                         message.channel.send(fighter1+" got rick rolled! **"+fighter2+"** deals "+dam+" damage and gains 10 hp!")
                         
@@ -1469,11 +1473,56 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
                 damagePlayer(towhom, (dam / 2))
             break;
 
+            case "chuckle":
+                if (message.author.id == "340900469968732161"){
+                    message.channel.send("**OH NO!**")
+                    knux = Math.floor ((Math.random() * 2));
+                    if (knux == 0){
+                        knux = 1
+                    }
+                    damagePlayer(knux, 999)
+                }
+                else {
+                    dam = Math.floor ((Math.random() * 50));
+                    message.channel.send("**"+fighter+"** uses **"+attack+"!** \n"+fightie+" takes "+dam+" damage!");
+                    damagePlayer(towhom, dam);
+                }
+            break;
+
+            case "gnome":
+            case "gnomed":
+                dam = Math.floor ((Math.random() * 65));
+                message.channel.send("**"+fighter+"'s a gnome! And "+fightie+"'s been....GNOMED! \nThey take "+dam+" damage!")
+                damagePlayer(towhom, dam);
+            break;
+
+            case "babybabybaby":
+                if (message.author.id == "350802851964125184"){
+                    if (bab = 0){
+                    message.channel.send("**YEEEAAAAAAAAAAAAAHH!** \n"+fightie+" gets mass destructed! (78 DMG)")
+                    damagePlayer(towhom, 78)
+                    bab = 1}
+                    else{
+                        dam = Math.floor ((Math.random() * 55));
+                        message.channel.send("**"+fighter+"** uses an all out attack! \n"+fightie+" takes "+dam+" damage!")
+                    }
+                }
+                else{
+                    dam = Math.floor ((Math.random() * 50));
+                    message.channel.send("**"+fighter+"** uses **"+attack+"!** \n"+fightie+" takes "+dam+" damage!");
+                    damagePlayer(towhom, dam);
+                }
+
+                break;
+                
+
+
         
         }
     }
 
     function damagePlayer(player, damage){
+    if (battle == true){
         if (player == 1){
             fighter1hp -= damage;
         }
@@ -1483,6 +1532,7 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
 
         checkTheHealths();
     }
+    }
 
     function checkTheHealths(){
         if (fighter1hp <= 0){
@@ -1490,12 +1540,14 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
             battle = false;
             fighter1hp = 100;
             fighter2hp = 100;
+            bab = 0;
         }
         else if (fighter2hp <= 0){
             message.channel.send(fighter2+" has been defeated! **"+fighter1+"** WINS! :tada:");
             battle = false;
             fighter1hp = 100;
             fighter2hp = 100;
+            bab = 0;
         }
     }
 
