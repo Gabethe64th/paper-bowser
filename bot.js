@@ -1506,7 +1506,7 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
                     damagePlayer(towhom, 78)
                     bab = 1}
                     else{
-                        dam = Math.floor ((Math.random() * 55));
+                        dam = Math.floor ((Math.random() * 10));
                         message.channel.send("**"+fighter+"** uses an all out attack! \n"+fightie+" takes "+dam+" damage!")
                     }
                 }
