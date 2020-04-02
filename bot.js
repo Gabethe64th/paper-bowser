@@ -1140,7 +1140,10 @@ bot.on('message', message=> {
                 else if (score > 69 && score < 80){
                     message.channel.send("You guys trust each other pretty well!");
                 }
-                else if (score > 59 && score < 70){
+                else if (score == 69){
+                    message.channel.send("Nice.");
+                }
+                else if (score > 59 && score < 69){
                     message.channel.send("A passable friendship.");
                 }
                 else if (score > 49 && score < 60){
