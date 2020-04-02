@@ -121,6 +121,8 @@ bot.on('message', message=> {
                 .addBlankField()
                 .addField("How fond are you two?", "'v!pair' is finally ready for use! Test the relationships of people you barely even know!")
                 .addBlankField()
+                .addField("As a wise guy once said...", "Say hello to 'v!quote'! (Requested by TheUnchuckled!) More quotes from different series will be added in soon, so stay tuned!")
+                .addBlankField()
                 .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                 message.channel.send(embed);
             }
