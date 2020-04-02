@@ -1495,7 +1495,7 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
             case "gnome":
             case "gnomed":
                 dam = Math.floor ((Math.random() * 65));
-                message.channel.send("**"+fighter+"'s a gnome! And "+fightie+"'s been....GNOMED! \nThey take "+dam+" damage!")
+                message.channel.send("**"+fighter+"'s** a gnome! And "+fightie+"'s been....GNOMED! \nThey take "+dam+" damage!")
                 damagePlayer(towhom, dam);
             break;
 
