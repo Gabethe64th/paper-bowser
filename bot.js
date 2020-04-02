@@ -1095,18 +1095,18 @@ bot.on('message', message=> {
                     
                     uusers = bot.guilds.get(message.guild.id).members.array();
                     uwusers = Math.floor ((Math.random() * uusers.length));
-                    pair2 = bot.users.get(uusers[uwusers].member.user.tag);
+                    pair2 = bot.users.get(uusers[uwusers].tag);
                     
                     message.channel.send("*Reading the pair score of "+pair1.user.username+" and "+pair2+"...*")
                 }
                 else {
                     uusers = bot.guilds.get(message.guild.id).members.array();
                     uwusers = Math.floor ((Math.random() * uusers.length));
-                    pair1 = bot.users.get(uusers[uwusers].member.user.tag);
+                    pair1 = bot.users.get(uusers[uwusers].tag);
 
                     uusers = bot.guilds.get(message.guild.id).members.array();
                     uwusers = Math.floor ((Math.random() * uusers.length));
-                    pair2 = bot.users.get(uusers[uwusers].member.user.tag);
+                    pair2 = bot.users.get(uusers[uwusers].tag);
 
                     message.channel.send("*Reading the pair score of "+pair1+" and "+pair2+"...*")
                 }
