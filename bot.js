@@ -2032,6 +2032,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         p3cardpile = [];
         p4cardpile = [];
         var a9match = false;
+        var a9channel;
         
         
         bot.on('message', message=> {
@@ -2395,12 +2396,22 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                 }
                                 else {
                                     message.channel.sendMessage("Alright! Creating a room!")
+                                    a9match = true;
+                                    a9channel = message.channel.id;
                                 }
                                 addPlayerto9match(message.author)
                                 break;
 
                             case '9+join':
+                                if (a9match == false && a9channel == undefined){
+                                    message.channel.send("There is no match going on at the moment \n Feel free to make one using 'v!9+create'.")
+                                }
+                                else if (a9match == true && a9channel != message.channel.id){
+                                    message.channel.send("A match is going on, but it's not at this channel/guild!")
+                                }
+                                else{
                                 addPlayerto9match(message.author);
+                                }
                                 break;
 
                             case '9+cancel':
@@ -2408,6 +2419,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                 message.channel.send("`Scrapping the match...`")
                                 players9 = [0];
                                 a9match = false;
+                                a9channel = undefined;
                                 }
                                 break;
 
@@ -2427,7 +2439,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
                             function addPlayerto9match(user){
                                 tester = false;
-                                for (i = 0; i <= players9.length; i++){
+                                for (i = 0; i < players9.length; i++){
                                     if (players9[i] == user.username){
                                         tester = true;
                                     }
@@ -2444,7 +2456,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                     }
                                     
                                     message.channel.sendMessage("[/////PLAYERS/////]");
-                                    for (i = 0; i <= players9.length; i++){
+                                    for (i = 0; i < players9.length; i++){
                                         message.channel.sendMessage(players9[i]+"\n");
                                     }
 
