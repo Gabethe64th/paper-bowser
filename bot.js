@@ -2386,11 +2386,11 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         
         
                             case '9+':
-                                message.channel.send("Welcome to 9+! A simple card card where you cannot exceed the number 9!\nThis game is currently in testing as a bot command before it is used elsewhere.");
+                                message.channel.send("Welcome to 9+! A simple card game where you cannot exceed the number 9!\n\nThis game is currently in testing as a bot command before it is used elsewhere.");
                                 break;
 
                             case '9+create':
-                                if (a9match = true){
+                                if (a9match == true){
                                     message.channel.sendMessage("Oops! It seems like a room is already created!")
                                 }
                                 else {
