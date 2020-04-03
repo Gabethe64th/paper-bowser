@@ -2457,6 +2457,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                     
                                     message.channel.sendMessage("[/////PLAYERS/////]");
                                     for (i = 0; i < players9.length; i++){
+                                        var playerlist
                                         playerlist += players9[i]+"\n";
                                         message.channel.send(playerlist)
                                     }
