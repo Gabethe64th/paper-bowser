@@ -2428,10 +2428,10 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                     message.channel.sendMessage("You're already added to the list!");
                                 }
                                 else{
-                                    players9.push(user);
+                                    players9.push(user.username);
                                     message.channel.sendMessage("[/////PLAYERS/////]");
                                     for (i = 0; i <= players9.length; i++){
-                                        message.channel.sendMessage(players9[i].username+"\n");
+                                        message.channel.sendMessage(players9[i]+"\n");
                                     }
 
                                 }
