@@ -2398,8 +2398,9 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                     message.channel.sendMessage("Alright! Creating a room!")
                                     a9match = true;
                                     a9channel = message.channel.id;
+                                    addPlayerto9match(message.author)
                                 }
-                                addPlayerto9match(message.author)
+                                
                                 break;
 
                             case '9+join':
@@ -2439,6 +2440,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
                             function addPlayerto9match(user){
                                 tester = false;
+                                var playerlist = ""
                                 for (i = 0; i < players9.length; i++){
                                     if (players9[i] == user.username){
                                         tester = true;
@@ -2457,7 +2459,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                     
                                     message.channel.sendMessage("[/////PLAYERS/////]");
                                     for (i = 0; i < players9.length; i++){
-                                        var playerlist = ""
+                                        
                                         playerlist += players9[i]+"\n";
                                         
                                     }
