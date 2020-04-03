@@ -2026,7 +2026,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         path = 0;
 
         cards9 = [0, 1, 2, 3];
-        players9 = [];
+        var players9 = [0];
         p1cardpile = [];
         p2cardpile = [];
         p3cardpile = [];
@@ -2403,6 +2403,14 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                 addPlayerto9match(message.author);
                                 break;
 
+                            case '9+cancel':
+                                if (a9match == true){
+                                message.channel.send("`Scrapping the match...`")
+                                players9 = [0];
+                                a9match = false;
+                                }
+                                break;
+
 
 
 
@@ -2420,7 +2428,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                             function addPlayerto9match(user){
                                 tester = false;
                                 for (i = 0; i <= players9.length; i++){
-                                    if (players9[i] == user){
+                                    if (players9[i] == user.username){
                                         tester = true;
                                     }
                                 }
@@ -2428,7 +2436,13 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                     message.channel.sendMessage("You're already added to the list!");
                                 }
                                 else{
-                                    players9.push(user.username);
+                                    if (players9[0] == 0){
+                                        players9[0] = user.username;
+                                    }
+                                    else{
+                                        players9.push(user.username);
+                                    }
+                                    
                                     message.channel.sendMessage("[/////PLAYERS/////]");
                                     for (i = 0; i <= players9.length; i++){
                                         message.channel.sendMessage(players9[i]+"\n");
