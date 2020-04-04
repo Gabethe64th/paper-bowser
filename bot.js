@@ -2046,6 +2046,12 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         var o64channel = undefined;
         var o64join = false;
         var o64game = false;
+        var o64truedeck = 0;
+        var o64liedeck = 0;
+        var dm;
+        var tn = 0;
+        var ln = 0;
+        var claim;
 
         
         
@@ -2454,7 +2460,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
 
                             case 'o64':
-                                message.channel.send("Welcome to o64! A game where you can't trust ANYBODY.\n\n```Game Hosting Commands:\nv!o64create - Create a Room\nv!o64join - Join a Room\nv!o64start - Start the Game\nv!o64stop - Cancel the Game");
+                                message.channel.send("Welcome to o64! A game where you can't trust ANYBODY.\n\n```Game Hosting Commands:\nv!o64create - Create a Room\nv!o64join - Join a Room\nv!o64start - Start the Game\nv!o64stop - Cancel the Game\n\nIn-Game:\nv!o64w - Claim to be over 64```");
                             break;
 
                             case 'o64create':
@@ -2484,6 +2490,31 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                     addPlayerto064(message.author);
                                 }
 
+                            break;
+
+                            case 'o64start':
+                                if (o64game == true){
+                                    message.channel.send("A game is going on.")
+                                }
+                                else if (o64join == false){
+                                    message.channel.send("There is no match to start.")
+                                }
+                                else if (o64join == true && message.channel.id != o64channel){
+                                    message.channel.send("That command wouldn't work here.")
+                                }
+                                else {
+                                    dm = 0;
+                                    maino64();
+                                }
+                            break;
+
+                            case 'o64w':
+                                call64Bluff();
+                            break;
+
+                            case 'o64stop':
+                                message.channel.send("Scrapping the match.")
+                                end64game();
                             break;
 
 
@@ -3004,7 +3035,24 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
 
 
-               
+               //o64
+               if (message.author == players64[dm] && args[1] == undefined){
+                   if (message.content == NaN){
+                       message.channel.send("That's...not even a number. \n`Provide a number between 1-10.`")
+                   }
+                   else {
+                       ln = message.content;
+                       if ((ln < 1) || (ln > 10)){
+                           message.channel.send("No one's gonna believe that.\n`Provide a number between 1-10.`")
+                       }
+                       else{
+                           o64liedeck += ln;
+                        bot.channels.get(o64channel).send("**"+players64[dm].username+"** has claimed to place a **"+ln+".**\n`The total is now told to be: "+o64liedeck+".`")
+                        dm++;
+                        maino64();
+                       }
+                   }
+               }
         
             function addPlayerto064(user){
                 tester = false;
@@ -3031,7 +3079,57 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
                 }
             }
+
+            function maino64(){
+                o64number = Math.floor (Math.random() * cards64.length);
+                
+                var secretOne = players64[dm];
+                if (players64[dm] == undefined){
+                    secretOne = players64[0]
+                }
+
+                bot.channels.get(o64channel).send("It's **"+players64[dm].username+"'s** turn to pick a card...")
+                tn = cards64[o64number];
+                o64truedeck += tn;
+                bot.users.get(players64[dm].id).send("You got a **"+tn+"!** \nNow...what do you tell everyone it is?")
+                
+            }
+
+            function end64game(){
+                dm = 0;
+                o64channel = undefined;
+                o64game = false;
+                o64join = false;
+                o64liedeck = 0;
+                o64truedeck = 0;
+                players64 = [];
+                tn = 0;
+                ln = 0;
+            }
+
+            function call64Bluff(){
+                claim = players64.find(message.author);
+                if (players64[claim] != undefined){
+                    if (o64truedeck <= 64){
+                        message.channel.send("`Oh, too bad! The real deck is NOT over 64 yet!` \n**"+players64[claim]+" has been removed for lying.**")
+                        players64.splice(claim, 1);
+                        check64Players();
+                    }
+                    else if (o64truedeck > 64){
+                        message.channel.send("`Hold the phone! The deck IS truly over 64!\nThe game is over!`\n**"+players64[claim].username+" WINS!!!** :tada:")
+                    }
+                }
+            }
                
+            function check64Players(){
+                if (players64.length == 1){
+                    message.channel.send("`One person is left alive. The game is now over.`\n**"+players64[0].username+" WINS!!!** :tada:")
+                    end64game();
+                }
+                else{
+                    maino64();
+                }
+            }
         
             
         
