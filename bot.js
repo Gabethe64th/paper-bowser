@@ -2471,7 +2471,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                     }
                                     else{
                                         players9.push(user.username);
-                                        rawplayers9.push(user);
+                                        rawplayers9.push(user.id);
                                     }
                                     
                                     message.channel.sendMessage("[/////PLAYERS/////]");
@@ -2493,7 +2493,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                     cardd = Math.floor (Math.random() * cards9.length);
 
                                     innercardpile[i] = [cards9[carda], cards9[cardb], cards9[cardc], cards9[cardd]];
-                                    bot.users.get(rawplayers9[i].id).send("`Your cards:` \n"+innercardpile);
+                                    bot.users.get(rawplayers9[i]).send("`Your cards:` \n"+innercardpile);
                                 }
                             }
 
