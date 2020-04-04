@@ -2524,7 +2524,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                 }
                             }
 
-                            function addThisCardToPile(card){
+                            function addCard(card){
                                 maintotal += card;
                                 message.channel.send("A "+card+" number was added. \n`The total is now: "+maintotal)
                                 checkTotal()
@@ -2922,7 +2922,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 for (i = 0; i < icp.length; i++){
                     if (message == icp[i]){
                         jazz = icp[i]
-                        addThisCardToPile(jazz)
+                        addCard(jazz)
                         pos = i;
                         let removedCard = icp.splice(pos, 1)
                         i = 5;
