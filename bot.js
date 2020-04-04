@@ -2827,13 +2827,14 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
             if (message.author.username == players9[j]){
                 icp = innercardpile[j];
+                y = j;
                 for (i = 0; i < icp.length; i++){
                     if (message == icp[i]){
                         jazz = icp[i]
                         addCard(jazz)
                         pos = i;
                         let removedCard = icp.splice(pos, 1)
-                        bot.users.get(rawplayers9[j]).send("`Your cards:` \n"+icp);
+                        bot.users.get(rawplayers9[y]).send("`Your cards:` \n"+icp);
                         i = 5;
                     }
 
