@@ -3041,12 +3041,11 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                        message.channel.send("That's...not even a number. \n`Provide a number between 1-10.`")
                    }
                    else {
-                       ln = message;
-                       if ((ln < 1) || (ln > 10)){
+                       if ((message < 1) || (message > 10)){
                            message.channel.send("No one's gonna believe that.\n`Provide a number between 1-10.`")
                        }
                        else{
-                           o64liedeck = o64liedeck + ln;
+                           o64liedeck += message;
                         bot.channels.get(o64channel).send("**"+players64[dm].username+"** has claimed to place a **"+ln+".**\n`The total is now told to be: "+o64liedeck+".`")
                         dm++;
                         maino64();
