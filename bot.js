@@ -2039,6 +2039,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         var a9channel;
         var j;
         var maintotal = 0;
+        var onegone = false;
         
         
         bot.on('message', message=> {
@@ -2829,6 +2830,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 icp = innercardpile[j];
                 y = j;
                 ycp = innercardpile[y];
+                onegone = false;
                 for (i = 0; i < icp.length; i++){
                     if (message == icp[i]){
                         jazz = icp[i]
@@ -2844,13 +2846,15 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
                             innercardpile[y] = [cards9[carda], cards9[cardb], cards9[cardc], cards9[cardd]];
 
-                            bot.users.get(rawplayers9[y]).send(icp);
+                            bot.users.get(rawplayers9[y]).send(innercardpile[y]);
                         }
-                        else if (y == j - 1){
-                            bot.users.get(rawplayers9[y]).send("`Your cards:` \n"+icp);
+                        else if (onegone == true){
+                            i = 5;
                         }
-                        
+                        else{
+                        bot.users.get(rawplayers9[y]).send("`Your cards:` \n"+ycp);
                         i = 5;
+                        }
                     }
 
                 }
@@ -2936,6 +2940,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     let removedPlayerName = players9.splice(pos, 1)
                     let removedPlayerID = rawplayers9.splice(pos, 1)
                     let removedDeck = innercardpile.splice(pos, 1)
+                    onegone = true;
                     shareOutCards();
                     maintotal = 0;
                     j++;
