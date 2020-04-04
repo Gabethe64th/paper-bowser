@@ -2027,7 +2027,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
         var cards9 = [0, 1, 2, 3];
         var players9 = [0];
-        var rawplayers9 = [];
+        var rawplayers9 = [0];
         var innercardpile = [];
         var outercardpile = [];
         p1cardpile = [];
@@ -2423,7 +2423,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                 if (a9match == true && message.channel.id == a9channel){
                                 message.channel.send("`Scrapping the match...`")
                                 players9 = [0];
-                                rawplayers9 = [];
+                                rawplayers9 = [0];
                                 a9match = false;
                                 a9game = false;
                                 a9channel = undefined;
@@ -2468,6 +2468,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                 else{
                                     if (players9[0] == 0){
                                         players9[0] = user.username;
+                                        rawplayers9[0] = user.id;
                                     }
                                     else{
                                         players9.push(user.username);
