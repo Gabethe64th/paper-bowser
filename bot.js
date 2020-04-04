@@ -2845,7 +2845,10 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
                             bot.users.get(rawplayers9[y]).send(icp);
                         }
-                        bot.users.get(rawplayers9[y]).send("`Your cards:` \n"+icp);
+                        else if (y == j - 1){
+                            bot.users.get(rawplayers9[y]).send("`Your cards:` \n"+icp);
+                        }
+                        
                         i = 5;
                     }
 
