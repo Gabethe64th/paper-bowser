@@ -2414,6 +2414,9 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                 else if (a9match == true && a9channel != message.channel.id){
                                     message.channel.send("A match is going on, but it's not at this channel/guild!")
                                 }
+                                else if (a9game == true){
+                                    message.channel.send("A match is already in session!")
+                                }
                                 else{
                                 addPlayerto9match(message.author);
                                 }
@@ -2422,11 +2425,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                             case '9+cancel':
                                 if (a9match == true && message.channel.id == a9channel){
                                 message.channel.send("`Scrapping the match...`")
-                                players9 = [0];
-                                rawplayers9 = [0];
-                                a9match = false;
-                                a9game = false;
-                                a9channel = undefined;
+                                end9Match();
                                 }
                                 else {
                                     message.channel.send("`There was an error while doing this.`")
@@ -2487,6 +2486,14 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                 }
                             }
 
+                            function end9Match(){
+                                players9 = [0];
+                                rawplayers9 = [0];
+                                a9match = false;
+                                a9game = false;
+                                a9channel = undefined;
+                            }
+
                             function shareOutCards(){
                                 for (i = 0; i < players9.length; i++){
                                     carda = Math.floor (Math.random() * cards9.length);
@@ -2495,7 +2502,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                     cardd = Math.floor (Math.random() * cards9.length);
 
                                     innercardpile[i] = [cards9[carda], cards9[cardb], cards9[cardc], cards9[cardd]];
-                                    bot.users.get(rawplayers9[i]).send("`Your cards:` \n"+innercardpile);
+                                    bot.users.get(rawplayers9[i]).send("`Your cards:` \n"+innercardpile[i]);
                                 }
                             }
 
