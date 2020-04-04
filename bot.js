@@ -2038,7 +2038,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         var a9game = false;
         var a9channel;
         var j;
-        var maintotal;
+        var maintotal = 0;
         
         
         bot.on('message', message=> {
@@ -2908,20 +2908,24 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
             function addCard(card){
                 maintotal += card;
-                message.channel.send("A "+card+" number was added. \n`The total is now: "+maintotal)
+                message.channel.send("A "+card+" card was added. \n`The total is now: "+maintotal+"`")
                 checkTotal();
             }
 
             function checkTotal(){
                 if (maintotal > 9){
-                    message.channel.send("**The limit of 9 was exceeded. "+players9[j]+" has been removed.")
+                    message.channel.send("**The limit of 9 was exceeded. "+players9[j]+" has been removed.** \nThe board will now reset.")
                     pos = j;
                     let removedPlayerName = players9.splice(pos, 1)
                     let removedPlayerID = rawplayers9.splice(pos, 1)
                     let removedDeck = innercardpile.splice(pos, 1)
+                    shareOutCards();
+                    maintotal = 0;
+                    j++;
                     continue9Match();
                 }
                 else {
+                    j++;
                     continue9Match();
                 }
             }
