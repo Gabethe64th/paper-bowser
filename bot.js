@@ -2471,7 +2471,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                     }
                                     else{
                                         players9.push(user.username);
-                                        rawplayers9(user);
+                                        rawplayers9.push(user);
                                     }
                                     
                                     message.channel.sendMessage("[/////PLAYERS/////]");
