@@ -1471,7 +1471,7 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
             break;
 
             case "no u":
-                message.channel.send(fightie+"'s attack was countered! **"+fighter+"** gains back thier hp, and deals back half the damage!")
+                message.channel.send(fightie+"'s attack was countered! **"+fighter+"** gains back their hp, and deals back half the damage!")
                 damagePlayer(theother, (dam * -1))
                 damagePlayer(towhom, (dam / 2))
             break;
@@ -2394,7 +2394,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         
         
                             case '9+':
-                                message.channel.send("Welcome to 9+! A simple card game where you cannot exceed the number 9!\n\n```Commands: \nv!9+create - Create a room.\nv!9+jion - Join an existing room.\nv!9+cancel - Cancel a match.```");
+                                message.channel.send("Welcome to 9+! A simple card game where you cannot exceed the number 9!\n\n```Commands: \nv!9+create - Create a room.\nv!9+join - Join an existing room.\nv!9+cancel - Cancel a match.```");
                                 break;
 
                             case '9+create':
