@@ -2037,6 +2037,8 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         var a9match = false;
         var a9game = false;
         var a9channel;
+        var j;
+        var maintotal;
         
         
         bot.on('message', message=> {
@@ -2437,6 +2439,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                     message.channel.send("`Let's begin!`")
                                     shareOutCards();
                                     a9game = true;
+                                    begin9Match();
                                 }
                             break;
 
@@ -2503,6 +2506,47 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
                                     innercardpile[i] = [cards9[carda], cards9[cardb], cards9[cardc], cards9[cardd]];
                                     bot.users.get(rawplayers9[i]).send("`Your cards:` \n"+innercardpile[i]);
+                                }
+                            }
+
+                            function begin9Match(){
+                                j = 0;
+                                message.channel.send("**"+players9[0]+"**, it's your turn!")
+                            }
+
+                            function continue9Match(){
+                                if (players9[j] == undefined){
+                                    j = 0;
+                                }
+                                checkPlayerAmount();
+                                if (a9game == true){
+                                message.channel.send("**"+players9[j]+"**, it's your turn!")
+                                }
+                            }
+
+                            function addthisCardToPile(card){
+                                maintotal += card;
+                                message.channel.send("A "+card+" number was added. \n`The total is now: "+maintotal)
+                            }
+
+                            function checkTotal(total){
+                                if (maintotal > 9){
+                                    message.channel.send("**The limit of 9 was exceeded. "+players9[j]+" has been removed.")
+                                    pos = j;
+                                    let removedPlayerName = players9.splice(pos, 1)
+                                    let removedPlayerID = rawplayers9.splice(pos, 1)
+                                    let removedDeck = innercardpile.splice(pos, 1)
+                                    continue9Match();
+                                }
+                                else {
+                                    continue9Match();
+                                }
+                            }
+
+                            function checkPlayerAmount(){
+                                if (players9.length == 1){
+                                    message.channel.send("The game is over! \n`"+players9[0]+" WINS!` :tada:")
+                                    end9Match();
                                 }
                             }
 
@@ -2869,7 +2913,20 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         
                }
         
-               //dicegame
+            
+               //9+
+
+            if (message.author.username == players9[j]){
+                for (i = 0; i < innercardpile[j].length; i++){
+                    if (message == innercardpile[j][i]){
+                        addthisCardToPile(innercardpile[j][i])
+                        pos = i;
+                        let removedCard = innercardpile[j][i].splice(pos, 1)
+                        i = 5;
+                    }
+
+                }
+            }
                
         
         
