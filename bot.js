@@ -2483,6 +2483,8 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                     addPlayerto064(message.author);
                                 }
 
+                            break;
+
 
 
 
