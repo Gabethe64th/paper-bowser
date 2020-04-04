@@ -2394,7 +2394,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         
         
                             case '9+':
-                                message.channel.send("Welcome to 9+! A simple card game where you cannot exceed the number 9!\n\n```Commands: \nv!9+create - Create a room.\nv!9+join - Join an existing room.\nv!9+cancel - Cancel a match.```");
+                                message.channel.send("Welcome to 9+! A simple card game where you cannot exceed the number 9!\n\n```Commands: \nv!9+create - Create a room.\nv!9+join - Join an existing room.\nv!9+start - Begin the match\nv!9+cancel - Cancel a match.```");
                                 break;
 
                             case '9+create':
