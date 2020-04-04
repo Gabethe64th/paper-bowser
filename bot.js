@@ -2834,6 +2834,17 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                         addCard(jazz)
                         pos = i;
                         let removedCard = icp.splice(pos, 1)
+                        if (icp = undefined){
+                            bot.users.get(rawplayers9[y]).send("You're out of cards. Refreshing...");
+                            carda = Math.floor (Math.random() * cards9.length);
+                        cardb = Math.floor (Math.random() * cards9.length);
+                        cardc = Math.floor (Math.random() * cards9.length);
+                        cardd = Math.floor (Math.random() * cards9.length);
+
+                        innercardpile[i] = [cards9[carda], cards9[cardb], cards9[cardc], cards9[cardd]];
+
+                        bot.users.get(rawplayers9[y]).send(icp);
+                        }
                         bot.users.get(rawplayers9[y]).send("`Your cards:` \n"+icp);
                         i = 5;
                     }
