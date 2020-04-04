@@ -3037,7 +3037,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
                //o64
                if (message.author == players64[dm] && args[1] == undefined){
-                   if (message.content == NaN){
+                   if (isNaN(message.content)){
                        message.channel.send("That's...not even a number. \n`Provide a number between 1-10.`")
                    }
                    else {
@@ -3085,7 +3085,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 
                 var secretOne = players64[dm];
                 if (players64[dm] == undefined){
-                    secretOne = players64[0]
+                    dm = 0;
                 }
 
                 bot.channels.get(o64channel).send("It's **"+players64[dm].username+"'s** turn to pick a card...")
