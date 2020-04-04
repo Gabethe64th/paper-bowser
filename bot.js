@@ -3041,7 +3041,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                        message.channel.send("That's...not even a number. \n`Provide a number between 1-10.`")
                    }
                    else {
-                       ln = message.content;
+                       ln = message;
                        if ((ln < 1) || (ln > 10)){
                            message.channel.send("No one's gonna believe that.\n`Provide a number between 1-10.`")
                        }
@@ -3090,7 +3090,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
                 bot.channels.get(o64channel).send("It's **"+players64[dm].username+"'s** turn to pick a card...")
                 tn = cards64[o64number];
-                o64truedeck += tn;
+                o64truedeck = o64truedeck + tn;
                 bot.users.get(players64[dm].id).send("You got a **"+tn+"!** \nNow...what do you tell everyone it is?")
                 
             }
@@ -3108,7 +3108,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             }
 
             function call64Bluff(){
-                claim = players64.find(message.author);
+                claim = players64.indexOf(message.author);
                 if (players64[claim] != undefined){
                     if (o64truedeck <= 64){
                         message.channel.send("`Oh, too bad! The real deck is NOT over 64 yet!` \n**"+players64[claim]+" has been removed for lying.**")
