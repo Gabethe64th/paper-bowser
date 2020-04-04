@@ -2834,7 +2834,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                         addCard(jazz)
                         pos = i;
                         let removedCard = icp.splice(pos, 1)
-                        if (icp = undefined){
+                        if (icp == undefined){
                             bot.users.get(rawplayers9[y]).send("You're out of cards. Refreshing...");
                             carda = Math.floor (Math.random() * cards9.length);
                             cardb = Math.floor (Math.random() * cards9.length);
