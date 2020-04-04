@@ -2439,6 +2439,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                     shareOutCards();
                                     a9game = true;
                                 }
+                            break;
 
 
 
