@@ -2828,13 +2828,14 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             if (message.author.username == players9[j]){
                 icp = innercardpile[j];
                 y = j;
+                ycp = innercardpile[y];
                 for (i = 0; i < icp.length; i++){
                     if (message == icp[i]){
                         jazz = icp[i]
                         addCard(jazz)
                         pos = i;
                         let removedCard = icp.splice(pos, 1)
-                        if (icp == undefined){
+                        if (ycp.length == 0){
                             bot.users.get(rawplayers9[y]).send("You're out of cards. Refreshing...");
                             carda = Math.floor (Math.random() * cards9.length);
                             cardb = Math.floor (Math.random() * cards9.length);
