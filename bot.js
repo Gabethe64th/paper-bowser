@@ -2462,6 +2462,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                     message.channel.send("`Creating Room...`")
                                     addPlayerto064(message.author)
                                     o64channel = message.channel.id;
+                                    o64join = true;
                                 }
                                 else {
                                     message.channel.send("`ERROR: A game is already starting/has already started.`")
