@@ -2457,99 +2457,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
 
 
-                            function addPlayerto9match(user){
-                                tester = false;
-                                var playerlist = ""
-                                for (i = 0; i < players9.length; i++){
-                                    if (players9[i] == user.username){
-                                        tester = true;
-                                    }
-                                }
-                                if (tester == true){
-                                    message.channel.sendMessage("You're already added to the list!");
-                                }
-                                else{
-                                    if (players9[0] == 0){
-                                        players9[0] = user.username;
-                                        rawplayers9[0] = user.id;
-                                    }
-                                    else{
-                                        players9.push(user.username);
-                                        rawplayers9.push(user.id);
-                                    }
-                                    
-                                    message.channel.sendMessage("[/////PLAYERS/////]");
-                                    for (i = 0; i < players9.length; i++){
-                                        
-                                        playerlist += players9[i]+"\n";
-                                        
-                                    }
-                                    message.channel.send(playerlist)
-
-                                }
-                            }
-
-                            function end9Match(){
-                                players9 = [0];
-                                rawplayers9 = [0];
-                                a9match = false;
-                                a9game = false;
-                                a9channel = undefined;
-                            }
-
-                            function shareOutCards(){
-                                for (i = 0; i < players9.length; i++){
-                                    carda = Math.floor (Math.random() * cards9.length);
-                                    cardb = Math.floor (Math.random() * cards9.length);
-                                    cardc = Math.floor (Math.random() * cards9.length);
-                                    cardd = Math.floor (Math.random() * cards9.length);
-
-                                    innercardpile[i] = [cards9[carda], cards9[cardb], cards9[cardc], cards9[cardd]];
-                                    bot.users.get(rawplayers9[i]).send("`Your cards:` \n"+innercardpile[i]);
-                                }
-                            }
-
-                            function begin9Match(){
-                                j = 0;
-                                message.channel.send("**"+players9[0]+"**, it's your turn!")
-                            }
-
-                            function continue9Match(){
-                                if (players9[j] == undefined){
-                                    j = 0;
-                                }
-                                checkPlayerAmount();
-                                if (a9game == true){
-                                message.channel.send("**"+players9[j]+"**, it's your turn!")
-                                }
-                            }
-
-                            function addCard(card){
-                                maintotal += card;
-                                message.channel.send("A "+card+" number was added. \n`The total is now: "+maintotal)
-                                checkTotal()
-                            }
-
-                            function checkTotal(){
-                                if (maintotal > 9){
-                                    message.channel.send("**The limit of 9 was exceeded. "+players9[j]+" has been removed.")
-                                    pos = j;
-                                    let removedPlayerName = players9.splice(pos, 1)
-                                    let removedPlayerID = rawplayers9.splice(pos, 1)
-                                    let removedDeck = innercardpile.splice(pos, 1)
-                                    continue9Match();
-                                }
-                                else {
-                                    continue9Match();
-                                }
-                            }
-
-                            function checkPlayerAmount(){
-                                if (players9.length == 1){
-                                    message.channel.send("The game is over! \n`"+players9[0]+" WINS!` :tada:")
-                                    end9Match();
-                                }
-                            }
+                           
 
 
 
@@ -2928,6 +2836,100 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                         i = 5;
                     }
 
+                }
+            }
+
+            function addPlayerto9match(user){
+                tester = false;
+                var playerlist = ""
+                for (i = 0; i < players9.length; i++){
+                    if (players9[i] == user.username){
+                        tester = true;
+                    }
+                }
+                if (tester == true){
+                    message.channel.sendMessage("You're already added to the list!");
+                }
+                else{
+                    if (players9[0] == 0){
+                        players9[0] = user.username;
+                        rawplayers9[0] = user.id;
+                    }
+                    else{
+                        players9.push(user.username);
+                        rawplayers9.push(user.id);
+                    }
+                    
+                    message.channel.sendMessage("[/////PLAYERS/////]");
+                    for (i = 0; i < players9.length; i++){
+                        
+                        playerlist += players9[i]+"\n";
+                        
+                    }
+                    message.channel.send(playerlist)
+
+                }
+            }
+
+            function end9Match(){
+                players9 = [0];
+                rawplayers9 = [0];
+                a9match = false;
+                a9game = false;
+                a9channel = undefined;
+            }
+
+            function shareOutCards(){
+                for (i = 0; i < players9.length; i++){
+                    carda = Math.floor (Math.random() * cards9.length);
+                    cardb = Math.floor (Math.random() * cards9.length);
+                    cardc = Math.floor (Math.random() * cards9.length);
+                    cardd = Math.floor (Math.random() * cards9.length);
+
+                    innercardpile[i] = [cards9[carda], cards9[cardb], cards9[cardc], cards9[cardd]];
+                    bot.users.get(rawplayers9[i]).send("`Your cards:` \n"+innercardpile[i]);
+                }
+            }
+
+            function begin9Match(){
+                j = 0;
+                message.channel.send("**"+players9[0]+"**, it's your turn!")
+            }
+
+            function continue9Match(){
+                if (players9[j] == undefined){
+                    j = 0;
+                }
+                checkPlayerAmount();
+                if (a9game == true){
+                message.channel.send("**"+players9[j]+"**, it's your turn!")
+                }
+            }
+
+            function addCard(card){
+                maintotal += card;
+                message.channel.send("A "+card+" number was added. \n`The total is now: "+maintotal)
+                checkTotal();
+            }
+
+            function checkTotal(){
+                if (maintotal > 9){
+                    message.channel.send("**The limit of 9 was exceeded. "+players9[j]+" has been removed.")
+                    pos = j;
+                    let removedPlayerName = players9.splice(pos, 1)
+                    let removedPlayerID = rawplayers9.splice(pos, 1)
+                    let removedDeck = innercardpile.splice(pos, 1)
+                    continue9Match();
+                }
+                else {
+                    continue9Match();
+                }
+            }
+
+            function checkPlayerAmount(){
+                if (players9.length == 1){
+                    message.channel.send("The game is over! \n`"+players9[0]+" WINS!` :tada:")
+                    end9Match();
                 }
             }
                
