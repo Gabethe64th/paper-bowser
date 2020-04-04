@@ -2925,6 +2925,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     continue9Match();
                 }
                 else {
+                    bot.users.get(rawplayers9[j]).send("`Your cards:` \n"+innercardpile[j]);
                     j++;
                     continue9Match();
                 }
