@@ -2051,7 +2051,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         var dm;
         var tn = 0;
         var ln = 0;
-        var claim;
+        var claim = 0;
 
         
         
@@ -3037,7 +3037,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
                //o64
                if (message.author == players64[dm] && args[1] == undefined){
-                   if (isNaN(message.content)){
+                   if (isNaN(message)){
                        message.channel.send("That's...not even a number. \n`Provide a number between 1-10.`")
                    }
                    else {
@@ -3083,7 +3083,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             function maino64(){
                 o64number = Math.floor (Math.random() * cards64.length);
                 
-                var secretOne = players64[dm];
+                
                 if (players64[dm] == undefined){
                     dm = 0;
                 }
