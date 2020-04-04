@@ -2833,6 +2833,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                         addCard(jazz)
                         pos = i;
                         let removedCard = icp.splice(pos, 1)
+                        bot.users.get(rawplayers9[j]).send("`Your cards:` \n"+icp);
                         i = 5;
                     }
 
@@ -2925,7 +2926,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     continue9Match();
                 }
                 else {
-                    bot.users.get(rawplayers9[j]).send("`Your cards:` \n"+innercardpile[j]);
+                    
                     j++;
                     continue9Match();
                 }
