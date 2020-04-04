@@ -2040,6 +2040,13 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         var j;
         var maintotal = 0;
         var onegone = false;
+
+        var cards64 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        var players64 = [];
+        var o64channel = undefined;
+        var o64join = false;
+        var o64game = false;
+
         
         
         bot.on('message', message=> {
@@ -2446,8 +2453,35 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
 
 
+                            case 'o64':
+                                message.channel.send("Welcome to o64! A game where you can't trust ANYBODY.\n\n```Game Hosting Commands:\nv!o64create - Create a Room\nv!o64join - Join a Room\nv!o64start - Start the Game\nv!o64stop - Cancel the Game");
+                            break;
 
+                            case 'o64create':
+                                if (o64join == false){
+                                    message.channel.send("`Creating Room...`")
+                                    addPlayerto064(message.author)
+                                    o64channel = message.channel.id;
+                                }
+                                else {
+                                    message.channel.send("`ERROR: A game is already starting/has already started.`")
+                                }
 
+                            break;
+
+                            case 'o64join':
+                                if (o64join == false){
+                                    message.channel.send("There is no game to join. Maybe try creating a new one?")
+                                }
+                                else if (o64join == true && message.channel.id != o64channel){
+                                    message.channel.send("There is a game going on elsewhere.")
+                                }
+                                else if (o64game == true){
+                                    message.channel.send("You cannot join a match that has already started.")
+                                }
+                                else{
+                                    addPlayerto064(message.author);
+                                }
 
 
 
@@ -2862,7 +2896,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
             function addPlayerto9match(user){
                 tester = false;
-                var playerlist = ""
+                var playerlist = "[/////PLAYERS/////]\n"
                 for (i = 0; i < players9.length; i++){
                     if (players9[i] == user.username){
                         tester = true;
@@ -2881,7 +2915,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                         rawplayers9.push(user.id);
                     }
                     
-                    message.channel.sendMessage("[/////PLAYERS/////]");
+                    
                     for (i = 0; i < players9.length; i++){
                         
                         playerlist += players9[i]+"\n";
@@ -2960,9 +2994,40 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     end9Match();
                 }
             }
+
+
+
+
+
+
+
                
         
-        
+            function addPlayerto064(user){
+                tester = false;
+                
+                var playerlist64 = "[/////PLAYERS/////]\n"
+                for (i = 0; i < players64.length; i++){
+                    if (players64[i] == user){
+                        tester = true;
+                    }
+                }
+                if (tester == true){
+                    message.channel.sendMessage("You're already in the player list.");
+                }
+                else{
+                    players64.push(user)
+                    
+                    
+                    for (i = 0; i < players64.length; i++){
+                        
+                        playerlist64 += players64[i].username+"\n";
+                        
+                    }
+                    message.channel.send(playerlist64)
+
+                }
+            }
                
         
             
