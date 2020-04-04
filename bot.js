@@ -2025,13 +2025,17 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         start = 0;
         path = 0;
 
-        cards9 = [0, 1, 2, 3];
+        var cards9 = [0, 1, 2, 3];
         var players9 = [0];
+        var rawplayers9 = [];
+        var innercardpile = [];
+        var outercardpile = [];
         p1cardpile = [];
         p2cardpile = [];
         p3cardpile = [];
         p4cardpile = [];
         var a9match = false;
+        var a9game = false;
         var a9channel;
         
         
@@ -2392,7 +2396,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
                             case '9+create':
                                 if (a9match == true){
-                                    message.channel.sendMessage("Oops! It seems like a room is already created!")
+                                    message.channel.sendMessage("Oops! It seems like a room is already created! \n`You can join using 'v!9+join'.`")
                                 }
                                 else {
                                     message.channel.sendMessage("Alright! Creating a room!")
@@ -2416,13 +2420,25 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                 break;
 
                             case '9+cancel':
-                                if (a9match == true){
+                                if (a9match == true && message.channel.id == a9channel){
                                 message.channel.send("`Scrapping the match...`")
                                 players9 = [0];
+                                rawplayers9 = [];
                                 a9match = false;
+                                a9game = false;
                                 a9channel = undefined;
                                 }
+                                else {
+                                    message.channel.send("`There was an error while doing this.`")
+                                }
                                 break;
+
+                            case '9+start':
+                                if (a9match == true && message.channel.id == a9channel){
+                                    message.channel.send("`Let's begin!`")
+                                    shareOutCards();
+                                    a9game = true;
+                                }
 
 
 
@@ -2455,6 +2471,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                     }
                                     else{
                                         players9.push(user.username);
+                                        rawplayers9(user);
                                     }
                                     
                                     message.channel.sendMessage("[/////PLAYERS/////]");
@@ -2465,6 +2482,18 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                     }
                                     message.channel.send(playerlist)
 
+                                }
+                            }
+
+                            function shareOutCards(){
+                                for (i = 0; i < players9.length; i++){
+                                    carda = Math.floor (Math.random() * cards9.length);
+                                    cardb = Math.floor (Math.random() * cards9.length);
+                                    cardc = Math.floor (Math.random() * cards9.length);
+                                    cardd = Math.floor (Math.random() * cards9.length);
+
+                                    innercardpile[i] = [cards9[carda], cards9[cardb], cards9[cardc], cards9[cardd]];
+                                    bot.users.get(rawplayers9[i].id).send("`Your cards:` \n"+innercardpile);
                                 }
                             }
 
