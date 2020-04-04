@@ -2530,7 +2530,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                 checkTotal()
                             }
 
-                            function checkTotal(total){
+                            function checkTotal(){
                                 if (maintotal > 9){
                                     message.channel.send("**The limit of 9 was exceeded. "+players9[j]+" has been removed.")
                                     pos = j;
