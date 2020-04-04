@@ -2394,7 +2394,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         
         
                             case '9+':
-                                message.channel.send("Welcome to 9+! A simple card game where you cannot exceed the number 9!\n\nThis game is currently in testing as a bot command before it is used elsewhere.");
+                                message.channel.send("Welcome to 9+! A simple card game where you cannot exceed the number 9!\n\n```Commands: \nv!9+create - Create a room.\nv!9+jion - Join an existing room.\nv!9+cancel - Cancel a match.```");
                                 break;
 
                             case '9+create':
@@ -2923,13 +2923,14 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 }
                 checkPlayerAmount();
                 if (a9game == true){
-                message.channel.send("**"+players9[j]+"**, it's your turn!")
+                bot.channels.get(a9channel).send("**"+players9[j]+"**, it's your turn!")
                 }
             }
 
             function addCard(card){
                 maintotal += card;
-                message.channel.send("A "+card+" card was added. \n`The total is now: "+maintotal+"`")
+                bot.channels.get(a9channel).send("A "+card+" card was added. \n`The total is now: "+maintotal+"`");
+                //message.channel.send("A "+card+" card was added. \n`The total is now: "+maintotal+"`")
                 checkTotal();
             }
 
