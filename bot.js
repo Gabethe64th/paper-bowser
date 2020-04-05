@@ -3145,7 +3145,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 claim = players64.indexOf(message.author);
                 if (players64[claim] != undefined){
                     if (o64truedeck <= 64){
-                        message.channel.send("`Oh, too bad! The real deck is NOT over 64 yet!` \n**"+players64[claim].username+" has been removed for lying.**")
+                        message.channel.send("`Oh, too bad! The real deck is NOT over 64 yet!` \n**"+players64[claim].username+" has been executed for lying.**")
                         players64.splice(claim, 1);
                         check64Players();
                     }
