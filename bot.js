@@ -3039,7 +3039,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
 
                //o64
-               if (message.author == players64[dm] && args[1] == undefined){
+               if (message.author == players64[dm] && args[1] == undefined && o64game == true){
                    if (isNaN(message)){
                        message.channel.send("That's...not even a number. \n`Provide a number between 1-10.`")
                    }
