@@ -3046,8 +3046,9 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                            message.channel.send("No one's gonna believe that.\n`Provide a number between 1-10.`")
                        }
                        else{
-                           o64liedeck += ln;
-                        bot.channels.get(o64channel).send("**"+players64[dm].username+"** has claimed to place a **"+ln+".**\n`The total is now told to be: "+o64liedeck+".`")
+                           ln = cards64.indexOf(ln);
+                           o64liedeck += cards64[ln];
+                        bot.channels.get(o64channel).send("**"+players64[dm].username+"** has claimed to place a **"+cards64[ln]+".**\n`The total is now told to be: "+o64liedeck+".`")
                         dm++;
                         maino64();
                        }
