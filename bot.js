@@ -3041,11 +3041,12 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                        message.channel.send("That's...not even a number. \n`Provide a number between 1-10.`")
                    }
                    else {
-                       if ((message < 1) || (message > 10)){
+                       ln = message;
+                       if ((ln < 1) || (ln > 10)){
                            message.channel.send("No one's gonna believe that.\n`Provide a number between 1-10.`")
                        }
                        else{
-                           o64liedeck += message;
+                           o64liedeck += ln;
                         bot.channels.get(o64channel).send("**"+players64[dm].username+"** has claimed to place a **"+ln+".**\n`The total is now told to be: "+o64liedeck+".`")
                         dm++;
                         maino64();
@@ -3110,7 +3111,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 claim = players64.indexOf(message.author);
                 if (players64[claim] != undefined){
                     if (o64truedeck <= 64){
-                        message.channel.send("`Oh, too bad! The real deck is NOT over 64 yet!` \n**"+players64[claim]+" has been removed for lying.**")
+                        message.channel.send("`Oh, too bad! The real deck is NOT over 64 yet!` \n**"+players64[claim].username+" has been removed for lying.**")
                         players64.splice(claim, 1);
                         check64Players();
                     }
