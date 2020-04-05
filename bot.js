@@ -3041,40 +3041,40 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                        message.channel.send("That's...not even a number. \n`Provide a number between 1-10.`")
                    }
                    else {
-                       ln = message;
+                       ln = message.content;
                        if ((ln < 1) || (ln > 10)){
                            message.channel.send("No one's gonna believe that.\n`Provide a number between 1-10.`")
                        }
                        else{
                            switch (ln){
-                               case 1:
+                               case "1":
                                     o64liedeck += 1;
                                break;
-                               case 2:
+                               case "2":
                                     o64liedeck += 2;
                                break;
-                               case 3:
+                               case "3":
                                     o64liedeck += 3;
                                break;
-                               case 4:
+                               case "4":
                                     o64liedeck += 4;
                                break;
-                               case 5:
+                               case "5":
                                     o64liedeck += 5;
                                break;
-                               case 6:
+                               case "6":
                                     o64liedeck += 6;
                                break;
-                               case 7:
+                               case "7":
                                     o64liedeck += 7;
                                break;
-                               case 8:
+                               case "8":
                                     o64liedeck += 8;
                                break;
-                               case 9:
+                               case "9":
                                     o64liedeck += 9;
                                break;
-                               case 10:
+                               case "10":
                                     o64liedeck += 10;
                                break;
                            }
