@@ -3151,6 +3151,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     }
                     else if (o64truedeck > 64){
                         message.channel.send("`Hold the phone! The deck IS truly over 64!\nThe game is over!`\n**"+players64[claim].username+" WINS!!!** :tada:")
+                        end64game();
                     }
                 }
             }
