@@ -3046,9 +3046,39 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                            message.channel.send("No one's gonna believe that.\n`Provide a number between 1-10.`")
                        }
                        else{
-                           ln = cards64.indexOf(message.cleanContent);
-                           o64liedeck += cards64[ln];
-                        bot.channels.get(o64channel).send("**"+players64[dm].username+"** has claimed to place a **"+cards64[ln]+".**\n`The total is now told to be: "+o64liedeck+".`")
+                           switch (ln){
+                               case 1:
+                                    o64liedeck += 1;
+                               break;
+                               case 2:
+                                    o64liedeck += 2;
+                               break;
+                               case 3:
+                                    o64liedeck += 3;
+                               break;
+                               case 4:
+                                    o64liedeck += 4;
+                               break;
+                               case 5:
+                                    o64liedeck += 5;
+                               break;
+                               case 6:
+                                    o64liedeck += 6;
+                               break;
+                               case 7:
+                                    o64liedeck += 7;
+                               break;
+                               case 8:
+                                    o64liedeck += 8;
+                               break;
+                               case 9:
+                                    o64liedeck += 9;
+                               break;
+                               case 10:
+                                    o64liedeck += 10;
+                               break;
+                           }
+                        bot.channels.get(o64channel).send("**"+players64[dm].username+"** has claimed to place a **"+ln+".**\n`The total is now told to be: "+o64liedeck+".`")
                         dm++;
                         maino64();
                        }
