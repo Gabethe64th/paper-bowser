@@ -2515,6 +2515,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                 }
                                 else {
                                     dm = 0;
+                                    o64game = true;
                                     maino64();
                                 }
                             break;
