@@ -2502,6 +2502,9 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                 else if (o64join == true && message.channel.id != o64channel){
                                     message.channel.send("That command wouldn't work here.")
                                 }
+                                else if (players64.length < 2){
+                                    message.channel.send("There are too little people to start a match.")
+                                }
                                 else {
                                     dm = 0;
                                     maino64();
