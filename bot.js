@@ -2407,8 +2407,12 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         
         
                             case '9+':
-                                message.channel.send("Welcome to 9+! A simple card game where you cannot exceed the number 9!\n\n```Commands: \nv!9+create - Create a room.\nv!9+join - Join an existing room.\nv!9+start - Begin the match\nv!9+cancel - Cancel a match.```");
+                                message.channel.send("Welcome to 9+! A simple card game where you cannot exceed the number 9!\n\n```Commands: \nv!9+rules - View the rules.\nv!9+create - Create a room.\nv!9+join - Join an existing room.\nv!9+start - Begin the match\nv!9+cancel - Cancel a match.```");
                                 break;
+
+                            case '9+rules':
+                                    message.channel.send("**How do I play 9+?**\n\n-At the start of the game, you will receive 4 cards between 0-3.\n-When it's your turn, you type a card number which you currently own, and that number will be added towards a total.\n-If you play a number that makes the total go over 9, you will be removed and the game will reset with the remaining players.\n**-The last player standing wins!**")
+                            break;
 
                             case '9+create':
                                 if (a9match == true){
@@ -2460,7 +2464,11 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
 
                             case 'o64':
-                                message.channel.send("Welcome to o64! A game where you can't trust ANYBODY.\n\n```Game Hosting Commands:\nv!o64create - Create a Room\nv!o64join - Join a Room\nv!o64start - Start the Game\nv!o64stop - Cancel the Game\n\nIn-Game:\nv!o64w - Claim to be over 64```");
+                                message.channel.send("Welcome to o64! A game where you can't trust ANYBODY.\n\n```Game Hosting Commands:\nv!o64rules - View the rules.\nv!o64create - Create a Room\nv!o64join - Join a Room\nv!o64start - Start the Game\nv!o64stop - Cancel the Game\n\nIn-Game:\nv!o64w - Claim to be over 64```");
+                            break;
+
+                            case 'o64rules':
+                                message.channel.send("**What is this game and how does it work?**\n-This game has 2 main totals: The 'true' total and the 'visible' total.\n-One by one, each player will receive a number from Virus (1-10), which will be automatically added to the 'true' total.\n-The player who just received a number can say what it is, or lie about which number they got. Either way, the number they claimed to have will be added onto the 'visible' total for everyone to see.\n\n**How do you win?**\n-If you believe the 'true' total has reached a number over 64, type `v!o64w` to claim so.\n-If it's true, you win! If not, however, you will be executed for lying.\n-The game will end if a player claims correctly, or if there are no players left.")
                             break;
 
                             case 'o64create':
