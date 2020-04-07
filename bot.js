@@ -2548,7 +2548,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
 
 
-                            
+
                             case 'pwp':
                                 message.channel.send('Welcome to PWP (Playing with Power)! The game where you have to run out of cards as fast as possible!\n\n```Commands: v!pwprules - Shows the rules\nv!pwpcreate - Create a room\nv!pwpjoin - Join a room\npwpstart - Start the game\nv!pwpstop - Stop the game```')
                             break;
@@ -2562,6 +2562,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                     message.channel.send("A game is already in session.")
                                 }
                                 else{
+                                    pwpjoin = true;
                                     pwpchannel = message.channel.id;
                                     addPlayertopwp(message.author)
                                 }
