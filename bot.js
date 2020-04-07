@@ -2018,6 +2018,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         questions1 = ["`Instead of singing, Dru messes around with an instrument you can't fit in your pocket. What is it?`", "`What's the indie rhythm game that both Gabe and Reni can be seen gushing over?`", "`Other than bees, there is another animal which, if seen in a meme, you could say 'Oh yeah, that's a meme for Cain.' What is that animal?`", "`What was the name of the roleplay arc that featured a pen as a bad guy? (It's also the subheading for a Smash game!)`", "`Other than Pip, who else is the purest of them all?`", "`What is the name of the bird that made its debut in Angry Birds 2, and is mentioned as Chuck's sister in the game's second movie?`", "`What activity does Dru, Moon, Izzle, Hatless, Pip, Pkoby and Irri have in common? (Other than Roleplay!)`", "`Who's the person that requested the 'v!slot' command?`", "`Who's the only child from Irri and Cain's family that is NOT in Jerry's Server?`", "`What word does Izzle hate to be called, Dru wants to be called, and applies to both Korbs and Name?`", "`What's the subheading for the Mario spinoff that once had an innuendo in one of its ads?`", "`Irri's Birthday is near the end of which month?`", "`Before Reni changed his name, what nickname was he FIRST referred to as?`", "`Who was the person who had their first custom status as an animated emoji followed by the words 'love you all'?`", "`Who once had a nickname titled 'Moody Girl' in Jerry's Server?`", "`Who was the female discord user that brung the most joy in VCs when paired with Kir b in the older days? (She's also a non-trans female without an endless channel.)`", "`What was the name of the fictional character that owns the Inn? (And is an OC owned my Reni?)`", "`Fill in the blanks: 'Dys' character, known as 'Dyshero' was formerly called _______ Hero before his sprite got updated to what we know today.'`", "`What is the name of the cartoon that was shown on Disney Channel which had over 300 songs?`", "`What is the subheading for the Smash game which had a gliding mechanic for winged characters?`", "`What is the nickname for the roleplayer who disagrees with the off-topic rule more than the others? (His nickname is also an ammo for bows.)`", "`Fill in the blank: 'What does Mr. Game and Watch, Lucina, and Paper Mario have in common? Well, for one thing, they're all ____.'`", "`During the time when Mimik first changed his name to Reun, he also changed the name of his endless to encourage everyone else to mention him by the name 'Reun'. What was the name of his endless channel at that time?`", "`What is the name of the Mario spinoff that contained an underwater section for Bowser's Castle?`",  "`In the Mario Kart Wii's Instruction Booklet, at the last page which shows a picture of the gang in a race, what item is Bowser holding?`", "`Who is 'Gerald' in Jerry's Server?`", "`Who has an endless channel with the discription saying 'I guess this is kinda the unofficial Smash channel? Working on backlog though so it isn't fully smash stuff.'?`", "`Other than 'pure', what's another adjective people use for Pip, even though she sometimes doesn't like to be called that word?`", "`Who's birthday is on the day before Halloween?`", "`What is the item that is seen on a Pixar logo?`", "`Who was the female discord user that once got Dru upset (When he was known as the Galactic Nova) because the chat exploded on her appearance?`", "`Who is the discord user that has the word 'waifu' in a strikethrough in their personal command?`", "`Fill in the blank: 'Despite not being the official name, the Nintendo Discord server can be mentioned as Irri's _____.'`", "`Izzle's roleplay character can be argued to be similar to TruDru because she can be seen holding an art supply. What is it?`", "`Other than Gabe, who else is planning the creation of a game in Jerry's Server?`", "`What is the name of the command that requires you to get 20 fruits in a row to win?`", "`What weapon does Joker use in his neutral special in Smash?`", "`On the (former) Nintendo Music Stream, which character gif isn't taken from an official Nintendo game?`", "`What is the subheading for the WarioWare game which included both Tilting and Touching as game input?`", "`Other than doors, what method of travel in the same subarea is available in Super Mario 3D World's theme in Super Mario Maker 2?`", "`What song did Jimbo sing that was then shown in Jerry's YouTube Channel?`", "`Which person in Irri's Harem can be seen often using the joke 'Your Mom' in VCs?`", "`Who streams the most in #secret-base?`", "`What is the name of the urban location that contains a stream of water which is infamous for a man falling in?`", "`What is Jet's new nickname?`", "`Who's the anime girl that has a recent meme of her walking around Minecraft, and various other places? (She comes from a song!)`", "`Who once called themself 'the man behind the slaughter.'?`", "`Who's most likely to say 'Ok Dru' when Dru says something in a VC?`", "`Who is our lord and saviour?`", "`Fill in the blanks: ___ is best in. gaem.`", "`Is Name cute?`", "`Fill in the blanks: Hoes ___!`", "`If you're at a urinal and you see a picture of Shadow the Hedgehog, what words are most likely to be seen above him?`", "`What do you call a guy, two guys, two guys, one falls?`", "`Phobos' 'RIP AND TEAR' command is a reference to what game series?`", "`In hentai, what does a 18-year old sister call her brother before smut happens?`", "`What board game has you to become a simp for a queen figure?`", "`What's the name of Terry Bogard's dog?`", "`Who once celebrated Izzle's death?`", "`Fill in the blanks: CAN'T ESCAPE FROM CROSSING ____.`", "`What would be the first word you will hear when you play the song 'Mass Destruction'?`",  "`What adjective does Moon (alongside Ghost) normally call Dru?`", "`Who's the OG hottie that will normally have a pfp of Celeste?`", "`What block has the power to nuke your house if you click on it 5 times with Glowstone?`", "`Which indie game allows you to pick up and keep a female character's underwear?`", "`What fictional character makes TruthTomato feel happy?`", "`Who can show you how to scratch it?`", "`Who's is Moon's waifu that can stab herself if pressured enough by loving someone?`", "`Who is referred to as 'The Pussy Destroyer'?`"]
         answers1 = ["piano", "rhythm doctor", "duck", "ultimate arc", "pkoby", "silver", "drawing", "korbs", "jimbo", "furry", "strikers", "november", "mimik", "ender", "jet", "maeva", "vis", "gameboy", "phineas and ferb", "brawl", "arrow", "flat", "call me reun", "mario kart 7", "blue shell", "mee6", "rb", "cute", "dru", "lamp", "florp", "moon", "harem", "paintbrush", "pip", "gayslots", "gun", "yoshi", "gold", "warp box", "photograph", "ellie", "vessel", "lego city", "phobos", "mio", "snoop", "ghost", "jesus christ", "dmc", "yes", "mad", "nice cock", "loss", "doom", "onii-chan", "chess", "buster wolf", "kir b", "fate", "baby", "simp", "jasper", "respawn anchor", "cave story", "isabelle", "thanos", "yuri", "moon"]
 
+        //snek
         ladderA = [2, 7, 8, 15, 21, 28, 36, 51, 71, 78, 87];
         ladderB = [38, 14, 31, 26, 42, 84, 44, 67, 91, 98, 94];
         snekA = [16, 46, 49, 62, 64, 74, 89, 92, 95, 99];
@@ -2025,6 +2026,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         start = 0;
         path = 0;
 
+        //9+
         var cards9 = [0, 1, 2, 3];
         var players9 = [0];
         var rawplayers9 = [0];
@@ -2041,6 +2043,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         var maintotal = 0;
         var onegone = false;
 
+        //o64
         var cards64 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
         var players64 = [];
         var o64channel = undefined;
@@ -2053,6 +2056,17 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         var ln = 0;
         var claim = 0;
 
+        //pwp
+        var numspwp = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'T', 'W', 'R', 'X', 'D'];
+        var typespwp = ['R', 'G', 'B', 'Y'];
+        var currentnum;
+        var currenttype;
+        var playerspwp = [];
+        var pwpchannel = undefined;
+        var pwpjoin = false;
+        var pwpgame = false;
+        var danger = false;
+        
         
         
         bot.on('message', message=> {
@@ -2407,7 +2421,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         
         
                             case '9+':
-                                message.channel.send("Welcome to 9+! A simple card game where you cannot exceed the number 9!\n\n```Commands: \nv!9+rules - View the rules.\nv!9+create - Create a room.\nv!9+join - Join an existing room.\nv!9+start - Begin the match\nv!9+cancel - Cancel a match.```");
+                                message.channel.send("Welcome to 9+! A simple card game where you cannot exceed the number 9!\n\n```Commands: \nv!9+rules - View the rules.\nv!9+create - Create a room.\nv!9+join - Join an existing room.\nv!9+start - Begin the match\nv!9+stop - Cancel a match.```");
                                 break;
 
                             case '9+rules':
@@ -2442,7 +2456,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                 }
                                 break;
 
-                            case '9+cancel':
+                            case '9+stop':
                                 if (a9match == true && message.channel.id == a9channel){
                                 message.channel.send("`Scrapping the match...`")
                                 end9Match();
@@ -2527,6 +2541,15 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                             case 'o64stop':
                                 message.channel.send("Scrapping the match.")
                                 end64game();
+                            break;
+
+
+                            case 'pwp':
+                                message.channel.send('Welcome to PWP (Playing with Power)! The game where you have to run out of cards as fast as possible!\n\n```Commands: v!pwprules - Shows the rules\nv!pwpcreate - Create a room\nv!pwpjoin - Join a room\npwpstart - Start the game\nv!pwpstop - Stop the game```')
+                            break;
+
+                            case 'pwprules':
+                                message.channel.send("**What is this game?**\n-PWP is a multiplayer game where your goal is to get rid of your cards as fast as possible. (Basically, it's like UNO.)\n-As the game starts, you'll be given 7 'cards' each, and one-by-one, each player will place a card on their turn.\n\n**How do I play?**\n-The way to place cards is like UNO. Each card will have one of four letters at the beginning (R, G, B, Y) and one of 15 chars at the end (0-9, T, R, X, W, D). You'll be able to play a card if your card matches one of the two of the previous card.\n\n**What are these letters, and what is the 'Danger Zone'?**\nIf a 'D' card is played, you'll either enter, or exit the 'Danger Zone'. In this zone, the powers of the other power cards (The cards which end with a letter) will greatly intensify.\n\n**What do the Power Cards do?** \n*When out of the Danger Zone...*\nD - Puts players in the Danger Zone\nT - Forces the next player to receive two cards\nW - Allows the player to change the type of cards to be played (R, G, B Y)\nR - Reverses the order of players\nX - Skips the next player\n\n*When in the Danger Zone...*\nD - Takes players out of the danger zone\nT - Forces the next player to receive four cards, and skips them\nW - Forces the next player to receive four cards, and allows the player to change the type of cards to be played\nR - Randomly picks the next player\nX - Skips the next three players");
                             break;
 
 
