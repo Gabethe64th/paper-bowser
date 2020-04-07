@@ -2058,7 +2058,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
         //pwp
         var numspwp = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'T', 'W', 'R', 'X', 'D'];
-        var typespwp = ['R', 'G', 'B', 'Y'];
+        var typespwp = ['Red', 'Green', 'Blue', 'Yellow'];
         var cardspwp = [];
         var currentnum;
         var currenttype;
@@ -2554,7 +2554,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                             break;
 
                             case 'pwprules':
-                                message.channel.send("**What is this game?**\n-PWP is a multiplayer game where your goal is to get rid of your cards as fast as possible. (Basically, it's like UNO.)\n-As the game starts, you'll be given 7 'cards' each, and one-by-one, each player will place a card on their turn.\n\n**How do I play?**\n-The way to place cards is like UNO. Each card will have one of four letters at the beginning (R, G, B, Y) and one of 15 chars at the end (0-9, T, R, X, W, D). You'll be able to play a card if your card matches one of the two chars on the previous card.\n\n**What are these letters, and what is the 'Danger Zone'?**\nIf a 'D' card is played, you'll either enter, or exit the 'Danger Zone'. In this zone, the powers of the other power cards (The cards which end with a letter) will greatly intensify.\n\n**What do the Power Cards do?** \n*When out of the Danger Zone...*\nD - Puts players in the Danger Zone\nT - Forces the next player to receive two cards\nW - Allows the player to change the type of cards to be played (R, G, B Y)\nR - Reverses the order of players\nX - Skips the next player\n\n*When in the Danger Zone...*\nD - Takes players out of the danger zone\nT - Forces the next player to receive four cards, and skips them\nW - Forces the next player to receive four cards, and allows the player to change the type of cards to be played\nR - Randomly picks the next player\nX - Skips the next three players");
+                                message.channel.send("**What is this game?**\n-PWP is a multiplayer game where your goal is to get rid of your cards as fast as possible. (Basically, it's like UNO.)\n-As the game starts, you'll be given 7 'cards' each, and one-by-one, each player will place a card on their turn.\n\n**How do I play?**\n-The way to place cards is like UNO. Each card will have one of four colours at the beginning (Red, Green, Blue, Yellow) and one of 15 chars at the end (0-9, T, R, X, W, D). You'll be able to play a card if your card matches either the colour or the char on the previous card.\n\n**What are these letters, and what is the 'Danger Zone'?**\nIf a 'D' card is played, you'll either enter, or exit the 'Danger Zone'. In this zone, the powers of the other power cards (The cards which end with a letter) will greatly intensify.\n\n**What do the Power Cards do?** \n*When out of the Danger Zone...*\nD - Puts players in the Danger Zone\nT - Forces the next player to receive two cards\nW - Allows the player to change the color of cards to be played\nR - Reverses the order of players\nX - Skips the next player\n\n*When in the Danger Zone...*\nD - Takes players out of the danger zone\nT - Forces the next player to receive four cards, and skips them\nW - Forces the next player to receive four cards, and allows the player to change the colour of cards to be played\nR - Randomly picks the next player\nX - Skips the next three players");
                             break;
 
                             case 'pwpcreate':
@@ -3258,31 +3258,31 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 for (i = 0; i < playerspwp.length; i++){
                     pwpcardnum1 = Math.floor (Math.random() * numspwp.length);
                     pwpcardtype1 = Math.floor (Math.random() * typespwp.length);
-                    pwpcard1 = typespwp[pwpcardtype1] + numspwp[pwpcardnum1];
+                    pwpcard1 = typespwp[pwpcardtype1] + " " + numspwp[pwpcardnum1];
 
                     pwpcardnum2 = Math.floor (Math.random() * numspwp.length);
                     pwpcardtype2 = Math.floor (Math.random() * typespwp.length);
-                    pwpcard2 = typespwp[pwpcardtype2] + numspwp[pwpcardnum2];
+                    pwpcard2 = typespwp[pwpcardtype2] + " " + numspwp[pwpcardnum2];
 
                     pwpcardnum3 = Math.floor (Math.random() * numspwp.length);
                     pwpcardtype3 = Math.floor (Math.random() * typespwp.length);
-                    pwpcard3 = typespwp[pwpcardtype3] + numspwp[pwpcardnum3];
+                    pwpcard3 = typespwp[pwpcardtype3] + " " + numspwp[pwpcardnum3];
 
                     pwpcardnum4 = Math.floor (Math.random() * numspwp.length);
                     pwpcardtype4 = Math.floor (Math.random() * typespwp.length);
-                    pwpcard4 = typespwp[pwpcardtype4] + numspwp[pwpcardnum4];
+                    pwpcard4 = typespwp[pwpcardtype4] + " " + numspwp[pwpcardnum4];
 
                     pwpcardnum5 = Math.floor (Math.random() * numspwp.length);
                     pwpcardtype5 = Math.floor (Math.random() * typespwp.length);
-                    pwpcard5 = typespwp[pwpcardtype5] + numspwp[pwpcardnum5];
+                    pwpcard5 = typespwp[pwpcardtype5] + " " + numspwp[pwpcardnum5];
 
                     pwpcardnum6 = Math.floor (Math.random() * numspwp.length);
                     pwpcardtype6 = Math.floor (Math.random() * typespwp.length);
-                    pwpcard6 = typespwp[pwpcardtype6] + numspwp[pwpcardnum6];
+                    pwpcard6 = typespwp[pwpcardtype6] + " " + numspwp[pwpcardnum6];
 
                     pwpcardnum7 = Math.floor (Math.random() * numspwp.length);
                     pwpcardtype7 = Math.floor (Math.random() * typespwp.length);
-                    pwpcard7 = typespwp[pwpcardtype7] + numspwp[pwpcardnum7];
+                    pwpcard7 = typespwp[pwpcardtype7] + " " + numspwp[pwpcardnum7];
 
                     
                     cardspwp[i] = [pwpcard1, pwpcard2, pwpcard3, pwpcard4, pwpcard5, pwpcard6, pwpcard7];
