@@ -3284,8 +3284,12 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     pwpcardtype7 = Math.floor (Math.random() * typespwp.length);
                     pwpcard7 = typespwp[pwpcardtype7] + numspwp[pwpcardnum7];
 
+                    
                     cardspwp[i] = [pwpcard1, pwpcard2, pwpcard3, pwpcard4, pwpcard5, pwpcard6, pwpcard7];
-                    bot.users.get(playerspwp[i].id).send(cardspwp[i]);
+                    for (j = 0; j < cardspwp[i].length; j++){
+                        pwpdmmes += " **"+cardspwp[i][j]+"**|"
+                    }
+                    bot.users.get(playerspwp[i].id).send("`Your cards:`\n"+pwpdmmes);
 
                 }
             }
