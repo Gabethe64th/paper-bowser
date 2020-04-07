@@ -3286,7 +3286,9 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
                     
                     cardspwp[i] = [pwpcard1, pwpcard2, pwpcard3, pwpcard4, pwpcard5, pwpcard6, pwpcard7];
+                    pwpdmmes = ""
                     for (j = 0; j < cardspwp[i].length; j++){
+                        hi = cardspwp[i];
                         pwpdmmes += " **"+cardspwp[i][j]+"**|"
                     }
                     bot.users.get(playerspwp[i].id).send("`Your cards:`\n"+pwpdmmes);
