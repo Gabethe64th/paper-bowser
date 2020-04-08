@@ -3477,7 +3477,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             }
 
             function displayCards(){
-                for (j = 0; j < cardspwp[i].length; j++){
+                for (j = 0; j < cardspwp[pwpplayer].length; j++){
                     hi = cardspwp[i];
                     pwpdmmes += " **"+hi[j]+"** |"
                 }
