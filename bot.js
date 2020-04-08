@@ -2598,6 +2598,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                 if (pwpgame == true){
                                 if (message.author == playerspwp[pwpplayer]){
                                 giveCards(1);
+                                chooseNextPlayer();
                                 }
                             }
                             break;
@@ -3331,18 +3332,20 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                         if (othertype == currenttype){
                             caseOtherNum();
                             pc.splice(checker, 1);
+                            displayCards();
                             chooseNextPlayer();
                         }
                         else if (currentnum == othernum){
                             currenttype = othertype;
                             caseOtherNum();
                             pc.splice(checker, 1);
+                            displayCards();
                             chooseNextPlayer();
                         }
                     }
 
                     
-                    displayCards();
+                    
                 }
             }
 
@@ -3693,7 +3696,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 if (danger == true){
                     bot.channels.get(pwpchannel).send("`Randomly picking a player...`");
                     pwpplayer = Math.floor (Math.random() * playerspwp.length);
-                    displayNextPwpPlayer();
+                    
                 }
                 else{
                     bot.channels.get(pwpchannel).send("**The order of players have been flipped!**");
