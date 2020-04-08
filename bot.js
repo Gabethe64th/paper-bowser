@@ -3256,7 +3256,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             //pwp
 
             if (message.author == playerspwp[pwpplayer] && pwpgame == true && choosingType == true){
-                switch (message.cleanContent.startsWith()){
+                switch (message.content.split(" ")[0]){
                     case "llow":
                     case "yellow":
                     case "Y":
@@ -3362,12 +3362,10 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 if (danger == false){
                     bot.channels.get(pwpchannel).send("**Everyone is now in the Danger Zone!**\n`Power Cards have been buffed!`");
                     danger = true;
-                    chooseNextPlayer();
                 }
                 else {
                     bot.channels.get(pwpchannel).send("**Everyone is now out of the Danger Zone!**\n`Power Cards have been nurfed.`");
                     danger = false;
-                    chooseNextPlayer();
                 }
             }
 
@@ -3386,15 +3384,23 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                         bot.channels.get(pwpchannel).send("A **"+othertype+" "+othernum+"** has been played.")
                     break;
                     case "D":
+                    case "d":
+                        bot.channels.get(pwpchannel).send("A **"+othertype+" "+othernum+"** has been played.")
                         displayDanger();
                     break;
                     case "T":
+                    case "t":
+                        bot.channels.get(pwpchannel).send("A **"+othertype+" "+othernum+"** has been played.")
                         pickUpTwo();
                     break;
                     case "X":
+                    case "x":
+                        bot.channels.get(pwpchannel).send("A **"+othertype+" "+othernum+"** has been played.")
                         skipNextPlayer();
                     break;
                     case "R":
+                    case "r":
+                        bot.channels.get(pwpchannel).send("A **"+othertype+" "+othernum+"** has been played.")
                         reverse();
                     break;
                 }
@@ -3526,14 +3532,13 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             }
 
             function giveCards(num){
-                for (i = 0; i <= num; i++){
+                for (i = 0; i < num; i++){
                     pwpcardnumx = Math.floor (Math.random() * numspwp.length);
                     pwpcardtypex = Math.floor (Math.random() * typespwp.length);
                     pwpcardx = typespwp[pwpcardtypex] + " " + numspwp[pwpcardnumx];
                     cardspwp[pwpplayer].push(pwpcardx);
                 }
                 displayCards();
-                chooseNextPlayer();
             }
 
             function displayCards(){
@@ -3551,7 +3556,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 thiscolor = Math.floor (Math.random() * typespwp.length);
                 currenttype = typespwp[thiscolor];
                 currentnum = "0";
-                bot.channels.get(pwpchannel).send("We'll begin with the color: **"+currenttype+"**.")
+                bot.channels.get(pwpchannel).send("We'll begin with a **"+currenttype+" 0**.")
                 displayNextPwpPlayer();
             }
 
@@ -3640,7 +3645,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                             pwpplayer = playerspwp.length - 1;
                         }
                     }
-                    chooseNextPlayer();
+                    
                 }
 
                 else {
@@ -3663,7 +3668,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                             pwpplayer = playerspwp.length - 1;
                         }
                     }
-                    chooseNextPlayer();
+                    
                 }
             }
 
@@ -3681,7 +3686,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     else{
                         pwpreverse = true;
                     }
-                    chooseNextPlayer();
+                    
                 }
             }
 
