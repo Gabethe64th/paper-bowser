@@ -2604,7 +2604,13 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                             break;
                             
                             case 'pwpstop':
+                                if (message.channel.id == pwpchannel){
+                                message.channel.send("Stopping the match.")
                                 endPwp();
+                                }
+                                else {
+                                    message.channel.send("`An error occured.\nCODE: 1337`")
+                                }
                             break;
 
 
