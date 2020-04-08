@@ -3289,11 +3289,12 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             }
 
             if (message.author == playerspwp[pwpplayer] && pwpgame == true && choosingType == false && args[1] != undefined){
-                checking = cardspwp[pwpplayer].indexOf(message.content);
+                checking = cardspwp[pwpplayer].indexOf(message.cleanContent);
                 if (cardspwp[checking] != undefined){
 
                 
-
+                    othertype = message.content.slice(0, 2);
+                    othernum = args[1];
                 
 
                 if(args[1] == "W"){
@@ -3301,7 +3302,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     choosingType = true;
                 }
                 else{
-                    if ((args[1] == currentnum) || (args[0] == currenttype)){
+                    if ((args[1] == currentnum) || (othertype == currenttype)){
                         switch (args[1]){
                             default:
                                 bot.channels.get(pwpchannel).send("A **"+args[0]+" "+args[1]+"** has been played.");
