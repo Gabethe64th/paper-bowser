@@ -2064,6 +2064,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         var currentnum = "";
         var othertype = "";
         var checking = false;
+        var checker = 0;
         var currenttype = "";
         var playerspwp = [];
         var pwpplayer = 0;
@@ -3295,6 +3296,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                         othertype = args[0];
                         othernum = args[1];
                         checking = true;
+                        checker = i;
 
                         i = 999;
                     }
@@ -3313,6 +3315,9 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                             caseOtherNum();
                         }
                     }
+
+                    pc.splice(checker, 1);
+                    displayCards();
                 }
             }
 
@@ -3358,6 +3363,18 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
             function caseOtherNum(){
                 switch (othernum){
+                    case "0":
+                    case "1":
+                    case "2":
+                    case "3":
+                    case "4":
+                    case "5":
+                    case "6":
+                    case "7":
+                    case "8":
+                    case "9":
+                        bot.channels.get(pwpchannel).send("A **"+othertype+" "+othernum+"** has been played.")
+                    break;
                     case "D":
                         displayDanger();
                     break;
@@ -3670,6 +3687,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 pwpreverse = false;
                 choosingType = false;
                 checking = false;
+                checker = 0;
             }
         
             
