@@ -3293,7 +3293,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 pc = cardspwp[pwpplayer];
                 for (i = 0; i < pc.length; i++){
                     if (message.content == pc[i]){
-                        othertype = message.content.slice(0, 2);
+                        othertype = args[0];
                         othernum = args[1];
                         checking = true;
                         checker = i;
