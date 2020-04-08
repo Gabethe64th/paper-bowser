@@ -3289,82 +3289,20 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             }
 
             if (message.author == playerspwp[pwpplayer] && pwpgame == true && choosingType == false && args[1] != undefined){
-                have1 = args[0];
-                have2 = args[1];
-
-                switch (have1){
-                    case "Yellow":
-                    case "yellow":
-                    case "Y":
-                    case "y":
-                        othertype = "Yellow";
-                    break;
-
-                    case "Red":
-                    case "red":
-                    case "R":
-                    case "r":
-                        othertype = "Red";
-                    break;
-
-                    case "Green":
-                    case "green":
-                    case "G":
-                    case "g":
-                        othertype = "Green";
-                    break;
-
-                    case "Blue":
-                    case "blue":
-                    case "B":
-                    case "b":
-                        othertype = "Blue";
-                    break;
-                }
-
-                switch (have2){
-                    default:
-                        othernum = have2;
-                    break;
-
-                    case "D":
-                    case "d":
-                        othernum = "D";
-                    break;
-
-                    case "X":
-                    case "x":
-                        othernum = "X";
-                    break;
-
-                    case "T":
-                    case "t":
-                        othernum = "T";
-                    break;
-
-                    case "R":
-                    case "r":
-                        othernum = "R";
-                    break;
-
-                    case "W":
-                    case "w":
-                        othernum = "W";
-                    break;
-                }
+                checking = cardspwp[pwpplayer].indexOf(message.content);
+                if (cardspwp[checking] != undefined){
 
                 
 
-                checking = cardspwp[pwpplayer].indexOf(othertype + " " + othernum);
-                if (cardspwp[checking] != undefined){
+                
 
-                if(othernum == "W"){
+                if(args[1] == "W"){
                     message.channel.send("**A WILD has been played.**\n"+playerspwp[pwpplayer].username+", specify your next colour.")
                     choosingType = true;
                 }
                 else{
-                    if ((othernum == currentnum) || (othertype == currenttype)){
-                        switch (othernum){
+                    if ((args[1] == currentnum) || (args[0] == currenttype)){
+                        switch (args[1]){
                             default:
                                 bot.channels.get(pwpchannel).send("A **"+othertype+" "+othernum+"** has been played.");
                                 chooseNextPlayer();
@@ -3389,6 +3327,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     }
                 }
                 cardspwp[pwpplayer].splice(checking, 1)
+                displayCards();
             }
 
             }
