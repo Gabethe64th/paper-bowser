@@ -2587,6 +2587,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                     message.channel.send("`An error occured.\nCODE: 42069`")
                                 }
                                 else {
+                                    pwpgame = true;
                                     sharepwpcards();
                                 }
                             break;
@@ -3491,7 +3492,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     hi = cardspwp[i];
                     pwpdmmes += " **"+hi[j]+"** |"
                 }
-                bot.users.get(playerspwp[i].id).send("`Your cards:`\n"+pwpdmmes);
+                bot.users.get(playerspwp[pwpplayer].id).send("`Your cards:`\n"+pwpdmmes);
             }
 
 
