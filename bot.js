@@ -3382,7 +3382,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                         }
                     }
                 }
-                cardspwp[pwpplayer].splice(checking)
+                cardspwp[pwpplayer].splice(checking, 1)
             }
 
             }
