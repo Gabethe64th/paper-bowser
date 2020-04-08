@@ -2063,6 +2063,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         var othernum = "";
         var currentnum = "";
         var othertype = "";
+        var checking = 0;
         var currenttype = "";
         var playerspwp = [];
         var pwpplayer = 0;
@@ -3688,6 +3689,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 cardspwp = [];
                 pwpreverse = false;
                 choosingType = false;
+                checking = 0;
             }
         
             
