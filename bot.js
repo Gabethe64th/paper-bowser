@@ -3257,28 +3257,28 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
             if (message.author == playerspwp[pwpplayer] && pwpgame == true && choosingType == true){
                 switch (message.cleanContent.startsWith()){
-                    case "Yellow":
+                    case "llow":
                     case "yellow":
                     case "Y":
                     case "y":
                         currenttype = "Yellow";
                     break;
 
-                    case "Red":
+                    case "d":
                     case "red":
                     case "R":
                     case "r":
                         currenttype = "Red";
                     break;
 
-                    case "Green":
+                    case "een":
                     case "green":
                     case "G":
                     case "g":
                         currenttype = "Green";
                     break;
 
-                    case "Blue":
+                    case "ue":
                     case "blue":
                     case "B":
                     case "b":
@@ -3303,28 +3303,28 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
                 if (checking == true){
                     switch(message.cleanContent.startsWith()){
-                        case "Yellow":
+                        case "llow":
                     case "yellow":
                     case "Y":
                     case "y":
                         othertype = "Yellow";
                     break;
 
-                    case "Red":
+                    case "d":
                     case "red":
                     case "R":
                     case "r":
                         othertype = "Red";
                     break;
 
-                    case "Green":
+                    case "een":
                     case "green":
                     case "G":
                     case "g":
                         othertype = "Green";
                     break;
 
-                    case "Blue":
+                    case "ue":
                     case "blue":
                     case "B":
                     case "b":
