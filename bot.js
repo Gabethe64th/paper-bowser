@@ -3350,7 +3350,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     break;
                 }
 
-                message.channel.send(othertype + " " + othernum);
+                
 
                 checking = cardspwp[pwpplayer].indexOf(othertype + " " + othernum);
                 if (cardspwp[checking] != undefined){
