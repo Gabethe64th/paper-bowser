@@ -3690,7 +3690,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             }
 
             function reverse(){
-                if (pwpdanger == true){
+                if (danger == true){
                     bot.channels.get(pwpchannel).send("`Randomly picking a player...`");
                     pwpplayer = Math.floor (Math.random() * playerspwp.length);
                     displayNextPwpPlayer();
