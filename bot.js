@@ -2591,6 +2591,12 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                     sharepwpcards();
                                 }
                             break;
+
+                            case 'pwpick':
+                                if (message.author == playerspwp[pwpplayer]){
+                                giveCards(1);
+                                }
+                            break;
                             
                             case 'pwpstop':
                                 endPwp();
@@ -3358,19 +3364,19 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                 chooseNextPlayer();
                             break;
 
-                            case 'T':
+                            case "T":
                                pickUpTwo();
                             break;
 
-                            case 'D':
+                            case "D":
                                 displayDanger();
                             break;
 
-                            case 'X':
+                            case "X":
                                 skipNextPlayer();
                             break;
 
-                            case 'R':
+                            case "R":
                                 reverse();
                             break;
                         }
