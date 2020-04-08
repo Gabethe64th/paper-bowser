@@ -3256,7 +3256,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             //pwp
 
             if (message.author == playerspwp[pwpplayer] && pwpgame == true && choosingType == true){
-                switch (args[0]){
+                switch (message.cleanContent.startsWith()){
                     case "Yellow":
                     case "yellow":
                     case "Y":
@@ -3302,7 +3302,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 }
 
                 if (checking == true){
-                    switch(message.content.startsWith()){
+                    switch(message.cleanContent.startsWith()){
                         case "Yellow":
                     case "yellow":
                     case "Y":
@@ -3343,11 +3343,13 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                         if (othertype == currenttype){
                             caseOtherNum();
                             pc.splice(checker, 1);
+                            chooseNextPlayer();
                         }
                         else if (currentnum == othernum){
                             currenttype = othertype;
                             caseOtherNum();
                             pc.splice(checker, 1);
+                            chooseNextPlayer();
                         }
                     }
 
