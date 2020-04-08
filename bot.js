@@ -2063,7 +2063,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         var othernum = "";
         var currentnum = "";
         var othertype = "";
-        var checking = 0;
+        var checking = false;
         var currenttype = "";
         var playerspwp = [];
         var pwpplayer = 0;
@@ -3289,49 +3289,31 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             }
 
             if (message.author == playerspwp[pwpplayer] && pwpgame == true && choosingType == false && args[1] != undefined){
-                checking = cardspwp[pwpplayer].indexOf(message.cleanContent);
-                if (cardspwp[checking] != undefined){
+                pc = cardspwp[pwpplayer];
+                for (i = 0; i < pc.length; i++){
+                    if (message.content == pc[i]){
+                        othertype = args[0];
+                        othernum = args[1];
+                        checking = true;
 
-                
-                    othertype = message.content.slice(0, 2);
-                    othernum = args[1];
-                
-
-                if(args[1] == "W"){
-                    message.channel.send("**A WILD has been played.**\n"+playerspwp[pwpplayer].username+", specify your next colour.")
-                    choosingType = true;
-                }
-                else{
-                    if ((args[1] == currentnum) || (othertype == currenttype)){
-                        switch (args[1]){
-                            default:
-                                bot.channels.get(pwpchannel).send("A **"+args[0]+" "+args[1]+"** has been played.");
-                                chooseNextPlayer();
-                            break;
-
-                            case "T":
-                               pickUpTwo();
-                            break;
-
-                            case "D":
-                                displayDanger();
-                            break;
-
-                            case "X":
-                                skipNextPlayer();
-                            break;
-
-                            case "R":
-                                reverse();
-                            break;
-                        }
-                        cardspwp[pwpplayer].splice(checking, 1)
-                        displayCards();
+                        i = 999;
                     }
                 }
-                
-            }
 
+                if (checking == true){
+                    if (othernum == "W"){
+                        Wild();
+                    }
+                    else if (othertype == currenttype || othernum == currentnum){
+                        if (othertype == currenttype){
+                            caseOtherNum();
+                        }
+                        else if (currentnum == othernum){
+                            currenttype = othertype;
+                            caseOtherNum();
+                        }
+                    }
+                }
             }
 
 
@@ -3371,6 +3353,55 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     bot.channels.get(pwpchannel).send("**Everyone is now out of the Danger Zone!**\n`Power Cards have been nurfed.`");
                     danger = false;
                     chooseNextPlayer();
+                }
+            }
+
+            function caseOtherNum(){
+                switch (othernum){
+                    case "D":
+                        displayDanger();
+                    break;
+                    case "T":
+                        pickUpTwo();
+                    break;
+                    case "X":
+                        skipNextPlayer();
+                    break;
+                    case "R":
+                        reverse();
+                    break;
+                }
+                currentnum = othernum;
+            }
+
+            function Wild(){
+                if (danger == true){
+                    thiscolor = Math.floor (Math.random() * typespwp.length);
+                    currenttype = typespwp[thiscolor];
+                    bot.channels.get(pwpchannel).send("`CHAOS APPROACHES! The colour is now: "+currenttype+"!\nThe next player gets 4 cards!`")
+                    if (pwpreverse == true){
+                        pwpplayer--;
+                        if (pwpplayer > 0 && playerspwp[pwpplayer] == undefined){
+                            pwpplayer = 0;
+                        }
+                        else if (pwpplayer == -1){
+                            pwpplayer = playerspwp.length - 1;
+                        }
+                    }
+                    else {
+                        pwpplayer++;
+                        if (pwpplayer > 0 && playerspwp[pwpplayer] == undefined){
+                            pwpplayer = 0;
+                        }
+                        else if (pwpplayer == -1){
+                            pwpplayer = playerspwp.length - 1;
+                        }
+                    }
+                    giveCards(4);
+                }
+                else{
+                    bot.channels.get(pwpchannel).send("**A WILD card has been played.**\nPlease specify your next colour.")
+                    choosingType = true;
                 }
             }
 
@@ -3638,7 +3669,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 cardspwp = [];
                 pwpreverse = false;
                 choosingType = false;
-                checking = 0;
+                checking = false;
             }
         
             
