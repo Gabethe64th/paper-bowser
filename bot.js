@@ -3305,18 +3305,21 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 if (checking == true){
                     if (othernum == "W"){
                         Wild();
+                        pc.splice(checker, 1);
                     }
                     else if (othertype == currenttype || othernum == currentnum){
                         if (othertype == currenttype){
                             caseOtherNum();
+                            pc.splice(checker, 1);
                         }
                         else if (currentnum == othernum){
                             currenttype = othertype;
                             caseOtherNum();
+                            pc.splice(checker, 1);
                         }
                     }
 
-                    pc.splice(checker, 1);
+                    
                     displayCards();
                 }
             }
