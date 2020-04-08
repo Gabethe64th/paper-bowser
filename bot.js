@@ -3304,7 +3304,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     if ((args[1] == currentnum) || (args[0] == currenttype)){
                         switch (args[1]){
                             default:
-                                bot.channels.get(pwpchannel).send("A **"+othertype+" "+othernum+"** has been played.");
+                                bot.channels.get(pwpchannel).send("A **"+args[0]+" "+args[1]+"** has been played.");
                                 chooseNextPlayer();
                             break;
 
@@ -3324,10 +3324,11 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                 reverse();
                             break;
                         }
+                        cardspwp[pwpplayer].splice(checking, 1)
+                        displayCards();
                     }
                 }
-                cardspwp[pwpplayer].splice(checking, 1)
-                displayCards();
+                
             }
 
             }
