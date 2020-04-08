@@ -3555,7 +3555,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     pwpcardnumx = Math.floor (Math.random() * numspwp.length);
                     pwpcardtypex = Math.floor (Math.random() * typespwp.length);
                     pwpcardx = typespwp[pwpcardtypex] + " " + numspwp[pwpcardnumx];
-                    cardspwp[pwpplayer].push(pwpcardx);
+                    cardspwp[pwpplayer].unshift(pwpcardx);
                 }
                 displayCards();
             }
