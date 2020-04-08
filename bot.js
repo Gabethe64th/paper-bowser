@@ -2060,13 +2060,18 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         var numspwp = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'T', 'W', 'R', 'X', 'D'];
         var typespwp = ['Red', 'Green', 'Blue', 'Yellow'];
         var cardspwp = [];
+        var othernum;
         var currentnum;
+        var othertype;
         var currenttype;
         var playerspwp = [];
+        var pwpplayer = 0;
         var pwpchannel = undefined;
         var pwpjoin = false;
         var pwpgame = false;
         var danger = false;
+        var pwpreverse = false;
+        var choosingType = false;
         
         
         
@@ -2568,6 +2573,15 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                 }
                             break;
 
+                            case 'pwpjoin':
+                                if (pwpgame == true || pwpchannel != message.channel.id){
+                                    message.channel.send("`An error occured.\nCODE: 33354`")
+                                }
+                                else {
+                                    addPlayertopwp(message.author);
+                                }
+                            break;
+
                             case 'pwpstart':
                                 if (pwpgame == true || pwpchannel != message.channel.id || pwpjoin == false){
                                     message.channel.send("`An error occured.\nCODE: 42069`")
@@ -2575,6 +2589,10 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                 else {
                                     sharepwpcards();
                                 }
+                            break;
+                            
+                            case 'pwpstop':
+                                endPwp();
                             break;
 
 
@@ -3228,6 +3246,103 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
             //pwp
 
+            if (message.author == playerspwp[pwpplayer] && pwpgame == true && args[1] != undefined){
+                switch (args[0]){
+                    case "Yellow":
+                    case "Y":
+                    case "y":
+                        othertype = 'Yellow';
+                    break;
+
+                    case "Red":
+                    case "R":
+                    case "r":
+                        othertype = 'Red';
+                    break;
+
+                    case "Green":
+                    case "G":
+                    case "g":
+                        othertype = 'Green';
+                    break;
+
+                    case "Blue":
+                    case "B":
+                    case "b":
+                        othertype = 'Blue';
+                    break;
+                }
+
+                switch (args[1]){
+                    default:
+                        othernum = args[1];
+                    break;
+
+                    case "D":
+                    case "d":
+                        othernum = 'D';
+                    break;
+
+                    case "X":
+                    case "x":
+                        othernum = 'X';
+                    break;
+
+                    case "T":
+                    case "t":
+                        othernum = 'T';
+                    break;
+
+                    case "R":
+                    case "r":
+                        othernum = 'R';
+                    break;
+
+                    case "W":
+                    case "w":
+                        othernum = 'W';
+                    break;
+                }
+
+                checking = cardspwp[pwpplayer].indexOf(othertype + " " + othernum);
+                if (checking != undefined){
+
+                if(othernum == 'W'){
+                    message.channel.send("**A WILD has been played.**\n"+playerspwp[i].username+", specify your next colour.")
+                    choosingType = true;
+                }
+                else{
+                    if ((othernum == currentnum) || (othertype == currenttype)){
+                        switch (othernum){
+                            default:
+                                bot.channels.get(pwpchannel).send("A **"+othertype+" "+othernum+"** has been played.");
+                                chooseNextPlayer();
+                            break;
+
+                            case 'T':
+                               pickUpTwo();
+                            break;
+
+                            case 'D':
+                                displayDanger();
+                            break;
+
+                            case 'X':
+                                skipNextPlayer();
+                            break;
+
+                            case 'R':
+                                reverse();
+                            break;
+                        }
+                    }
+                }
+                cardspwp[pwpplayer].splice(checking)
+            }
+
+            }
+
+
             function addPlayertopwp(user){
                 tester = false;
                 
@@ -3251,6 +3366,19 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     }
                     message.channel.send(playerlistpwp)
 
+                }
+            }
+
+            function displayDanger(){
+                if (danger == false){
+                    bot.channels.get(pwpchannel).send("**Everyone is now in the Danger Zone!**\n`Power Cards have been buffed!`");
+                    danger = true;
+                    chooseNextPlayer();
+                }
+                else {
+                    bot.channels.get(pwpchannel).send("**Everyone is now out of the Danger Zone!**\n`Power Cards have been nurfed.`");
+                    danger = false;
+                    chooseNextPlayer();
                 }
             }
 
@@ -3294,6 +3422,227 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     bot.users.get(playerspwp[i].id).send("`Your cards:`\n"+pwpdmmes);
 
                 }
+
+                pwppickAcolor();
+            }
+
+            function pickUpTwo(){
+                if (danger == true){
+                    bot.channels.get(pwpchannel).send("`DANGER'S IN! The next player picks up 8 cards!`")
+                    if (pwpreverse == true){
+                        pwpplayer--;
+                        if (pwpplayer > 0 && playerspwp[pwpplayer] == undefined){
+                            pwpplayer = 0;
+                        }
+                        else if (pwpplayer == -1){
+                            pwpplayer = playerspwp.length - 1;
+                        }
+                        giveCards(8);
+                    }
+                    else {
+                        pwpplayer++;
+                        if (pwpplayer > 0 && playerspwp[pwpplayer] == undefined){
+                            pwpplayer = 0;
+                        }
+                        else if (pwpplayer == -1){
+                            pwpplayer = playerspwp.length - 1;
+                        }
+                        giveCards(8);
+                    }
+                }
+                else {
+                    bot.channels.get(pwpchannel).send("**The next player picks up 2 cards!**")
+                    if (pwpreverse == true){
+                        pwpplayer--;
+                        if (pwpplayer > 0 && playerspwp[pwpplayer] == undefined){
+                            pwpplayer = 0;
+                        }
+                        else if (pwpplayer == -1){
+                            pwpplayer = playerspwp.length - 1;
+                        }
+                        giveCards(2);
+                    }
+                    else {
+                        pwpplayer++;
+                        if (pwpplayer > 0 && playerspwp[pwpplayer] == undefined){
+                            pwpplayer = 0;
+                        }
+                        else if (pwpplayer == -1){
+                            pwpplayer = playerspwp.length - 1;
+                        }
+                        giveCards(2);
+                    }
+                }
+            }
+
+            function giveCards(num){
+                for (i = 0; i <= num; i++){
+                    pwpcardnumx = Math.floor (Math.random() * numspwp.length);
+                    pwpcardtypex = Math.floor (Math.random() * typespwp.length);
+                    pwpcardx = typespwp[pwpcardtypex] + " " + numspwp[pwpcardnumx];
+                    cardspwp[pwpplayer].push(pwpcardx);
+                }
+                displayCards();
+                chooseNextPlayer();
+            }
+
+            function displayCards(){
+                for (j = 0; j < cardspwp[i].length; j++){
+                    hi = cardspwp[i];
+                    pwpdmmes += " **"+hi[j]+"** |"
+                }
+                bot.users.get(playerspwp[i].id).send("`Your cards:`\n"+pwpdmmes);
+            }
+
+
+            function pwppickAcolor() {
+                thiscolor = Math.floor (Math.random() * typespwp.length);
+                currenttype = thiscolor;
+                bot.channels.get(pwpchannel).send("We'll begin with the color: **"+currenttype+"**.")
+                displayNextPwpPlayer();
+            }
+
+            function chooseNextPlayer(){
+                if (playerspwp.length == 1){
+                    bot.channels.get(pwpchannel).send("`The game is now over.`\n**"+playerspwp[0]+" WINS!** :tada:")
+                    endPwp();
+                }
+
+                if (pwpreverse == true){
+                    pwpplayer --;
+                    displayNextPwpPlayer();
+                }
+                else{
+                    pwpplayer++;
+                    displayNextPwpPlayer();
+                }
+            }
+
+            function displayNextPwpPlayer(){
+                if (pwpplayer > 0 && playerspwp[pwpplayer] == undefined){
+                    pwpplayer = 0;
+                }
+                else if (pwpplayer == -1){
+                    pwpplayer = playerspwp.length - 1;
+                }
+
+                bot.channels.get(pwpchannel).send("It's **"+playerspwp[i].username+"'s** turn!")
+            }
+
+            function skipNextPlayer(){
+                if (danger == true){
+
+                    bot.channels.get(pwpchannel).send("`DANGER'S IN! Three players are skipped!`");
+                    if (pwpreverse == true){
+                        pwpplayer--;
+                        if (pwpplayer > 0 && playerspwp[pwpplayer] == undefined){
+                            pwpplayer = 0;
+                        }
+                        else if (pwpplayer == -1){
+                            pwpplayer = playerspwp.length - 1;
+                        }
+                    }
+                    else {
+                        pwpplayer++;
+                        if (pwpplayer > 0 && playerspwp[pwpplayer] == undefined){
+                            pwpplayer = 0;
+                        }
+                        else if (pwpplayer == -1){
+                            pwpplayer = playerspwp.length - 1;
+                        }
+                    }
+                    if (pwpreverse == true){
+                        pwpplayer--;
+                        if (pwpplayer > 0 && playerspwp[pwpplayer] == undefined){
+                            pwpplayer = 0;
+                        }
+                        else if (pwpplayer == -1){
+                            pwpplayer = playerspwp.length - 1;
+                        }
+                    }
+                    else {
+                        pwpplayer++;
+                        if (pwpplayer > 0 && playerspwp[pwpplayer] == undefined){
+                            pwpplayer = 0;
+                        }
+                        else if (pwpplayer == -1){
+                            pwpplayer = playerspwp.length - 1;
+                        }
+                    }
+                    if (pwpreverse == true){
+                        pwpplayer--;
+                        if (pwpplayer > 0 && playerspwp[pwpplayer] == undefined){
+                            pwpplayer = 0;
+                        }
+                        else if (pwpplayer == -1){
+                            pwpplayer = playerspwp.length - 1;
+                        }
+                    }
+                    else {
+                        pwpplayer++;
+                        if (pwpplayer > 0 && playerspwp[pwpplayer] == undefined){
+                            pwpplayer = 0;
+                        }
+                        else if (pwpplayer == -1){
+                            pwpplayer = playerspwp.length - 1;
+                        }
+                    }
+                    chooseNextPlayer();
+                }
+
+                else {
+                    bot.channels.get(pwpchannel).send("**A player is skipped!**");
+                    if (pwpreverse == true){
+                        pwpplayer--;
+                        if (pwpplayer > 0 && playerspwp[pwpplayer] == undefined){
+                            pwpplayer = 0;
+                        }
+                        else if (pwpplayer == -1){
+                            pwpplayer = playerspwp.length - 1;
+                        }
+                    }
+                    else {
+                        pwpplayer++;
+                        if (pwpplayer > 0 && playerspwp[pwpplayer] == undefined){
+                            pwpplayer = 0;
+                        }
+                        else if (pwpplayer == -1){
+                            pwpplayer = playerspwp.length - 1;
+                        }
+                    }
+                    chooseNextPlayer();
+                }
+            }
+
+            function reverse(){
+                if (pwpdanger == true){
+                    bot.channels.get(pwpchannel).send("`Randomly picking a player...`");
+                    pwpplayer = Math.floor (Math.random() * playerspwp.length);
+                    displayNextPwpPlayer();
+                }
+                else{
+                    bot.channels.get(pwpchannel).send("**The order of players have been flipped!**");
+                    if (pwpreverse == true){
+                        pwpreverse = false;
+                    }
+                    else{
+                        pwpreverse = true;
+                    }
+                    chooseNextPlayer();
+                }
+            }
+
+            function endPwp(){
+                pwpchannel = undefined;
+                playerspwp = [];
+                currenttype = "";
+                currentnum = "";
+                pwpplayer = 0;
+                pwpgame = false;
+                pwpjoin = false;
+                cardspwp = [];
+                pwpreverse = false;
+                choosingType = false;
             }
         
             
