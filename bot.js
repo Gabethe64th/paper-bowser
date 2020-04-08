@@ -3288,8 +3288,11 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 chooseNextPlayer();
             }
 
-            if (message.author == playerspwp[pwpplayer] && pwpgame == true && choosingType == false){
-                switch (args[0]){
+            if (message.author == playerspwp[pwpplayer] && pwpgame == true && choosingType == false && args[1] != undefined){
+                have1 = args[0];
+                have2 = args[1];
+
+                switch (have1){
                     case "Yellow":
                     case "yellow":
                     case "Y":
@@ -3319,9 +3322,9 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     break;
                 }
 
-                switch (args[1]){
+                switch (have2){
                     default:
-                        othernum = args[1];
+                        othernum = have2;
                     break;
 
                     case "D":
