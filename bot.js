@@ -3430,6 +3430,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     thiscolor = Math.floor (Math.random() * typespwp.length);
                     currenttype = typespwp[thiscolor];
                     bot.channels.get(pwpchannel).send("`CHAOS APPROACHES! The colour is now: "+currenttype+"!\nThe next player gets 4 cards!`")
+                    displayCards();
                     if (pwpreverse == true){
                         pwpplayer--;
                         if (pwpplayer > 0 && playerspwp[pwpplayer] == undefined){
