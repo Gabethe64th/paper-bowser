@@ -3293,7 +3293,6 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 pc = cardspwp[pwpplayer];
                 for (i = 0; i < pc.length; i++){
                     if (message.content == pc[i]){
-                        othertype = args[0];
                         othernum = args[1];
                         checking = true;
                         checker = i;
@@ -3303,6 +3302,36 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 }
 
                 if (checking == true){
+                    switch(message.content.startsWith()){
+                        case "Yellow":
+                    case "yellow":
+                    case "Y":
+                    case "y":
+                        othertype = "Yellow";
+                    break;
+
+                    case "Red":
+                    case "red":
+                    case "R":
+                    case "r":
+                        othertype = "Red";
+                    break;
+
+                    case "Green":
+                    case "green":
+                    case "G":
+                    case "g":
+                        othertype = "Green";
+                    break;
+
+                    case "Blue":
+                    case "blue":
+                    case "B":
+                    case "b":
+                        othertype = "Blue";
+                    break;
+                    }
+
                     bot.channels.get(pwpchannel).send(othernum)
                     bot.channels.get(pwpchannel).send(othertype)
 
