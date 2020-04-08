@@ -2060,10 +2060,10 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         var numspwp = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'T', 'W', 'R', 'X', 'D'];
         var typespwp = ['Red', 'Green', 'Blue', 'Yellow'];
         var cardspwp = [];
-        var othernum;
-        var currentnum;
-        var othertype;
-        var currenttype;
+        var othernum = "";
+        var currentnum = "";
+        var othertype = "";
+        var currenttype = "";
         var playerspwp = [];
         var pwpplayer = 0;
         var pwpchannel = undefined;
@@ -3526,7 +3526,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     pwpplayer = playerspwp.length - 1;
                 }
 
-                bot.channels.get(pwpchannel).send("It's **"+playerspwp[i].username+"'s** turn!")
+                bot.channels.get(pwpchannel).send("It's **"+playerspwp[pwpplayer].username+"'s** turn!")
             }
 
             function skipNextPlayer(){
