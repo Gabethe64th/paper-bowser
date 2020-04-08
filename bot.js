@@ -3477,8 +3477,10 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             }
 
             function displayCards(){
-                for (j = 0; j < cardspwp[pwpplayer].length; j++){
-                    hi = cardspwp[pwpplayer];
+                hi = cardspwp[pwpplayer];
+                pwpdmmes = "";
+                for (j = 0; j < hi.length; j++){
+                    
                     pwpdmmes += " **"+hi[j]+"** |"
                 }
                 bot.users.get(playerspwp[pwpplayer].id).send("`Your cards:`\n"+pwpdmmes);
