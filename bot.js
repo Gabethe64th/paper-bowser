@@ -3497,7 +3497,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
             function pwppickAcolor() {
                 thiscolor = Math.floor (Math.random() * typespwp.length);
-                currenttype = thiscolor;
+                currenttype = typespwp[thiscolor];
                 bot.channels.get(pwpchannel).send("We'll begin with the color: **"+currenttype+"**.")
                 displayNextPwpPlayer();
             }
