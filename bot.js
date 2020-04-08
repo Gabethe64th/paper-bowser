@@ -2057,7 +2057,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         var claim = 0;
 
         //pwp
-        var numspwp = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "T", "W", "R", "X", "D"];
+        var numspwp = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "T", "W", "R", "X", "D"];
         var typespwp = ["Red", "Green", "Blue", "Yellow"];
         var cardspwp = [];
         var othernum = "";
@@ -3544,6 +3544,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             function pwppickAcolor() {
                 thiscolor = Math.floor (Math.random() * typespwp.length);
                 currenttype = typespwp[thiscolor];
+                currentnum = "0";
                 bot.channels.get(pwpchannel).send("We'll begin with the color: **"+currenttype+"**.")
                 displayNextPwpPlayer();
             }
