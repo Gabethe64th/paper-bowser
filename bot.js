@@ -3257,28 +3257,28 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
             if (message.author == playerspwp[pwpplayer] && pwpgame == true && choosingType == true){
                 switch (message.content.split(" ")[0]){
-                    case "llow":
+                    case "Yellow":
                     case "yellow":
                     case "Y":
                     case "y":
                         currenttype = "Yellow";
                     break;
 
-                    case "d":
+                    case "Red":
                     case "red":
                     case "R":
                     case "r":
                         currenttype = "Red";
                     break;
 
-                    case "een":
+                    case "Green":
                     case "green":
                     case "G":
                     case "g":
                         currenttype = "Green";
                     break;
 
-                    case "ue":
+                    case "Blue":
                     case "blue":
                     case "B":
                     case "b":
@@ -3305,8 +3305,8 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 if (checking == true){
                     
 
-                    bot.channels.get(pwpchannel).send(othernum)
-                    bot.channels.get(pwpchannel).send(othertype)
+                   // bot.channels.get(pwpchannel).send(othernum)
+                  //  bot.channels.get(pwpchannel).send(othertype)
 
                     if (othernum == "W"){
                         Wild();
