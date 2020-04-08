@@ -3303,6 +3303,9 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 }
 
                 if (checking == true){
+                    bot.channels.get(pwpchannel).send(othernum)
+                    bot.channels.get(pwpchannel).send(othertype)
+
                     if (othernum == "W"){
                         Wild();
                         pc.splice(checker, 1);
