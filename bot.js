@@ -2042,6 +2042,8 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         var j;
         var maintotal = 0;
         var onegone = false;
+        var limit9plus = 9;
+        var choosingC = false;
 
         //o64
         var cards64 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -2481,6 +2483,16 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                     a9game = true;
                                     begin9Match();
                                 }
+                            break;
+
+                            case 'c+':
+                                message.channel.send("`Please specify the number.`")
+                                choosingC = true;
+                            break;
+
+                            case 'c9reset':
+                                message.channel.send("`Done.`")
+                                limit9plus = 9;
                             break;
 
 
@@ -3021,6 +3033,16 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                         }
                     }
 
+                }
+            }
+
+            if (choosingC == true){
+                if(isNaN(message.content)){
+                    message.channel.send("`Not a number.`");
+                }
+                else{
+                    message.channel.send("`Done!`");
+                    limit9plus = message.content;
                 }
             }
 
