@@ -3333,6 +3333,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     if (othernum == "W"){
                         Wild();
                         pc.splice(checker, 1);
+                        
                     }
                     else if (othertype == currenttype || othernum == currentnum){
                         if (othertype == currenttype){
@@ -3456,6 +3457,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                         }
                     }
                     giveCards(4);
+                    chooseNextPlayer();
                 }
                 else{
                     bot.channels.get(pwpchannel).send("**A WILD card has been played.**\nPlease specify your next colour.")
@@ -3509,7 +3511,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
             function pickUpTwo(){
                 if (danger == true){
-                    bot.channels.get(pwpchannel).send("`DANGER'S IN! The next player picks up 8 cards!`")
+                    bot.channels.get(pwpchannel).send("`DANGER'S IN! The next player picks up 4 cards!`")
                     if (pwpreverse == true){
                         pwpplayer--;
                         if (pwpplayer > 0 && playerspwp[pwpplayer] == undefined){
@@ -3518,7 +3520,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                         else if (pwpplayer == -1){
                             pwpplayer = playerspwp.length - 1;
                         }
-                        giveCards(8);
+                        giveCards(4);
                     }
                     else {
                         pwpplayer++;
@@ -3528,7 +3530,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                         else if (pwpplayer == -1){
                             pwpplayer = playerspwp.length - 1;
                         }
-                        giveCards(8);
+                        giveCards(4);
                     }
                 }
                 else {
@@ -3586,8 +3588,8 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             }
 
             function chooseNextPlayer(){
-                if (playerspwp.length == 1){
-                    bot.channels.get(pwpchannel).send("`The game is now over.`\n**"+playerspwp[0]+" WINS!** :tada:")
+                if (cardspwp[pwpplayer].length == 0){
+                    bot.channels.get(pwpchannel).send("`The game is now over.`\n**"+playerspwp[pwpplayer].username+" WINS!** :tada:")
                     endPwp();
                 }
 
