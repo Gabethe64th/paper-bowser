@@ -2076,6 +2076,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         var danger = false;
         var pwpreverse = false;
         var choosingType = false;
+        var cpluschannel = undefined;
         
         
         
@@ -2488,6 +2489,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                             case 'c+':
                                 message.channel.send("`Please specify the number.`")
                                 choosingC = true;
+                                cpluschannel = message.channel.id;
                             break;
 
                             case 'c9reset':
@@ -3036,7 +3038,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 }
             }
 
-            if (choosingC == true){
+            if (choosingC == true && cpluschannel == message.channel.id){
                 if(isNaN(message.content)){
                     message.channel.send("`Not a number.`");
                 }
@@ -3044,6 +3046,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     message.channel.send("`Done!`");
                     limit9plus = message.content;
                     choosingC = false;
+                    cpluschannel = undefined;
                 }
             }
 
@@ -3123,7 +3126,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
             function checkTotal(){
                 if (maintotal > limit9plus){
-                    message.channel.send("**The limit of 9 was exceeded. "+players9[j]+" has been removed.** \nThe board will now reset.")
+                    message.channel.send("**The limit of "+limit9plus+" was exceeded. "+players9[j]+" has been removed.** \nThe board will now reset.")
                     pos = j;
                     let removedPlayerName = players9.splice(pos, 1)
                     let removedPlayerID = rawplayers9.splice(pos, 1)
