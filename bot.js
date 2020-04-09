@@ -3121,7 +3121,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             }
 
             function checkTotal(){
-                if (maintotal > 9){
+                if (maintotal > limit9plus){
                     message.channel.send("**The limit of 9 was exceeded. "+players9[j]+" has been removed.** \nThe board will now reset.")
                     pos = j;
                     let removedPlayerName = players9.splice(pos, 1)
