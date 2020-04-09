@@ -3593,6 +3593,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     endPwp();
                 }
 
+                else{
                 if (pwpreverse == true){
                     pwpplayer --;
                     displayNextPwpPlayer();
@@ -3603,6 +3604,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     displayNextPwpPlayer();
                     checking = false;
                 }
+            }
             }
 
             function displayNextPwpPlayer(){
