@@ -3043,6 +3043,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 else{
                     message.channel.send("`Done!`");
                     limit9plus = message.content;
+                    choosingC = false;
                 }
             }
 
