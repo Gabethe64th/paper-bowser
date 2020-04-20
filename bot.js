@@ -1822,7 +1822,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
             if (emoji.name == "📌"){
                 if (messageReaction.count == 1){
-                    if (message.attachments.first != undefined){
+                    if (message.attachments.first() != undefined){
                         const pinembed = new Discord.RichEmbed()
                         .setAuthor("From "+message.author.username, message.author.avatarURL)
                         .setColor('#00BFFF')
