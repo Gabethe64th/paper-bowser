@@ -1747,7 +1747,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         if(user.id === message.author.id && key === 1 || key === 0){
             message.channel.send('**'+ user.username + "** has joi- Wait. You're supporting yourself?! How sweet! ♥");
         }
-        if (user.id !== message.author.id && key === 1 || key === 0){
+        if (user.id !== message.author.id && (key === 1 || key === 0)){
             
             message.channel.send('**'+ user.username + '** has joined the support gang! 💙');
         }
@@ -1816,6 +1816,33 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 
                 else {
             message.channel.sendMessage("...but there's no one to hug! How pitiful...");
+                }
+            }
+
+
+            if (emoji.name == "📌"){
+                if (messageReaction.count == 1){
+                    if (message.attachments.first != undefined){
+                        const pinembed = new Discord.RichEmbed()
+                        .setAuthor("From "+message.author.username, message.author.avatarURL)
+                        .setColor('#00BFFF')
+                        .setTitle("Pinned Moment:")
+                        .setImage(message.attachments.first())
+                        .addBlankField()
+                        .addField(message.content)
+                        .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
+                    }
+                    else {
+                        const pinembed = new Discord.RichEmbed()
+                        .setAuthor("From "+message.author.username, message.author.avatarURL)
+                        .setColor('#00BFFF')
+                        .setTitle("Pinned Moment:")
+                        .addBlankField()
+                        .addField(message.content)
+                        .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
+                    }
+
+                    bot.channels.get("636573475993288734").send(pinembed);
                 }
             }
 
