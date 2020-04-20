@@ -1829,7 +1829,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                         .setTitle("Pinned Moment:")
                         .setImage(message.attachments.first())
                         .addBlankField()
-                        .addField(message.content, " ")
+                        .addField(" ", message.content)
                         .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                         bot.channels.get("636573475993288734").send(pinembed);
                     }
@@ -1839,7 +1839,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                         .setColor('#00BFFF')
                         .setTitle("Pinned Moment:")
                         .addBlankField()
-                        .addField(message.content, " ")
+                        .addField(" ", message.content)
                         .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                         bot.channels.get("636573475993288734").send(pinembed);
                     }
