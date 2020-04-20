@@ -1827,9 +1827,8 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                         .setAuthor("From "+message.author.username, message.author.avatarURL)
                         .setColor('#00BFFF')
                         .setTitle("Pinned Moment:")
+                        .setDescription(message.content)
                         .setImage(message.attachments.first())
-                        .addBlankField()
-                        .addField(" ", message.content)
                         .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                         bot.channels.get("636573475993288734").send(pinembed);
                     }
@@ -1838,8 +1837,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                         .setAuthor("From "+message.author.username, message.author.avatarURL)
                         .setColor('#00BFFF')
                         .setTitle("Pinned Moment:")
-                        .addBlankField()
-                        .addField(" ", message.content)
+                        .setDescription(message.content)
                         .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                         bot.channels.get("636573475993288734").send(pinembed);
                     }
