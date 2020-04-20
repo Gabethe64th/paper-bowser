@@ -1820,8 +1820,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             }
 
 
-            if (emoji.name == "📌"){
-                if (messageReaction.count == 1){
+            if (emoji.name == "📌" && messageReaction.count == 1){
                     if (message.attachments.first() != undefined){
                         const pinembed = new Discord.RichEmbed()
                         .setAuthor("From "+message.author.username, message.author.avatarURL)
@@ -1843,7 +1842,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     }
 
 
-                }
+                
             }
 
         });
