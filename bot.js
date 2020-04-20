@@ -1831,6 +1831,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                         .addBlankField()
                         .addField(message.content)
                         .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
+                        bot.channels.get("636573475993288734").send(pinembed);
                     }
                     else {
                         const pinembed = new Discord.RichEmbed()
@@ -1840,9 +1841,10 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                         .addBlankField()
                         .addField(message.content)
                         .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
+                        bot.channels.get("636573475993288734").send(pinembed);
                     }
 
-                    bot.channels.get("636573475993288734").send(pinembed);
+
                 }
             }
 
