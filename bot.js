@@ -758,7 +758,7 @@ bot.on('message', message=> {
                 imo10 = Math.floor ((Math.random() * fruits.length));
                 message.channel.sendMessage("🎰 `Welcome to Jack's Casino!` 🎰 \n**" +message.author.username+"** rolled the impossible slots...\n   ["+fruits[imo1]+" "+fruits[imo2]+" "+fruits[imo3]+" "+fruits[imo4]+" "+fruits[imo5]+" "+fruits[imo6]+" "+fruits[imo7]+" "+fruits[imo8]+" "+fruits[imo9]+" "+fruits[imo10]+"]")
                 if (fruits[imo1] === fruits[imo2] === fruits[imo3] === fruits[imo4] === fruits[imo5] === fruits[imo6] === fruits[imo7] === fruits[imo8] === fruits[imo9] === fruits[imo10]) {
-                    message.channel.sendMessage("***WHAT THE HECK?! YOU ACTUALLY WON?!*** \nJack is looking at your direction!")
+                    message.channel.sendMessage("***WHAT THE HECK?! YOU ACTUALLY WON?!*** \nYou have achieved greatness! Be proud, you RNG god!")
                 }
                 else {
                     message.channel.sendMessage("...yep. They don't call it the 'Impossible Slots' for nothing...")
@@ -956,7 +956,7 @@ bot.on('message', message=> {
             break;
 
         case 'kirB':
-            message.channel.sendMessage("1. A cool lad who will comfort you in VCs. \n2. A demonic madlad who will cream yo ass in both Smash and SMM2. \n\n**Example:** \nGuy 1: I heard that Izzle died.\nKir b: Good.")
+            message.channel.sendMessage("1. A cool lad who will comfort you in VCs. \n2. A demonic madlad who will cream yo ass in SMM2. \n3. X+A (To the left or right) \n\n**Example:** \nGuy 1: I heard that Izzle died.\nKir b: Good.")
             break;
 
             case 'rb':
@@ -995,7 +995,7 @@ bot.on('message', message=> {
             break;
 
         case 'druxwario':
-            message.channel.sendMessage("Sit tight, folks. Let me tell you a story. One night, Dru decided to take a shower to wash off the depression he obtained from an 'article' about how the world now accepts cursed images. The article was mostly bullshit, and for some reason it decided to talk about politics for no reason. But let's not go there. As Dru stepped in the shower and turned on the nozzle, allowing the warm, steaming water to cover hie entire body from the head-down, he heard an unexpected noise. A hpyer-realistic 'wah', to be exact, followed by the opening of a creaky door. Upon hearing this, Dru smiles. He knows what's about to happen to him. He hears the incoming footsteps of Wario, slowly approaching him while inside the shower. Another nearby 'WAH' could be heard. As Dru feels the closeness of Wario in the shower, he also feels a large, muscular hand grabbing him by the ass, followed by a husky but sexy voice, which says 'Time to unrotten this hole!' Gabe, what the fuck is wrong with you. I'm not finishing this. Fuck you.")
+            message.channel.sendMessage("Sit tight, folks. Let me tell you a story. One night, Dru decided to take a shower to wash off the depression he obtained from an 'article' about how the world now accepts cursed images. The article was mostly bullshit, and for some reason it decided to talk about politics for no reason. But let's not go there. As Dru stepped in the shower and turned on the nozzle, allowing the warm, steaming water to cover hie entire body from the head-down, he heard an unexpected noise. A hyper-realistic 'wah', to be exact, followed by the opening of a creaky door. Upon hearing this, Dru smiles. He knows what's about to happen to him. He hears the incoming footsteps of Wario, slowly approaching him while inside the shower. Another nearby 'WAH' could be heard. As Dru feels the closeness of Wario in the shower, he also feels a large, muscular hand grabbing him by the ass, followed by a husky but sexy voice, which says 'Time to unrotten this hole!' Gabe, what the fuck is wrong with you. I'm not finishing this. Fuck you.")
             break;
 
         case 'BK':
@@ -1820,6 +1820,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             }
 
 
+            /*
             if (emoji.name == "📌" && messageReaction.count == 1){
                     if (message.attachments.first() != undefined){
                         const pinembed = new Discord.RichEmbed()
@@ -1844,6 +1845,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
                 
             }
+            */
 
         });
 
