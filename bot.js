@@ -1221,11 +1221,11 @@ bot.on('message', message=> {
             break;
             
             function pickASong(connection){
-                            vibes = 65;
+                            vibes = 53;
                             vib = Math.floor (Math.random() * (vibes - 1 + 1)) +1;
                             
 
-                const dispatcher = connection.playFile('./vibes/song (' + vib + ').mp3').then(
+                const dispatcher = connection.playFile('./vibes/vibes/tune (' + vib + ').mp3').then(
                     connection => { pickASong(connection) }
                 )
             }
