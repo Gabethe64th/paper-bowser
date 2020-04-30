@@ -1193,9 +1193,12 @@ bot.on('message', message=> {
 
             case 'vibe':
                 if (message.member.voiceChannel != undefined){
-                    message.member.voiceChannel.join();
                     vchannel = message.member.voiceChannelID;
-                    playASong();
+                    message.member.voiceChannel.join().then(
+                        connection => {const dispatcher = connection.playFile('./wait.mp3'); }
+                    )
+                    
+                    
                 }
                 else{
                     message.channel.send("...but you're not in a voice channel!")
@@ -1208,13 +1211,6 @@ bot.on('message', message=> {
                     vchannel = "0";
                 }
             break;
-
-            function playASong(){
-                
-                message.member.voiceChannel.connection.playFile("wait.mp3").setVolume(50);
-
-                //const dispatcher = connection.play("/wait.mp3")
-            }
             
             
                 
