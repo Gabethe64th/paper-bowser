@@ -1195,7 +1195,7 @@ bot.on('message', message=> {
                 if (message.member.voiceChannel != undefined){
                     vchannel = message.member.voiceChannelID;
                     message.member.voiceChannel.join().then(
-                        connection => { pickASong(connection) }
+                        connection => { pickASong() }
                     )
                     
                     
@@ -1220,12 +1220,16 @@ bot.on('message', message=> {
                 }
             break;
             
-            function pickASong(connection){
+            function pickASong(){
                             vibes = 53;
                             vib = Math.floor (Math.random() * (vibes - 1 + 1)) +1;
                             
 
                 const dispatcher = connection.playFile('./vibes/vibes/tune (' + vib + ').mp3')
+
+                dispatcher.on('finish', () => {
+                    pickASong();
+                })
 
                 
                 
