@@ -1195,7 +1195,7 @@ bot.on('message', message=> {
                 if (message.member.voiceChannel != undefined){
                     vchannel = message.member.voiceChannelID;
                     message.member.voiceChannel.join().then(
-                        connection => {const dispatcher = connection.playFile('./wait.mp3'); }
+                        connection => { pickASong(connection) }
                     )
                     
                     
@@ -1212,7 +1212,9 @@ bot.on('message', message=> {
                 }
             break;
             
-            
+            function pickASong(connection){
+                const dispatcher = connection.playFile('./wait.mp3');
+            }
                 
 
 
