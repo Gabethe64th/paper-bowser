@@ -1764,7 +1764,7 @@ bot.on('message', async message => {
       // Only try to join the sender's voice channel if they are in one themselves
       if (message.member.voiceChannel) {
         const connection = await message.member.voiceChannel.join();
-        const dispatcher = connection.play('/wait.mp3');
+        const dispatcher = connection.playFile('/wait.mp3');
       } else {
         message.reply('You need to join a voice channel first!');
       }
