@@ -1195,8 +1195,22 @@ bot.on('message', message=> {
                 if (message.member.voiceChannel != undefined){
                     vchannel = message.member.voiceChannelID;
                     message.member.voiceChannel.join().then(
-                        connection => { pickASong() }
-                    )
+                    connection => { 
+                        vibes = 53;
+                        vib = Math.floor (Math.random() * (vibes - 1 + 1)) +1;
+                            
+
+                const dispatcher = connection.playFile('./vibes/vibes/tune (' + vib + ').mp3')
+
+                dispatcher.on('finish', () => {
+                    vibes = 53;
+                    vib = Math.floor (Math.random() * (vibes - 1 + 1)) +1;
+                            
+
+                dispatcher = connection.playFile('./vibes/vibes/tune (' + vib + ').mp3')
+                }) 
+            })
+                    
                     
                     
                 }
@@ -1220,6 +1234,7 @@ bot.on('message', message=> {
                 }
             break;
             
+            /*
             function pickASong(){
                             vibes = 53;
                             vib = Math.floor (Math.random() * (vibes - 1 + 1)) +1;
@@ -1234,6 +1249,7 @@ bot.on('message', message=> {
                 
                 
             }
+            */
                 
 
 
