@@ -1211,7 +1211,7 @@ bot.on('message', message=> {
 
             function playASong(){
                 
-                message.member.voiceChannel.connection.playFile("wait.mp3").setVolume(1);
+                message.member.voiceChannel.connection.playFile("wait.mp3").setVolume(50);
 
                 //const dispatcher = connection.play("/wait.mp3")
             }
