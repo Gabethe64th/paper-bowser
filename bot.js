@@ -1205,6 +1205,14 @@ bot.on('message', message=> {
                 }
             break;
 
+            /*
+            case 'viberng':
+                if (vchannel != "0"){
+                    pickAsong(connection)
+                }
+            break;
+            */
+
             case 'vibeend':
                 if (vchannel != "0"){
                     bot.channels.get(vchannel).leave();
@@ -1213,7 +1221,13 @@ bot.on('message', message=> {
             break;
             
             function pickASong(connection){
-                const dispatcher = connection.playFile('./wait.mp3');
+                            vibes = 65;
+                            vib = Math.floor (Math.random() * (vibes - 1 + 1)) +1;
+                            
+
+                const dispatcher = connection.playFile('./vibes/song (' + vib + ').mp3').then(
+                    connection => { pickASong(connection) }
+                )
             }
                 
 
