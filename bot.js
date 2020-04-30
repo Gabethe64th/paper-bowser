@@ -1227,9 +1227,7 @@ bot.on('message', message=> {
 
                 const dispatcher = connection.playFile('./vibes/vibes/tune (' + vib + ').mp3')
 
-                message.channel.send("Picking another song...").then(
-                    connection => { pickASong(connection) }
-                )
+                
                 
             }
                 
