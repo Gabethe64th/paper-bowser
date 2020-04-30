@@ -11,7 +11,7 @@
   "scripts": {
 
     "start": "node bot.js",
-    "install ffmpeg"
+    "install ffmpeg": "install ffmpeg"
 
   },
 
