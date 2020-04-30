@@ -1755,7 +1755,7 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
 
 })
 
-client.on('message', async message => {
+bot.on('message', async message => {
     // Voice only works in guilds, if the message does not come from a guild,
     // we ignore it
     if (!message.guild) return;
