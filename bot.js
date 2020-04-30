@@ -1760,10 +1760,10 @@ bot.on('message', async message => {
     // we ignore it
     if (!message.guild) return;
   
-    if (message.content === 'vibe') {
+    if (message.content === 'v!vibe') {
       // Only try to join the sender's voice channel if they are in one themselves
-      if (message.member.voice.channel) {
-        const connection = await message.member.voice.channel.join();
+      if (message.member.voiceChannel) {
+        const connection = await message.member.voiceChannel.join();
         const dispatcher = connection.play('/wait.mp3');
       } else {
         message.reply('You need to join a voice channel first!');
