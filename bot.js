@@ -1225,9 +1225,12 @@ bot.on('message', message=> {
                             vib = Math.floor (Math.random() * (vibes - 1 + 1)) +1;
                             
 
-                const dispatcher = connection.playFile('./vibes/vibes/tune (' + vib + ').mp3').then(
+                const dispatcher = connection.playFile('./vibes/vibes/tune (' + vib + ').mp3')
+
+                message.channel.send("Picking another song...").then(
                     connection => { pickASong(connection) }
                 )
+                
             }
                 
 
