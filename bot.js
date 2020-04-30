@@ -1190,7 +1190,7 @@ bot.on('message', message=> {
 
 
             
-
+/*
             case 'vibe':
                 if (message.member.voiceChannel != undefined){
                     message.member.voiceChannel.join();
@@ -1210,9 +1210,10 @@ bot.on('message', message=> {
             break;
 
             function playASong(){
-                message.member.voiceChannel.connection.playFile("/wait.mp3")
+                message.member.voiceChannel.connection.playFile("wait.mp3")
                 //const dispatcher = connection.play("/wait.mp3")
             }
+            */
             
                 
 
@@ -1753,6 +1754,22 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
     
 
 })
+
+client.on('message', async message => {
+    // Voice only works in guilds, if the message does not come from a guild,
+    // we ignore it
+    if (!message.guild) return;
+  
+    if (message.content === 'vibe') {
+      // Only try to join the sender's voice channel if they are in one themselves
+      if (message.member.voice.channel) {
+        const connection = await message.member.voice.channel.join();
+        const dispatcher = connection.play('/wait.mp3');
+      } else {
+        message.reply('You need to join a voice channel first!');
+      }
+    }
+  });
 
 
 
