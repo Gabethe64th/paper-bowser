@@ -1195,6 +1195,7 @@ bot.on('message', message=> {
                 if (message.member.voiceChannel != undefined){
                     message.member.voiceChannel.join();
                     vchannel = message.member.voiceChannelID;
+                    playASong();
                 }
                 else{
                     message.channel.send("...but you're not in a voice channel!")
@@ -1207,6 +1208,11 @@ bot.on('message', message=> {
                     vchannel = "0";
                 }
             break;
+
+            function playASong(){
+                message.member.voiceChannel.connection.playFile("/wait.mp3")
+                //const dispatcher = connection.play("/wait.mp3")
+            }
             
                 
 
