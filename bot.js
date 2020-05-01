@@ -1209,7 +1209,12 @@ bot.on('message', message=> {
                         
 
                     connection.playFile('./vibes/vibes/tune (' + vib + ').mp3')
-                  }      
+
+                    dispatcher.on('end', () => {
+                        doItAgain()
+                    })
+                  } 
+
 
                 dispatcher.on('end', () => {
                     doItAgain()
