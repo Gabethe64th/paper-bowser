@@ -1196,17 +1196,23 @@ bot.on('message', message=> {
                     vchannel = message.member.voiceChannelID;
                     message.member.voiceChannel.join().then(
                     connection => { 
-                        function playASong(connection){
+                        
                         vibes = 53;
                         vib = Math.floor (Math.random() * (vibes - 1 + 1)) +1;
-                            
+                        
 
                 const dispatcher = connection.playFile('./vibes/vibes/tune (' + vib + ').mp3')
-                        }
+
+                        
 
                 dispatcher.on('end', () => {
-                    playASong(connection);
+                    vibes = 53;
+                    vib = Math.floor (Math.random() * (vibes - 1 + 1)) +1;
+                        
+
+                    connection.playFile('./vibes/vibes/tune (' + vib + ').mp3')
                 }) 
+            
             })
                     
                     
