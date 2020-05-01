@@ -1201,14 +1201,14 @@ bot.on('message', message=> {
                         vib = Math.floor (Math.random() * (vibes - 1 + 1)) +1;
                         
 
-                const dispatcher = connection.playFile('./vibes/vibes/tune (' + vib + ').mp3')
+                 dispatcher = connection.playFile('./vibes/vibes/tune (' + vib + ').mp3')
 
                   function doItAgain(){
                     vibes = 53;
                     vib = Math.floor (Math.random() * (vibes - 1 + 1)) +1;
                         
 
-                    connection.playFile('./vibes/vibes/tune (' + vib + ').mp3')
+                    dispatcher = connection.playFile('./vibes/vibes/tune (' + vib + ').mp3')
 
                     dispatcher.on('end', () => {
                         doItMore()
@@ -1220,7 +1220,7 @@ bot.on('message', message=> {
                     vib = Math.floor (Math.random() * (vibes - 1 + 1)) +1;
                         
 
-                    connection.playFile('./vibes/vibes/tune (' + vib + ').mp3')
+                    dispatcher = connection.playFile('./vibes/vibes/tune (' + vib + ').mp3')
 
                     dispatcher.on('end', () => {
                         doItAgain()
