@@ -1207,7 +1207,7 @@ bot.on('message', message=> {
                     vib = Math.floor (Math.random() * (vibes - 1 + 1)) +1;
                             
 
-                dispatcher = connection.playFile('./vibes/vibes/tune (' + vib + ').mp3')
+                connection.playFile('./vibes/vibes/tune (' + vib + ').mp3')
                 }) 
             })
                     
