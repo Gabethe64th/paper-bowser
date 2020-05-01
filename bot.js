@@ -1203,14 +1203,16 @@ bot.on('message', message=> {
 
                 const dispatcher = connection.playFile('./vibes/vibes/tune (' + vib + ').mp3')
 
-                        
-
-                dispatcher.on('end', () => {
+                  function doItAgain(){
                     vibes = 53;
                     vib = Math.floor (Math.random() * (vibes - 1 + 1)) +1;
                         
 
                     connection.playFile('./vibes/vibes/tune (' + vib + ').mp3')
+                  }      
+
+                dispatcher.on('end', () => {
+                    doItAgain()
                 }) 
             
             })
