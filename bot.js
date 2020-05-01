@@ -1211,6 +1211,18 @@ bot.on('message', message=> {
                     connection.playFile('./vibes/vibes/tune (' + vib + ').mp3')
 
                     dispatcher.on('end', () => {
+                        doItMore()
+                    })
+                  } 
+
+                  function doItMore(){
+                    vibes = 53;
+                    vib = Math.floor (Math.random() * (vibes - 1 + 1)) +1;
+                        
+
+                    connection.playFile('./vibes/vibes/tune (' + vib + ').mp3')
+
+                    dispatcher.on('end', () => {
                         doItAgain()
                     })
                   } 
