@@ -1267,7 +1267,7 @@ bot.on('message', message=> {
                             
                     
                      stream = ytdl(vibesongs[vib], { filter: 'audioonly' });
-                     dispatcher = connection.playStream(stream)
+                     dispatcher = message.member.voiceChannel.connection.playStream(stream)
     
                       function doItAgain(){
                         
@@ -1275,7 +1275,7 @@ bot.on('message', message=> {
                             
                     
                      stream = ytdl(vibesongs[vib], { filter: 'audioonly' });
-                     dispatcher = connection.playStream(stream)
+                     dispatcher = message.member.voiceChannel.connection.playStream(stream)
     
                         dispatcher.on('end', () => {
                             doItMore()
@@ -1288,7 +1288,7 @@ bot.on('message', message=> {
                             
                     
                      stream = ytdl(vibesongs[vib], { filter: 'audioonly' });
-                     dispatcher = connection.playStream(stream)
+                     dispatcher = message.member.voiceChannel.connection.playStream(stream)
     
                         dispatcher.on('end', () => {
                             doItAgain()
