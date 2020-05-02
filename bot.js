@@ -1225,6 +1225,7 @@ bot.on('message', message=> {
                  dispatcher = connection.playStream(stream)
 
                     dispatcher.on('end', () => {
+                        console.log("New song at "+vchannel);
                         doItMore()
                     })
                   } 
@@ -1238,12 +1239,14 @@ bot.on('message', message=> {
                  dispatcher = connection.playStream(stream)
 
                     dispatcher.on('end', () => {
+                        console.log("New song at "+vchannel);
                         doItAgain()
                     })
                   } 
 
 
                 dispatcher.on('end', () => {
+                    console.log("New song at "+vchannel);
                     doItAgain()
                 }) 
             
@@ -1258,6 +1261,7 @@ bot.on('message', message=> {
             break;
 
             
+            /*
             case 'viberng':
                 if (vchannel != "0" && message.member.voiceChannelID == vchannel && vcskip == true){
                     
@@ -1313,6 +1317,7 @@ bot.on('message', message=> {
                     message.channel.send("You can't do that right now. Please join a VC, or wait a bit.")
                 }
             break;
+            */
             
 
             case 'vibeend':
