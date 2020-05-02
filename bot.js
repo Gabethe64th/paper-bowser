@@ -57,6 +57,7 @@ var wisequouts = ["*I'm outta here!* -Sonic, https://i.ytimg.com/vi/9Sj-NByEA0E/
 var vibesongs = ["https://youtu.be/GGSbyJXN86o", "https://youtu.be/bVoWW_G-V4E", "https://youtu.be/FQdEzYN1CkI", "https://youtu.be/ggqTSLydqr0", "https://youtu.be/lpTT2wTlNZM", "https://youtu.be/bGgDtXvDNz4", "https://youtu.be/-XdN6GzeN7Y", "https://youtu.be/nfm0nyKz7Mg", "https://youtu.be/RhMh2O-kn64", "https://youtu.be/2wWLYg-kgy0", "https://youtu.be/Xb3pJuBzOcY", "https://youtu.be/nj6OA-n916k", "https://youtu.be/giwG7djXPKc", "https://youtu.be/JFP4wn0dejc", "https://youtu.be/JCwlck3Xpms", "https://youtu.be/_7ujua6cTZs", "https://youtu.be/IAfo6YI4KGs", "https://youtu.be/0o_B_qGoZ8A", "https://youtu.be/95HuSMQSUVo", "https://youtu.be/05YkWebV86w", "https://youtu.be/XT08seC4JDg", "https://youtu.be/fVLNw8B1S5Y", "https://youtu.be/W-DfeRp8t4Q", "https://youtu.be/gEUv22jBUtY", "https://youtu.be/qWbkcFdEkgM", "https://youtu.be/WA2WjP6sgrc", "https://youtu.be/xwMzeLa8rBY", "https://youtu.be/zWckr41oNCc", "https://youtu.be/_V9ZBEo4wKg", "https://youtu.be/9GVzDMr1YJA", "https://youtu.be/Boqy0Q-4c_M", "https://youtu.be/di6VFegOMfk", "https://youtu.be/9nQVQb2yxjY", "https://youtu.be/pCLETISZSVU", "https://youtu.be/6Cy07t8jmA8", "https://youtu.be/-2r-FKU1QpE", "https://youtu.be/DsdMTmz4k5Q", "https://youtu.be/acfG3QeH7Uw", "https://youtu.be/csisM0fshrU", "https://youtu.be/gFFOXwniVKw", "https://youtu.be/tWBKtLiYe5w", "https://youtu.be/-WcRJ4Nx81k", "https://youtu.be/lVuCM-ifWdQ", "https://youtu.be/LQn7EsWACcM", "https://youtu.be/D8j4RxAldC0", "https://youtu.be/IXkyzCgYIgg", "https://youtu.be/IEi6VrVRYxQ", "https://youtu.be/ezsQ1Ih9J4M", "https://youtu.be/WMe8600C_H0", "https://youtu.be/o_hXGZ8NXAA", "https://youtu.be/xGkiOGe7FdU", "https://youtu.be/GDxS8oK6hCc", "https://youtu.be/uRtAbX2-f3A", "https://youtu.be/PZu47D9OdEQ", "https://youtu.be/SDTZ7iX4vTQ", "https://youtu.be/BQF0EFToYB0", "https://youtu.be/HtUH9z_Oey8", "https://youtu.be/18JQUYgpOlw", "https://youtu.be/wZZ8V2AFUq0", "https://youtu.be/y2oLbP7tvMk", "https://youtu.be/diuexInkshA", "https://youtu.be/2MtOpB5LlUA", "https://youtu.be/nOL7KQc5Wfo", "https://youtu.be/fE_spqJTU6k", "https://youtu.be/HnyGSl3K-IE", "https://youtu.be/kbHttO65eUM", "https://youtu.be/hQlPzrX8u0A", "https://youtu.be/RsJT0Unnef4", "https://youtu.be/dBHWQx4zbqE", "https://youtu.be/rnJYlQ_bVP4", "https://youtu.be/TgbqBx4NthI", "https://youtu.be/JFgaxeA-BW4", "https://youtu.be/cwGWZr24d2o", "https://youtu.be/_CzSCWpF7TM", "https://youtu.be/edgMzNquVzk", "https://youtu.be/KGCWnMXICrg", "https://youtu.be/TuwoH2iZuKU", "https://youtu.be/qa52CKvb3qg", "https://youtu.be/4poG9l7-ZZg", "https://youtu.be/k3eym4mqS4A", "https://youtu.be/RklG6SprjMk", "https://youtu.be/AzUVwWwkuKM", "https://youtu.be/uU7E__eIkVE", "https://youtu.be/0F-XzhAMFAM", "https://youtu.be/XiJW-Gzi4rU", "https://youtu.be/JVovZkcU5tk", "https://youtu.be/X3tPa9DEmxQ", "https://youtu.be/YhScNIi2rgI", "https://youtu.be/JcbMvsQqgAc", "https://youtu.be/qQbUTutaKKo", "https://youtu.be/tmI92GX-xF0", "https://youtu.be/m20g62c5JsM", "https://youtu.be/TcoASjlFysk", "https://youtu.be/y65oKsRJth8"];
 var vibenames = ["Kichijoji 199X - Persona 5 The Royal", "Ideal and the Real - Persona 5 Royal", "Persona 4 -Reincarnation- Heartbreak, Heartbreak", "Wave Ocean (The Water's Edge) - Sonic the Hedgehog", "Tropical Jungle (The Jungle ~ The Swamp) - Sonic the Hedgehog", "Soleanna Forest - Sonic the Hedgehog", "Aquatic Base (Level 1) - Sonic the Hedgehog", "Soleanna New City - Sonic the Hedgehog", "Flame Core (The Cavern) - Sonic the Hedgehog", "Tostarena: Ruins - Super Mario Odyssey", "Bubblaine - Super Mario Odyssey", "Donkey Kong Country: Tropical Freeze - Sawmill Hill", "Donkey Kong Country: Tropical Freeze - Sawmill Thrill (Midway)", "Donkey Kong Country: Tropical Freeze - Scorch 'N' Torch", "Windmill Hills - Donkey Kong Country: Tropical Freeze", "Donkey Kong Country: Tropical Freeze - Alpine Incline (Lowlands)", "Donkey Kong Country: Tropical Freeze - Horn Top Hop", "Donkey Kong Country: Tropical Freeze - Frozen Frenzy ~ Fear Factory", "Donkey Kong Country: Tropical Freeze - Busted Bayou", "Donkey Kong Country: Tropical Freeze - Savannah Symphony [Stickerbrush Symphony Returns]", "Donkey Kong Country: Tropical Freeze - Deep Keep", "Donkey Kong Country: Tropical Freeze - Crumble Cavern [Cave Dweller Concert Returns]", "Donkey Kong Country: Tropical Freeze - High Tide Ride", "Donkey Kong Country: Tropical Freeze - Wing Ding (Full Version)", "Donkey Kong Country: Tropical Freeze - Funky's Fly 'N' Buy", "Donkey Kong Country: Tropical Freeze - Funky Waters (Amiss Abyss)", "Donkey Kong Country: Tropical Freeze - Frosty Fruits ~ In a Snow-Bound Land", "Donkey Kong Country: Tropical Freeze - Fruity Factory", "Donkey Kong Country: Tropical Freeze - Jammin' Jams", "Donkey Kong Country: Tropical Freeze - Jelly Jamboree", "Donkey Kong Country: Tropical Freeze - Seashore War", "Donkey Kong Country: Tropical Freeze - Forest Folly", "[Sonic BTS'12] 1-22 Metro Madness Act 1", "[Sonic BTS'12] 2-05 Playa del Mediterráneo - For Perilous Paradise Act 1", "Nightlite Paradise (Stage 1) - Sonic vs Darkness", "[Sonic BTS'12] 2-09 Titanic Tower Act 1", "Persona Q 2 New Cinema Labyrinth - Cinematic Tale Full Version", "Shadow World ATLUS Kozuka Remix - P4D", "Fearofdark - Funknitium-99", "Persona 5  - Beneath the Mask", "Persona 4 Dancing All Night - Specialist", "Fresh Green Cafe Terrace - Green Greens", "Butter Brimful Building - Butter Building", "The King and The Witch's Rendezvous - Kirby Extra Game Series Medley", "Sixty-four - vs. Zero Two", "A Twinkling Star, Born - The Sound of Kirby Café 2", "Fruits of the Dancing Forest - The Sound of Kirby Café 2", "Smile-Sisters & Gentleman - The Sound of Kirby Café 2", "Sleeping Mechanical Planet - The Sound of Kirby Café 2", "Fox Stevenson - Dreamland", "Steven Universe The Movie - Change", "A Hat in Time [Nyakuza Metro] - Nyakuza Manholes", "Battle!!, by Kenji Hiramatsu - Xenoblade Chronicles 2: Torna ~The Golden Country", "Sen no Kiseki Super Arrange Version - Belief", "Foster The People - Pumped up Kicks", "Spongebob Squarepants - Ripped Pants", "The Beatles - Strawberry Fields Forever", "ProleteR - April Showers", "The Electric Swing Circus - Bella Belle", "Wings For Dreamers", "Débilman No Uta (Full) - Devilman Crybaby", "JoJo's Bizarre Adventure:Golden Wind: ~Giorno's Theme~ 'Il vento d'oro'", "Unknown Artist - Maboroshi", "Hyper Potions, Synthion & MYLK - Maboroshi", "Hedgehog Stew", "Sonic Adventure Special Remix - 'Welcome to Station Square'", "Hey There Delilah", "Panic Room Acoustic Au/Ra", "Spyro Reignited Trilogy - Sunrise Spring", "Dyson Sphere", "鋼之鍊金術師 Fullmetal Alchemist: Brotherhood OP3 - スキマスイッチ - Golden Time Lover【中日字幕】", "After All", "The Happy Fits - Best Tears", "Ghost Duet - Louie Zong", "an everything song", "Professor Layton and the Eternal Diva - The Eternal Diva", "Under Night In-Birth: Blood Drain - Again - (Eltnum's Theme)", "Blood Drain Again (Eltinum's Theme) Retro-Synth REMIX (Under Night In Birth)", "Under Night In-Birth: Rushing Heart (Gordeau's Theme)", "Under Night In-Birth: Night Walker (Linne's Theme)", "The Turntable Turnabout - SiIvaGunner: King for Another Day", "Ladies and Gentlemen...Leave Me Alone - SiIvaGunner: King for Another Day", "nelward - Never Wanna Fall in Love With U", "Persona 4 -Reincarnation- Pursuing My True Self", "7PM - Animal Crossing: New Horizons", "Mio Honda (本田未央) - Step! (ステップ！)", "Sticker Album / Album / Chronicle - Super Smash Bros. Brawl", "Sonic Advance: Ice Mountain Zone Act 1", "Sonic Advance 2: Music Plant (Act 1)", "Sonic Remix - 'Dr. Gigglymen'", "[Sonic ATS] 1-16 - Tea With Ellie - For Cyan City Act 1", "[Sonic ATS] 1-17 - Flight Thrills - For Cyan City Act 2", "[Sonic ATS] 1-18 - Espresso with Bayonetta - For Cyan City Act 3", "Persona (PSP) - Dream of Butterfly"];
 var vcskip = true;
+var vib = 0;
 var vcservers = [];
 var vcinthisserver;
 
@@ -1210,7 +1211,7 @@ bot.on('message', message=> {
                     connection => { 
                         
                         
-                 vib = Math.floor (Math.random() * vibesongs.length);
+                 vib = Math.floor (Math.random() * (vibesongs.length - 1));
                         
                 
                  stream = ytdl(vibesongs[vib], { filter: 'audioonly' });
@@ -1218,7 +1219,7 @@ bot.on('message', message=> {
 
                   function doItAgain(){
                     
-                    vib = Math.floor (Math.random() * vibesongs.length);
+                    vib = Math.floor (Math.random() * (vibesongs.length - 1));
                         
                 
                  stream = ytdl(vibesongs[vib], { filter: 'audioonly' });
@@ -1231,7 +1232,7 @@ bot.on('message', message=> {
 
                   function doItMore(){
                     
-                    vib = Math.floor (Math.random() * vibesongs.length);
+                    vib = Math.floor (Math.random() * (vibesongs.length - 1));
                         
                 
                  stream = ytdl(vibesongs[vib], { filter: 'audioonly' });
@@ -1263,7 +1264,7 @@ bot.on('message', message=> {
                     connection = message.member.voiceChannel.connection;
                             
                             
-                     vib = Math.floor (Math.random() * vibesongs.length);
+                     vib = Math.floor (Math.random() * (vibesongs.length - 1));
                             
                     
                      stream = ytdl(vibesongs[vib], { filter: 'audioonly' });
@@ -1271,7 +1272,7 @@ bot.on('message', message=> {
     
                       function doItAgain(){
                         
-                        vib = Math.floor (Math.random() * vibesongs.length);
+                        vib = Math.floor (Math.random() * (vibesongs.length - 1));
                             
                     
                      stream = ytdl(vibesongs[vib], { filter: 'audioonly' });
@@ -1284,7 +1285,7 @@ bot.on('message', message=> {
     
                       function doItMore(){
                         
-                        vib = Math.floor (Math.random() * vibesongs.length);
+                        vib = Math.floor (Math.random() * (vibesongs.length - 1));
                             
                     
                      stream = ytdl(vibesongs[vib], { filter: 'audioonly' });
