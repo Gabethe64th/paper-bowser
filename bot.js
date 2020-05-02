@@ -59,7 +59,7 @@ var vibenames = ["Kichijoji 199X - Persona 5 The Royal", "Ideal and the Real - P
 var vcskip = true;
 var vib = 0;
 var vcservers = ["0"];
-var vcinthisserver;
+var vcinthisserver = false;
 
 
 bot.on('ready', () =>{
@@ -1206,7 +1206,6 @@ bot.on('message', message=> {
                 if (vcinthisserver == false){
                     vchannel = message.member.voiceChannelID;
                     vcservers.push(message.guild.id)
-                    vcinthisserver = false;
                     message.member.voiceChannel.join().then(
                     connection => { 
                         
