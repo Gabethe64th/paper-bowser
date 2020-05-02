@@ -1198,7 +1198,7 @@ bot.on('message', message=> {
             
 
             case 'vibe':
-                for (i = 0; i > vcservers.length; i++){
+                for (i = 0; i < vcservers.length; i++){
                     if (vcservers[i] == message.guild.id){
                         vcinthisserver = true;
                     }
@@ -1319,7 +1319,7 @@ bot.on('message', message=> {
                 if (vchannel != "0"){
                     bot.channels.get(vchannel).leave();
                     vchannel = "0";
-                    for (i = 0; i > vcservers.length; i++){
+                    for (i = 0; i < vcservers.length; i++){
                         if (vcservers[i] == message.guild.id){
                             vcinthisserver = true;
                         }
