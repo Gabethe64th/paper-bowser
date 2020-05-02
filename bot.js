@@ -1225,7 +1225,7 @@ bot.on('message', message=> {
                  dispatcher = connection.playStream(stream)
 
                     dispatcher.on('end', () => {
-                        console.log("New song at "+vchannel);
+                        
                         doItMore()
                     })
                   } 
@@ -1239,14 +1239,14 @@ bot.on('message', message=> {
                  dispatcher = connection.playStream(stream)
 
                     dispatcher.on('end', () => {
-                        console.log("New song at "+vchannel);
+                        
                         doItAgain()
                     })
                   } 
 
 
                 dispatcher.on('end', () => {
-                    console.log("New song at "+vchannel);
+                    
                     doItAgain()
                 }) 
             
