@@ -1259,7 +1259,7 @@ bot.on('message', message=> {
 
             
             case 'viberng':
-                if (vchannel != "0" && message.member.voiceChannelID == vchannel){
+                if (vchannel != "0" && message.member.voiceChannelID == vchannel && vcskip == true){
                     connection = message.member.voiceChannel.connection;
                             
                             
@@ -1307,6 +1307,9 @@ bot.on('message', message=> {
                           }, 3000)
                     )
 
+                }
+                else {
+                    message.channel.send("You can't do that right now. Please join a VC, or wait a bit.")
                 }
             break;
             
