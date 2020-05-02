@@ -1253,14 +1253,14 @@ bot.on('message', message=> {
                     
                 }
                 else{
-                    message.channel.send("...but you're not in a voice channel!")
+                    message.channel.send("I can't do this...are you in a VC? Or am I in one?")
                 }
             break;
 
             
             case 'viberng':
                 if (vchannel != "0" && message.member.voiceChannelID == vchannel && vcskip == true){
-                    connection = message.member.voiceChannel.connection;
+                    
                             
                             
                      vib = Math.floor (Math.random() * (vibesongs.length - 1));
