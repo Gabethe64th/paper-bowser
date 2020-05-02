@@ -1316,7 +1316,7 @@ bot.on('message', message=> {
 
             case 'vibeend':
                 if (vchannel != "0"){
-                    bot.channels.get(vchannel).leave();
+                    
                     vchannel = "0";
                     for (i = 0; i < vcservers.length; i++){
                         if (vcservers[i] == message.guild.id){
@@ -1324,6 +1324,7 @@ bot.on('message', message=> {
                         }
                     }
                     if (vcinthisserver == true){
+                        bot.channels.get(message.member.voiceChannelID).leave();
                     vcservertodel = vcservers.indexOf(message.guild.id)
                     vcservers.splice(vcservertodel)
                     vcinthisserver = false;
