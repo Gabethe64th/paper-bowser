@@ -1267,6 +1267,7 @@ bot.on('message', message=> {
                             
                     
                      stream = ytdl(vibesongs[vib], { filter: 'audioonly' });
+                     message.member.voiceChannel.connection.dispatcher.end;
                      dispatcher = message.member.voiceChannel.connection.playStream(stream)
     
                       function doItAgain(){
@@ -1317,7 +1318,7 @@ bot.on('message', message=> {
             case 'vibeend':
                 if (vchannel != "0"){
                     
-                    vchannel = "0";
+                    
                     for (i = 0; i < vcservers.length; i++){
                         if (vcservers[i] == message.guild.id){
                             vcinthisserver = true;
