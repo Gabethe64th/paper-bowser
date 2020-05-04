@@ -1273,11 +1273,11 @@ bot.on('message', message=> {
                     }
 
                     vcserver.dispatcher.end();
+                    message.channel.send("I'm outta here!");
                     
                 }
 
                 if(message.guild.connection) 
-                    message.channel.send("I'm outta here!");
                     vcserver.dispatcher.destroy();
                     message.guild.voiceConnection.disconnect();
                 
