@@ -1278,6 +1278,7 @@ bot.on('message', message=> {
 
                 if(message.guild.connection) 
                     message.channel.send("I'm outta here!");
+                    vcserver.dispatcher.destroy();
                     message.guild.voiceConnection.disconnect();
                 
             break;
