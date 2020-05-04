@@ -1273,10 +1273,11 @@ bot.on('message', message=> {
                     }
 
                     vcserver.dispatcher.end();
-                    message.channel.send("I'm outta here!");
+                    
                 }
 
                 if(message.guild.connection) 
+                    message.channel.send("I'm outta here!");
                     message.guild.voiceConnection.disconnect();
                 
             break;
@@ -1285,7 +1286,7 @@ bot.on('message', message=> {
                 var vcserver = vcservers[message.guild.id];
                 indexname = vibesongs.indexOf(vcserver.queue[0])
                 message.channel.send("Now Playing: \n `"+vibenames[indexname]+"`")
-            break
+            break;
 
 
 
