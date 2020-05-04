@@ -1241,8 +1241,8 @@ bot.on('message', message=> {
                 vcserver.queue.push(vibesongs[vib])
              }
              else{
-                 if (!isNaN(message.content) && message.content <= vibesongs.length){
-                     vcserver.queue.push(vibesongs[message.content]);
+                 if (!isNaN(args[1]) && args[1] <= vibesongs.length){
+                     vcserver.queue.push(vibesongs[args[1]]);
                  }
              }
              
