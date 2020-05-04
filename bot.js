@@ -1277,16 +1277,20 @@ bot.on('message', message=> {
                     
                 }
 
-                if(message.guild.connection) 
+                if(message.guild.connection){
                     vcserver.dispatcher.destroy();
                     message.guild.voiceConnection.disconnect();
+                }
                 
             break;
 
             case 'vibenp':
+                /*
                 var vcserver = vcservers[message.guild.id];
                 indexname = vibesongs.indexOf(vcserver.queue[0])
                 message.channel.send("Now Playing: \n `"+vibenames[indexname]+"`")
+                */
+               message.channel.send("Sorry! This command still needs more work.")
             break;
 
 
