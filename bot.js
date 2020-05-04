@@ -1245,7 +1245,7 @@ bot.on('message', message=> {
              }
              else{
                  if (!isNaN(args[1]) && (args[1] <= (vibesongs.length - 1) && args[1] >= 0)){
-                     message.channel.send("`"+ vibesongs[args[1]] + "` has been queued. It will play after.")
+                     message.channel.send("`"+ vibenames[args[1]] + "` has been queued. It will play after.")
                      vcserver.queue.push(vibesongs[args[1]]);
                  }
              }
