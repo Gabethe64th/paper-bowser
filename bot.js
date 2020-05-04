@@ -1206,6 +1206,7 @@ bot.on('message', message=> {
 
                 vcserver.dispatcher = connection.playStream(ytdl(vcserver.queue[0], {filter: "audioonly"}));
 
+                vcserver.np = vcserver.queue[0]
                 vcserver.queue.shift();
 
                 vcserver.dispatcher.on("end", function(){
@@ -1230,7 +1231,8 @@ bot.on('message', message=> {
 
              if(!vcservers[message.guild.id])
                  vcservers[message.guild.id] = {
-                     queue: []
+                     queue: [],
+                     np: ""
                  }
              
 
@@ -1285,12 +1287,12 @@ bot.on('message', message=> {
             break;
 
             case 'vibenp':
-                /*
+                
                 var vcserver = vcservers[message.guild.id];
-                indexname = vibesongs.indexOf(vcserver.queue[0])
+                indexname = vibesongs.indexOf(vcserver.np)
                 message.channel.send("Now Playing: \n `"+vibenames[indexname]+"`")
-                */
-               message.channel.send("Sorry! This command still needs more work.")
+                
+               // message.channel.send("Sorry! This command still needs more work.")
             break;
 
 
