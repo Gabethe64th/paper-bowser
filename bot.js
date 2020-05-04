@@ -1281,10 +1281,10 @@ bot.on('message', message=> {
                     
                 }
 
-                if(message.guild.connection){
+                if(message.guild.connection)
                     vcserver.dispatcher.destroy();
                     message.guild.voiceConnection.disconnect();
-                }
+                
                 
             break;
 
