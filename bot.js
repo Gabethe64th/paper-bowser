@@ -1228,11 +1228,11 @@ bot.on('message', message=> {
                  message.channel.send("You aren't in a VC!");
              } 
 
-             if(!vcservers[message.guild.id]){
+             if(!vcservers[message.guild.id])
                  vcservers[message.guild.id] = {
                      queue: []
                  }
-             }
+             
 
              var vcserver = vcservers[message.guild.id];
 
@@ -1242,26 +1242,26 @@ bot.on('message', message=> {
              }
              else{
                  if (!isNaN(message.content) && message.content <= vibesongs.length){
-                     vcserver.queue.push(args[1]);
+                     vcserver.queue.push(vibesongs[message.content]);
                  }
              }
              
 
-             if(!message.guild.voiceConnection){
+             if(!message.guild.voiceConnection)
                  message.member.voiceChannel.join().then(function(connection){
                      play(connection, message)
                  })
-             }
+             
 
 
             break;
 
             case 'vibeskip':
                 var vcserver = vcservers[message.guild.id];
-                    if(vcserver.dispatcher){
+                    if(vcserver.dispatcher)
                         vcserver.dispatcher.end();
                         message.channel.send("Skipping...");
-                    }
+                    
 
             break;
 
@@ -1276,9 +1276,9 @@ bot.on('message', message=> {
                     message.channel.send("I'm outta here!");
                 }
 
-                if(message.guild.connection) {
+                if(message.guild.connection) 
                     message.guild.voiceConnection.disconnect();
-                }
+                
             break;
 
             case 'vibenp':
