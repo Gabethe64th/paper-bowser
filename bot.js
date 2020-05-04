@@ -1240,10 +1240,12 @@ bot.on('message', message=> {
 
              if (!args[1]){
                 vib = Math.floor (Math.random() * (vibesongs.length - 1));
+                message.channel.send("A song has been queued!")
                 vcserver.queue.push(vibesongs[vib])
              }
              else{
-                 if (!isNaN(args[1]) && args[1] <= (vibesongs.length - 1)){
+                 if (!isNaN(args[1]) && (args[1] <= (vibesongs.length - 1) && args[1] >= 0)){
+                     message.channel.send("`"+ vibesongs[args[1]] + "` has been queued. It will play after.")
                      vcserver.queue.push(vibesongs[args[1]]);
                  }
              }
