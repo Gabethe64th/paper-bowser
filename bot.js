@@ -61,6 +61,7 @@ var vib = 0;
 var vcservers = {};
 var vcnps = [];
 var vcinthisserver = false;
+var mathans;
 
 
 bot.on('ready', () =>{
@@ -1087,6 +1088,47 @@ bot.on('message', message=> {
             case 'fuck':
                 message.channel.sendMessage("You don't have permission to use that command. Please try another.");
                 break;
+
+            case 'math':
+                if (args[3] != undefined){
+                    if (!isNaN(args[1]) && !isNaN(args[3])){
+                        switch (args[2]){
+                            case '+':
+                                mathans = Number(args[1]) + Number(args[3]);
+                                message.channel.send("Your answer is: "+mathans)
+                            break;
+
+                            case '-':
+                                mathans = Number(args[1]) - Number(args[3]);
+                                message.channel.send("Your answer is: "+mathans)
+                            break;
+
+                            case '*':
+                            case 'x':
+                                mathans = Number(args[1]) * Number(args[3]);
+                                message.channel.send("Your answer is: "+mathans)
+                            break;
+
+                            case '/':
+                            case 'DIV':
+                                mathans = Number(args[1]) / Number(args[3]);
+                                message.channel.send("Your answer is: "+mathans)
+                            break;
+
+                            default:
+                                message.channel.send("Invalid operator.")
+                            break;
+
+                        }
+                    }
+                    else {
+                        message.channel.send("One of the values aren't a number!")
+                    }
+                }
+                else {
+                    message.channel.send("I do not see enough args.")
+                }
+            break;
 
             case 'deathbattle':
                 if (message.mentions.users.first() == undefined){
