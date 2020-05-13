@@ -1115,6 +1115,12 @@ bot.on('message', message=> {
                                 message.channel.send("Your answer is: "+mathans)
                             break;
 
+                            case '^':
+                            case 'exponent':
+                                mathans = Math.pow(Number(args[1]), Number(args[3]));
+                                message.channel.send("Your answer is: "+mathans)
+                            break;
+
                             default:
                                 message.channel.send("Invalid operator.")
                             break;
