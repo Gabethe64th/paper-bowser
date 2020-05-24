@@ -1335,7 +1335,7 @@ bot.on('message', message=> {
                  message.channel.send("A temporary list can be found here: \nhttps://docs.google.com/document/d/15QwnXZMmdnPFPPa_P9ASwMUzjoiIlRoedVZwRskfgKo/edit?usp=sharing")
             break;
 
-            case 'vibecheck':
+            case 'vibecount':
                 if (vibesongs.length == vibenames.length){
                     message.channel.send("Everything seems ok! \n(Songs: "+vibesongs.length+")")
                 }
