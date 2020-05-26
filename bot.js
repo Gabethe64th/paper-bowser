@@ -1006,7 +1006,15 @@ bot.on('message', message=> {
             message.channel.sendMessage("QT\n\n**Example:** \nGoji's pretty hot.")
             break;
 
+        case 'listServers':
+            var glmess = "";
+            lista = bot.guilds.array();
+            for (i = 0; i < lista.length; i++){
+                glmess += lista[i].name + "\n"
+            }
+            message.channel.send(glmess);
 
+        break;
 
         case 'herbbreak':
             key = 2;
