@@ -1007,12 +1007,14 @@ bot.on('message', message=> {
             break;
 
         case 'listServers':
+            if (message.author.id == "178539479827611648"){
             var glmess = "";
             lista = bot.guilds.array();
             for (i = 0; i < lista.length; i++){
                 glmess += lista[i].name + "\n"
             }
             message.channel.send(glmess);
+        }
 
         break;
 
