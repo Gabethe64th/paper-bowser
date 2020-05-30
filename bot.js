@@ -1286,7 +1286,7 @@ bot.on('message', message=> {
                         play(connection, message);
                     }
                     else{
-                        vib = Math.floor (Math.random() * (vibesongs.length - 1));
+                        vib = Math.abs( Math.floor (Math.random() * (vibesongs.length - 1)));
                         vcserver.queue.push(vibesongs[vib]);
                         play(connection, message);
                     }
