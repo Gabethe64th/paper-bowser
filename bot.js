@@ -1326,6 +1326,7 @@ bot.on('message', message=> {
              if(!message.guild.voiceConnection)
                  message.member.voiceChannel.join().then(function(connection){
                      play(connection, message)
+                     bot.channels.get().send("`Joined VC at "+message.guild.name+".`")
                  })
              
 
@@ -1376,6 +1377,7 @@ bot.on('message', message=> {
 
                 if(message.member.voiceChannel){
                     message.member.voiceChannel.leave();
+                    bot.channels.get().send("`Left VC at "+message.guild.name+".`")
                 }
                 
                 
