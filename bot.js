@@ -465,6 +465,16 @@ bot.on('message', message=> {
                     message.channel.send(attachment18);
                     break;
 
+        case 'imthisclose':
+                const attachment19 = new Attachment('https://cdn.discordapp.com/attachments/616765923491053671/716435153404035172/video0.mp4');
+                message.channel.send(attachment19);
+                break;
+
+        case 'diggy':
+                const attachment20 = new Attachment('https://cdn.discordapp.com/attachments/635683701987999804/716436252832039042/video0.mp4');
+                message.channel.send(attachment20);
+             break;
+
 
         case 'bottomtext':
             message.channel.send('Your free bottom text, sir. \n  \nbottom text');
