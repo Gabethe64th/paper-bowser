@@ -379,19 +379,19 @@ bot.on('message', message=> {
                     aftermes += beforemes.charAt(i).replace("r", "w");
                 }
                 for (i = 0; i < aftermes.length; i++){
-                    aftermes1 += beforemes.charAt(i).replace("R", "W");
+                    aftermes1 += aftermes.charAt(i).replace("R", "W");
                 }
                 for (i = 0; i < aftermes1.length; i++){
-                    aftermes2 += beforemes.charAt(i).replace("Y", "I");
+                    aftermes2 += aftermes1.charAt(i).replace("Y", "I");
                 }
                 for (i = 0; i < aftermes2.length; i++){
-                    aftermes3 += beforemes.charAt(i).replace("y", "i");
+                    aftermes3 += aftermes2.charAt(i).replace("y", "i");
                 }
                 for (i = 0; i < aftermes3.length; i++){
-                    aftermes4 += beforemes.charAt(i).replace("o", "u");
+                    aftermes4 += aftermes3.charAt(i).replace("o", "u");
                 }
                 for (i = 0; i < aftermes4.length; i++){
-                    aftermes5 += beforemes.charAt(i).replace("O", "U");
+                    aftermes5 += aftermes4.charAt(i).replace("O", "U");
                 }
                 message.channel.send(aftermes5);
         break;
@@ -2185,6 +2185,10 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             stolenmeme = new Attachment (message.attachments.first().url);
             message.channel.send("This is a message to alert that "+user.username+" has stolen "+message.author.username+"'s meme. No further action is required.");
             bot.users.get(user.id).send(stolenmeme);
+        }
+
+        if (emoji.name == "🔎"){
+            message.channel.send(message.author.username + ", I have just analysed all "+ message.content.length + " characters of that post you made, and I still don't get how drunk you got to even type that.")
         }
 
         
