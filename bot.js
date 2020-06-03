@@ -3055,6 +3055,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                             case 'numguess':
                                 guessnum = Math.floor(Math.random() * 100);
                                 guessgame = true;
+                                guesscount = 0;
                                 guesschannel = message.channel.id;
                                 message.channel.send("Ok! I'm thinking of a number between 0 and 100...")
                             break;
@@ -3420,10 +3421,10 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             else{
                 sentnum = Number(message.content);
                 if (sentnum > guessnum){
-                    message.channel.send("That's more than the number!")
+                    message.channel.send("Go Lower!")
                 }
                 else{
-                    message.channel.send("That's less than the number!")
+                    message.channel.send("Go Higher!")
                 }
                 guesscount++;
 
