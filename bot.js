@@ -43,7 +43,7 @@ const fs = require("fs");
 const ytdl = require("ytdl-core");
 bot.afile = require ("./afile.json");
 const BotID = '634502800872833033';
-var word1 = ["Kir b", "TruthTomato", "Name", "Dru", "Irri", "Poochy", "Phobos", "Mario", "Luigi", "Reni", "Cain", "Sayori", "Ghost", "Yuri", "Knux", "Y'all", "Sonic", "Minecraft", "Ellie", "Sushi", "Izzle", "Moon", "Obama", "An undying passion for hentai is why Name", "Gabe", "The mastermind named Irri", "Your wife", "Dru is laughing because Izzle", "It turns out that Cain", "Unfortunate news, Kevin", "I've come to make an announcement. Moon", "After performing an Animal Crossing 100% speedrun, Ellie", "My waifu", "You can't attend the Smash tourney because Knux", "ARE YOU OK? Well you won't be now because Ghost", "Terry", "What's that noise? Oh. Snoop", "Everytime I close my eyes, Phobos", "Shrek", "Call me a liar, but Jimbo", "This disgraceful bitch", "A simp", "I can't believe that Kir b", "Hold the phone, Snoop", "You don't have time to defeat me because Reni", "The fuck, Korbs"];
+var word1 = ["Kir b", "TruthTomato", "Name", "Dru", "Irri", "Poochy", "Mario", "Luigi", "Reni", "Cain", "Sayori", "Ghost", "Yuri", "Knux", "Y'all", "Sonic", "Minecraft", "Ellie", "Sushi", "Izzle", "Moon", "Obama", "An undying passion for hentai is why Name", "Gabe", "The mastermind named Irri", "Your wife", "Dru is laughing because Izzle", "It turns out that Cain", "Unfortunate news, Kevin", "I've come to make an announcement. Moon", "After performing an Animal Crossing 100% speedrun, Ellie", "My waifu", "You can't attend the Smash tourney because Knux", "ARE YOU OK? Well you won't be now because Ghost", "Terry", "What's that noise? Oh. Snoop", "Everytime I close my eyes, Phobos", "Shrek", "Call me a liar, but Jimbo", "This disgraceful bitch", "A simp", "I can't believe that Kir b", "Hold the phone, Snoop", "You don't have time to defeat me because Reni", "The fuck, Korbs"];
 var word2 = ["is", "is gonna be", "is about to be", "is thinking of", "wants to be", "is officially", "will be"];
 var word3 = ["hecking", "fucking", "playing", "imitating", "buying", "promoting", "sponsoring", "hanging out with", "having a crush on", "fighting", "smashing", "buying a Mario Amiibo for", "reporting", "warning Irri about", "banning", "dying for", "taking a shower with"];
 var word4 = ["h", "you", "Kir b", "TruthTomato", "the big iron on Truth's hip", "Moonlite, the pussy destroyer", "Raid Shadow Legends", "Name", "Dru", "Irri", "Poochy", "Phobos", "Mario", "Luigi", "Reni", "Obama", "free coochie", "the 15% discount from GEICO", "some gamer", "an e-girl...the horny shit.", "the man in Lego City", "Cheems", "some simp called Dru", "both Izzle and Moon", "Cain", "Sayori", "Ghost", "Yuri", "Knux", "Y'all", "Sonic", "Minecraft", "me", "gay", "something inappropriate", "Spider-Man", "here", "Celeste", "a hat in time", "a perv", "Squidward", "communism", "Ellie", "Sushi", "Izzle", "Moon", "Moon's oddly advertised dick", "Ellie's will to be a god", "Dru, but not really", "Izzle, and Gabe agrees", "Virus, but Virus doesn't care", "Dys, but thank god he's gone", "Earthbound", "Gabe, and he hates you for that", "Monika, but she refuses", "Monika, who sang a song for them", "Nutella, but that's gay", "a gay guy", "a freaking bag", "Generic", "Jet, but she'll most likely sue you before it happens", "Name, but that's a crime", "Dru, but [sexual joke here]", "Barry...wait. Who's Barry?", "a loli", "Snoop, who screams during the event", "Arrowsden, but it didnt work", "Link, the princess", "Gabe, but he loves them too much for that to happen", "Irri, but please, buy Mother 3", "your reality", "the n word", "Vessel, but why would that happen", "us for soup", "TwoSoup", "Reni, but I don't recommend it"];
@@ -62,6 +62,7 @@ var vcservers = {};
 var vcnps = [];
 var vcinthisserver = false;
 var mathans;
+
 
 
 bot.on('ready', () =>{
@@ -321,6 +322,10 @@ bot.on('message', message=> {
 
         case 'gamestop':
             message.channel.send(message.author.username + " in GameStop! \nWhat will they buy?")
+            break;
+
+        case 'beep':
+            message.channel.send("beep.");
             break;
 
         case 'gay':
@@ -2486,6 +2491,12 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         var pwpreverse = false;
         var choosingType = false;
         var cpluschannel = undefined;
+
+        //number guess
+        var guesschannel;
+        var guessnum = 0;
+        var guesscount = 0;
+        var guessgame = false;
         
         
         
@@ -3041,6 +3052,15 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
 
 
+                            case 'numguess':
+                                guessnum = Math.floor(Math.random() * 100);
+                                guessgame = true;
+                                guesschannel = message.channel.id;
+                                message.channel.send("Ok! I'm thinking of a number between 1 and 100...")
+                            break;
+
+
+
 
 
 
@@ -3391,7 +3411,28 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         
         
         
-        
+        //guessgame
+        if (guessgame == true && message.channel.id == guesschannel && !isNaN(message.content)){
+            if (guessnum == message.content){
+                message.channel.send("Aw crap! You found the number! You win! :tada:");
+                clearGuessNum();
+            }
+            else{
+                sentnum = Number(message.content);
+                if (sentnum > guessnum){
+                    message.channel.send("That's more than the number!")
+                }
+                else{
+                    message.channel.send("That's less than the number!")
+                }
+                guesscount++;
+
+                if (guesscount >= 5){
+                    message.channel.send("Oooh...Out of tries! Try again...")
+                    clearGuessNum();
+                }
+            }
+        }
         
         
         
@@ -3458,6 +3499,15 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     cpluschannel = undefined;
                 }
             }
+
+
+            function clearGuessNum(){
+                guessgame = false;
+                guessnum = 0;
+                guesschannel = undefined;
+                guesscount = 0;
+            }
+
 
             function addPlayerto9match(user){
                 tester = false;
