@@ -382,18 +382,12 @@ bot.on('message', message=> {
                     aftermes1 += aftermes.charAt(i).replace("R", "W");
                 }
                 for (i = 0; i < aftermes1.length; i++){
-                    aftermes2 += aftermes1.charAt(i).replace("Y", "I");
+                    aftermes2 += aftermes1.charAt(i).replace("y", "i");
                 }
                 for (i = 0; i < aftermes2.length; i++){
-                    aftermes3 += aftermes2.charAt(i).replace("y", "i");
+                    aftermes3 += aftermes2.charAt(i).replace("o", "u");
                 }
-                for (i = 0; i < aftermes3.length; i++){
-                    aftermes4 += aftermes3.charAt(i).replace("o", "u");
-                }
-                for (i = 0; i < aftermes4.length; i++){
-                    aftermes5 += aftermes4.charAt(i).replace("O", "U");
-                }
-                message.channel.send(aftermes5);
+                message.channel.send(aftermes3);
         break;
 
         case 'bruh':
