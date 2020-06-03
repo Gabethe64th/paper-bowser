@@ -366,6 +366,10 @@ bot.on('message', message=> {
             message.channel.send('What the heck do you want, '+ message.author.username+ '?');
             break;
 
+        case 'uwuify':
+                message.channel.send(message.content+ "test.")
+        break;
+
         case 'bruh':
             bruhs = 7;
                 bruhNumber = Math.floor (Math.random() * (bruhs - 1 + 1)) +1;
