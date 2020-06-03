@@ -367,7 +367,11 @@ bot.on('message', message=> {
             break;
 
         case 'uwuify':
-                message.channel.send(message.content+ "test.")
+                //9
+                beforemes = message.content.slice(9);
+                aftermes = beforemes.replace("r", "w");
+                finalmes = aftermes.replace("y", "i");
+                message.channel.send(finalmes);
         break;
 
         case 'bruh':
