@@ -3056,7 +3056,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                 guessnum = Math.floor(Math.random() * 100);
                                 guessgame = true;
                                 guesschannel = message.channel.id;
-                                message.channel.send("Ok! I'm thinking of a number between 1 and 100...")
+                                message.channel.send("Ok! I'm thinking of a number between 0 and 100...")
                             break;
 
 
