@@ -369,9 +369,31 @@ bot.on('message', message=> {
         case 'uwuify':
                 //9
                 beforemes = message.content.slice(9);
-                aftermes = beforemes.replace("r", "w");
-                finalmes = aftermes.replace("y", "i");
-                message.channel.send(finalmes);
+                aftermes = "";
+                aftermes1 = "";
+                aftermes2 = "";
+                aftermes3 = "";
+                aftermes4 = "";
+                aftermes5 = "";
+                for (i = 0; i < beforemes.length; i++){
+                    aftermes += beforemes.charAt(i).replace("r", "w");
+                }
+                for (i = 0; i < aftermes.length; i++){
+                    aftermes1 += beforemes.charAt(i).replace("R", "W");
+                }
+                for (i = 0; i < aftermes1.length; i++){
+                    aftermes2 += beforemes.charAt(i).replace("Y", "I");
+                }
+                for (i = 0; i < aftermes2.length; i++){
+                    aftermes3 += beforemes.charAt(i).replace("y", "i");
+                }
+                for (i = 0; i < aftermes3.length; i++){
+                    aftermes4 += beforemes.charAt(i).replace("o", "u");
+                }
+                for (i = 0; i < aftermes4.length; i++){
+                    aftermes5 += beforemes.charAt(i).replace("O", "U");
+                }
+                message.channel.send(aftermes5);
         break;
 
         case 'bruh':
