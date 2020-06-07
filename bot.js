@@ -193,7 +193,8 @@ bot.on('message', message=> {
             currentmoon = new Attachment(rollpics[0]);
             message.channel.send(currentmoon).then(message => {message.react("◀️");
         message.react("▶️");
-        message.react("🔀")
+        message.react("🔀"); 
+        message.react("🛑");
         currentroll = message.id;})
             
         break;
@@ -2094,7 +2095,8 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 currentmoon = new Attachment(rollpics[indexroll]);
             message.channel.send(currentmoon).then(message => {message.react("◀️");
             message.react("▶️");
-            message.react("🔀")
+            message.react("🔀");
+            message.react("🛑");
             currentroll = message.id;})
             }
 
@@ -2107,7 +2109,8 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 currentmoon = new Attachment(rollpics[indexroll]);
             message.channel.send(currentmoon).then(message => {message.react("◀️");
             message.react("▶️");
-            message.react("🔀")
+            message.react("🔀");
+            message.react("🛑");
             currentroll = message.id;})
             }
 
@@ -2117,8 +2120,14 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 currentmoon = new Attachment(rollpics[indexroll]);
             message.channel.send(currentmoon).then(message => {message.react("◀️");
             message.react("▶️");
-            message.react("🔀")
+            message.react("🔀");
+            message.react("🛑");
             currentroll = message.id;})
+            }
+
+            if (emoji.name == "🛑" && rollboll == true && currentroll == message.id){
+                message.delete();
+                rollboll = false;
             }
 
 
