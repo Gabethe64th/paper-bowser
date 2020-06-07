@@ -62,6 +62,11 @@ var vcservers = {};
 var vcnps = [];
 var vcinthisserver = false;
 var mathans;
+var rollboll = false;
+var currentroll;
+var indexroll = 0;
+var currentmoon;
+var rollpics = ["https://cdn.discordapp.com/attachments/695110863379497001/696501140354760774/unknown.png", "https://cdn.discordapp.com/attachments/686423110198624266/717798022532300841/unknown.png", "https://cdn.discordapp.com/attachments/695110863379497001/717907054806827018/unknown.png"];
 
 
 
@@ -179,6 +184,16 @@ bot.on('message', message=> {
 
 
             }
+        break;
+
+        case 'HappyBirthdayMoon':
+            message.channel.send("To celebrate the birthday of a wonderful friend!")
+            indexroll = 0;
+            rollboll = true;
+            currentmoon = new Attachment(rollpics[0]);
+            message.channel.send(currentmoon).then(message => {message.react("◀️");
+        message.react("▶️");
+        message.react("🔀")})
         break;
 
         case 'choose':
@@ -1432,171 +1447,6 @@ bot.on('message', message=> {
                // message.channel.send("Sorry! This command still needs more work.")
             break;
 
-
-
-            /*
-            case 'vibe':
-                for (i = 0; i < vcservers.length; i++){
-                    if (vcservers[i] == message.guild.id){
-                        vcinthisserver = true;
-                    }
-                }
-                if (vcinthisserver == false){
-                    vchannel = message.member.voiceChannelID;
-                    vcservers.push(message.guild.id)
-                    vcnps.push("Nothing")
-                    message.member.voiceChannel.join().then(
-                    connection => { 
-                        
-                        
-                 vib = Math.floor (Math.random() * (vibesongs.length - 1));
-                        
-                
-                 stream = ytdl(vibesongs[vib], { filter: 'audioonly' });
-                 dispatcher = connection.playStream(stream)
-
-                  function doItAgain(){
-                    
-                    vib = Math.floor (Math.random() * (vibesongs.length - 1));
-                    
-                        
-                
-                 stream = ytdl(vibesongs[vib], { filter: 'audioonly' });
-                 vcnps[vcservers.indexOf(message.guild.id)] = vibenames[vib];
-                 dispatcher = connection.playStream(stream)
-
-                    dispatcher.on('end', () => {
-                        
-                        doItMore()
-                    })
-                  } 
-
-                  function doItMore(){
-                    
-                    vib = Math.floor (Math.random() * (vibesongs.length - 1));
-                        
-                
-                 stream = ytdl(vibesongs[vib], { filter: 'audioonly' });
-                 dispatcher = connection.playStream(stream)
-
-                    dispatcher.on('end', () => {
-                        
-                        doItAgain()
-                    })
-                  } 
-
-
-                dispatcher.on('end', () => {
-                    
-                    doItAgain()
-                }) 
-            
-            })
-                    
-                    
-                    
-                }
-                else{
-                    message.channel.send("I can't do this...are you in a VC? Or am I in one?")
-                }
-            break;
-
-            
-            
-            case 'viberng':
-                if (vchannel != "0" && message.member.voiceChannelID == vchannel && vcskip == true){
-                    
-                            
-                            
-                     vib = Math.floor (Math.random() * (vibesongs.length - 1));
-                            
-                    
-                     stream = ytdl(vibesongs[vib], { filter: 'audioonly' });
-                     message.member.voiceChannel.connection.dispatcher.end;
-                     dispatcher = message.member.voiceChannel.connection.playStream(stream)
-    
-                      function doItAgain(){
-                        
-                        vib = Math.floor (Math.random() * (vibesongs.length - 1));
-                            
-                    
-                     stream = ytdl(vibesongs[vib], { filter: 'audioonly' });
-                     dispatcher = message.member.voiceChannel.connection.playStream(stream)
-    
-                        dispatcher.on('end', () => {
-                            doItMore()
-                        })
-                      } 
-    
-                      function doItMore(){
-                        
-                        vib = Math.floor (Math.random() * (vibesongs.length - 1));
-                            
-                    
-                     stream = ytdl(vibesongs[vib], { filter: 'audioonly' });
-                     dispatcher = message.member.voiceChannel.connection.playStream(stream)
-    
-                        dispatcher.on('end', () => {
-                            doItAgain()
-                        })
-                      } 
-    
-    
-                    dispatcher.on('end', () => {
-                        doItAgain()
-                    })
-
-                    vcskip = false;
-                    message.channel.send("Choosing another song...").then(
-                        setTimeout(function(){
-                            vcskip = true;
-                          }, 3000)
-                    )
-
-                }
-                else {
-                    message.channel.send("You can't do that right now. Please join a VC, or wait a bit.")
-                }
-            break;
-            
-            
-
-            case 'vibeend':
-                if (vchannel != "0"){
-                    
-                    
-                    for (i = 0; i < vcservers.length; i++){
-                        if (vcservers[i] == message.guild.id){
-                            vcinthisserver = true;
-                        }
-                    }
-                    if (vcinthisserver == true){
-                        bot.channels.get(message.member.voiceChannelID).leave();
-                    vcservertodel = vcservers.indexOf(message.guild.id)
-                    vcservers.splice(vcservertodel)
-                    vcinthisserver = false;
-                    }
-                }
-            break;
-
-            
-            
-            
-            function pickASong(){
-                            vibes = 53;
-                            vib = Math.floor (Math.random() * (vibes - 1 + 1)) +1;
-                            
-
-                const dispatcher = connection.playFile('./vibes/vibes/tune (' + vib + ').mp3')
-
-                dispatcher.on('finish', () => {
-                    pickASong();
-                })
-
-                
-                
-            }
-            */
                 
 
 
@@ -2234,32 +2084,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             }
 
 
-            /*
-            if (emoji.name == "📌" && messageReaction.count == 1){
-                    if (message.attachments.first() != undefined){
-                        const pinembed = new Discord.RichEmbed()
-                        .setAuthor("From "+message.author.username, message.author.avatarURL)
-                        .setColor('#00BFFF')
-                        .setTitle("Pinned Moment:")
-                        .setDescription(message.content)
-                        .setImage(message.attachments.first())
-                        .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
-                        bot.channels.get("636573475993288734").send(pinembed);
-                    }
-                    else {
-                        const pinembed = new Discord.RichEmbed()
-                        .setAuthor("From "+message.author.username, message.author.avatarURL)
-                        .setColor('#00BFFF')
-                        .setTitle("Pinned Moment:")
-                        .setDescription(message.content)
-                        .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
-                        bot.channels.get("636573475993288734").send(pinembed);
-                    }
-
-
-                
-            }
-            */
+           
 
         });
 
