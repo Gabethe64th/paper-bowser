@@ -2105,7 +2105,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 if (indexroll == 0){
                     indexroll = rollpics.length - 1;
                 }
-                else { indexroll++; }
+                else { indexroll--; }
                 currentmoon = new Attachment(rollpics[indexroll]);
             message.channel.send(currentmoon).then(message => {message.react("◀️");
             message.react("▶️");
