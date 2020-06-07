@@ -193,7 +193,9 @@ bot.on('message', message=> {
             currentmoon = new Attachment(rollpics[0]);
             message.channel.send(currentmoon).then(message => {message.react("◀️");
         message.react("▶️");
-        message.react("🔀")})
+        message.react("🔀")
+        currentroll = message.id;})
+            
         break;
 
         case 'choose':
@@ -2081,6 +2083,42 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 else {
             message.channel.sendMessage("...but there's no one to hug! How pitiful...");
                 }
+            }
+
+            if (emoji.name == "▶️" && rollboll == true && currentroll == message.id){
+                message.delete();
+                if (indexroll == rollpics.length - 1){
+                    indexroll = 0;
+                }
+                else { indexroll++; }
+                currentmoon = new Attachment(rollpics[indexroll]);
+            message.channel.send(currentmoon).then(message => {message.react("◀️");
+            message.react("▶️");
+            message.react("🔀")
+            currentroll = message.id;})
+            }
+
+            if (emoji.name == "◀️" && rollboll == true && currentroll == message.id){
+                message.delete();
+                if (indexroll == 0){
+                    indexroll = rollpics.length - 1;
+                }
+                else { indexroll++; }
+                currentmoon = new Attachment(rollpics[indexroll]);
+            message.channel.send(currentmoon).then(message => {message.react("◀️");
+            message.react("▶️");
+            message.react("🔀")
+            currentroll = message.id;})
+            }
+
+            if (emoji.name == "🔀" && rollboll == true && currentroll == message.id){
+                message.delete();
+                indexroll = Math.floor(Math.random() * (rollpics.length -1))
+                currentmoon = new Attachment(rollpics[indexroll]);
+            message.channel.send(currentmoon).then(message => {message.react("◀️");
+            message.react("▶️");
+            message.react("🔀")
+            currentroll = message.id;})
             }
 
 
