@@ -1345,6 +1345,7 @@ bot.on('message', message=> {
                     else{
                         vib = Math.abs( Math.floor (Math.random() * (vibesongs.length - 1)));
                         vcserver.queue.push(vibesongs[vib]);
+                        bot.channels.get("687702849479508036").send("`Attempting to play: "+vibenames[vib]+"`")
                         play(connection, message);
                     }
                 })
