@@ -66,7 +66,7 @@ var rollboll = false;
 var currentroll;
 var indexroll = 0;
 var currentmoon;
-var rollpics = ["https://cdn.discordapp.com/attachments/695110863379497001/696501140354760774/unknown.png", "https://cdn.discordapp.com/attachments/686423110198624266/717798022532300841/unknown.png", "https://cdn.discordapp.com/attachments/695110863379497001/717907054806827018/unknown.png"];
+var rollpics = ["https://cdn.discordapp.com/attachments/695110863379497001/696501140354760774/unknown.png", "https://cdn.discordapp.com/attachments/686423110198624266/717798022532300841/unknown.png", "https://cdn.discordapp.com/attachments/695110863379497001/717907054806827018/unknown.png", "https://cdn.discordapp.com/attachments/620081595382235186/718934147044737054/Screenshot_20200606-135454.png","https://cdn.discordapp.com/attachments/620081595382235186/718934148659806299/You_whore.png", "https://cdn.discordapp.com/attachments/620081595382235186/718934148953407583/Screenshot_20200606-135344.png","https://cdn.discordapp.com/attachments/620081595382235186/718934149691473991/Screenshot_20200606-135205.png","https://cdn.discordapp.com/attachments/620081595382235186/718934149255397516/Screenshot_20200606-135314.png"];
 
 
 
