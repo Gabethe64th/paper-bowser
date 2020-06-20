@@ -10,7 +10,7 @@ const PREFIX = 'v!';
 //const channel = client.channels.find('roleplay-off-topic', channelName)
 //channel.send(message)
 
-var version = 'Version 1.6.1 [BETA]';
+var version = 'Version 1.8.7 [BETA]';
 var pass;
 var int, key = 0;
 /*
@@ -186,7 +186,12 @@ bot.on('message', message=> {
             }
         break;
 
+
         case 'HappyBirthdayMoon':
+            message.channel.send("Clean up the confetti! This command was fun, but now it's time to say goodbye. The command still exists, but its code will be used for something else soon. Thanks for the support!")
+            break;
+
+        case 'ImageLoadTester':
             message.channel.send("To celebrate the birthday of a wonderful friend!")
             indexroll = 0;
             rollboll = true;
@@ -480,7 +485,7 @@ bot.on('message', message=> {
                 break;
 
         case 'jet':
-                message.channel.send("[ARCHIVED] \nOk, so you know those movies which has that ONE villain you love to hate, and then suddenly the villain joins the good side and now you're just straight up in love with the person? (Not LOVE love ofc cuz you can't be with a fictional character.) Meet Jet. \nJet's that kind of person you might be scared of at first, but as you get to meet them, you can't leave them alone. One of her 'special abilities' is that she can be an entire mood at times. She even had a nickname for it! She's also pretty tough and sarcastic, but the times she breaks out into a playful mood can be arguably considered to be pretty cute. (but ***DO NOT CALL HER CUTE***, or else you might end up with a gun pointed at your face.) She's no Izzle, no Moon, no Pip, nor an Irri. She's *Jet*, and I'm glad she's in the gang. Once a mood, always a mood!");
+                message.channel.send("Ok, so you know those movies which has that ONE villain you love to hate, and then suddenly the villain joins the good side and now you're just straight up in love with the person? (Not LOVE love ofc cuz you can't be with a fictional character.) Meet Jet. \nJet's that kind of person you might be scared of at first, but as you get to meet them, you can't leave them alone. One of her 'special abilities' is that she can be an entire mood at times. She even had a nickname for it! She's also pretty tough and sarcastic, but the times she breaks out into a playful mood can be arguably considered to be pretty cute. (but ***DO NOT CALL HER CUTE***, or else you might end up with a gun pointed at your face.) She's no Izzle, no Moon, no Pip, nor an Irri. She's *Jet*, and I'm glad she's in the gang. Once a mood, always a mood!");
                 const attachment13 = new Attachment('https://cdn.discordapp.com/attachments/607654317079396410/638828874129604608/unknown.png');
                 message.channel.send(attachment13);
                 break;
@@ -532,11 +537,7 @@ bot.on('message', message=> {
             break;
 
         case 'crash':
-            message.channel.send("What's wrong? Did I go overboard? Please type 'v!failsafe' to crash the bot. If you can, please report the bot using 'v!report' to inform the bot owner about this event.");
-            break;
-
-        case 'failsafe':
-            bot.destroy;
+            message.channel.send("Unfortunately, this command no longer exists.");
             break;
 
         case 'ts':
@@ -968,10 +969,6 @@ bot.on('message', message=> {
                 else {message.channel.sendMessage("This command posts the profile picture of a user using their ID. To use it, send `v!IDvatar [User ID here]`.")}
         break;
 
-        case 'noswears':
-            message.channel.sendMessage("Ok, bud. That's enough swearing for now. Go sit in the corner and think about what you did.")
-            break;
-
         case 'purewars':
             message.channel.sendMessage("Quick! Place your bets! Who do you think is the purest? 'Pip', or 'Pkoby'? Type that person's name NOW! (Will only count if you start a sentence with that name.)")
             war = true;
@@ -1154,7 +1151,12 @@ bot.on('message', message=> {
                 break;
 
             case 'fuck':
+                if (message.author.id == '178539479827611648'){
+                    message.channel.send("You can't use this command in this server.")
+                }
+                else {
                 message.channel.sendMessage("You don't have permission to use that command. Please try another.");
+                }
                 break;
 
             case 'math':
@@ -2799,7 +2801,10 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                 break;
 
                             case '9+start':
-                                if (a9match == true && message.channel.id == a9channel){
+                                if (players9.length <= 1){
+                                    message.channel.send("`You can't start a match as one person.`")
+                                }
+                                else if (players9.length > 1 && a9match == true && message.channel.id == a9channel){
                                     message.channel.send("`Let's begin!`")
                                     shareOutCards();
                                     a9game = true;
