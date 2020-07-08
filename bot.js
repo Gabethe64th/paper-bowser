@@ -232,7 +232,7 @@ bot.on('message', message=> {
                 a = texttotrans.charAt(i);
                 b = dewtext.indexOf(a);
 
-                if (b == undefined){
+                if (b == null){
                     transedsen += a;
                 }
                 else{
