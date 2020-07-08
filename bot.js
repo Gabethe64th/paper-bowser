@@ -234,11 +234,11 @@ bot.on('message', message=> {
                 a = texttotrans.charAt(i);
                 b = dewtext.indexOf(a);
 
-                if (b == undefined || b == null || a == undefined){
-                    transedsen += texttotrans.charAt(i);
+                if (!isNaN(b)){
+                    transedsen += engtext[b];
                 }
                 else{
-                    transedsen += engtext[b];
+                    transedsen += texttotrans.charAt(i);
                 }
             }
 
