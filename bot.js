@@ -234,8 +234,8 @@ bot.on('message', message=> {
                 a = texttotrans.charAt(i);
                 b = dewtext.indexOf(a);
 
-                if (b == undefined || b == null){
-                    transedsen += a;
+                if (b == undefined || b == null || a == undefined){
+                    transedsen += texttotrans.charAt(i);
                 }
                 else{
                     transedsen += engtext[b];
