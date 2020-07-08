@@ -237,9 +237,9 @@ bot.on('message', message=> {
                 else{
                     transedsen += dewtext[b];
                 }
-
-                message.channel.send(transedsen);
             }
+
+            message.channel.send(transedsen);
 
             break;
 
