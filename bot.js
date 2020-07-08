@@ -234,7 +234,7 @@ bot.on('message', message=> {
                 a = texttotrans.charAt(i);
                 b = dewtext.indexOf(a);
 
-                if (!isNaN(b)){
+                if (engtext[b] != undefined){
                     transedsen += engtext[b];
                 }
                 else{
