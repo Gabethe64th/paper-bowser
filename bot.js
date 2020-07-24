@@ -1095,7 +1095,7 @@ bot.on('message', message=> {
          break;
 
          case 'truth':
-            message.channel.sendMessage("A tomato from Brazil. Don't get close, or you'll get shot. \n\n**Example:** \nOi, tomato of truths, what is your wisdom?")
+            message.channel.sendMessage("1. A tomato from Brazil. Don't get close, or you'll get shot. \n2. A guy who doesn't like stickers. \n\n**Example:** \nOi, tomato of truths, what is your wisdom?")
             break;
 
         case 'sushi':
@@ -1108,6 +1108,18 @@ bot.on('message', message=> {
 
         case 'goji':
             message.channel.sendMessage("QT\n\n**Example:** \nGoji's pretty hot.")
+            break;
+
+        case 'ina':
+            message.channel.sendMessage("The owner of a cafe with is more reliable than every Starbucks in the world combined. And that's coming from a bot whose owner's country only has one of those. Also a provider of BANGERS!\n\n**Example:** \nGuy 1: Dude, I'm so sleepy.\nGuy 2: You should check out Ina's cafe. That'll wake you up. \nGuy 1: But I'm not a fan of coffee. \nGuy 2: Not the coffee, you dipshit. The music.")
+        break;
+
+        case 'isaac':
+            message.channel.sendMessage("A guy with a bigass magic hand. Oh, you mean the discord user. A guy with a bigass magic heart.\n\n**Example:** \nYou're such an Isaac at times, marry me!")
+            break;
+
+        case 'kaden':
+            message.channel.sendMessage("1. An underpaid employee from Ina's cafe. Wait, nevermind, he's the only employee. \n2. A tech guy who you would be glad to meet as a friend. Good luck on his arcade machine!\n\n**Example:** \nKADEN, INA'S CAFE IS OPEN! No rush, though. <3")
             break;
 
         case 'listServers':
@@ -1632,7 +1644,7 @@ bot.on('message', message=> {
                         .addBlankField()
                         .addField('**Personal Commands** 👤', 'Commands about friends, for friends.')
                         .addBlankField()
-                        .addField('The following people have their own commands:', '• dru\n• moon\n• pkoby\n• kirB\n• ender\n• korbs\n• prince\n• eliz\n• nokobo\n• jasper\n• jacob\n• ghost\n• goat\n• name\n• izzle\n• ethan\n• cain\n• kyu\n• sushi\n• goji\n• snoop\n• jet\n• rowlet\n• irri\n• pip\n• mimik\n• reun\n• knux\n• dyst\n• reni\n• phobos\n• rb\n• generic\n• truth', true)
+                        .addField('The following people have their own commands:', '• dru\n• moon\n• pkoby\n• kirB\n• ender\n• korbs\n• prince\n• eliz\n• nokobo\n• jasper\n• jacob\n• ghost\n• goat\n• name\n• izzle\n• ethan\n• cain\n• kyu\n• sushi\n• goji\n• snoop\n• jet\n• rowlet\n• irri\n• pip\n• mimik\n• reun\n• knux\n• dyst\n• reni\n• phobos\n• rb\n• generic\n• truth\n• ina\n• isaac\n• kaden', true)
                         .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                         
                         bot.users.get(message.author.id).send(embed4);
