@@ -754,6 +754,37 @@ bot.on('message', message=> {
                         message.channel.send(suplex);
                     }
                 }
+                else {
+                    message.channel.sendMessage("...but there's no one to hug! How pitiful...");
+                        }
+
+
+                break;
+
+                case 'purehug':
+                    hugs = 16;
+                    user = message.mentions.users.first();
+                    if (user !== undefined && user.id === message.author.id){
+                        message.channel.sendMessage("Oh...you hugged yourself? Damn, you're lonely...")
+                    }
+                    else if (user !== undefined && user.id === BotID) {
+                        if (message.author.id === '356389068634062848') {
+                            gifNumber = Math.floor (Math.random() * (hugs - 1 + 1)) +1;
+                        message.channel.sendMessage("*Hugs "+message.author.username+" back!* 💙");
+                        message.channel.send ( { files: ["./hugs/hugif (" + gifNumber + ").gif"]})
+                        }
+                        else {
+    
+                        message.channel.sendMessage("Nope! You ain't hugging me ya crap! Hug someone else!")
+                    }
+                }
+                    else if (user !== undefined){
+                        gifNumber = Math.floor (Math.random() * (hugs - 1 + 1)) +1;
+                        message.channel.sendMessage("*"+message.author.username+" gives "+user.username+" a hug!* 💙");
+                        message.channel.send ( { files: ["./hugs/hugif (" + gifNumber + ").gif"]})
+                    }
+                    
+            
                 
                 
                 else {
