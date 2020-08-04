@@ -139,7 +139,7 @@ bot.on('message', message=> {
                 .addBlankField()
                 .addField("How fond are you two?", "'v!pair' is finally ready for use! Test the relationships of people you barely even know!")
                 .addBlankField()
-                .addField("As a wise guy once said...", "Say hello to 'v!quote'! (Requested by TheUnchuckled!) More quotes from different series will be added in soon, so stay tuned!")
+                .addField("As a wise guy once said...", "Say hello to 'v!quote'! (Requested by TheUnchuckled!)")
                 .addBlankField()
                 .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                 message.channel.send(embed);
@@ -1152,6 +1152,10 @@ bot.on('message', message=> {
             message.channel.sendMessage("1. An underpaid employee from Ina's cafe. Wait, nevermind, he's the only employee. \n2. A tech guy who you would be glad to meet as a friend. Good luck on his arcade machine!\n\n**Example:** \nKADEN, INA'S CAFE IS OPEN! No rush, though. <3")
             break;
 
+        case 'traz':
+            message.channel.sendMessage("1. Him. \n2. He might be watching this. \n3. Run.\n\n**Example:** \nHey have you seen Tra- crap wait oh gosh why do I hear boss music")
+            break;
+
         case 'listServers':
             if (message.author.id == "178539479827611648"){
             var glmess = "";
@@ -1607,7 +1611,6 @@ bot.on('message', message=> {
                 .addField('• dead', 'Aaand you died.', true)
                 .addField('• gamestop', 'What will you buy?', true)
                 .addField('• gay', 'For the fresh people!', true)
-                .addField('• noswears', 'Stop swearing!', true)
                 .addField('• gluck', 'Gives good luck', true)
                 .addField('• bluck', 'Guess.', true)
                 .addField('• analyse', 'Looks at a post', true)
@@ -1674,7 +1677,7 @@ bot.on('message', message=> {
                         .addBlankField()
                         .addField('**Personal Commands** 👤', 'Commands about friends, for friends.')
                         .addBlankField()
-                        .addField('The following people have their own commands:', '• dru\n• moon\n• pkoby\n• kirB\n• ender\n• korbs\n• prince\n• eliz\n• nokobo\n• jasper\n• jacob\n• ghost\n• goat\n• name\n• izzle\n• ethan\n• cain\n• kyu\n• sushi\n• goji\n• snoop\n• jet\n• rowlet\n• irri\n• pip\n• mimik\n• reun\n• knux\n• dyst\n• reni\n• phobos\n• rb\n• generic\n• truth\n• ina\n• isaac\n• kaden', true)
+                        .addField('The following people have their own commands:', '• dru\n• moon\n• pkoby\n• kirB\n• ender\n• korbs\n• prince\n• eliz\n• nokobo\n• jasper\n• jacob\n• ghost\n• goat\n• name\n• izzle\n• ethan\n• cain\n• kyu\n• sushi\n• goji\n• snoop\n• jet\n• rowlet\n• irri\n• pip\n• mimik\n• reun\n• knux\n• dyst\n• reni\n• phobos\n• rb\n• generic\n• truth\n• ina\n• isaac\n• kaden\n• traz', true)
                         .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                         
                         bot.users.get(message.author.id).send(embed4);
