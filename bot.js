@@ -26,7 +26,7 @@ deds = 485;
 var trail = 0;
 var strail = 0;
 var fruits = ["🍎", "🍐", "🍊", "🍋", "🍇", "🍓", "🍒"];
-var callids = ["636573475993288734", "635683701987999804", "634821648385572883", "640725111397285888", "643100072988639242", "353324382208131073"];
+var callids = ["636573475993288734", "635683701987999804", "634821648385572883", "640725111397285888", "643100072988639242", "743020296876982324"];
 var callA;
 var callB;
 var callAmes;
@@ -1154,6 +1154,10 @@ bot.on('message', message=> {
 
         case 'traz':
             message.channel.sendMessage("1. Him. \n2. He might be watching this. \n3. Run.\n\n**Example:** \nHey have you seen Tra- crap wait oh gosh why do I hear boss music")
+            break;
+
+        case 'jerry':
+            message.channel.sendMessage("An ancient god that takes the form of a wooden puppet. Normally summoned by others for the viewing of an event often referred to as 'Hunger Games.'.\n\n**Example:** \nHey where's the v!jerry command?")
             break;
 
         case 'listServers':
