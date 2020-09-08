@@ -1113,7 +1113,7 @@ bot.on('message', message=> {
             break;
 
         case 'kirB':
-            message.channel.sendMessage("1. The pronunciation of a pink...thing. \n2. The one who doesn't agree with their previous command because I leaked their smash strategy. \n3. A chill, mostly calm lad who will always join you to chill in VCs. If you wanna lure him, invite FredBoat to the call, or just ripidly ping him until he gives up. \n4. ... \n\n**Example:** \nGuy 1: Hey, where's Kir b? \nGuy 2: Idk, just say something to call him over. \nGuy 1: ...Dru is gay...? \nKir b: *joins VC*")
+            message.channel.sendMessage("1. The pronunciation of a pink...thing. \n2. The one who doesn't agree with their previous command because I leaked their smash strategy. \n3. A chill, mostly calm lad who will always join you to hang around in VCs. If you wanna lure him, invite FredBoat to the call, or just ripidly ping him until he gives up. \n4. ... \n\n**Example:** \nGuy 1: Hey, where's Kir b? \nGuy 2: Idk, just say something to call him over. \nGuy 1: ...Dru is gay...? \nKir b: *joins VC*")
             break;
 
             case 'rb':
@@ -1162,6 +1162,10 @@ bot.on('message', message=> {
 
         case 'banjo':
             message.channel.sendMessage("1. An instrument that should now be played in the background whenever someone denies to be gay, even though they are. \n2. The victim of the first definition. \n\n**Example:** \nGuy 1: Yo, have you tried the Puff-Shroom strat? It's so good! \nGuy 2: Ikr? Banjo taught me it!")
+            break;
+
+        case 'vessel':
+             message.channel.sendMessage("1. Dru's son...somehow. \n2. A male that's the same level of pure as Pkoby. Shush, Moon. \n3. Persona 3. \n\n**Example:** \nGuy 1: Vessel, your waifu sucks....well at least one of them. \nDru: Your Mom sucks. \nGuy 1: You know you can't say that next to Vessel.")
             break;
 
         case 'listServers':
