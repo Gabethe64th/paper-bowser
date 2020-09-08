@@ -661,7 +661,7 @@ bot.on('message', message=> {
             break;
 
         case 'name':
-            message.channel.send("A living definition of 'cute'. \n\n**Example:** \nName is cute.")
+            message.channel.send("1. A word people use for tech advice. \n2. A Sonic-loving madlass who should be hugged. \n3. hentaihaven.org  \n\n**Example:** \nGuy 1:NAAAAAAAAAAAME SOP RTING HENTAI \nName: no.")
             break;
 
         case 'todaysong':
@@ -1113,7 +1113,7 @@ bot.on('message', message=> {
             break;
 
         case 'kirB':
-            message.channel.sendMessage("1. A cool lad who will comfort you in VCs. \n2. A demonic madlad who will cream yo ass in SMM2. \n3. X+A (To the left or right) \n\n**Example:** \nGuy 1: I heard that Izzle died.\nKir b: Good.")
+            message.channel.sendMessage("1. The pronunciation of a pink...thing. \n2. The one who doesn't agree with their previous command because I leaked their smash strategy. \n3. A chill, mostly calm lad who will always join you to chill in VCs. If you wanna lure him, invite FredBoat to the call, or just ripidly ping him until he gives up. \n4. ... \n\n**Example:** \nGuy 1: Hey, where's Kir b? \nGuy 2: Idk, just say something to call him over. \nGuy 1: ...Dru is gay...? \nKir b: *joins VC*")
             break;
 
             case 'rb':
@@ -1158,6 +1158,10 @@ bot.on('message', message=> {
 
         case 'jerry':
             message.channel.sendMessage("An ancient god that takes the form of a wooden puppet. Normally summoned by others for the viewing of an event often referred to as 'Hunger Games.'.\n\n**Example:** \nHey where's the v!jerry command?")
+            break;
+
+        case 'banjo':
+            message.channel.sendMessage("1. An instrument that should now be played in the background whenever someone denies to be gay, even though they are. \n2. The victim of the first definition. \n\n**Example:** \nGuy 1: Yo, have you tried the Puff-Shroom strat? It's so good! \nGuy 2: Ikr? Banjo taught me it!")
             break;
 
         case 'listServers':
