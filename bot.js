@@ -419,7 +419,7 @@ bot.on('message', message=> {
             break;
 
         case 'reni':
-                message.channel.send("A cute and loveable person who's afraid to share their wonderful ideas to everyone. Previously known as 'Mimik' or 'Reun', and if he changes his name once more I swear to gosh I'm just gonna rename this command to 'v!silvester' and call it a day. \n\n**Example:** \nReni: Hey, Jet! \nPhobos: Who's Jet, Reun? \nReni: Who's Reun, Jet? \nKir b: (oh my fucking gosh...)")
+                message.channel.send("A cute and loveable person who's afraid to share their wonderful ideas to everyone. Previously known as 'Mimik' or 'Reun', and if he changes his name once more I swear to gosh I'm just gonna rename this command to 'v!silvester' and call it a day. \n\n**Example:** \nReni: Hey, Red or Purple? \nJet: Purple. Purple fits a lot more with your stuff. \nReni: But...blood isn't purple. \nJet: what")
             break;
 
         case 'phobos':
@@ -533,8 +533,8 @@ bot.on('message', message=> {
                 message.channel.send(attachment12);
                 break;
 
-        case 'jet':
-                message.channel.send("Ok, so you know those movies which has that ONE villain you love to hate, and then suddenly the villain joins the good side and now you're just straight up in love with the person? (Not LOVE love ofc cuz you can't be with a fictional character.) Meet Jet. \nJet's that kind of person you might be scared of at first, but as you get to meet them, you can't leave them alone. One of her 'special abilities' is that she can be an entire mood at times. She even had a nickname for it! She's also pretty tough and sarcastic, but the times she breaks out into a playful mood can be arguably considered to be pretty cute. (but ***DO NOT CALL HER CUTE***, or else you might end up with a gun pointed at your face.) She's no Izzle, no Moon, no Pip, nor an Irri. She's *Jet*, and I'm glad she's in the gang. Once a mood, always a mood!");
+        case 'famished':
+                message.channel.send("[ARCHIVED] \nOk, so you know those movies which has that ONE villain you love to hate, and then suddenly the villain joins the good side and now you're just straight up in love with the person? (Not LOVE love ofc cuz you can't be with a fictional character.) Meet Jet. \nJet's that kind of person you might be scared of at first, but as you get to meet them, you can't leave them alone. One of her 'special abilities' is that she can be an entire mood at times. She even had a nickname for it! She's also pretty tough and sarcastic, but the times she breaks out into a playful mood can be arguably considered to be pretty cute. (but ***DO NOT CALL HER CUTE***, or else you might end up with a gun pointed at your face.) She's no Izzle, no Moon, no Pip, nor an Irri. She's *Jet*, and I'm glad she's in the gang. Once a mood, always a mood!");
                 const attachment13 = new Attachment('https://cdn.discordapp.com/attachments/607654317079396410/638828874129604608/unknown.png');
                 message.channel.send(attachment13);
                 break;
@@ -661,7 +661,7 @@ bot.on('message', message=> {
             break;
 
         case 'name':
-            message.channel.send("1. A word people use for tech advice. \n2. A Sonic-loving madlass who should be hugged. \n3. hentaihaven.org  \n\n**Example:** \nGuy 1: NAAAAAAAAAAAME SOP RTING HENTAI \nName: no.")
+            message.channel.send("1. A word people use for tech advice. \n2. A Sonic-loving madlass who should be hugged. \n3. nhentai.org (Don't press this.) \n\n**Example:** \nGuy 1: NAAAAAAAAAAAME SOP RTING HENTAI \nName: no.")
             break;
 
         case 'todaysong':
@@ -1149,7 +1149,7 @@ bot.on('message', message=> {
             break;
 
         case 'kaden':
-            message.channel.sendMessage("1. An underpaid employee from Ina's cafe. Wait, nevermind, he's the only employee. \n2. A tech guy who you would be glad to meet as a friend. Good luck on his arcade machine!\n\n**Example:** \nKADEN, INA'S CAFE IS OPEN! No rush, though. <3")
+            message.channel.sendMessage("1. An underpaid employee from Ina's cafe. Wait, nevermind, he's the only employee. \n2. A tech guy who you would be glad to meet as a friend. \n3. One hairy boi\n\n**Example:** \nKADEN, INA'S CAFE IS OPEN! No rush, though. <3")
             break;
 
         case 'traz':
@@ -1167,6 +1167,18 @@ bot.on('message', message=> {
         case 'vessel':
              message.channel.sendMessage("1. Dru's son...somehow. \n2. A male that's the same level of pure as Pkoby. Shush, Moon. \n3. Persona 3. \n\n**Example:** \nGuy 1: Vessel, your waifu sucks....well at least one of them. \nDru: Your Mom sucks. \nGuy 1: You know you can't say that next to Vessel.")
             break;
+
+        case 'jet':
+            message.channel.sendMessage("1. Cute, supportive, funny, hates this command. \n2. Heck off Jet you're a good person and deserves to be loved. \n3. v!famished bias \n\n**Example:** \nBREAKING NEWS: Jet makes another post yet again in her endless channel, telling Dru to stop simping for her. More at 7.")
+            break;
+
+        case 'bridgey':
+            message.channel.sendMessage("1. A British, I repeat, BRITISH person who just appeared one day. \n2. World Record Holder of 'FUCK!' \n3. Someone who scares me. \n\n**Example:** \n...she took a knife because she had a knife...")
+            break;
+
+        case 'gerald':
+        message.channel.sendMessage("Fuck this guy. \n\n**Example:** \nFuck Gerald.")
+        break;
 
         case 'listServers':
             if (message.author.id == "178539479827611648"){
@@ -1689,7 +1701,7 @@ bot.on('message', message=> {
                         .addBlankField()
                         .addField('**Personal Commands** 👤', 'Commands about friends, for friends.')
                         .addBlankField()
-                        .addField('The following people have their own commands:', '• dru\n• moon\n• pkoby\n• kirB\n• ender\n• korbs\n• prince\n• eliz\n• nokobo\n• jasper\n• jacob\n• ghost\n• goat\n• name\n• izzle\n• ethan\n• cain\n• kyu\n• sushi\n• goji\n• snoop\n• jet\n• rowlet\n• irri\n• pip\n• mimik\n• reun\n• knux\n• dyst\n• reni\n• phobos\n• rb\n• generic\n• truth\n• ina\n• isaac\n• kaden\n• traz', true)
+                        .addField('The following people have their own commands:', '• dru\n• moon\n• pkoby\n• kirB\n• ender\n• korbs\n• prince\n• eliz\n• nokobo\n• jasper\n• jacob\n• ghost\n• goat\n• name\n• izzle\n• ethan\n• cain\n• kyu\n• sushi\n• goji\n• snoop\n• jet\n• rowlet\n• irri\n• pip\n• mimik\n• reun\n• knux\n• dyst\n• reni\n• rb\n• generic\n• truth\n• ina\n• isaac\n• kaden\n• traz\n• jerry\n• vessel\n• banjo\n• bridgey', true)
                         .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
                         
                         bot.users.get(message.author.id).send(embed4);
