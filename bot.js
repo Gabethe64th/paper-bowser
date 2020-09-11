@@ -968,7 +968,7 @@ bot.on('message', message=> {
             break;
 
         case 'ethan':
-            message.channel.send("1. The kid named 'school' in the sentence: 'Fuck school.'\n2. A word Dru can say to avoid Kyu's horniness. \n\n**Example:**\nKyu: Hi Dru. \nDru: ETHAN! \nKyu: ...what? \nEthan: What?")
+            message.channel.send("1. The kid named 'cheese' in the sentence: 'I fucking love cheese.'\n2. A word Dru can say to avoid Kyu's horniness. \n\n**Example:**\nKyu: Hi Dru. \nDru: ETHAN! \nKyu: ...what? \nEthan: What?")
             break;
 
         case 'pip':
@@ -1186,6 +1186,46 @@ bot.on('message', message=> {
 
         case 'kooper':
             message.channel.sendMessage("1. An artist that can draw Koopas with more personality than Paper Mario's current plans. \n2. Owner of an endless channel that counts faster than [REDACTED]'s server...well two servers. \n\n**Example:** \nShameless ad but follow Kooper's Twitter.")
+            break;
+
+         case 'benji':
+            message.channel.sendMessage("1. A notorious chain breaker, banned from 1500+ servers for his crimes. \n2. Some Hero of Mania. \n\n**Example:** \nGuy 1: Yes \nGuy 2: Yes \nGuy 3: Yes \nBenji: No. \nGuy 2: Heck you.")
+            break;
+
+        case 'chase':
+            message.channel.sendMessage("1. A chill guy that's so chill he actually has a life. \n2. My secret crush \n3. A guy who actually beat PiT, now THAT'S a keeper. \n\n**Example:** \nClever, Chase.")
+            break;
+
+        case 'miek':
+            message.channel.sendMessage("1. A name your phone's auto-correct hates. \n2. An old pal who's endless is actually dead, but he doesn't want to accept the facts. \n\n**Example:** \nGuy 1: Hey, have you seen Miek? \nGuy 2: That's a Kirby Copy Ability. \nGuy 3: No, I mean...wait what?")
+            break;
+
+        case 'zek':
+            message.channel.sendMessage("Not enough of these guys exist and I'm sad.  \n\n**Example:** \nIf I load Zek on Project64, does that make him a ZekROM?")
+            break;
+
+        case 'link':
+            message.channel.sendMessage("1. He come to town. \n2. To save the Princess Zelda. \n3. Ganon took her away. \n4. Now the children don't play. \n\n**Example:** \nBut Link, he come to save the day. \nHALLELUIAH!")
+            break;
+
+        case 'snow':
+            message.channel.sendMessage("1. For a cold Fox, they sure look human.  \n\n**Example:** \nI guess that's why they're a *chill* mod (I'm not sorry...)")
+            break;
+
+        case 'pichu':
+            message.channel.sendMessage("1. Pichu. \n2. Pichu. \n Pichu. \n\n**Example:** \nPichu.")
+            break;
+
+        case 'dw':
+            message.channel.sendMessage("1. DragonWario? I thought you said 'Don't Worry'! \n2. That was an original joke. \n\n**Example:** \nWhere is DW nowadays? Did I miss a memo?")
+            break;
+
+        case 'maeva':
+            message.channel.sendMessage("1. Kir b's first crush <3 \n2. A pretty awesome person that existed for way longer than I thought. \n\n**Example:** \nHoly SHIT Maeva. - Someone 2019")
+            break;
+
+        case 'acidic':
+            message.channel.sendMessage("1. Moon's bro. I know, it surprises me that there are two of them as well. \n2. Famous owner of the OK hand house in Trinidad 3. \n\n**Example:** \nGuy 1: Alright who's the impostor? \nAcidic: Dude this is Minecraft. \nGuy 1: Ok but who the HECK was at Medbay?")
             break;
 
         case 'listServers':
