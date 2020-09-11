@@ -1180,6 +1180,14 @@ bot.on('message', message=> {
         message.channel.sendMessage("Fuck this guy. \n\n**Example:** \nFuck Gerald.")
         break;
 
+        case 'ellie':
+            message.channel.sendMessage("1. An alt command because you beautiful fricks keep forgetting that the og command is 'v!eliz' \n2. An AHIT bias memester that's actually pretty chill \n3. Guess what? \n\n**Example:** \nEllie: ||Chicken butt HA GOTEM||")
+            break;
+
+        case 'kooper':
+            message.channel.sendMessage("1. An artist that can draw Koopas with more personality than Paper Mario's current plans. \n2. Owner of an endless channel that counts faster than [REDACTED]'s server...well two servers. \n\n**Example:** \nShameless ad but follow Kooper's Twitter.")
+            break;
+
         case 'listServers':
             if (message.author.id == "178539479827611648"){
             var glmess = "";
