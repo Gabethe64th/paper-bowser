@@ -3870,20 +3870,24 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     heroeshp[i] = heroesmaxhp[i]; 
                 }
 
-                    //print them
+                //print them
+                
+
                 for (i = 0; i < heroesname.length; i++){
                     rpgmyt += "\n" + heroesclass[i] + ": " + heroesname[i] + "  (" + heroeshp[i] + "/" + heroesmaxhp[i] + ")";
                 }
 
-                rpgmyt += "\n\n`The story begins!`";
+                rpgmyt += "\n\n`Ready for adventure?`";
 
-                message.channel.send(rpgmyt);
-
-                //function game
+                message.channel.send(rpgmyt).then(message => {message.react("🔄");
+                message.react("✅"); 
+                rpgcurmes = message.id; })
             }
             else {
                 message.channel.send("That can't happen right now.")
             }
+
+
             }
 
 
@@ -4366,6 +4370,17 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             
         
             
+
+            bot.on('messageReactionAdd', (messageReaction, user) => {
+                if(user.bot) return;
+                const {message, emoji} = messageReaction;
+    
+                if (emoji.name == "🔄" && rpggame == true && rpgcurmes == message.id && rpgui == 1){
+                    message.delete();
+                    rpgGatherHeroes();
+                }
+    
+            });
             
         }
         );
