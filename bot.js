@@ -3864,9 +3864,9 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     message.channel.send("\n" + heroesname[i] + "  (" + heroeshp[i] + "/" + heroesmaxhp[i] + ")")
                 }
 
-                message.channel.send("Ready for adventure?");
-                message.reply("🔄")
-                message.reply("✅")
+                message.channel.send("\nReady for adventure?");
+                message.react("🔄")
+                message.react("✅")
 
 
             }
