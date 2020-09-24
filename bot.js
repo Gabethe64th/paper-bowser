@@ -2573,7 +2573,16 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         var guessnum = 0;
         var guesscount = 0;
         var guessgame = false;
-        
+
+        //rpg
+        var heroesname = ["???", "???", "???", "???"];
+        var heroesdata = []
+        var heroeshp = [1, 1, 1, 1];
+        var heroesmaxhp = [1, 1, 1, 1];
+        var rpgbosses = ["Chi", "Nightmare", "Mistake", "Terror", "King's Toilet", "Superman 64", "Twin Woods", "JoyCon's Drift", "Lagswitch", "Stan"];
+        var rpgbosshp = 1;   
+        var rpggame = false;
+        var rpgcurfighter = 0;     
         
         
         bot.on('message', message=> {
@@ -2824,6 +2833,12 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                         case 'trivialost':
                             triv = 0;
                             message.channel.sendMessage("Too bad...");
+                        break;
+
+
+
+                        case 'rpg':
+                                 rpgGatherHeroes();
                         break;
         
                         
@@ -3822,6 +3837,34 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 else{
                     maino64();
                 }
+            }
+
+            function rpgGameOverCheck(f, s, t, fo){
+                if (f == 0 && s == 0 && t == 0 && fo == 0){
+                    message.channel.send("`All heroes were defeated...Game Over!`")
+                }
+            }
+
+            function rpgGatherHeroes(){
+                for (i = 0; i < heroesname.length; i++){
+                    //get names
+                    uusers = bot.guilds.get(message.guild.id).members.array();
+                    uwusers = Math.floor ((Math.random() * uusers.length));
+                    heroesname[i] = bot.users.get(uusers[uwusers].id).username;
+                    
+                    //get hp
+                    heroesmaxhp[i] = Math.floor ((Math.random() * 150) + 100);
+                    heroeshp[i] = heroesmaxhp[1]; 
+                }
+
+                //print them
+                message.channel.send("Meet Your Team!")
+
+                for (i = 0; i < heroesname.length; i++){
+                    message.channel.send("\n" + heroesname[i] + "  (" + heroeshp[i] + "/" + heroesmaxhp[i] + ")")
+                }
+
+
             }
 
 
