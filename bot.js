@@ -3871,8 +3871,8 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 }
 
                 //print them
+                rpgmyt = "Meet Your Team!"
                 for (i = 0; i < heroesname.length; i++){
-                    rpgmyt = "Meet Your Team!"
                     rpgmyt += "\n" + heroesclass[i] + ": " + heroesname[i] + "  (" + heroeshp[i] + "/" + heroesmaxhp[i] + ")";
                 }
 
@@ -4374,7 +4374,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 if(user.bot) return;
                 const {message, emoji} = messageReaction;
     
-                if (emoji.name == "🔄" && rpggame == true && rpgcurmes == message.id && rpgui == 1){
+                if (emoji.name == "🔄" && rpggame == true && rpgcurmes == message.id && rpgui == 1 && rpgchannel == messageReaction.message.channel){
                     message.delete();
                     rpgGatherHeroes();
                 }
