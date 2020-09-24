@@ -3879,7 +3879,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 rpgmyt += "\n\n`Ready for adventure?`";
 
                 rpgchannel.send(rpgmyt).then(message => {message.react("🔄");
-                message.react("✅"); 
+                message.react("✅");
                 rpgcurmes = message.id; })
             }
             else {
