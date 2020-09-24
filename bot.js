@@ -2849,10 +2849,6 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                  rpgchannel = message.channel;
                                  rpgGatherHeroes();
                         break;
-
-                        case 'rstop':
-                            rpggame = false;
-                        break;
         
                         
         
@@ -3875,16 +3871,15 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 }
 
                 //print them
-                rpgmyt = "Meet Your Team!"
+                
+
                 for (i = 0; i < heroesname.length; i++){
                     rpgmyt += "\n" + heroesclass[i] + ": " + heroesname[i] + "  (" + heroeshp[i] + "/" + heroesmaxhp[i] + ")";
                 }
 
-                rpgmyt += "\n\n`Ready for adventure?`";
+                rpgmyt += "\n\n`Let's get going!`";
 
-                rpgchannel.send(rpgmyt).then(message => {message.react("🔄");
-                message.react("✅");
-                rpgcurmes = message.id; })
+                rpgchannel.send(rpgmyt).then(message => {rpgcurmes = message.id; })
             }
             else {
                 message.channel.send("That can't happen right now.")
@@ -4373,24 +4368,9 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             
         
             
-
-            
             
         }
         );
-
-        bot.on('messageReactionAdd', (messageReaction, user) => {
-            if(user.bot) return;
-            const {message, emoji} = messageReaction;
-
-            if (emoji.name == "🔄" && rpggame == true && rpgcurmes == message.id && rpgui == 1 && user.id != BotID){
-                message.delete();
-                rpgGatherHeroes();
-            }
-
-        });
-
-        
         
         
         
