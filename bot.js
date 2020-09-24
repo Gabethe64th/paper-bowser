@@ -2892,7 +2892,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                     
                                         */
                                     me = message.member.nickname;
-                                    if (me == null){
+                                    if (me == null || me == undefined){
                                         me = message.author.username;
                                     }
 
