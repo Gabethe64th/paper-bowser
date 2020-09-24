@@ -3854,7 +3854,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     
                     //get hp
                     heroesmaxhp[i] = Math.floor ((Math.random() * 150) + 100);
-                    heroeshp[i] = heroesmaxhp[1]; 
+                    heroeshp[i] = heroesmaxhp[i]; 
                 }
 
                 //print them
