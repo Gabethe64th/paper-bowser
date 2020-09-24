@@ -3874,7 +3874,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 
 
                 for (i = 0; i < heroesname.length; i++){
-                    rpgmyt =+ "\n" + heroesclass[i] + ": " + heroesname[i] + "  (" + heroeshp[i] + "/" + heroesmaxhp[i] + ")";
+                    rpgmyt += "\n" + heroesclass[i] + ": " + heroesname[i] + "  (" + heroeshp[i] + "/" + heroesmaxhp[i] + ")";
                 }
 
                 rpgmyt += "\n`Ready for adventure?`";
