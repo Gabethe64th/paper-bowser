@@ -2577,6 +2577,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         //rpg
         var heroesname = ["???", "???", "???", "???"];
         var heroesclass = ["WARRIOR", "MAGE", "HEALER", "TANK"]
+        var rpgmyt = "Meet Your Team!"
         var heroesdata = []
         var heroeshp = [1, 1, 1, 1];
         var heroesmaxhp = [1, 1, 1, 1];
@@ -2585,7 +2586,9 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         var rpggame = false;
         var rpgcurfighter = 0;
         var rpgui = 0;
-        //0 = null, 1 = charcter select, 2 = battle     
+        //0 = null, 1 = charcter select, 2 = battle
+        var rpgchannel;
+        var rpgcurmes;   
         
         
         bot.on('message', message=> {
@@ -2843,6 +2846,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                         case 'rpg':
                                  rpggame = true;
                                  rpgui = 1;
+                                 rpgchannel = message.channel;
                                  rpgGatherHeroes();
                         break;
         
@@ -3847,6 +3851,9 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             function rpgGameOverCheck(f, s, t, fo){
                 if (f == 0 && s == 0 && t == 0 && fo == 0){
                     message.channel.send("`All heroes were defeated...Game Over!`")
+                    rpggame = false;
+                    rpgmyt = "Meet Your Team!";
+                    rpgui = 0;
                 }
             }
 
@@ -3864,13 +3871,15 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 }
 
                 //print them
-                message.channel.send("Meet Your Team!")
+                
 
                 for (i = 0; i < heroesname.length; i++){
-                    message.channel.send("\n" + heroesclass[i] + ": " + heroesname[i] + "  (" + heroeshp[i] + "/" + heroesmaxhp[i] + ")")
+                    rpgmyt =+ "\n" + heroesclass[i] + ": " + heroesname[i] + "  (" + heroeshp[i] + "/" + heroesmaxhp[i] + ")";
                 }
 
-                message.channel.send("`Ready for adventure?`").then(message => {message.react("🔄");
+                rpgmyt += "\n`Ready for adventure?`";
+
+                message.channel.send(rpgmyt).then(message => {message.react("🔄");
                 message.react("✅"); })
             }
             else {
