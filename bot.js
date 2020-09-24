@@ -4374,19 +4374,21 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         
             
 
-            bot.on('messageReactionAdd', (messageReaction, user) => {
-                if(user.bot) return;
-                const {message, emoji} = messageReaction;
-    
-                if (emoji.name == "🔄" && rpggame == true && rpgcurmes == message.id && rpgui == 1 && user.id != BotID){
-                    message.delete();
-                    rpgGatherHeroes();
-                }
-    
-            });
+            
             
         }
         );
+
+        bot.on('messageReactionAdd', (messageReaction, user) => {
+            if(user.bot) return;
+            const {message, emoji} = messageReaction;
+
+            if (emoji.name == "🔄" && rpggame == true && rpgcurmes == message.id && rpgui == 1 && user.id != BotID){
+                message.delete();
+                rpgGatherHeroes();
+            }
+
+        });
 
         
         
