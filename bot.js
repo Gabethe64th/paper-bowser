@@ -3871,9 +3871,8 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 }
 
                 //print them
-                
-
                 for (i = 0; i < heroesname.length; i++){
+                    rpgmyt = "Meet Your Team!"
                     rpgmyt += "\n" + heroesclass[i] + ": " + heroesname[i] + "  (" + heroeshp[i] + "/" + heroesmaxhp[i] + ")";
                 }
 
