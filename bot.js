@@ -2849,6 +2849,10 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                  rpgchannel = message.channel;
                                  rpgGatherHeroes();
                         break;
+
+                        case 'rstop':
+                            rpggame = false;
+                        break;
         
                         
         
