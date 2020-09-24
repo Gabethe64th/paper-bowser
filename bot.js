@@ -3877,10 +3877,9 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     rpgmyt += "\n" + heroesclass[i] + ": " + heroesname[i] + "  (" + heroeshp[i] + "/" + heroesmaxhp[i] + ")";
                 }
 
-                rpgmyt += "\n`Ready for adventure?`";
+                rpgmyt += "\n\n`The story begins!`";
 
-                message.channel.send(rpgmyt).then(message => {message.react("🔄");
-                message.react("✅"); })
+                message.channel.send(rpgmyt);
             }
             else {
                 message.channel.send("That can't happen right now.")
@@ -4372,6 +4371,8 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             
         }
         );
+
+        
         
         
         
