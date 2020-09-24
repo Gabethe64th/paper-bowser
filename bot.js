@@ -3870,9 +3870,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     heroeshp[i] = heroesmaxhp[i]; 
                 }
 
-                //print them
-                
-
+                    //print them
                 for (i = 0; i < heroesname.length; i++){
                     rpgmyt += "\n" + heroesclass[i] + ": " + heroesname[i] + "  (" + heroeshp[i] + "/" + heroesmaxhp[i] + ")";
                 }
@@ -3880,12 +3878,12 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 rpgmyt += "\n\n`The story begins!`";
 
                 message.channel.send(rpgmyt);
+
+                //function game
             }
             else {
                 message.channel.send("That can't happen right now.")
             }
-
-
             }
 
 
