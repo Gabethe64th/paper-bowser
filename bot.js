@@ -2576,13 +2576,16 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
         //rpg
         var heroesname = ["???", "???", "???", "???"];
+        var heroesclass = ["WARRIOR", "MAGE", "HEALER", "TANK"]
         var heroesdata = []
         var heroeshp = [1, 1, 1, 1];
         var heroesmaxhp = [1, 1, 1, 1];
         var rpgbosses = ["Chi", "Nightmare", "Mistake", "Terror", "King's Toilet", "Superman 64", "Twin Woods", "JoyCon's Drift", "Lagswitch", "Stan"];
         var rpgbosshp = 1;   
         var rpggame = false;
-        var rpgcurfighter = 0;     
+        var rpgcurfighter = 0;
+        var rpgui = 0;
+        //0 = null, 1 = charcter select, 2 = battle     
         
         
         bot.on('message', message=> {
@@ -2838,6 +2841,8 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
 
                         case 'rpg':
+                                 rpggame = true;
+                                 rpgui = 1;
                                  rpgGatherHeroes();
                         break;
         
@@ -3846,6 +3851,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             }
 
             function rpgGatherHeroes(){
+                if (rpgui == 1){
                 for (i = 0; i < heroesname.length; i++){
                     //get names
                     uusers = bot.guilds.get(message.guild.id).members.array();
@@ -3861,11 +3867,15 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 message.channel.send("Meet Your Team!")
 
                 for (i = 0; i < heroesname.length; i++){
-                    message.channel.send("\n" + heroesname[i] + "  (" + heroeshp[i] + "/" + heroesmaxhp[i] + ")")
+                    message.channel.send("\n" + heroesclass[i] + ": " + heroesname[i] + "  (" + heroeshp[i] + "/" + heroesmaxhp[i] + ")")
                 }
 
                 message.channel.send("`Ready for adventure?`").then(message => {message.react("🔄");
                 message.react("✅"); })
+            }
+            else {
+                message.channel.send("That can't happen right now.")
+            }
 
 
             }
