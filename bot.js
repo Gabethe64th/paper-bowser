@@ -3897,30 +3897,30 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 rpgmaxbosshp = rpgbosshp;
 
                 rpgchannel.send("__Enemy **" + rpgbosscurrent + "** approaches!__\n[" + rpgbosshp + "/" + rpgmaxbosshp + "]")
-                rpgcurfighter = 1;
-                rpgPrompt(1);
+                rpgcurfighter = 0;
+                rpgPrompt(0);
             }
 
             function rpgPrompt(i){
                 switch(i){
                     default:
-                        rpgPrompt(1);
+                        rpgPrompt(0);
+                    break;
+
+                    case 0:
+                        rpgchannel.send("What will " + heroesclass[i] + " " + heroesname[i] + " (" + heroeshp[i] + "/" + heroesmaxhp[i] + ") do? \n\nA: Slash \nB: Strike");
                     break;
 
                     case 1:
-                        rpgchannel.send("What will " + heroesclass[i] + " " + heroesname[i] + " (" + heroeshp + "/" + heroesmaxhp + ") do? \n\nA: Slash \nB: Strike");
+                        rpgchannel.send("What will " + heroesclass[i] + " " + heroesname[i] + " (" + heroeshp[i] + "/" + heroesmaxhp[i] + ") do? \n\nA: Beam \nB: Staff Wack");
                     break;
 
                     case 2:
-                        rpgchannel.send("What will " + heroesclass[i] + " " + heroesname[i] + " (" + heroeshp + "/" + heroesmaxhp + ") do? \n\nA: Beam \nB: Staff Wack");
+                        rpgchannel.send("What will " + heroesclass[i] + " " + heroesname[i] + " (" + heroeshp[i] + "/" + heroesmaxhp[i] + ") do? \n\nA: Attack \nB: Heal");
                     break;
 
                     case 3:
-                        rpgchannel.send("What will " + heroesclass[i] + " " + heroesname[i] + " (" + heroeshp + "/" + heroesmaxhp + ") do? \n\nA: Attack \nB: Heal");
-                    break;
-
-                    case 4:
-                        rpgchannel.send("What will " + heroesclass[i] + " " + heroesname[i] + " (" + heroeshp + "/" + heroesmaxhp + ") do? \n\nA: Blast \nB: Nuke");
+                        rpgchannel.send("What will " + heroesclass[i] + " " + heroesname[i] + " (" + heroeshp[i] + "/" + heroesmaxhp[i] + ") do? \n\nA: Blast \nB: Nuke");
                     break;
                 }
             }
