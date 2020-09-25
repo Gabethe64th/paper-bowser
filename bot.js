@@ -3892,11 +3892,12 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             function rpgSummonBoss(){
                 bpicka = Math.floor ((Math.random() * rpgbosses.length));
                 rpgbosscurrent = rpgbosses[bpicka];
-                rpgbosshp = ((Math.random() * 170) + 100);
+                rpgbosshp = (Math.floor(Math.random() * 170) + 100);
                 rpgmaxbosshp = rpgbosshp;
 
                 rpgchannel.send("__Enemy **" + rpgbosscurrent + "** approaches!__\n[" + rpgbosshp + "/" + rpgmaxbosshp + "]")
                 rpgcurfighter = 1;
+                rpgPrompt(1);
             }
 
             function rpgPrompt(i){
