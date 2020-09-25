@@ -2582,7 +2582,9 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         var heroeshp = [1, 1, 1, 1];
         var heroesmaxhp = [1, 1, 1, 1];
         var rpgbosses = ["Chi", "Nightmare", "Mistake", "Terror", "King's Toilet", "Superman 64", "Twin Woods", "JoyCon's Drift", "Lagswitch", "Stan"];
-        var rpgbosshp = 1;   
+        var rpgbosshp = 1;
+        var rpgmaxbosshp;
+        var rpgbosscurrent;   
         var rpggame = false;
         var rpgcurfighter = 0;
         var rpgui = 0;
@@ -3854,6 +3856,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     rpggame = false;
                     rpgmyt = "Meet Your Team!";
                     rpgui = 0;
+                    rpgchannel = undefined;
                 }
             }
 
@@ -3871,8 +3874,6 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 }
 
                 //print them
-                
-
                 for (i = 0; i < heroesname.length; i++){
                     rpgmyt += "\n" + heroesclass[i] + ": " + heroesname[i] + "  (" + heroeshp[i] + "/" + heroesmaxhp[i] + ")";
                 }
@@ -3884,9 +3885,18 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             else {
                 message.channel.send("That can't happen right now.")
             }
-
-
             }
+
+            function rpgSummonBoss(){
+                bpicka = Math.floor ((Math.random() * rpgbosses.length));
+                rpgbosscurrent = rpgbosses[bpicka];
+                rpgbosshp = ((Math.random() * 170) + 100);
+                rpgmaxbosshp = rpgbosshp;
+
+                rpgchannel.send("__Enemy **" + rpgbosscurrent + "** approaches!__\n[" + rpgbosshp + "/" + rpgmaxbosshp + "]")
+            }
+
+
 
 
 
