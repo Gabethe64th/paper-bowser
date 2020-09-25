@@ -3881,6 +3881,8 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 rpgmyt += "\n\n`Let's get going!`";
 
                 rpgchannel.send(rpgmyt).then(message => {rpgcurmes = message.id; })
+
+                rpgSummonBoss();
             }
             else {
                 message.channel.send("That can't happen right now.")
@@ -3894,6 +3896,31 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 rpgmaxbosshp = rpgbosshp;
 
                 rpgchannel.send("__Enemy **" + rpgbosscurrent + "** approaches!__\n[" + rpgbosshp + "/" + rpgmaxbosshp + "]")
+                rpgcurfighter = 1;
+            }
+
+            function rpgPrompt(i){
+                switch(i){
+                    default:
+                        rpgPrompt(1);
+                    break;
+
+                    case 1:
+                        rpgchannel.send("What will " + heroesclass[i] + " " + heroesname[i] + " (" + heroeshp + "/" + heroesmaxhp + ") do? \n\nA: Slash \nB: Strike");
+                    break;
+
+                    case 2:
+                        rpgchannel.send("What will " + heroesclass[i] + " " + heroesname[i] + " (" + heroeshp + "/" + heroesmaxhp + ") do? \n\nA: Beam \nB: Staff Wack");
+                    break;
+
+                    case 3:
+                        rpgchannel.send("What will " + heroesclass[i] + " " + heroesname[i] + " (" + heroeshp + "/" + heroesmaxhp + ") do? \n\nA: Attack \nB: Heal");
+                    break;
+
+                    case 4:
+                        rpgchannel.send("What will " + heroesclass[i] + " " + heroesname[i] + " (" + heroeshp + "/" + heroesmaxhp + ") do? \n\nA: Blast \nB: Nuke");
+                    break;
+                }
             }
 
 
