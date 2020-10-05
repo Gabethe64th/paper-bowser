@@ -3962,15 +3962,21 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                             break;
 
                             case 1:
-                                message.channel.send("[TEST MESSAGE] MAGE A")
+                                rpgdmg = (Math.floor(Math.random() * 15) + 1);
+                                rpgbosshp -= rpgdmg;
+                                message.channel.send(heroesname[1] + " deals "+ rpgdmg + " damage onto "+ rpgbosscurrent +"! [`" + rpgbosshp + "/" + rpgmaxbosshp +"`]")
                             break;
 
                             case 2:
-                                message.channel.send("[TEST MESSAGE] HEALER A")
+                                rpgdmg = (Math.floor(Math.random() * 10) + 1);
+                                rpgbosshp -= rpgdmg;
+                                message.channel.send(heroesname[2] + " deals "+ rpgdmg + " damage to "+ rpgbosscurrent +"! [`" + rpgbosshp + "/" + rpgmaxbosshp +"`]")
                             break;
 
                             case 3:
-                                message.channel.send("[TEST MESSAGE] TANK A")
+                                rpgdmg = (Math.floor(Math.random() * 30) + 1);
+                                rpgbosshp -= rpgdmg;
+                                message.channel.send(heroesname[3] + " deals "+ rpgdmg + " damage to "+ rpgbosscurrent +"! [`" + rpgbosshp + "/" + rpgmaxbosshp +"`]")
                             break;
                         }
 
