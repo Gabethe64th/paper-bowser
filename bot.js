@@ -3942,21 +3942,30 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     case "A":
                         //text pls
                         message.channel.send("[TEST MESSAGE] A sent!");
+                        if (rpgcurfighter == 3){
+                            rpgcurfighter = 0
+                        }
+                        else {
+                            rpgcurfighter++;
+                        }
+        
+                        rpgPrompt(rpgcurfighter)
                     break;
 
                     case "B":
                         message.channel.send("[TEST MESSAGE] B sent!");
+                        if (rpgcurfighter == 3){
+                            rpgcurfighter = 0
+                        }
+                        else {
+                            rpgcurfighter++;
+                        }
+        
+                        rpgPrompt(rpgcurfighter)
                     break;
                 }
 
-                if (rpgcurfighter == 3){
-                    rpgcurfighter = 0
-                }
-                else {
-                    rpgcurfighter++;
-                }
-
-                rpgPrompt(rpgcurfighter)
+                
             }
 
 
