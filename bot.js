@@ -3958,25 +3958,25 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                             case 0:
                                 rpgdmg = (Math.floor(Math.random() * 25) + 1);
                                 rpgbosshp -= rpgdmg;
-                                message.channel.send(heroesname[0] + " deals "+ rpgdmg + " damage to "+ rpgbosscurrent +"! [`" + rpgbosshp + "/" + rpgmaxbosshp +"`]")
+                                message.channel.send("**" + heroesname[0] + "** deals "+ rpgdmg + " damage to "+ rpgbosscurrent +"! [`" + rpgbosshp + "/" + rpgmaxbosshp +"`]")
                             break;
 
                             case 1:
                                 rpgdmg = (Math.floor(Math.random() * 15) + 1);
                                 rpgbosshp -= rpgdmg;
-                                message.channel.send(heroesname[1] + " deals "+ rpgdmg + " damage onto "+ rpgbosscurrent +"! [`" + rpgbosshp + "/" + rpgmaxbosshp +"`]")
+                                message.channel.send("**" + heroesname[1] + "** deals "+ rpgdmg + " damage onto "+ rpgbosscurrent +"! [`" + rpgbosshp + "/" + rpgmaxbosshp +"`]")
                             break;
 
                             case 2:
                                 rpgdmg = (Math.floor(Math.random() * 10) + 1);
                                 rpgbosshp -= rpgdmg;
-                                message.channel.send(heroesname[2] + " deals "+ rpgdmg + " damage to "+ rpgbosscurrent +"! [`" + rpgbosshp + "/" + rpgmaxbosshp +"`]")
+                                message.channel.send("**" + heroesname[2] + "** deals "+ rpgdmg + " damage to "+ rpgbosscurrent +"! [`" + rpgbosshp + "/" + rpgmaxbosshp +"`]")
                             break;
 
                             case 3:
                                 rpgdmg = (Math.floor(Math.random() * 30) + 1);
                                 rpgbosshp -= rpgdmg;
-                                message.channel.send(heroesname[3] + " deals "+ rpgdmg + " damage to "+ rpgbosscurrent +"! [`" + rpgbosshp + "/" + rpgmaxbosshp +"`]")
+                                message.channel.send("**" + heroesname[3] + "** deals "+ rpgdmg + " damage to "+ rpgbosscurrent +"! [`" + rpgbosshp + "/" + rpgmaxbosshp +"`]")
                             break;
                         }
 
