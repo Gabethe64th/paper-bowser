@@ -3939,6 +3939,11 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
             if (rpggame == true && rpgchannel == message.channel && rpgui == 2){
                 switch(message.cleanContent){
+
+                    default:
+                        console.log("Am I working?")
+                    break;
+
                     case "A":
                         //text pls
                         message.channel.send("[TEST MESSAGE] A sent!");
