@@ -3947,13 +3947,31 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 switch(message.cleanContent){
 
                     default:
-                        console.log("Am I working?")
+                        console.log("Invalid RPG option sent. Skipping...")
                     break;
 
                     case "A":
                     case "a":
                         //text pls
-                        message.channel.send("[TEST MESSAGE] A sent!");
+                        //message.channel.send("[TEST MESSAGE] A sent!");
+                        switch (rpgcurfighter){
+                            case 0:
+                                message.channel.send("[TEST MESSAGE] WARRIOR A")
+                            break;
+
+                            case 1:
+                                message.channel.send("[TEST MESSAGE] MAGE A")
+                            break;
+
+                            case 2:
+                                message.channel.send("[TEST MESSAGE] HEALER A")
+                            break;
+
+                            case 3:
+                                message.channel.send("[TEST MESSAGE] TANK A")
+                            break;
+                        }
+
                         if (rpgcurfighter == 3){
                             rpgBossAttack()
                         }
@@ -3965,7 +3983,24 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
                     case "B":
                     case "b":
-                        message.channel.send("[TEST MESSAGE] B sent!");
+                        switch (rpgcurfighter){
+                            case 0:
+                                message.channel.send("[TEST MESSAGE] WARRIOR B")
+                            break;
+
+                            case 1:
+                                message.channel.send("[TEST MESSAGE] MAGE B")
+                            break;
+
+                            case 2:
+                                message.channel.send("[TEST MESSAGE] HEALER B")
+                            break;
+
+                            case 3:
+                                message.channel.send("[TEST MESSAGE] TANK B")
+                            break;
+                        }
+
                         if (rpgcurfighter == 3){
                             rpgBossAttack()
                         }
