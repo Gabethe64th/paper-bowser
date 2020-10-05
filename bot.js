@@ -2593,6 +2593,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         //0 = null, 1 = charcter select, 2 = battle
         var rpgchannel;
         var rpgcurmes;   
+        var rpgbeamchance = 50;
         
         
         bot.on('message', message=> {
@@ -3914,21 +3915,46 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     break;
 
                     case 0:
-                        rpgchannel.send("What will " + heroesclass[i] + " **" + heroesname[i] + "** ([HP]: `" + heroeshp[i] + "/" + heroesmaxhp[i] + "` | [MP]: `" + heroesmp[i] + "/" + heroesmaxmp[i] + "`) do? \n\nA: Slash \nB: Strike");
+                        rpgchannel.send("What will " + heroesclass[i] + " **" + heroesname[i] + "** ([HP]: `" + heroeshp[i] + "/" + heroesmaxhp[i] + "` | [MP]: `" + heroesmp[i] + "/" + heroesmaxmp[i] + "`) do? \n\nA: Slash \nB: Wicked Cutter (45 MP)");
                     break;
 
                     case 1:
-                        rpgchannel.send("What will " + heroesclass[i] + " **" + heroesname[i] + "** ([HP]: `" + heroeshp[i] + "/" + heroesmaxhp[i] + "` | [MP]: `" + heroesmp[i] + "/" + heroesmaxmp[i] + "`) do? \n\nA: Beam \nB: Staff Wack");
+                        rpgchannel.send("What will " + heroesclass[i] + " **" + heroesname[i] + "** ([HP]: `" + heroeshp[i] + "/" + heroesmaxhp[i] + "` | [MP]: `" + heroesmp[i] + "/" + heroesmaxmp[i] + "`) do? \n\nA: Staff Wack \nB: Beam (50 MP)");
                     break;
 
                     case 2:
-                        rpgchannel.send("What will " + heroesclass[i] + " **" + heroesname[i] + "** ([HP]: `" + heroeshp[i] + "/" + heroesmaxhp[i] + "` | [MP]: `" + heroesmp[i] + "/" + heroesmaxmp[i] + "`) do? \n\nA: Attack \nB: Heal");
+                        rpgchannel.send("What will " + heroesclass[i] + " **" + heroesname[i] + "** ([HP]: `" + heroeshp[i] + "/" + heroesmaxhp[i] + "` | [MP]: `" + heroesmp[i] + "/" + heroesmaxmp[i] + "`) do? \n\nA: Attack \nB: Heal (60 MP)");
                     break;
 
                     case 3:
-                        rpgchannel.send("What will " + heroesclass[i] + " **" + heroesname[i] + "** ([HP]: `" + heroeshp[i] + "/" + heroesmaxhp[i] + "` | [MP]: `" + heroesmp[i] + "/" + heroesmaxmp[i] + "`) do? \n\nA: Blast \nB: Nuke");
+                        rpgchannel.send("What will " + heroesclass[i] + " **" + heroesname[i] + "** ([HP]: `" + heroeshp[i] + "/" + heroesmaxhp[i] + "` | [MP]: `" + heroesmp[i] + "/" + heroesmaxmp[i] + "`) do? \n\nA: Blast \nB: Nuke (40 MP)");
                     break;
                 }
+            }
+
+
+
+            //rpg I know I'm messing this up but
+
+            if (rpggame == true && rpgchannel == message.channel && rpgui == 1){
+                switch(message.content){
+                    case "A":
+                        message.channel.send("[TEST MESSAGE] A sent!");
+                    break;
+
+                    case "B":
+                        message.channel.send("[TEST MESSAGE] B sent!");
+                    break;
+                }
+
+                if (rpgcurfighter == 3){
+                    rpgcurfighter = 0
+                }
+                else {
+                    rpgcurfighter++
+                }
+
+                rpgPrompt(rpgcurfighter)
             }
 
 
