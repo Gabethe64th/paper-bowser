@@ -3882,7 +3882,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 //print them
                 rpgmyt = "Meet Your Team!"
                 for (i = 0; i < heroesname.length; i++){
-                    rpgmyt += "\n" + heroesclass[i] + ": " + heroesname[i] + "  (HP: " + heroeshp[i] + "/" + heroesmaxhp[i] + " | MP: " + heroesmp[i] + "/" + heroesmaxmp[i] +")";
+                    rpgmyt += "\n" + heroesclass[i] + ": " + heroesname[i] + "  [**HP**: `" + heroeshp[i] + "/" + heroesmaxhp[i] + "`] [**MP**: `" + heroesmp[i] + "/" + heroesmaxmp[i] +"`]";
                 }
 
                 rpgmyt += "\n\n`Let's get going!`";
@@ -3914,19 +3914,19 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     break;
 
                     case 0:
-                        rpgchannel.send("What will " + heroesclass[i] + " " + heroesname[i] + " ([HP]: " + heroeshp[i] + "/" + heroesmaxhp[i] + " | [MP]: " + heroesmp[i] + "/" + heroesmaxmp[i] + ") do? \n\nA: Slash \nB: Strike");
+                        rpgchannel.send("What will " + heroesclass[i] + " **" + heroesname[i] + "** ([HP]: `" + heroeshp[i] + "/" + heroesmaxhp[i] + "` | [MP]: `" + heroesmp[i] + "/" + heroesmaxmp[i] + "`) do? \n\nA: Slash \nB: Strike");
                     break;
 
                     case 1:
-                        rpgchannel.send("What will " + heroesclass[i] + " " + heroesname[i] + " ([HP]: " + heroeshp[i] + "/" + heroesmaxhp[i] + " | [MP]: " + heroesmp[i] + "/" + heroesmaxmp[i] + ") do? \n\nA: Beam \nB: Staff Wack");
+                        rpgchannel.send("What will " + heroesclass[i] + " **" + heroesname[i] + "** ([HP]: `" + heroeshp[i] + "/" + heroesmaxhp[i] + "` | [MP]: `" + heroesmp[i] + "/" + heroesmaxmp[i] + "`) do? \n\nA: Beam \nB: Staff Wack");
                     break;
 
                     case 2:
-                        rpgchannel.send("What will " + heroesclass[i] + " " + heroesname[i] + " ([HP]: " + heroeshp[i] + "/" + heroesmaxhp[i] + " | [MP]: " + heroesmp[i] + "/" + heroesmaxmp[i] + ") do? \n\nA: Attack \nB: Heal");
+                        rpgchannel.send("What will " + heroesclass[i] + " **" + heroesname[i] + "** ([HP]: `" + heroeshp[i] + "/" + heroesmaxhp[i] + "` | [MP]: `" + heroesmp[i] + "/" + heroesmaxmp[i] + "`) do? \n\nA: Attack \nB: Heal");
                     break;
 
                     case 3:
-                        rpgchannel.send("What will " + heroesclass[i] + " " + heroesname[i] + " ([HP]: " + heroeshp[i] + "/" + heroesmaxhp[i] + " | [MP]: " + heroesmp[i] + "/" + heroesmaxmp[i] + ") do? \n\nA: Blast \nB: Nuke");
+                        rpgchannel.send("What will " + heroesclass[i] + " **" + heroesname[i] + "** ([HP]: `" + heroeshp[i] + "/" + heroesmaxhp[i] + "` | [MP]: `" + heroesmp[i] + "/" + heroesmaxmp[i] + "`) do? \n\nA: Blast \nB: Nuke");
                     break;
                 }
             }
