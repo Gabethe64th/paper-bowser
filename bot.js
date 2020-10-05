@@ -3916,19 +3916,47 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     break;
 
                     case 0:
+                        if (heroeshp[i] <= 0){
+                            rpgchannel.send("**" + heroesname[i] + "** is pretending to be dead!")
+                            i++;
+                            rpgPrompt(i);
+                        }
+                        else{
                         rpgchannel.send("What will " + heroesclass[i] + " **" + heroesname[i] + "** ([HP]: `" + heroeshp[i] + "/" + heroesmaxhp[i] + "` | [MP]: `" + heroesmp[i] + "/" + heroesmaxmp[i] + "`) do? \n\nA: Slash \nB: Wicked Cutter (45 MP)");
+                        }
                     break;
 
                     case 1:
+                        if (heroeshp[i] <= 0){
+                            rpgchannel.send("**" + heroesname[i] + "** is pretending to be dead!")
+                            i++;
+                            rpgPrompt(i);
+                        }
+                        else {
                         rpgchannel.send("What will " + heroesclass[i] + " **" + heroesname[i] + "** ([HP]: `" + heroeshp[i] + "/" + heroesmaxhp[i] + "` | [MP]: `" + heroesmp[i] + "/" + heroesmaxmp[i] + "`) do? \n\nA: Staff Wack \nB: Beam (50 MP)");
+                        }
                     break;
 
                     case 2:
+                        if (heroeshp[i] <= 0){
+                            rpgchannel.send("**" + heroesname[i] + "** is pretending to be dead!")
+                            i++;
+                            rpgPrompt(i);
+                        }
+                        else{
                         rpgchannel.send("What will " + heroesclass[i] + " **" + heroesname[i] + "** ([HP]: `" + heroeshp[i] + "/" + heroesmaxhp[i] + "` | [MP]: `" + heroesmp[i] + "/" + heroesmaxmp[i] + "`) do? \n\nA: Attack \nB: Heal (60 MP)");
+                        }
                     break;
 
                     case 3:
+                        if (heroeshp[i] <= 0){
+                            rpgchannel.send("**" + heroesname[i] + "** is pretending to be dead!")
+                            i++;
+                            rpgPrompt(i);
+                        }
+                        else{
                         rpgchannel.send("What will " + heroesclass[i] + " **" + heroesname[i] + "** ([HP]: `" + heroeshp[i] + "/" + heroesmaxhp[i] + "` | [MP]: `" + heroesmp[i] + "/" + heroesmaxmp[i] + "`) do? \n\nA: Blast \nB: Nuke (40 MP)");
+                        }
                     break;
                 }
             }
@@ -3938,6 +3966,8 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 rpgcurfighter = 0;
                 rpgPrompt(rpgcurfighter);
             }
+
+            
 
 
 
@@ -3956,25 +3986,25 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                         //message.channel.send("[TEST MESSAGE] A sent!");
                         switch (rpgcurfighter){
                             case 0:
-                                rpgdmg = (Math.floor(Math.random() * 25) + 1);
+                                rpgdmg = (Math.floor(Math.random() * 25) + 10);
                                 rpgbosshp -= rpgdmg;
                                 message.channel.send("**" + heroesname[0] + "** deals "+ rpgdmg + " damage to "+ rpgbosscurrent +"! [`" + rpgbosshp + "/" + rpgmaxbosshp +"`]")
                             break;
 
                             case 1:
-                                rpgdmg = (Math.floor(Math.random() * 15) + 1);
+                                rpgdmg = (Math.floor(Math.random() * 15) + 10);
                                 rpgbosshp -= rpgdmg;
                                 message.channel.send("**" + heroesname[1] + "** deals "+ rpgdmg + " damage onto "+ rpgbosscurrent +"! [`" + rpgbosshp + "/" + rpgmaxbosshp +"`]")
                             break;
 
                             case 2:
-                                rpgdmg = (Math.floor(Math.random() * 10) + 1);
+                                rpgdmg = (Math.floor(Math.random() * 10) + 10);
                                 rpgbosshp -= rpgdmg;
                                 message.channel.send("**" + heroesname[2] + "** deals "+ rpgdmg + " damage to "+ rpgbosscurrent +"! [`" + rpgbosshp + "/" + rpgmaxbosshp +"`]")
                             break;
 
                             case 3:
-                                rpgdmg = (Math.floor(Math.random() * 30) + 1);
+                                rpgdmg = (Math.floor(Math.random() * 30) + 10);
                                 rpgbosshp -= rpgdmg;
                                 message.channel.send("**" + heroesname[3] + "** deals "+ rpgdmg + " damage to "+ rpgbosscurrent +"! [`" + rpgbosshp + "/" + rpgmaxbosshp +"`]")
                             break;
@@ -3993,19 +4023,91 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     case "b":
                         switch (rpgcurfighter){
                             case 0:
-                                message.channel.send("[TEST MESSAGE] WARRIOR B")
+                                //45 mp
+                                if(heroesmp[0] < 45){
+                                    message.channel.send("There's not enough MP for this move!");
+                                    rpgcurfighter--;
+                                }
+                                else {
+                                    //deal high damage
+                                    heroesmp[0] -= 45;
+                                    rpgdmg = (Math.floor(Math.random() * 30) + 35); 
+                                    rpgbosshp -= rpgdmg;
+                                    message.channel.send("YAH! **" + heroesname[0] + "** deals "+ rpgdmg + " damage to "+ rpgbosscurrent +"! [`" + rpgbosshp + "/" + rpgmaxbosshp +"`]")
+                                }
                             break;
 
                             case 1:
-                                message.channel.send("[TEST MESSAGE] MAGE B")
+                                //50 mp
+                                if(heroesmp[1] < 50){
+                                    message.channel.send("There's not enough MP for this move!");
+                                    rpgcurfighter--;
+                                }
+                                else{
+                                    //raise beam chance
+                                    heroesmp[1] -= 50;
+                                    rpgbeamchance--;
+                                    message.channel.send("A bright light engulfs the area! The enemy might miss more often!")
+                                }
                             break;
 
                             case 2:
-                                message.channel.send("[TEST MESSAGE] HEALER B")
+                                //60 mp
+                                if(heroesmp[2] < 60){
+                                    message.channel.send("There's not enough MP for this move!");
+                                    rpgcurfighter--;
+                                }
+                                else{
+                                    //heal lowest HP
+                                    low = Math.min(heroeshp[0], heroeshp[1], heroeshp[2], heroeshp[3]);
+
+                                    if (low = heroeshp[0] && heroeshp[0] != heroesmaxhp[0]){
+                                        heroeshp[0] += 50;
+                                        if (heroeshp[0] > heroesmaxhp[0]){
+                                            heroeshp[0] = heroesmaxhp[0];
+                                        }
+                                        message.channel.send("Gave **"+ heroesname[0]+ "** a little boost!")
+                                    }
+                                    else if (low = heroeshp[1] && heroeshp[1] != heroesmaxhp[1]){
+                                        heroeshp[1] += 50;
+                                        if (heroeshp[1] > heroesmaxhp[1]){
+                                            heroeshp[1] = heroesmaxhp[1];
+                                        }
+                                        message.channel.send("Gave **"+ heroesname[1]+ "** a little boost!")
+                                    }
+                                    else if (low = heroeshp[2] && heroeshp[2] != heroesmaxhp[2]){
+                                        heroeshp[2] += 50;
+                                        if (heroeshp[2] > heroesmaxhp[2]){
+                                            heroeshp[2] = heroesmaxhp[2];
+                                        }
+                                        message.channel.send("Gave **"+ heroesname[2]+ "** a little boost!")
+                                    }
+                                    else if (low = heroeshp[3] && heroeshp[3] != heroesmaxhp[3]){
+                                        heroeshp[3] += 50;
+                                        if (heroeshp[3] > heroesmaxhp[3]){
+                                            heroeshp[3] = heroesmaxhp[3];
+                                        }
+                                        message.channel.send("Gave **"+ heroesname[3]+ "** a little boost!")
+                                    }
+                                }
                             break;
 
                             case 3:
-                                message.channel.send("[TEST MESSAGE] TANK B")
+                                //40 mp
+                                if(heroesmp[3] < 40){
+                                    message.channel.send("There's not enough MP for this move!");
+                                    rpgcurfighter--;
+                                }
+                                else{
+                                    //deal high damage, hurt players
+                                    heroesmp[3] -= 40;
+                                    rpgdmg = (Math.floor(Math.random() * 30) + 50); 
+                                    rpgbosshp -= rpgdmg;
+                                    heroeshp[0] -= 15;
+                                    heroeshp[1] -= 15;
+                                    heroeshp[2] -= 15;
+                                    message.channel.send("**" + heroesname[3] + "** deals "+ rpgdmg + " damage to "+ rpgbosscurrent +"! [`" + rpgbosshp + "/" + rpgmaxbosshp +"`], but the other players take damage!")
+                                    }
                             break;
                         }
 
