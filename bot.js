@@ -4059,7 +4059,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                 }
                                 else{
                                     //heal lowest HP
-                                    low = Math.min(heroeshp[0], heroeshp[1], heroeshp[2], heroeshp[3], 0);
+                                    low = Math.min(heroeshp[0], heroeshp[1], heroeshp[2], heroeshp[3], 250);
 
                                     if (low == heroeshp[0] && heroeshp[0] != heroesmaxhp[0]){
                                         heroeshp[0] += 50;
@@ -4093,7 +4093,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                         heroesmp[2] -= 60;
                                         message.channel.send("Gave **"+ heroesname[3]+ "** a little boost!")
                                     }
-                                    else if (low == 0){
+                                    else if (low == 250){
                                         message.channel.send("There's no reason to heal!");
                                         rpgcurfighter--;
                                     }
