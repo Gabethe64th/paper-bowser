@@ -2594,7 +2594,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         var rpgchannel;
         var rpgcurmes;   
         var rpgbeamchance = 50;
-        
+        var rpgdmg = 0;        
         
         bot.on('message', message=> {
             
@@ -3956,7 +3956,9 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                         //message.channel.send("[TEST MESSAGE] A sent!");
                         switch (rpgcurfighter){
                             case 0:
-                                message.channel.send("[TEST MESSAGE] WARRIOR A")
+                                rpgdmg = rpgbosshp = (Math.floor(Math.random() * 25) + 1);
+                                rpgbosshp -= rpgdmg;
+                                message.channel.send(heroesname[0] + " deals "+ rpgdmg + " damage to "+ rpgbosscurrent +"! [`" +rpgbosshp + "/" + rpgmaxbosshp +"`]")
                             break;
 
                             case 1:
