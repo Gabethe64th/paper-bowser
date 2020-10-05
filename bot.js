@@ -3951,7 +3951,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     rpgcurfighter = 0
                 }
                 else {
-                    rpgcurfighter++
+                    rpgcurfighter++;
                 }
 
                 rpgPrompt(rpgcurfighter)
