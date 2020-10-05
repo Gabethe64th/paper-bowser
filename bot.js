@@ -3933,6 +3933,12 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 }
             }
 
+            function rpgBossAttack(){
+                message.channel.send("[TEST MESSAGE] "+ rpgbosscurrent + " attacks!")
+                rpgcurfighter = 0;
+                rpgPrompt(rpgcurfighter);
+            }
+
 
 
             //rpg I know I'm messing this up but
@@ -3945,28 +3951,28 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     break;
 
                     case "A":
+                    case "a":
                         //text pls
                         message.channel.send("[TEST MESSAGE] A sent!");
                         if (rpgcurfighter == 3){
-                            rpgcurfighter = 0
+                            rpgBossAttack()
                         }
                         else {
                             rpgcurfighter++;
+                            rpgPrompt(rpgcurfighter)
                         }
-        
-                        rpgPrompt(rpgcurfighter)
                     break;
 
                     case "B":
+                    case "b":
                         message.channel.send("[TEST MESSAGE] B sent!");
                         if (rpgcurfighter == 3){
-                            rpgcurfighter = 0
+                            rpgBossAttack()
                         }
                         else {
                             rpgcurfighter++;
+                            rpgPrompt(rpgcurfighter)
                         }
-        
-                        rpgPrompt(rpgcurfighter)
                     break;
                 }
 
