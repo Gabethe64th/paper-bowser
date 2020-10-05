@@ -4059,35 +4059,43 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                 }
                                 else{
                                     //heal lowest HP
-                                    low = Math.min(heroeshp[0], heroeshp[1], heroeshp[2], heroeshp[3]);
+                                    low = Math.min(heroeshp[0], heroeshp[1], heroeshp[2], heroeshp[3], 0);
 
-                                    if (low = heroeshp[0] && heroeshp[0] != heroesmaxhp[0]){
+                                    if (low == heroeshp[0] && heroeshp[0] != heroesmaxhp[0]){
                                         heroeshp[0] += 50;
                                         if (heroeshp[0] > heroesmaxhp[0]){
                                             heroeshp[0] = heroesmaxhp[0];
                                         }
+                                        heroesmp[2] -= 60;
                                         message.channel.send("Gave **"+ heroesname[0]+ "** a little boost!")
                                     }
-                                    else if (low = heroeshp[1] && heroeshp[1] != heroesmaxhp[1]){
+                                    else if (low == heroeshp[1] && heroeshp[1] != heroesmaxhp[1]){
                                         heroeshp[1] += 50;
                                         if (heroeshp[1] > heroesmaxhp[1]){
                                             heroeshp[1] = heroesmaxhp[1];
                                         }
+                                        heroesmp[2] -= 60;
                                         message.channel.send("Gave **"+ heroesname[1]+ "** a little boost!")
                                     }
-                                    else if (low = heroeshp[2] && heroeshp[2] != heroesmaxhp[2]){
+                                    else if (low == heroeshp[2] && heroeshp[2] != heroesmaxhp[2]){
                                         heroeshp[2] += 50;
                                         if (heroeshp[2] > heroesmaxhp[2]){
                                             heroeshp[2] = heroesmaxhp[2];
                                         }
+                                        heroesmp[2] -= 60;
                                         message.channel.send("Gave **"+ heroesname[2]+ "** a little boost!")
                                     }
-                                    else if (low = heroeshp[3] && heroeshp[3] != heroesmaxhp[3]){
+                                    else if (low == heroeshp[3] && heroeshp[3] != heroesmaxhp[3]){
                                         heroeshp[3] += 50;
                                         if (heroeshp[3] > heroesmaxhp[3]){
                                             heroeshp[3] = heroesmaxhp[3];
                                         }
+                                        heroesmp[2] -= 60;
                                         message.channel.send("Gave **"+ heroesname[3]+ "** a little boost!")
+                                    }
+                                    else if (low == 0){
+                                        message.channel.send("There's no reason to heal!");
+                                        rpgcurfighter--;
                                     }
                                 }
                             break;
