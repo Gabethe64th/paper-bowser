@@ -3939,6 +3939,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             if (rpggame == true && rpgchannel == message.channel && rpgui == 1){
                 switch(message.content){
                     case "A":
+                        //text pls
                         message.channel.send("[TEST MESSAGE] A sent!");
                     break;
 
