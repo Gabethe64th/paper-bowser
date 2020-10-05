@@ -3909,6 +3909,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             }
 
             function rpgPrompt(i){
+                rpgui = 2;
                 switch(i){
                     default:
                         rpgPrompt(0);
@@ -3936,7 +3937,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
             //rpg I know I'm messing this up but
 
-            if (rpggame == true && rpgchannel == message.channel && rpgui == 1){
+            if (rpggame == true && rpgchannel == message.channel && rpgui == 2){
                 switch(message.content){
                     case "A":
                         //text pls
