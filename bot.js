@@ -76,7 +76,7 @@ var activitylist = ["lmao who's Corona? Never heard of them.", "around", "as Ste
 bot.on('ready', () =>{
     console.log('Let er rip!');
     bot.channels.get('607654317079396410').sendMessage("`VirusBot has been rebooted.`")
-    thatone = Math.floor ((Math.random() * activitylist.length) -1);
+    thatone = Math.abs(Math.floor ((Math.random() * activitylist.length) -1));
     bot.user.setActivity(activitylist[thatone]);
 })
 
