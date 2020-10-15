@@ -742,7 +742,13 @@ bot.on('message', message=> {
                     message.channel.sendMessage("Nope! You ain't hugging me ya crap! Hug someone else!")
                 }
             }
-                else if (user !== undefined){
+                else if (user !== undefined && user.id != BotID){
+                    if (user.id == '346324933598773251'){
+                        gifNumber = Math.floor (Math.random() * (hugs - 1 + 1)) +1;
+                        message.channel.sendMessage("*You got this, Prince! Stay strong, and believe in yourself because everyone believes in you!* ❤️");
+                        message.channel.send ( { files: ["./hugs/hugif (" + gifNumber + ").gif"]})
+                    }
+                    else{
                     gifNumber = Math.floor (Math.random() * (hugs - 1 + 1)) +1;
                     message.channel.sendMessage("*"+message.author.username+" gives "+user.username+" a hug!* 💙");
                     message.channel.send ( { files: ["./hugs/hugif (" + gifNumber + ").gif"]})
@@ -751,6 +757,7 @@ bot.on('message', message=> {
                         const suplex = new Attachment('https://cdn6.omidoo.com/sites/default/files/imagecache/1200x630/images/headline/201803/thesuplex2.jpg');
                         message.channel.send("But surprise! It turned into a hecking suplex!")
                         message.channel.send(suplex);
+                    }
                     }
                 }
                 else {
