@@ -75,7 +75,7 @@ var rollpics = ["https://cdn.discordapp.com/attachments/695110863379497001/69650
 bot.on('ready', () =>{
     console.log('Let er rip!');
     bot.channels.get('607654317079396410').sendMessage("`VirusBot has been rebooted.`")
-    bot.user.setActivity("lmao who's Corona? Never heard of 'em.");
+    bot.user.setActivity("around");
 })
 
 
@@ -270,7 +270,6 @@ bot.on('message', message=> {
             message.channel.send(transedsen);
         break; 
             
-
 
         case 'changeAvatar':
             if (args[1] != undefined){
