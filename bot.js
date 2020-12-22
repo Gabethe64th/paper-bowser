@@ -105,23 +105,23 @@ bot.on('message', message=> {
         case 'info':
             if(args[1] === 'version'){
                 const embed = new Discord.RichEmbed()
-                .setAuthor("Requested by "+message.author.username, message.author.avatarURL)
+                .setAuthor("Requested by "+message.author.username, message.author.avatarURL())
                 .setColor('#00FA9A')
                 .setTitle("Current Bot Version")
                 .setDescription("I'm on "+version+ "!")
-                .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
+                .setFooter("VirusDaBot", bot.users.cache.get(BotID).avatarURL());
                 message.channel.send(embed);
             }
             else if(args[1] === 'nupdate'){
                 botup = "There are no current public plans for the next update. Please try again another time.";
                 
                 const embed = new Discord.RichEmbed()
-                .setAuthor("Requested by "+message.author.username, message.author.avatarURL)
+                .setAuthor("Requested by "+message.author.username, message.author.avatarURL())
                 .setColor('#FF00FF')
                 .setTitle("Upcoming Update Information")
                 .setDescription(botup)
                 .setTimestamp()
-                .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
+                .setFooter("VirusDaBot", bot.users.cache.get(BotID).avatarURL());
                 message.channel.send(embed);
             }
             else if(args[1] === 'oldies'){
@@ -130,7 +130,7 @@ bot.on('message', message=> {
             }
             else if(args[1] === 'changelog'){
                 const embed = new Discord.RichEmbed()
-                .setAuthor("Requested by "+message.author.username, message.author.avatarURL)
+                .setAuthor("Requested by "+message.author.username, message.author.avatarURL())
                 .setColor('#DC143C')
                 .setTitle("VirusBot "+version+" Changelog")
                 .setDescription("VB's April Update is here!")
@@ -143,26 +143,26 @@ bot.on('message', message=> {
                 .addBlankField()
                 .addField("As a wise guy once said...", "Say hello to 'v!quote'! (Requested by TheUnchuckled!)")
                 .addBlankField()
-                .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
+                .setFooter("VirusDaBot", bot.users.cache.get(BotID).avatarURL());
                 message.channel.send(embed);
             }
             else if(args[1] === 'bot'){
                 const embed = new Discord.RichEmbed()
-                .setAuthor("Requested by "+message.author.username, message.author.avatarURL)
+                .setAuthor("Requested by "+message.author.username, message.author.avatarURL())
                 .setColor('#00FF00')
                 .setTitle("Who am I?")
                 .setDescription("VirusBot is a bot created as a test project. For some reason, I'm still here.")
-                .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
+                .setFooter("VirusDaBot", bot.users.cache.get(BotID).avatarURL());
                 message.channel.send(embed);
             }
             else {
                 _info = "Current info available: \n\n-version: The current version of the bot.\n-nupdate: Provides little information about the next upcoming update.\n-bot: Gives info on the bot. \n-oldies: Shows how many pictures are in the 'oldie' command.\n-changelog: See what new features got added to the bot! \n\n[Please leave a space between the command and the selected word.]\nEg. 'v!info bot'";
                 const embed = new Discord.RichEmbed()
-                .setAuthor("Requested by "+message.author.username, message.author.avatarURL)
+                .setAuthor("Requested by "+message.author.username, message.author.avatarURL())
                 .setColor('#00BFFF')
                 .setTitle("Information Command's Options")
                 .setDescription(_info)
-                .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
+                .setFooter("VirusDaBot", bot.users.cache.get(BotID).avatarURL());
                 message.channel.send(embed);
             }
         break;    
@@ -305,15 +305,15 @@ bot.on('message', message=> {
 
         case 'me':
             const embed = new Discord.RichEmbed()
-                .setAuthor("About You", message.author.avatarURL)
+                .setAuthor("About You", message.author.avatarURL())
                 .setColor('#00BFFF')
                 .setTitle(message.author.username)
-                .setImage(message.author.avatarURL)
+                .setImage(message.author.avatarURL())
                 .setDescription(message.author.tag)
                 .addBlankField()
                 .addField('User ID', message.author.id)
                 .addField('Nickname in this server', message.member.nickname)
-                .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
+                .setFooter("VirusDaBot", bot.users.cache.get(BotID).avatarURL());
                 message.channel.send(embed);
         break;
 
@@ -866,7 +866,7 @@ bot.on('message', message=> {
 
                     bot.channels.get(AQ).send("Question Sent! Let's await for an answer...");
                     const questionembed = new Discord.RichEmbed()
-                    .setAuthor(message.author.tag, message.author.avatarURL)
+                    .setAuthor(message.author.tag, message.author.avatarURL())
                     .setColor('#DC143C')
                     .addField("Incoming Question from this user!", "\n**Question:** "+questionmessage+"\n")
                     .setFooter("You can reply with 'v!sAns [answer]'")
@@ -883,7 +883,7 @@ bot.on('message', message=> {
                         answermessage = message.content.slice(7)
 
                         const answerembed = new Discord.RichEmbed()
-                        .setAuthor(message.author.tag, message.author.avatarURL)
+                        .setAuthor(message.author.tag, message.author.avatarURL())
                         .setColor('#DC143C')
                         .addField("A question has been answered!", "\n**Question:** "+questionmessage+"\n\n**Answer:** "+answermessage+"\n")
                         
@@ -1025,7 +1025,7 @@ bot.on('message', message=> {
                 }
                 else{ gid = '[NOT VIEWABLE]'}
                 const serverembed = new Discord.RichEmbed()
-                .setAuthor("Requested by "+message.author.username, message.author.avatarURL)
+                .setAuthor("Requested by "+message.author.username, message.author.avatarURL())
                 .setColor('#00BFFF')
                 .setTitle(message.guild.name)
                 .setImage(message.guild.iconURL)
@@ -1034,7 +1034,7 @@ bot.on('message', message=> {
                 .addField('Guild ID', gid)
                 .addField('Created At', message.guild.createdAt)
                 .addField('People in this server', message.guild.memberCount)
-                .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
+                .setFooter("VirusDaBot", bot.users.cache.get(BotID).avatarURL());
                 message.channel.send(serverembed);
         break;
 
@@ -1044,13 +1044,13 @@ bot.on('message', message=> {
                     const IDaembed = new Discord.RichEmbed()
                     .setAuthor("Avatar of user "+Idget)
                     .setColor('#00BFFF')
-                    .setTitle(bot.users.get(Idget).username)
-                    .setImage(bot.users.get(Idget).avatarURL)
-                    .setDescription(bot.users.get(Idget).tag)
+                    .setTitle(bot.users.cache.get(Idget).username)
+                    .setImage(bot.users.cache.get(Idget).avatarURL())
+                    .setDescription(bot.users.cache.get(Idget).tag)
                     .addBlankField()
                     
                     
-                    .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
+                    .setFooter("VirusDaBot", bot.users.cache.get(BotID).avatarURL());
                     message.channel.send(IDaembed);
 
                 }
@@ -1291,30 +1291,30 @@ bot.on('message', message=> {
             message.channel.send("Alright. The report was sent via DM to the bot owner. Thank you for your input.");
             rep = message.content.slice(9)
             const reportEmbed = new Discord.RichEmbed()
-            .setAuthor(message.author.tag, message.author.avatarURL)
+            .setAuthor(message.author.tag, message.author.avatarURL())
             .setColor(0xFF0000)
             .setTitle("Report Submission")
             .setDescription(rep + '   \n[Jump to Message](https://discordapp.com/channels/'+message.guild.id+'/'+message.channel.id+'/'+message.id+')')
-            .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
-            bot.users.get("178539479827611648").send(reportEmbed);
+            .setFooter("VirusDaBot", bot.users.cache.get(BotID).avatarURL());
+            bot.users.cache.get("178539479827611648").send(reportEmbed);
             break;
 
             case 'suggest':
                     message.channel.send("Alright. The suggestion was sent via DM to the bot owner. Thank you for your support!");
                     sug = message.content.slice(10)
                     const suggestEmbed = new Discord.RichEmbed()
-                    .setAuthor(message.author.tag, message.author.avatarURL)
+                    .setAuthor(message.author.tag, message.author.avatarURL())
                     .setColor(0xFF0000)
                     .setTitle("Suggestion Submission")
                     .setDescription(sug + '   \n[Jump to Message](https://discordapp.com/channels/'+message.guild.id+'/'+message.channel.id+'/'+message.id+')')
-                    .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
-                    bot.users.get("178539479827611648").send(suggestEmbed);
+                    .setFooter("VirusDaBot", bot.users.cache.get(BotID).avatarURL());
+                    bot.users.cache.get("178539479827611648").send(suggestEmbed);
                     break;
 
             
 
                 case 'gabe':
-                    bot.users.get(message.author.id).send("Hello? \nIs this thing working?\nOf course it is, you're reading this.\n\nBut to be fair, I knew you would figure it out.\nI just wanna say, thank you.\nPeople like you were the reason I stayed up and going in this life. Honestly, I wasn't gonna make it that far in life if I never met you. Thank you. Gosh I wish I can do more, rather than just hidding a message inside a bot, but seriously, I loBe you.\nContinue being you!");
+                    bot.users.cache.get(message.author.id).send("Hello? \nIs this thing working?\nOf course it is, you're reading this.\n\nBut to be fair, I knew you would figure it out.\nI just wanna say, thank you.\nPeople like you were the reason I stayed up and going in this life. Honestly, I wasn't gonna make it that far in life if I never met you. Thank you. Gosh I wish I can do more, rather than just hidding a message inside a bot, but seriously, I loBe you.\nContinue being you!");
                     break;
 
             case 'easteregg':
@@ -1422,18 +1422,18 @@ bot.on('message', message=> {
                     
                     uusers = bot.guilds.get(message.guild.id).members.array();
                     uwusers = Math.floor ((Math.random() * uusers.length));
-                    pair2 = bot.users.get(uusers[uwusers].id).username;
+                    pair2 = bot.users.cache.get(uusers[uwusers].id).username;
                     
                     message.channel.send("*Reading the pair score of "+pair1.user.username+" and "+pair2+"...*")
                 }
                 else {
                     uusers = bot.guilds.get(message.guild.id).members.array();
                     uwusers = Math.floor ((Math.random() * uusers.length));
-                    pair1 = bot.users.get(uusers[uwusers].id).username;
+                    pair1 = bot.users.cache.get(uusers[uwusers].id).username;
 
                     uusers = bot.guilds.get(message.guild.id).members.array();
                     uwusers = Math.floor ((Math.random() * uusers.length));
-                    pair2 = bot.users.get(uusers[uwusers].id).username;
+                    pair2 = bot.users.cache.get(uusers[uwusers].id).username;
 
                     message.channel.send("*Reading the pair score of "+pair1+" and "+pair2+"...*")
                 }
@@ -1644,7 +1644,7 @@ bot.on('message', message=> {
             message.channel.send("Gotcha! Posting the commands via DMs...");
             
             const embed1 = new Discord.RichEmbed()
-                .setAuthor("Requested by "+message.author.username, message.author.avatarURL)
+                .setAuthor("Requested by "+message.author.username, message.author.avatarURL())
                 .setColor('#FF1493')
                 .setTitle("Commands - Page 1")
                 .setDescription("☆ The following commands have to be prefaced with [ "+PREFIX+" ] .")
@@ -1671,14 +1671,14 @@ bot.on('message', message=> {
                 .addField('• purewars', 'Starts a war.', true)
                 .addField('• purestandings', 'Shows the war.', true)
                 .addField('• heylook', 'Hey look buddy...', true)
-                .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
+                .setFooter("VirusDaBot", bot.users.cache.get(BotID).avatarURL());
                 
-                bot.users.get(message.author.id).send(embed1);
+                bot.users.cache.get(message.author.id).send(embed1);
             
             //People and Image
             //message.channel.send("``` 《《 VIRUS COMMANDS 》》 \n\nPAGE 2. \n\n────────\n\n☆ The following commands have to be prefaced with [ v! ] .\n\n-> People Commands:\ndru - Do it Dru!\nmoon - Bring it in, Moon!\npkoby - The pure lad.\nkirB - Whoa, a Kirby?\nender - A wild Ender appears!\nkorbs - my boi korbs.\nprince - Please don't say the n word.\neliz - Where's Ellie Bean?\nnokobo - Some random boomer I know.\njasper - Hyper...critical?.\njacob - Hot lad.\nghost - Spoookkkkyyyyy.....\ngoat - What? An epic gamer? \nname - Just an ego booster. \nizzle - What happens if I say 'furry' here? \nethan - You all know who he is!\ncain - Channel-indeed. \nkevin - Everyone...bow? \nsnoop - Ugh, Persona...\njet - Pings Jet. That's all.\nrowlet - Oh my. \nirri - Save us Irri!\npip - The purest person. So, so pure.\nmimik - Who's that?\nreun - The best boy!\nknux - You don't have one yet?!\n\n-> Image Commands:\nclown - Virus will provide you with the most important item of clothing for a clown.\nclown2 - Virus will bring you up for an interview.\nbruh - Bruh.\nwtf - Reacts with a 'Wtf' picture. Most are offensive, do be careful.\nmoonuwu - Virus gives you a shiney uwu!\najoke - A joke is a joke, Budtard.\nbuddy - Ok, Buddy.\nwhatcanIsay - A magical gif. \noldie - Posts a picture from the Glory Days...\ndedmeme - Posts a dead meme from Gabe's one year old folder.\nsad - Virus will provide an image for the saddened.\nnice - Virus will react with a 'Nice' image. \ndong - Where's the dong? \nfunky - Funky got that sicko I need. \ntoxicegg - Dru, get out. \nWAHOO - Mario for the PS4 cancels KH3\negirl - SHUT UP, E-GIRL! \nthouthefuck - BY THE POPE!\n\n──────\n\nPLEASE USE [ v!commands3 ] TO VIEW THE NEXT PAGE.```")
             const embed2 = new Discord.RichEmbed()
-            .setAuthor("Requested by "+message.author.username, message.author.avatarURL)
+            .setAuthor("Requested by "+message.author.username, message.author.avatarURL())
                 .setColor('#FF1493')
                 .setTitle("Commands - Page 2")
                 .setDescription("☆ The following commands have to be prefaced with [ "+PREFIX+" ] .")
@@ -1702,14 +1702,14 @@ bot.on('message', message=> {
                 .addField('• vibecheck', 'Vibe Check.', true)
                 .addField('• fuckyou', 'Why the hate?', true)
                 .addField('• facts', "Gotta note 'em down.", true)
-                .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
+                .setFooter("VirusDaBot", bot.users.cache.get(BotID).avatarURL());
                 
-                bot.users.get(message.author.id).send(embed2);
+                bot.users.cache.get(message.author.id).send(embed2);
            
             //Replies and Reactions
             //message.channel.send("``` 《《 VIRUS COMMANDS 》》 \n\nPAGE 3.\n\n────────\n\n☆ The following commands do not have to be prefaced with [ v! ] .\n\n-> Fun Commands:\nLET ROCK - Start a party!\nboomer - Shut up. This command can only be used if you have the boomer-pass (see Page 1).\nHOL UP - Virus will hold for you.\n\n-> User-Specific Commands:\nowo - uwu? - [ Only Izzle and Moon can use this command. ] \nDrizzle - Excuse me? - [ Only Jet can use this command. ]\nJoe - Joe Who? - [ Only Reun can use this command. ] \n\n────────\n\n☆ Adding the following reactions to any message will trigger Virus to send the correlated response!\n\n-> General Commands:\n:herb: - Join the support gang! (In case of spam, type 'v!herbbreak')\n\n-> User-Specific Commands:\njoystick - For the downed gamer. - [ This response can only be triggered by Gabe. ] \nguitar - Quick! Vibe Check. - [ This response can only be triggered by Snoop and Reun. ]\n\n────────\n\nEND OF COMMAND LIST.```");
             const embed3 = new Discord.RichEmbed()
-            .setAuthor("Requested by "+message.author.username, message.author.avatarURL)
+            .setAuthor("Requested by "+message.author.username, message.author.avatarURL())
                 .setColor('#FF1493')
                 .setTitle("Commands - Page 3")
                 .setDescription("☆ The following commands have to be prefaced with [ "+PREFIX+" ] .")
@@ -1735,12 +1735,12 @@ bot.on('message', message=> {
                 .addField('• WAHOO', 'PS4s suck.', true)
                 .addField('• egirl', 'SHUT IT!', true)
                 .addField('• thouthefuck', 'BY THE POPE!', true)
-                .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
+                .setFooter("VirusDaBot", bot.users.cache.get(BotID).avatarURL());
                 
-                bot.users.get(message.author.id).send(embed3);
+                bot.users.cache.get(message.author.id).send(embed3);
             
                     const embed4 = new Discord.RichEmbed()
-                    .setAuthor("Requested by "+message.author.username, message.author.avatarURL)
+                    .setAuthor("Requested by "+message.author.username, message.author.avatarURL())
                         .setColor('#FF1493')
                         .setTitle("Commands - Page 4")
                         .setDescription("☆ The following commands have to be prefaced with [ "+PREFIX+" ] .")
@@ -1758,12 +1758,12 @@ bot.on('message', message=> {
                         .addField('**Personal Commands** 👤', 'Commands about friends, for friends.')
                         .addBlankField()
                         .addField('The following people have their own commands:', '• dru\n• moon\n• pkoby\n• kirB\n• ender\n• korbs\n• prince\n• eliz\n• nokobo\n• jasper\n• jacob\n• ghost\n• goat\n• name\n• izzle\n• ethan\n• cain\n• kyu\n• sushi\n• goji\n• snoop\n• jet\n• rowlet\n• irri\n• pip\n• mimik\n• reun\n• knux\n• dyst\n• reni\n• rb\n• generic\n• truth\n• ina\n• isaac\n• kaden\n• traz\n• jerry\n• vessel\n• banjo\n• bridgey', true)
-                        .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
+                        .setFooter("VirusDaBot", bot.users.cache.get(BotID).avatarURL());
                         
-                        bot.users.get(message.author.id).send(embed4);
+                        bot.users.cache.get(message.author.id).send(embed4);
             
                     const embed5 = new Discord.RichEmbed()
-                    .setAuthor("Requested by "+message.author.username, message.author.avatarURL)
+                    .setAuthor("Requested by "+message.author.username, message.author.avatarURL())
                         .setColor('#FF1493')
                         .setTitle("Commands - Page 5")
                         .setDescription("☆ The following commands DO NOT have to be prefaced with [ "+PREFIX+" ] .")
@@ -1779,9 +1779,9 @@ bot.on('message', message=> {
                         .addBlankField()
                         .addField('**Personal Commands** 🦀', "Huh.")
                         .addField('The following reactions are user-specific:', '• :joystick: - Only Gabe can use this.\n• :guitar: - Only Snoop and Reun can use this.')
-                        .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
+                        .setFooter("VirusDaBot", bot.users.cache.get(BotID).avatarURL());
                         
-                        bot.users.get(message.author.id).send(embed5);
+                        bot.users.cache.get(message.author.id).send(embed5);
             break;
     
 
@@ -2024,7 +2024,7 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
     if (message.content.startsWith("@someone")){
         uusers = bot.guilds.get(message.guild.id).members.array();
         uwusers = Math.floor ((Math.random() * uusers.length));
-        thisone = bot.users.get(uusers[uwusers].id);
+        thisone = bot.users.cache.get(uusers[uwusers].id);
 
         message.channel.send("<@"+thisone.id+">");
     }
@@ -2215,7 +2215,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         if (emoji.name === "💰") {
             stolenmeme = new Attachment (message.attachments.first().url);
             message.channel.send("This is a message to alert that "+user.username+" has stolen "+message.author.username+"'s meme. No further action is required.");
-            bot.users.get(user.id).send(stolenmeme);
+            bot.users.cache.get(user.id).send(stolenmeme);
         }
 
         if (emoji.name == "🔎"){
@@ -3589,7 +3589,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                         pos = i;
                         let removedCard = icp.splice(pos, 1)
                         if (ycp.length == 0){
-                            bot.users.get(rawplayers9[y]).send("You're out of cards. Refreshing...");
+                            bot.users.cache.get(rawplayers9[y]).send("You're out of cards. Refreshing...");
                             carda = Math.floor (Math.random() * cards9.length);
                             cardb = Math.floor (Math.random() * cards9.length);
                             cardc = Math.floor (Math.random() * cards9.length);
@@ -3597,13 +3597,13 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
                             innercardpile[y] = [cards9[carda], cards9[cardb], cards9[cardc], cards9[cardd]];
 
-                            bot.users.get(rawplayers9[y]).send(innercardpile[y]);
+                            bot.users.cache.get(rawplayers9[y]).send(innercardpile[y]);
                         }
                         else if (onegone == true){
                             i = 5;
                         }
                         else{
-                        bot.users.get(rawplayers9[y]).send("`Your cards:` \n"+ycp);
+                        bot.users.cache.get(rawplayers9[y]).send("`Your cards:` \n"+ycp);
                         i = 5;
                         }
                     }
@@ -3680,7 +3680,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     cardd = Math.floor (Math.random() * cards9.length);
 
                     innercardpile[i] = [cards9[carda], cards9[cardb], cards9[cardc], cards9[cardd]];
-                    bot.users.get(rawplayers9[i]).send("`Your cards:` \n"+innercardpile[i]);
+                    bot.users.cache.get(rawplayers9[i]).send("`Your cards:` \n"+innercardpile[i]);
                 }
             }
 
@@ -3826,7 +3826,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 bot.channels.get(o64channel).send("It's **"+players64[dm].username+"'s** turn to pick a card...")
                 tn = cards64[o64number];
                 o64truedeck = o64truedeck + tn;
-                bot.users.get(players64[dm].id).send("You got a **"+tn+"!** \nNow...what do you tell everyone it is?")
+                bot.users.cache.get(players64[dm].id).send("You got a **"+tn+"!** \nNow...what do you tell everyone it is?")
                 
             }
 
@@ -3883,7 +3883,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     //get names
                     uusers = bot.guilds.get(message.guild.id).members.array();
                     uwusers = Math.floor ((Math.random() * uusers.length));
-                    heroesname[i] = bot.users.get(uusers[uwusers].id).username;
+                    heroesname[i] = bot.users.cache.get(uusers[uwusers].id).username;
                     
                     //get hp
                     heroesmaxhp[i] = Math.floor ((Math.random() * 150) + 100);
@@ -4391,7 +4391,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                         hi = cardspwp[i];
                         pwpdmmes += " **"+hi[j]+"** |"
                     }
-                    bot.users.get(playerspwp[i].id).send("`Your cards:`\n"+pwpdmmes);
+                    bot.users.cache.get(playerspwp[i].id).send("`Your cards:`\n"+pwpdmmes);
 
                 }
 
@@ -4464,7 +4464,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     
                     pwpdmmes += " **"+hi[j]+"** |"
                 }
-                bot.users.get(playerspwp[pwpplayer].id).send("`Your cards:`\n"+pwpdmmes);
+                bot.users.cache.get(playerspwp[pwpplayer].id).send("`Your cards:`\n"+pwpdmmes);
             }
 
 
