@@ -78,8 +78,72 @@ bot.on('ready', () =>{
     bot.channels.cache.get('607654317079396410').send("`VirusBot has been rebooted.`")
     thatone = Math.abs(Math.floor ((Math.random() * activitylist.length) -1));
     bot.user.setActivity(activitylist[thatone]);
+
+    bot.api.applications(bot.user.id).guilds('606955931145732111').commands.post({
+        data: {
+            name: "hello",
+            description: "Replies with Hello World...?"
+        }
+    })
+
+    bot.api.applications(bot.user.id).guilds('606955931145732111').commands.post({
+        data: {
+            name: "echo",
+            description: "Says what you said. How original.",
+
+            options: [
+                {
+                name: "content",
+                description: "Content of the embed",
+                type: 3,
+                required: true
+                }
+            ]
+        }
+    });
+
+    bot.ws.on('INTERACTION_CREATE', async interaction =>{
+        const command = interaction.data.name.toLowerCase();
+        const args = interaction.data.options;
+
+        if(command == 'hello'){
+            bot.api.interactions(interaction.id, interaction.token).callback.post({
+                data: {
+                    type: 4,
+                    data: {
+                        content: "I'm not saying that."
+                    }
+                }
+            })
+        }
+
+        if(command == "echo") {
+            const description = args.find(arg => arg.name.toLowerCase() == "content").value;
+            const embed = new Discord.MessageEmbed()
+                .setTitle("Echo!")
+                .setDescription(description)
+                .setAuthor(interaction.member.user.username);
+
+            bot.api.interactions(interaction.id, interaction.token).callback.post({
+                data: {
+                    type: 4,
+                    data: await createAPIMessage(interaction, embed)
+                }
+            });
+            
+        }
+
+    })
+
 })
 
+async function createAPIMessage(interaction, content){
+    const apiMessage = await Discord.APIMessage.create(bot.channels.resolve(interaction.channel.id), content)
+    .resolveData()
+    .resolveFiles();
+
+    return ( ...apiMessage.data, files: apiMessage.files );
+}
 
 bot.on('message', message=> {
     
