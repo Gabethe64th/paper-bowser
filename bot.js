@@ -75,7 +75,7 @@ var activitylist = ["lmao who's Corona? Never heard of them.", "around", "as Ste
 
 bot.on('ready', () =>{
     console.log('Let er rip!');
-    bot.channels.get('607654317079396410').sendMessage("`VirusBot has been rebooted.`")
+    bot.channels.get('607654317079396410').send("`VirusBot has been rebooted.`")
     thatone = Math.abs(Math.floor ((Math.random() * activitylist.length) -1));
     bot.user.setActivity(activitylist[thatone]);
 })
@@ -94,12 +94,12 @@ bot.on('message', message=> {
 
     switch(args[0]){
         case 'ping':
-            // message.channel.sendMessage('Pong!');
+            // message.channel.send('Pong!');
             message.reply('Pong!');
         break
 
         case 'help':
-            message.channel.sendMessage('There is no help. Only chaos. \n \n ||(v!commands)||');
+            message.channel.send('There is no help. Only chaos. \n \n ||(v!commands)||');
             break;
         
         case 'info':
@@ -125,8 +125,8 @@ bot.on('message', message=> {
                 message.channel.send(embed);
             }
             else if(args[1] === 'oldies'){
-                message.channel.sendMessage("There's a black hole where the oldie forder used to be...");
-                //message.channel.sendMessage("There are **"+olds+"** oldie pictures in the folder so far! \n\nDo you have a picture you want to add to the command? Feel free to DM Gabe with your suggestion!");
+                message.channel.send("There's a black hole where the oldie forder used to be...");
+                //message.channel.send("There are **"+olds+"** oldie pictures in the folder so far! \n\nDo you have a picture you want to add to the command? Feel free to DM Gabe with your suggestion!");
             }
             else if(args[1] === 'changelog'){
                 const embed = new Discord.RichEmbed()
@@ -171,10 +171,10 @@ bot.on('message', message=> {
         case 'love':
             if (args[1] === 'you'){
                 if (message.author.id === '356389068634062848'){
-                    message.channel.sendMessage('Love you too, <@' + message.author.id +'>! ❤');
+                    message.channel.send('Love you too, <@' + message.author.id +'>! ❤');
                 }
                 else {
-                message.channel.sendMessage('Gay.');
+                message.channel.send('Gay.');
                 }
             }
             else {
@@ -210,7 +210,7 @@ bot.on('message', message=> {
 
         case 'choose':
             if (args[1] == undefined){
-                message.channel.sendMessage("To properly use this command, please include at least two choices seperated by ' | '.\n\nExample:\n```v!choose (choice 1) | (choice 2)```")
+                message.channel.send("To properly use this command, please include at least two choices seperated by ' | '.\n\nExample:\n```v!choose (choice 1) | (choice 2)```")
             }
             else{
             cm = Math.floor ((Math.random() * choicemes.length));
@@ -218,10 +218,10 @@ bot.on('message', message=> {
             thechoice = choices[choos];
             if (choos == 0){
                 thechoice = choices[0].slice(7);
-                message.channel.sendMessage(choicemes[cm]+"**"+thechoice+"**");
+                message.channel.send(choicemes[cm]+"**"+thechoice+"**");
             }
             else{
-            message.channel.sendMessage(choicemes[cm]+"**"+thechoice+"**");
+            message.channel.send(choicemes[cm]+"**"+thechoice+"**");
             }
         }
         break;
@@ -276,30 +276,30 @@ bot.on('message', message=> {
         case 'changeAvatar':
             if (args[1] != undefined){
             bot.user.setAvatar(args[1]);
-            message.channel.sendMessage("I'm diggin' the new look!");
+            message.channel.send("I'm diggin' the new look!");
             }
             else (
-                message.channel.sendMessage("Can't find the URL. Did you post one?")
+                message.channel.send("Can't find the URL. Did you post one?")
             )
         break;
         
         case 'setChannelname':
             if (args[1] != undefined){
                 bot.member.setNickname(message.content.slice(17));
-                message.channel.sendMessage("A-OK!");
+                message.channel.send("A-OK!");
                 }
                 else (
-                    message.channel.sendMessage("No nick is found. Provide a space!")
+                    message.channel.send("No nick is found. Provide a space!")
                 )
         break;
 
         case 'changeNick':
             if (args[1] != undefined){
                 bot.guilds.get(message.guild.id).member(BotID).nickname = (message.content.slice(13))
-                message.channel.sendMessage("A-OK!");
+                message.channel.send("A-OK!");
             }
             else (
-                message.channel.sendMessage("No nick was found.")
+                message.channel.send("No nick was found.")
             )
         break;
 
@@ -318,7 +318,7 @@ bot.on('message', message=> {
         break;
 
         case 'nsfw':
-            message.channel.sendMessage("What the absolute fuck is wrong with you? Looking up porn on Discord? Kindly re-think your life choices.");
+            message.channel.send("What the absolute fuck is wrong with you? Looking up porn on Discord? Kindly re-think your life choices.");
         break;
 
         case 'timetorockwiththebiggitybuckbumble':
@@ -350,7 +350,7 @@ bot.on('message', message=> {
             break
 
         case 'dyst':
-            message.channel.sendMessage("A former person of the community who made the 24/7 music stream that started it all. Now, he's just a laughing stock that triggers a few people just by saying his nickname. He also ruined Minish Cap with peanut butter. \n\n**Example:** \nGuy 1: Hey, what happened to Dys? \nGuy 2: Gone. Reduced to atoms. \nGuy 1: Why? \nAll Mods: Ah shit, here we go again.");
+            message.channel.send("A former person of the community who made the 24/7 music stream that started it all. Now, he's just a laughing stock that triggers a few people just by saying his nickname. He also ruined Minish Cap with peanut butter. \n\n**Example:** \nGuy 1: Hey, what happened to Dys? \nGuy 2: Gone. Reduced to atoms. \nGuy 1: Why? \nAll Mods: Ah shit, here we go again.");
             
             break
 
@@ -371,26 +371,26 @@ bot.on('message', message=> {
 
         case 'joe':
                 if(args[1] === 'who'){
-                    message.channel.sendMessage('Joe Mama 😎');
+                    message.channel.send('Joe Mama 😎');
                 }
                 else {
-                    message.channel.sendMessage("Who's Joe?");
+                    message.channel.send("Who's Joe?");
                 }
             break;
 
         case 'dead':
                 user = message.mentions.users.first();
                 if (user !== undefined){
-                    message.channel.sendMessage(user.username + ' fucking dies! 🇫 😔');
+                    message.channel.send(user.username + ' fucking dies! 🇫 😔');
                 }
                 else {
-            message.channel.sendMessage(message.author.username + ' fucking dies! 🇫 😔');
+            message.channel.send(message.author.username + ' fucking dies! 🇫 😔');
                 }
             break;
 
             
         case 'irri':
-                message.channel.sendMessage("A fucking STALLION of a man that decided to take up the responsibilities of leading a server full of 1000+ people after the virgin Dys was banned. This absolute chad is also a best friend to many people, and is basically a walking Skillshare.com. \n\n**Example:** \nGuy 1: Hey, I need some help to draw a hand. Can anyone help? \nGuy 2: Ask Irri. \nGuy 1: Isn't he currently busy in a server of 500+ people? \nIrri: You called?");
+                message.channel.send("A fucking STALLION of a man that decided to take up the responsibilities of leading a server full of 1000+ people after the virgin Dys was banned. This absolute chad is also a best friend to many people, and is basically a walking Skillshare.com. \n\n**Example:** \nGuy 1: Hey, I need some help to draw a hand. Can anyone help? \nGuy 2: Ask Irri. \nGuy 1: Isn't he currently busy in a server of 500+ people? \nIrri: You called?");
                 break;
 
         case 'gamestop':
@@ -404,7 +404,7 @@ bot.on('message', message=> {
         case 'gay':
                 user = message.mentions.users.first();
                 if (user != undefined){
-                    message.channel.sendMessage(user.username+ ' do be looking kinda fresh doe 😳')
+                    message.channel.send(user.username+ ' do be looking kinda fresh doe 😳')
                 }
                 else {
                 message.channel.send(message.author.username + ' do be looking kinda fresh doe 😳')
@@ -583,7 +583,7 @@ bot.on('message', message=> {
             break;
 
         case 'h':
-            message.channel.sendMessage(message.member.nickname + " has h'ed. I suggest we all h as well.");
+            message.channel.send(message.member.nickname + " has h'ed. I suggest we all h as well.");
             break;
 
         case 'crash':
@@ -594,31 +594,31 @@ bot.on('message', message=> {
 
                 switch (args[1]){
                     case '0':
-                            message.channel.sendMessage('**Tomato Soup** is an ongoing (kinda) series about a girl named Irri who is on a quest to find the mythical tomato soup, a legendary food that has been rumoured to cure any cold. During her quest, she will meet many different friends and take a crap ton of detours from her main goal. The series is well praised for having a determined yet lovable main character alongside an unexpected plot for each episode.');
+                            message.channel.send('**Tomato Soup** is an ongoing (kinda) series about a girl named Irri who is on a quest to find the mythical tomato soup, a legendary food that has been rumoured to cure any cold. During her quest, she will meet many different friends and take a crap ton of detours from her main goal. The series is well praised for having a determined yet lovable main character alongside an unexpected plot for each episode.');
                             break;
                     
                             case '1':
-                                    message.channel.sendMessage("**Tomato Soup Part 1**: We meet our protagonist, Irri, who shortly comes with a never-ending cold. In an attempt to get rid of it, she goes on a quest to find the mythical 'Tomato Soup', which is rumored to be the soup that can cure any illness. Somewhere at the beginning of her journey, she meets the legendary Mewtwo, who then warns her that most of the village, including Irri's friends, had turned into birds from the work of a bitch named Melody. Quickly putting aside her current quest to save her friends, she follows Mewtwo to an island that contains the cure to turn them back to normal: Water. With the help of her Pokémon friend, she was able to carry a huge tub of water to the village and save her friends. After doing so, she heads out once again to find the soup.");
+                                    message.channel.send("**Tomato Soup Part 1**: We meet our protagonist, Irri, who shortly comes with a never-ending cold. In an attempt to get rid of it, she goes on a quest to find the mythical 'Tomato Soup', which is rumored to be the soup that can cure any illness. Somewhere at the beginning of her journey, she meets the legendary Mewtwo, who then warns her that most of the village, including Irri's friends, had turned into birds from the work of a bitch named Melody. Quickly putting aside her current quest to save her friends, she follows Mewtwo to an island that contains the cure to turn them back to normal: Water. With the help of her Pokémon friend, she was able to carry a huge tub of water to the village and save her friends. After doing so, she heads out once again to find the soup.");
                             break;
 
                             case '2':
-                                    message.channel.sendMessage("**Tomato Soup Part 2**: As she continues her hunt for the soup, she meets a new friend called Dandebish. During their conversation, Dandebish reveals to be a C-rank, who ran away from his group in hopes of joining B-ranks who are a group of players that live near Irri's village. Irri, being a B-rank herself, promises Dandebish to help him become one of them, and in return Dandebish agrees to join her in her quest. Unfortunately, both of them are ambushed by a small group of C-ranks shortly after, and Irri becomes separated from her new friend. Randomly determined by the power of friendship, Irri sneaks her way into the C-ranks' base and saves her friend, who she then gives directions to the location of the B-ranks and sends him off. Making sure no other C-rank follows him along the way, she then heads off to her main quest.");
+                                    message.channel.send("**Tomato Soup Part 2**: As she continues her hunt for the soup, she meets a new friend called Dandebish. During their conversation, Dandebish reveals to be a C-rank, who ran away from his group in hopes of joining B-ranks who are a group of players that live near Irri's village. Irri, being a B-rank herself, promises Dandebish to help him become one of them, and in return Dandebish agrees to join her in her quest. Unfortunately, both of them are ambushed by a small group of C-ranks shortly after, and Irri becomes separated from her new friend. Randomly determined by the power of friendship, Irri sneaks her way into the C-ranks' base and saves her friend, who she then gives directions to the location of the B-ranks and sends him off. Making sure no other C-rank follows him along the way, she then heads off to her main quest.");
                             break;
 
                             case '3':
-                                    message.channel.sendMessage("**Tomato Soup Part 3**: Irri spots a village during her journey and decides to head there for the night. While she introduces herself to the villagers, she encounters a group of kids who informs her about a shortcut to find the mythical soup known as 'The Abyss'. The next morning, she heads out into the Abyss, accompanied by a loli who claims that her mother is also somewhere into the Abyss and 'she must find her'. During the adventure, they meet many different creatures. Some being cute, while most being insanely deadly. Somewhere during the episode, Irri informs the loli to stat put while she goes to gather food. The loli, of course, doesn't listen, and ventures further into the Abyss. There, she meets a poisonous monster, who didn't hesitate to attack the dumb loli. Irri quickly finds her laying on the ground, but is unable to do anything that can help her get rid of the poison...that is until a bunny girl appears who agrees to help cure the badly damaged girl.");
+                                    message.channel.send("**Tomato Soup Part 3**: Irri spots a village during her journey and decides to head there for the night. While she introduces herself to the villagers, she encounters a group of kids who informs her about a shortcut to find the mythical soup known as 'The Abyss'. The next morning, she heads out into the Abyss, accompanied by a loli who claims that her mother is also somewhere into the Abyss and 'she must find her'. During the adventure, they meet many different creatures. Some being cute, while most being insanely deadly. Somewhere during the episode, Irri informs the loli to stat put while she goes to gather food. The loli, of course, doesn't listen, and ventures further into the Abyss. There, she meets a poisonous monster, who didn't hesitate to attack the dumb loli. Irri quickly finds her laying on the ground, but is unable to do anything that can help her get rid of the poison...that is until a bunny girl appears who agrees to help cure the badly damaged girl.");
                             break;
 
                             case '4':
-                                    message.channel.sendMessage("**Tomato Soup Part 4**: Continuing from the last episode, Irri leaves the loli to be cured at the bunny girl's house. Shortly after, she receives a text message from her friends which asks how the quest for the soup is going. As she's about to respond, she receives another message asking for her urgent help, as their village is being 'attacked by an anime girl with spinning swords'. The scene then goes to the village, where Irri's friends meet different characters from different anime genres, who were bought here from the same anime girl they reported to Irri. One of the anime genre characters, being a loli princess, tries to stop the sword girl from her plans to destroy the world, but she was killed off shortly after. It's now up to the other genres to stop her before it's too late, but the progress isn't going well since some of the characters have joined forces with the sword girl to help her evil scheme to occur, not knowing of her full plan. Will the good genres be able to save the world with the help of Irri's friends? Will Irri be able to make it back to the village in time? What about her quest to find the Tomato Soup? I guess we'll have to wait until part 5 to find out...");
+                                    message.channel.send("**Tomato Soup Part 4**: Continuing from the last episode, Irri leaves the loli to be cured at the bunny girl's house. Shortly after, she receives a text message from her friends which asks how the quest for the soup is going. As she's about to respond, she receives another message asking for her urgent help, as their village is being 'attacked by an anime girl with spinning swords'. The scene then goes to the village, where Irri's friends meet different characters from different anime genres, who were bought here from the same anime girl they reported to Irri. One of the anime genre characters, being a loli princess, tries to stop the sword girl from her plans to destroy the world, but she was killed off shortly after. It's now up to the other genres to stop her before it's too late, but the progress isn't going well since some of the characters have joined forces with the sword girl to help her evil scheme to occur, not knowing of her full plan. Will the good genres be able to save the world with the help of Irri's friends? Will Irri be able to make it back to the village in time? What about her quest to find the Tomato Soup? I guess we'll have to wait until part 5 to find out...");
                             break;
 
                             case '5':
-                                    message.channel.sendMessage("**Tomato Soup Part 5**: One short recap of episodes 1-4 later by an over-exaggerated busty Irri, and with a new bangin' OP, we are taken back to the village, where all of Irri's friends are plotting to get rid of the girl with spinning swords once and for all. It is believed that she was created by a girl who brutally killed herself, and if taken carefully, they can create a knock-off RP series with her as a villain character to defeat her. Somewhere during their preparations for the plan, we meet a new anime girl, who comes from a hentai game. Eventually, the plan turned out to be a success, persuading 100+ roleplayers to join the arc! The sword girl, who already knew about the scheme the same day it was created, decided to join in on the fun with her own gang of anime genre characters, and thus without any delay the arc (hilariously titled 'Korbs takes an hour to Piss.') begins! Not too long during the arc, the sword girl decides to break the fourth wall with all the roleplayers, but it doesn't cause too much damage to the plan, as shortly later, almost every character that was in her evil gang decided to join the good side, some by force. The episode then ends with another cliff-hanger, as the sword girl reveals one more character that was in her small gang, who turns out to be the secondary protagonist in one of Irri's most-watched animes...");
+                                    message.channel.send("**Tomato Soup Part 5**: One short recap of episodes 1-4 later by an over-exaggerated busty Irri, and with a new bangin' OP, we are taken back to the village, where all of Irri's friends are plotting to get rid of the girl with spinning swords once and for all. It is believed that she was created by a girl who brutally killed herself, and if taken carefully, they can create a knock-off RP series with her as a villain character to defeat her. Somewhere during their preparations for the plan, we meet a new anime girl, who comes from a hentai game. Eventually, the plan turned out to be a success, persuading 100+ roleplayers to join the arc! The sword girl, who already knew about the scheme the same day it was created, decided to join in on the fun with her own gang of anime genre characters, and thus without any delay the arc (hilariously titled 'Korbs takes an hour to Piss.') begins! Not too long during the arc, the sword girl decides to break the fourth wall with all the roleplayers, but it doesn't cause too much damage to the plan, as shortly later, almost every character that was in her evil gang decided to join the good side, some by force. The episode then ends with another cliff-hanger, as the sword girl reveals one more character that was in her small gang, who turns out to be the secondary protagonist in one of Irri's most-watched animes...");
                             break;
 
                             default:
-                                message.channel.sendMessage("There's no pot on the stove! Not a valid arg. Only numbers 0-5 are currently available.");
+                                message.channel.send("There's no pot on the stove! Not a valid arg. Only numbers 0-5 are currently available.");
                                 break;
                 }
 
@@ -628,17 +628,17 @@ bot.on('message', message=> {
             case 'etr':
                 switch (args[1]){
                     default: 
-                    message.channel.sendMessage("```Invalid number/arg.```");
+                    message.channel.send("```Invalid number/arg.```");
                     break;
 
                     case '0':
-                        message.channel.sendMessage("**Enter The Rimworld** is a story about surviving a group of people who all have the singular goal of surviving the jungle. Together, they'll have to build stable habitats, hunt for edible food, and fend off violent raiders. Who knows if some of them will even survive at the end...? The future is unreadable.");
+                        message.channel.send("**Enter The Rimworld** is a story about surviving a group of people who all have the singular goal of surviving the jungle. Together, they'll have to build stable habitats, hunt for edible food, and fend off violent raiders. Who knows if some of them will even survive at the end...? The future is unreadable.");
                         break;
 
                     case '1':
-                        message.channel.sendMessage(`**Enter The Rimworld: Chapter 1**\nThe Jungle. Damp, luscious, and full of predators. It's a fool's paradise. No matter how green the grass could be, or how tall the trees can get, no one would want to live in such a place without any form of protection. That didn't stop three people from picking that place as their new home, though. These three were given a simple mission: Survive. With their given resources and skills, at seems like a cakewalk at first glance. However, not everything is as it seems. One of the people, an old man called by his people with the name 'Nokobo', took one big sniff of his new habitat before looking back at his teammates.\n"Ah, nothing like the fresh smell of death!" He gleefully shouted at the trees behind the engaged couple; the Pirate Doctor named Irri, and his wife, the careless hunter named Cain.\n"The crickets around this place are awfully loud." The huntress quickly complained, darting her eyes around the surrounding trees, looking for anything that she can grab for dinner.\n"Good!" Nokobo replied, "That means it's time to stop lounging around and finally build a shelter. Irri, the blueprints, please."\nWithout hesitation, the horned doctor handed the old man a blue piece of paper. And with one quick glance at the plan, he got started on cutting down the nearby trees...
+                        message.channel.send(`**Enter The Rimworld: Chapter 1**\nThe Jungle. Damp, luscious, and full of predators. It's a fool's paradise. No matter how green the grass could be, or how tall the trees can get, no one would want to live in such a place without any form of protection. That didn't stop three people from picking that place as their new home, though. These three were given a simple mission: Survive. With their given resources and skills, at seems like a cakewalk at first glance. However, not everything is as it seems. One of the people, an old man called by his people with the name 'Nokobo', took one big sniff of his new habitat before looking back at his teammates.\n"Ah, nothing like the fresh smell of death!" He gleefully shouted at the trees behind the engaged couple; the Pirate Doctor named Irri, and his wife, the careless hunter named Cain.\n"The crickets around this place are awfully loud." The huntress quickly complained, darting her eyes around the surrounding trees, looking for anything that she can grab for dinner.\n"Good!" Nokobo replied, "That means it's time to stop lounging around and finally build a shelter. Irri, the blueprints, please."\nWithout hesitation, the horned doctor handed the old man a blue piece of paper. And with one quick glance at the plan, he got started on cutting down the nearby trees...
                         ~~~`);
-                        message.channel.sendMessage(`"cAIN!!"\n"WHAT?!"\nIrri kicked open the door to both Cain and his room, allowing a small, frail cat to run inside said room and quickly crash on the bed where Cain's slumber was interrupted by her husband's voice. \n"We have a cat now!" Irri gives off a smile of pure happiness.\n"You-You woke me up for this?" Cain's tired and grumpy voice informed Irri's smile to fade away.\n"Well, it's also sunrise, dear. C'mon, we have a full day ahead of us."\nCain groaned in disgust, reflecting on the week she had to put up through. First, she had to get used to the new environment, then she was given the job as the food hunter for the team, and now, there's a cat on her bed. But she wasn't too bothered on the second part, though. Shooting stuff is her specialty, even when the target begins to beg for mercy. After one more minute of lazing about on the bed, she hops off to reach for her gun, which was at its usual place of being under the bed, before walking out of her wooden cabin, followed by her new pet.\n"CAAIN, I'M HUNGRYYY!" The voice of an old man next to an unfinished kitchen whimpered loudly in the near distance.\n"Not my fault." Cain checked the number of remaining bullets in her gun, scaring away the cat that was behind her in the process with its noise. No ammo.\n"Ugh. What does it take to have good guns here?"\n"Time." Irri walked towards Cain with a blueprint in his hands, "A lot of time, unfortunately."\n"Then hurry up." Cain snapped. \n"Hah! Welcome to the new world!" Nokobo joked while nailing together two flimsy boards of wood. Truly, there's a lot of work to do if they want to continue on in this world. But for now, it's just three people stranded in a jungle...preparing themselves for one hell of a journey they're about to take.`);
+                        message.channel.send(`"cAIN!!"\n"WHAT?!"\nIrri kicked open the door to both Cain and his room, allowing a small, frail cat to run inside said room and quickly crash on the bed where Cain's slumber was interrupted by her husband's voice. \n"We have a cat now!" Irri gives off a smile of pure happiness.\n"You-You woke me up for this?" Cain's tired and grumpy voice informed Irri's smile to fade away.\n"Well, it's also sunrise, dear. C'mon, we have a full day ahead of us."\nCain groaned in disgust, reflecting on the week she had to put up through. First, she had to get used to the new environment, then she was given the job as the food hunter for the team, and now, there's a cat on her bed. But she wasn't too bothered on the second part, though. Shooting stuff is her specialty, even when the target begins to beg for mercy. After one more minute of lazing about on the bed, she hops off to reach for her gun, which was at its usual place of being under the bed, before walking out of her wooden cabin, followed by her new pet.\n"CAAIN, I'M HUNGRYYY!" The voice of an old man next to an unfinished kitchen whimpered loudly in the near distance.\n"Not my fault." Cain checked the number of remaining bullets in her gun, scaring away the cat that was behind her in the process with its noise. No ammo.\n"Ugh. What does it take to have good guns here?"\n"Time." Irri walked towards Cain with a blueprint in his hands, "A lot of time, unfortunately."\n"Then hurry up." Cain snapped. \n"Hah! Welcome to the new world!" Nokobo joked while nailing together two flimsy boards of wood. Truly, there's a lot of work to do if they want to continue on in this world. But for now, it's just three people stranded in a jungle...preparing themselves for one hell of a journey they're about to take.`);
                         break;
                 }
                 break;
@@ -649,8 +649,8 @@ bot.on('message', message=> {
                 break;
 
         case 'vibecheck':
-            message.channel.sendMessage("At Everyone. Stop what you're doing. Time for a vibe check. 🎸")
-            message.channel.sendMessage("*bonk.*")
+            message.channel.send("At Everyone. Stop what you're doing. Time for a vibe check. 🎸")
+            message.channel.send("*bonk.*")
             break;
         
         case 'weeb':
@@ -673,7 +673,7 @@ bot.on('message', message=> {
             break;
 
         case 'numbers':
-            message.channel.sendMessage(message.createdTimestamp);
+            message.channel.send(message.createdTimestamp);
             break;
 
         case 'bored':
@@ -684,18 +684,18 @@ bot.on('message', message=> {
             
             //imageNumber = Math.floor (Math.random() * (olds - 1 + 1)) +1;
             //message.channel.send ( { files: ["./oldies/oldie (" + imageNumber + ").png"]})
-            message.channel.sendMessage("...")
+            message.channel.send("...")
             break;
             
         
             case 'generate':
-                message.channel.sendMessage("Your generated sentence is: \n");
+                message.channel.send("Your generated sentence is: \n");
                 w1 = Math.floor ((Math.random() * word1.length));
                 w2 = Math.floor ((Math.random() * word2.length));
                 w3 = Math.floor ((Math.random() * word3.length));
                 w4 = Math.floor ((Math.random() * word4.length));
 
-                message.channel.sendMessage(word1[w1]+" "+word2[w2]+" "+word3[w3]+" "+word4[w4]+".");
+                message.channel.send(word1[w1]+" "+word2[w2]+" "+word3[w3]+" "+word4[w4]+".");
             break;
 
             case 'generatw':
@@ -705,7 +705,7 @@ bot.on('message', message=> {
                 w3 = Math.floor ((Math.random() * word3.length));
                 w4 = Math.floor ((Math.random() * word4.length));
 
-                message.channel.sendMessage(word2[w2]+" "+word4[w4]+" "+word3[w3]+" "+word1[w1]);
+                message.channel.send(word2[w2]+" "+word4[w4]+" "+word3[w3]+" "+word1[w1]);
             break;
 
            case 'dedmeme':
@@ -730,28 +730,28 @@ bot.on('message', message=> {
                 hugs = 16;
                 user = message.mentions.users.first();
                 if (user !== undefined && user.id === message.author.id){
-                    message.channel.sendMessage("Oh...you hugged yourself? Damn, you're lonely...")
+                    message.channel.send("Oh...you hugged yourself? Damn, you're lonely...")
                 }
                 else if (user !== undefined && user.id === BotID) {
                     if (message.author.id === '356389068634062848') {
                         gifNumber = Math.floor (Math.random() * (hugs - 1 + 1)) +1;
-                    message.channel.sendMessage("*Hugs "+message.author.username+" back!* 💙");
+                    message.channel.send("*Hugs "+message.author.username+" back!* 💙");
                     message.channel.send ( { files: ["./hugs/hugif (" + gifNumber + ").gif"]})
                     }
                     else {
 
-                    message.channel.sendMessage("Nope! You ain't hugging me ya crap! Hug someone else!")
+                    message.channel.send("Nope! You ain't hugging me ya crap! Hug someone else!")
                 }
             }
                 else if (user !== undefined && user.id != BotID){
                     if (user.id == '346324933598773251'){
                         gifNumber = Math.floor (Math.random() * (hugs - 1 + 1)) +1;
-                        message.channel.sendMessage("*You got this, Prince! Stay strong, and believe in yourself because everyone believes in you!* ❤️");
+                        message.channel.send("*You got this, Prince! Stay strong, and believe in yourself because everyone believes in you!* ❤️");
                         message.channel.send ( { files: ["./hugs/hugif (" + gifNumber + ").gif"]})
                     }
                     else{
                     gifNumber = Math.floor (Math.random() * (hugs - 1 + 1)) +1;
-                    message.channel.sendMessage("*"+message.author.username+" gives "+user.username+" a hug!* 💙");
+                    message.channel.send("*"+message.author.username+" gives "+user.username+" a hug!* 💙");
                     message.channel.send ( { files: ["./hugs/hugif (" + gifNumber + ").gif"]})
                     suplexChance = Math.floor (Math.random() * (10 - 1 + 1)) +1;
                     if (suplexChance <= 1){
@@ -762,7 +762,7 @@ bot.on('message', message=> {
                     }
                 }
                 else {
-                    message.channel.sendMessage("...but there's no one to hug! How pitiful...");
+                    message.channel.send("...but there's no one to hug! How pitiful...");
                         }
 
 
@@ -772,22 +772,22 @@ bot.on('message', message=> {
                     hugs = 16;
                     user = message.mentions.users.first();
                     if (user !== undefined && user.id === message.author.id){
-                        message.channel.sendMessage("Oh...you hugged yourself? Damn, you're lonely...")
+                        message.channel.send("Oh...you hugged yourself? Damn, you're lonely...")
                     }
                     else if (user !== undefined && user.id === BotID) {
                         if (message.author.id === '356389068634062848') {
                             gifNumber = Math.floor (Math.random() * (hugs - 1 + 1)) +1;
-                        message.channel.sendMessage("*Hugs "+message.author.username+" back!* 💙");
+                        message.channel.send("*Hugs "+message.author.username+" back!* 💙");
                         message.channel.send ( { files: ["./hugs/hugif (" + gifNumber + ").gif"]})
                         }
                         else {
     
-                        message.channel.sendMessage("Nope! You ain't hugging me ya crap! Hug someone else!")
+                        message.channel.send("Nope! You ain't hugging me ya crap! Hug someone else!")
                     }
                 }
                     else if (user !== undefined){
                         gifNumber = Math.floor (Math.random() * (hugs - 1 + 1)) +1;
-                        message.channel.sendMessage("*"+message.author.username+" gives "+user.username+" a hug!* 💙");
+                        message.channel.send("*"+message.author.username+" gives "+user.username+" a hug!* 💙");
                         message.channel.send ( { files: ["./hugs/hugif (" + gifNumber + ").gif"]})
                     }
                     
@@ -795,7 +795,7 @@ bot.on('message', message=> {
                 
                 
                 else {
-            message.channel.sendMessage("...but there's no one to hug! How pitiful...");
+            message.channel.send("...but there's no one to hug! How pitiful...");
                 }
             break;
 
@@ -804,10 +804,10 @@ bot.on('message', message=> {
             case 'call':
                 
                 if (callkey === true) {
-                    message.channel.sendMessage("A call is already in session! It'd be rude to interrupt them...")
+                    message.channel.send("A call is already in session! It'd be rude to interrupt them...")
                 }
                 else {
-                message.channel.sendMessage("Calling via the VirusNet...");
+                message.channel.send("Calling via the VirusNet...");
                 callA = message.channel.id;
                 callB = Math.floor ((Math.random() * callids.length));
 
@@ -816,11 +816,11 @@ bot.on('message', message=> {
                 }
 
                 if (message.channel.id === '338046744849809408') {
-                    message.channel.sendMessage("The call function has been blocked from this channel. Sorry!")
+                    message.channel.send("The call function has been blocked from this channel. Sorry!")
                 }
                 else {
                 bot.channels.get(callids[callB]).send("**Someone has called this channel! Who could it be...?**");
-                message.channel.sendMessage("**I caught something! Say hello!**");
+                message.channel.send("**I caught something! Say hello!**");
                 callkey = true;
                 }
             }
@@ -850,7 +850,7 @@ bot.on('message', message=> {
                         }
                     }
                     else {
-                        message.channel.sendMessage("**No one has been called!**")
+                        message.channel.send("**No one has been called!**")
                     }
                     
                     break;
@@ -877,7 +877,7 @@ bot.on('message', message=> {
 
                 case 'sAns':
                     if (!QQ){
-                        message.channel.sendMessage("No question to answer!");
+                        message.channel.send("No question to answer!");
                     }
                     else{
                         answermessage = message.content.slice(7)
@@ -888,7 +888,7 @@ bot.on('message', message=> {
                         .addField("A question has been answered!", "\n**Question:** "+questionmessage+"\n\n**Answer:** "+answermessage+"\n")
                         
                         bot.channels.get(AQ).send(answerembed);
-                        message.channel.sendMessage("Answer Sent!")
+                        message.channel.send("Answer Sent!")
                         QQ = false;
                     }
                     
@@ -900,15 +900,15 @@ bot.on('message', message=> {
                 emonum0 = Math.floor ((Math.random() * fruits.length));
                 emonum1 = Math.floor ((Math.random() * fruits.length));
                 emonum2 = Math.floor ((Math.random() * fruits.length));
-                message.channel.sendMessage("🎰 `Welcome to Jack's Casino!` 🎰 \n**" +message.author.username+"** rolled the slots...\n   ["+fruits[emonum0]+" "+fruits[emonum1]+" "+fruits[emonum2]+"]")
+                message.channel.send("🎰 `Welcome to Jack's Casino!` 🎰 \n**" +message.author.username+"** rolled the slots...\n   ["+fruits[emonum0]+" "+fruits[emonum1]+" "+fruits[emonum2]+"]")
                 if (fruits[emonum0] === fruits[emonum1] && fruits[emonum0] === fruits[emonum2]) {
-                    message.channel.sendMessage("...***and WON!*** :tada: :tada:")
+                    message.channel.send("...***and WON!*** :tada: :tada:")
                 }
                 else if (fruits[emonum0] === fruits[emonum1] || fruits[emonum0] === fruits[emonum2] || fruits[emonum1] === fruits[emonum2]){
-                    message.channel.sendMessage("...and *almost* won...")
+                    message.channel.send("...and *almost* won...")
                 }
                 else {
-                    message.channel.sendMessage("...and lost...")
+                    message.channel.send("...and lost...")
                 }
                 break;
 
@@ -924,12 +924,12 @@ bot.on('message', message=> {
                 imo8 = Math.floor ((Math.random() * fruits.length));
                 imo9 = Math.floor ((Math.random() * fruits.length));
                 imo10 = Math.floor ((Math.random() * fruits.length));
-                message.channel.sendMessage("🎰 `Welcome to Jack's Casino!` 🎰 \n**" +message.author.username+"** rolled the impossible slots...\n   ["+fruits[imo1]+" "+fruits[imo2]+" "+fruits[imo3]+" "+fruits[imo4]+" "+fruits[imo5]+" "+fruits[imo6]+" "+fruits[imo7]+" "+fruits[imo8]+" "+fruits[imo9]+" "+fruits[imo10]+"]")
+                message.channel.send("🎰 `Welcome to Jack's Casino!` 🎰 \n**" +message.author.username+"** rolled the impossible slots...\n   ["+fruits[imo1]+" "+fruits[imo2]+" "+fruits[imo3]+" "+fruits[imo4]+" "+fruits[imo5]+" "+fruits[imo6]+" "+fruits[imo7]+" "+fruits[imo8]+" "+fruits[imo9]+" "+fruits[imo10]+"]")
                 if (fruits[imo1] === fruits[imo2] === fruits[imo3] === fruits[imo4] === fruits[imo5] === fruits[imo6] === fruits[imo7] === fruits[imo8] === fruits[imo9] === fruits[imo10]) {
-                    message.channel.sendMessage("***WHAT THE HECK?! YOU ACTUALLY WON?!*** \nYou have achieved greatness! Be proud, you RNG god!")
+                    message.channel.send("***WHAT THE HECK?! YOU ACTUALLY WON?!*** \nYou have achieved greatness! Be proud, you RNG god!")
                 }
                 else {
-                    message.channel.sendMessage("...yep. They don't call it the 'Impossible Slots' for nothing...")
+                    message.channel.send("...yep. They don't call it the 'Impossible Slots' for nothing...")
                 }
                 break;
 
@@ -938,38 +938,38 @@ bot.on('message', message=> {
             hbuddy = 21;
             var hbran = Math.floor (Math.random() * (hbuddy - 1 + 1)) +1;
             switch (hbran) {
-                case 1: message.channel.sendMessage("Hey look buddy, I'm an engineer. That means I solve problems, not problems like 'What is beauty?' Because that would fall within the purview of your conundrums of philosophy. I solve practical problems, for instance: how am I going to stop some mean mother Hubbard from tearing me a structurally superfluous be-hind? The answer, use a gun, and if that don't work... Use more gun. Take for instance this heavy caliber tripod mounted lil' old number designed by me, built by me, and you best hope... Not pointed at you."); break;
-                case 2: message.channel.sendMessage("Hey look buddy, \n \n \n \n \n ||I'm Sans. ☠||"); break;
-                case 3: message.channel.sendMessage("Hey look buddy, \n \n Bottom Text"); break;
-                case 4: message.channel.sendMessage("Hey look buddy,\n\nSo we're back in the mine\nGot our pickaxe swinging from side to side, side, side to side\nThis task's a grueling one, hope to find some diamonds tonight\nNight, night, diamonds tonight\nHeads up, you hear a sound, turn around and look up\nTotal shock fills your body\nOh, no, it's you again\nI can never forget those eyes, eyes, eyes, eyes, eyes, eyes\n\n'Cause baby tonight, the creepers tryin' to steal all your stuff again\n'Cause baby tonight, you grab your pick, shovel and bolt again\nAnd run, run until it's done, done\nUntil the sun comes up in the morn'\n'Cause baby tonight, the creepers tryin' to steal all your stuff again"); break;
-                case 5: message.channel.sendMessage("Hey look buddy, we live in a society."); break;
-                case 6: message.channel.sendMessage("Hey look buddy, top window broken, broken glass falls and only one group shall prosper. But only one group is the most oppressed of them all. **GAYMERS.**"); break;
-                case 7: message.channel.sendMessage("Hey look buddy, 🍎🍑👖 🔞Shawty🔞 had them 🍎apple🍏🍑 bottom🍑👖 jeans👖 jeans 👢Boots👢 with the 👖 jeans 👖 with the 👖 jeans 👖 The whole🎊 club was 👀👀👀looking👀👀👀 at 👖 jeans 👖 She hit 👖 the jeans 👖 she hit 👖 the jeans 👖 Next thing you jeans 👖🔞Shawty🔞 got jeans, jeans, jeans, jeans, jeans, jeans, jeans, jeans Them baggy sweat pants 🍆 And the👟 Reebok's with the pants 👟 with the pants She 😉turned around 😉and gave that 🍑big booty🍑 a pants hey She💦 hit the pants 💦she hit the pants Next thing you pants 👅 Shawty got pants, pants, pants, pants, pants, pants, pants, pants 🍑🍑🍑"); break;
-                case 8: message.channel.sendMessage("Hey look buddy, What the 🖕🏻 did ➡️👤 just 👉🏻️👌🏻 💬 about 👤⬅️, ➡️👤 little 🐩👩🏻? I'll have ➡️👤 💡 I 👨🏻‍🎓️ 🔝 of my class in the Navy Seals, ➕ I've been involved in numerous secret raids on Al-Quaeda, ➕ I have over 3️⃣0️⃣0️⃣ confirmed kills. I am 🚋 in 🦍 warfare ➕ I'm the 🔝 sniper in the entire 👥⬅️ armed forces. ➡️👤 are nothing to 👤⬅️ but just another 🎯. I will wipe ➡️👤 the 🖕🏻 out with precision the likes of which has never been 👀 before on this 🌐, ❣️ my 👉🏻️👌🏻 words. ➡️👤 💭 ➡️👤 🥫 get away with 💬 that 💩 to 👤⬅️ over the Internet? 💭 🔂, fucker. As 👥⬅️ 🗣️ I am contacting my secret network of 🕵🏻️‍♂️ across the 🇺🇸 ➕ your IP is being traced ➡️ now so ➡️👤 better prepare for the storm, maggot. The storm that wipes out the pathetic little thing ➡️👤 📞 your 🧬. You're 👉🏻️👌🏻 ☠️, kid. I 🥫 be anywhere, anytime, ➕ I 🥫 kill ➡️👤 in over 7️⃣ 💯 ways, ➕ that's just with my bare ✋🏻. ❌ only am I extensively 🚋 in unarmed combat, but I have ♿️ to the entire arsenal of the United States Marine Corps ➕ I will use it to its 🌝 extent to wipe your miserable 🍑 off the 😀 of the continent, ➡️👤 little 💩. If only ➡️👤 could have 💡 what unholy retribution your little 'clever' comment was about to bring 👇🏻️ upon ➡️👤, maybe ➡️👤 would have held your 👉🏻️👌🏻 👅. But ➡️👤 couldn't, ➡️👤 didn't, ➕ now you're 💰️➡️ the price, ➡️👤 goddamn idiot. I will 💩 fury all over ➡️👤 ➕ ➡️👤 will drown in it. You're 👉🏻️👌🏻 ☠️, kiddo."); break;
-                case 9: message.channel.sendMessage("Hey look buddy, \n⣿⣿⣿⣿⣿⣿⣿⡿⡛⠟⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⠿⠨⡀⠄⠄⡘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⠿⢁⠼⠊⣱⡃⠄⠈⠹⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⡿⠛⡧⠁⡴⣦⣔⣶⣄⢠⠄⠄⠹⣿⣿⣿⣿⣿⣿⣿⣤⠭⠏⠙⢿⣿⣿ ⣿⡧⠠⠠⢠⣾⣾⣟⠝⠉⠉⠻⡒⡂⠄⠙⠻⣿⣿⣿⣿⣿⡪⠘⠄⠉⡄⢹⣿ ⣿⠃⠁⢐⣷⠉⠿⠐⠑⠠⠠⠄⣈⣿⣄⣱⣠⢻⣿⣿⣿⣿⣯⠷⠈⠉⢀⣾⣿ ⣿⣴⠤⣬⣭⣴⠂⠇⡔⠚⠍⠄⠄⠁⠘⢿⣷⢈⣿⣿⣿⣿⡧⠂⣠⠄⠸⡜⡿ ⣿⣇⠄⡙⣿⣷⣭⣷⠃⣠⠄⠄⡄⠄⠄⠄⢻⣿⣿⣿⣿⣿⣧⣁⣿⡄⠼⡿⣦ ⣿⣷⣥⣴⣿⣿⣿⣿⠷⠲⠄⢠⠄⡆⠄⠄⠄⡨⢿⣿⣿⣿⣿⣿⣎⠐⠄⠈⣙ ⣿⣿⣿⣿⣿⣿⢟⠕⠁⠈⢠⢃⢸⣿⣿⣶⡘⠑⠄⠸⣿⣿⣿⣿⣿⣦⡀⡉⢿ ⣿⣿⣿⣿⡿⠋⠄⠄⢀⠄⠐⢩⣿⣿⣿⣿⣦⡀⠄⠄⠉⠿⣿⣿⣿⣿⣿⣷⣨ ⣿⣿⣿⡟⠄⠄⠄⠄⠄⠋⢀⣼⣿⣿⣿⣿⣿⣿⣿⣶⣦⣀⢟⣻⣿⣿⣿⣿⣿ ⣿⣿⣿⡆⠆⠄⠠⡀⡀⠄⣽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⡿⡅⠄⠄⢀⡰⠂⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿"); break;
-                case 10: message.channel.sendMessage("Hey look buddy, (ﾉ◕ヮ◕)ﾉ*.✧"); break;
-                case 11: message.channel.sendMessage("Hey look buddy, as you might have noticed, my main Discord account has been disabled, and is currently under investigation. There is a high chance it will be permanently disabled."); break;
-                case 12: message.channel.sendMessage("Hey look buddy, At this point there's no excuse for baby boomers still in the workforce to be technologically inept anymore It's just willful ignorance, this shit is not fucking hard 'Why is it asking for a password?', Because you're logging into something, Martha. That's how it's been for the last 20 fucking years. 'How do I do this, Can you show me?' No, Jeb, you can Google it like the rest of us. You've been an engineer and working with computers for 35 years. Why would I waste time when some 12 year old indian kid on youtube can walk you through it far more clearly? It requires one exposure to the concept of googling to understand how it work Your generation was smart enough to create a giant hole in the ozone, but not smart enough to realize you have the near entirety of human knowledge at your disposal just by typing in a few words? Give me a break 'I'm not tech savvy', No, you just refuse to learn despite most modern software being idiot proof, stuck in your ways out of entitlement.\n\nThe worst part is after you help an old fuck 9 times out of 10, they'll give you some kind of bullshit passive-aggressive thank you along the lines of 'Oh, I guess you young people have to know something about those phones you're always on, huh?' Give me a fucking break Greg. Maybe we're staring at them because it's less depressing to be distracted instead of coming to terms with the fact our planet is literally dying. It's not my fault your wife hasn't had sex with you since 2006. Go away."); break;
-                case 13: message.channel.sendMessage("Hey look buddy, Just thought I’d get this off my chest here, but in my business communications class, everyone is making pamphlets for issues in teenagers. This girl in my class is doing “porn addiction” as her topic, and she’s using LOTS of pictures of Luigi for her pamphlet. It’s very clear she doesn’t know a lot about porn in the first place, but the thing that bothers me is that I don’t know what Luigi did to her. I think there’s one picture of Funky Kong but other than that, just Luigi beside things like “porn make people nut” and “porn is sin, people these days need to pray more”.\n\nUPDATE: I asked her what her problem with Luigi is and to my surprise, she said that Luigi raped her! Imagine that! She also admitted to having sexual attraction to him, which contradicts everything in her pamphlet. I can't criticize her for liking him that way because I have the same level of attraction to him, but still.\n\nUPDATE 2: The day of our presentation went by, and what a crazy turn of events. She happened to be the last one to present and I was pretty shocked at what happened next. Luigi jumped through the window into the room during the middle of her presentation and they started...well I think you know what they did. After they were done Luigi left and everyone clapped, she never even finished presenting. She got a 100% A+ grade and walked away feeling satisfied. Everyone has a newfound respect for her."); break;
-                case 14: message.channel.sendMessage("Hey look buddy, Imagine being a villager. You have an amazing partner and you recently purchased a new house. You love you job and are extremely happy. One day a traveler from a far away land came into your peaceful village. He has terrifying weapons and wears powerful armor. He carries thousand emeralds on his back and purchased many of your wares. One night the mysterious stranger disappears and with him a fellow villager goes missing. Life soon gos back to normal and the village is once again peaceful for many months. Then one day the traveler returns. He looks scarred and haggard. He has a bad omen about him. On his back he wears the banner of the pillagers. He walks past your home and enters the city center. RING RING RING. The traveler begins to ring the villages warning bell. You begin hearing the thundering footprints of an army. Could it be? Your window shatters as an arrow flies through it. The pillagers rumble through the streets. Cutting through doors with their axes and crushing villagers under the footprints for their ravaging beasts. You see the traveler chopping through the army with all his strength, but it's not enough. He falls on his knees riddled with arrows, and fades away into red particles and items. Suddenly your door is bashed down by a crossbow wielding pillager. He shoots you partner in their chests, and your beloved falls into your arms. The pillager lears over you, and you know this is the end. You close your eyes and accept your fate. Then you begin to hear music. Duh duh duh duh duh duh, duh duh duh duh, duuhh duhh. He default dances above you and your dying partner and then takes aim. Thruw, schip. Your life is over in an instant. Your last living moment was taken up by some stupid pillager default dancing on your dying body. Screw that stupid traveler."); break;
-                case 15: message.channel.sendMessage("Hey look buddy, PETER NO! Its the thirst💧😰, thirstiest💦 time⏰, of the year🗓. (Aye🤣, yuh👌🏾) 👀I have just ☝🏾one query❓ (😳What's that?🤔) Wanna 🙋🏾‍♂️Sprite 🥤😎Cranberry🍒💦? (😏Uh huh😏) The 😩answer 🤤is clear. 😋😉It's the 🥵😳thirst, 🤫🤭thirstiest 💦💦💯time⏰, of the year📅 (🥤Sprite🍒, let's go )!"); break;
-                case 16: message.channel.sendMessage("Hey look buddy, Ok, I know this might freak you out BUT, I'm a Simmer (yes, I play the Sims) and I made a ____ Sim. Her roommate is _____. I thought you deserved that."); break;
-                case 17: message.channel.sendMessage("Hey look buddy, I was ordering at the local McDonald's one day when I complimented the cashier for her great beauty and compared her to waifus that most females can only dream of looking like. Instead of acknowledging my kind words or appreciating that I even gave her a chance in the first place, she handed me my chicken tenders and rudely exclaimed, 'That would 5.99'."); break;
-                case 18: message.channel.sendMessage('Hey look buddy, A popular concept in the known world is the idea of the “bruh moment.” A “bruh moment” is defined as “bruh velocity” multiplied by “bruh mass.” In other words, the larger a “bruh velocity” or a “bruh mass” is, the overall larger a “bruh moment” will be. For example, something that hits harder has a larger “bruh mass,” such as karen taking the kids as opposed to spilling your drink. The faster something hits is known to have a larger “bruh velocity,” such as a fast moving train vs the slow inevitability of death as it crushes our very souls second by second and we’ll eventually succumb to the cold embrace of the Reaper himself. In these examples, we can clearly demonstrate exactly how much of a “bruh moment” something really is.'); break;
-                case 19: message.channel.sendMessage("Hey look buddy, TONS OF ROBUX"); break;
-                case 20: message.channel.sendMessage("Hey look buddy, \n☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭"); break;
-                case 21: message.channel.sendMessage("Hey look buddy, \nHello! I have been following your tweets for the past two days, and have come to the conclusion you do not deserve to have Raymond on your island. He is my comfort character and seeing him in an environment not meant for him brings me anxiety, so I will be expecting a reply to this DM when you have him in boxes and ready to relinquish him to someone who will treasure him like he deserves."); break;
+                case 1: message.channel.send("Hey look buddy, I'm an engineer. That means I solve problems, not problems like 'What is beauty?' Because that would fall within the purview of your conundrums of philosophy. I solve practical problems, for instance: how am I going to stop some mean mother Hubbard from tearing me a structurally superfluous be-hind? The answer, use a gun, and if that don't work... Use more gun. Take for instance this heavy caliber tripod mounted lil' old number designed by me, built by me, and you best hope... Not pointed at you."); break;
+                case 2: message.channel.send("Hey look buddy, \n \n \n \n \n ||I'm Sans. ☠||"); break;
+                case 3: message.channel.send("Hey look buddy, \n \n Bottom Text"); break;
+                case 4: message.channel.send("Hey look buddy,\n\nSo we're back in the mine\nGot our pickaxe swinging from side to side, side, side to side\nThis task's a grueling one, hope to find some diamonds tonight\nNight, night, diamonds tonight\nHeads up, you hear a sound, turn around and look up\nTotal shock fills your body\nOh, no, it's you again\nI can never forget those eyes, eyes, eyes, eyes, eyes, eyes\n\n'Cause baby tonight, the creepers tryin' to steal all your stuff again\n'Cause baby tonight, you grab your pick, shovel and bolt again\nAnd run, run until it's done, done\nUntil the sun comes up in the morn'\n'Cause baby tonight, the creepers tryin' to steal all your stuff again"); break;
+                case 5: message.channel.send("Hey look buddy, we live in a society."); break;
+                case 6: message.channel.send("Hey look buddy, top window broken, broken glass falls and only one group shall prosper. But only one group is the most oppressed of them all. **GAYMERS.**"); break;
+                case 7: message.channel.send("Hey look buddy, 🍎🍑👖 🔞Shawty🔞 had them 🍎apple🍏🍑 bottom🍑👖 jeans👖 jeans 👢Boots👢 with the 👖 jeans 👖 with the 👖 jeans 👖 The whole🎊 club was 👀👀👀looking👀👀👀 at 👖 jeans 👖 She hit 👖 the jeans 👖 she hit 👖 the jeans 👖 Next thing you jeans 👖🔞Shawty🔞 got jeans, jeans, jeans, jeans, jeans, jeans, jeans, jeans Them baggy sweat pants 🍆 And the👟 Reebok's with the pants 👟 with the pants She 😉turned around 😉and gave that 🍑big booty🍑 a pants hey She💦 hit the pants 💦she hit the pants Next thing you pants 👅 Shawty got pants, pants, pants, pants, pants, pants, pants, pants 🍑🍑🍑"); break;
+                case 8: message.channel.send("Hey look buddy, What the 🖕🏻 did ➡️👤 just 👉🏻️👌🏻 💬 about 👤⬅️, ➡️👤 little 🐩👩🏻? I'll have ➡️👤 💡 I 👨🏻‍🎓️ 🔝 of my class in the Navy Seals, ➕ I've been involved in numerous secret raids on Al-Quaeda, ➕ I have over 3️⃣0️⃣0️⃣ confirmed kills. I am 🚋 in 🦍 warfare ➕ I'm the 🔝 sniper in the entire 👥⬅️ armed forces. ➡️👤 are nothing to 👤⬅️ but just another 🎯. I will wipe ➡️👤 the 🖕🏻 out with precision the likes of which has never been 👀 before on this 🌐, ❣️ my 👉🏻️👌🏻 words. ➡️👤 💭 ➡️👤 🥫 get away with 💬 that 💩 to 👤⬅️ over the Internet? 💭 🔂, fucker. As 👥⬅️ 🗣️ I am contacting my secret network of 🕵🏻️‍♂️ across the 🇺🇸 ➕ your IP is being traced ➡️ now so ➡️👤 better prepare for the storm, maggot. The storm that wipes out the pathetic little thing ➡️👤 📞 your 🧬. You're 👉🏻️👌🏻 ☠️, kid. I 🥫 be anywhere, anytime, ➕ I 🥫 kill ➡️👤 in over 7️⃣ 💯 ways, ➕ that's just with my bare ✋🏻. ❌ only am I extensively 🚋 in unarmed combat, but I have ♿️ to the entire arsenal of the United States Marine Corps ➕ I will use it to its 🌝 extent to wipe your miserable 🍑 off the 😀 of the continent, ➡️👤 little 💩. If only ➡️👤 could have 💡 what unholy retribution your little 'clever' comment was about to bring 👇🏻️ upon ➡️👤, maybe ➡️👤 would have held your 👉🏻️👌🏻 👅. But ➡️👤 couldn't, ➡️👤 didn't, ➕ now you're 💰️➡️ the price, ➡️👤 goddamn idiot. I will 💩 fury all over ➡️👤 ➕ ➡️👤 will drown in it. You're 👉🏻️👌🏻 ☠️, kiddo."); break;
+                case 9: message.channel.send("Hey look buddy, \n⣿⣿⣿⣿⣿⣿⣿⡿⡛⠟⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⠿⠨⡀⠄⠄⡘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⠿⢁⠼⠊⣱⡃⠄⠈⠹⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⡿⠛⡧⠁⡴⣦⣔⣶⣄⢠⠄⠄⠹⣿⣿⣿⣿⣿⣿⣿⣤⠭⠏⠙⢿⣿⣿ ⣿⡧⠠⠠⢠⣾⣾⣟⠝⠉⠉⠻⡒⡂⠄⠙⠻⣿⣿⣿⣿⣿⡪⠘⠄⠉⡄⢹⣿ ⣿⠃⠁⢐⣷⠉⠿⠐⠑⠠⠠⠄⣈⣿⣄⣱⣠⢻⣿⣿⣿⣿⣯⠷⠈⠉⢀⣾⣿ ⣿⣴⠤⣬⣭⣴⠂⠇⡔⠚⠍⠄⠄⠁⠘⢿⣷⢈⣿⣿⣿⣿⡧⠂⣠⠄⠸⡜⡿ ⣿⣇⠄⡙⣿⣷⣭⣷⠃⣠⠄⠄⡄⠄⠄⠄⢻⣿⣿⣿⣿⣿⣧⣁⣿⡄⠼⡿⣦ ⣿⣷⣥⣴⣿⣿⣿⣿⠷⠲⠄⢠⠄⡆⠄⠄⠄⡨⢿⣿⣿⣿⣿⣿⣎⠐⠄⠈⣙ ⣿⣿⣿⣿⣿⣿⢟⠕⠁⠈⢠⢃⢸⣿⣿⣶⡘⠑⠄⠸⣿⣿⣿⣿⣿⣦⡀⡉⢿ ⣿⣿⣿⣿⡿⠋⠄⠄⢀⠄⠐⢩⣿⣿⣿⣿⣦⡀⠄⠄⠉⠿⣿⣿⣿⣿⣿⣷⣨ ⣿⣿⣿⡟⠄⠄⠄⠄⠄⠋⢀⣼⣿⣿⣿⣿⣿⣿⣿⣶⣦⣀⢟⣻⣿⣿⣿⣿⣿ ⣿⣿⣿⡆⠆⠄⠠⡀⡀⠄⣽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⡿⡅⠄⠄⢀⡰⠂⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿"); break;
+                case 10: message.channel.send("Hey look buddy, (ﾉ◕ヮ◕)ﾉ*.✧"); break;
+                case 11: message.channel.send("Hey look buddy, as you might have noticed, my main Discord account has been disabled, and is currently under investigation. There is a high chance it will be permanently disabled."); break;
+                case 12: message.channel.send("Hey look buddy, At this point there's no excuse for baby boomers still in the workforce to be technologically inept anymore It's just willful ignorance, this shit is not fucking hard 'Why is it asking for a password?', Because you're logging into something, Martha. That's how it's been for the last 20 fucking years. 'How do I do this, Can you show me?' No, Jeb, you can Google it like the rest of us. You've been an engineer and working with computers for 35 years. Why would I waste time when some 12 year old indian kid on youtube can walk you through it far more clearly? It requires one exposure to the concept of googling to understand how it work Your generation was smart enough to create a giant hole in the ozone, but not smart enough to realize you have the near entirety of human knowledge at your disposal just by typing in a few words? Give me a break 'I'm not tech savvy', No, you just refuse to learn despite most modern software being idiot proof, stuck in your ways out of entitlement.\n\nThe worst part is after you help an old fuck 9 times out of 10, they'll give you some kind of bullshit passive-aggressive thank you along the lines of 'Oh, I guess you young people have to know something about those phones you're always on, huh?' Give me a fucking break Greg. Maybe we're staring at them because it's less depressing to be distracted instead of coming to terms with the fact our planet is literally dying. It's not my fault your wife hasn't had sex with you since 2006. Go away."); break;
+                case 13: message.channel.send("Hey look buddy, Just thought I’d get this off my chest here, but in my business communications class, everyone is making pamphlets for issues in teenagers. This girl in my class is doing “porn addiction” as her topic, and she’s using LOTS of pictures of Luigi for her pamphlet. It’s very clear she doesn’t know a lot about porn in the first place, but the thing that bothers me is that I don’t know what Luigi did to her. I think there’s one picture of Funky Kong but other than that, just Luigi beside things like “porn make people nut” and “porn is sin, people these days need to pray more”.\n\nUPDATE: I asked her what her problem with Luigi is and to my surprise, she said that Luigi raped her! Imagine that! She also admitted to having sexual attraction to him, which contradicts everything in her pamphlet. I can't criticize her for liking him that way because I have the same level of attraction to him, but still.\n\nUPDATE 2: The day of our presentation went by, and what a crazy turn of events. She happened to be the last one to present and I was pretty shocked at what happened next. Luigi jumped through the window into the room during the middle of her presentation and they started...well I think you know what they did. After they were done Luigi left and everyone clapped, she never even finished presenting. She got a 100% A+ grade and walked away feeling satisfied. Everyone has a newfound respect for her."); break;
+                case 14: message.channel.send("Hey look buddy, Imagine being a villager. You have an amazing partner and you recently purchased a new house. You love you job and are extremely happy. One day a traveler from a far away land came into your peaceful village. He has terrifying weapons and wears powerful armor. He carries thousand emeralds on his back and purchased many of your wares. One night the mysterious stranger disappears and with him a fellow villager goes missing. Life soon gos back to normal and the village is once again peaceful for many months. Then one day the traveler returns. He looks scarred and haggard. He has a bad omen about him. On his back he wears the banner of the pillagers. He walks past your home and enters the city center. RING RING RING. The traveler begins to ring the villages warning bell. You begin hearing the thundering footprints of an army. Could it be? Your window shatters as an arrow flies through it. The pillagers rumble through the streets. Cutting through doors with their axes and crushing villagers under the footprints for their ravaging beasts. You see the traveler chopping through the army with all his strength, but it's not enough. He falls on his knees riddled with arrows, and fades away into red particles and items. Suddenly your door is bashed down by a crossbow wielding pillager. He shoots you partner in their chests, and your beloved falls into your arms. The pillager lears over you, and you know this is the end. You close your eyes and accept your fate. Then you begin to hear music. Duh duh duh duh duh duh, duh duh duh duh, duuhh duhh. He default dances above you and your dying partner and then takes aim. Thruw, schip. Your life is over in an instant. Your last living moment was taken up by some stupid pillager default dancing on your dying body. Screw that stupid traveler."); break;
+                case 15: message.channel.send("Hey look buddy, PETER NO! Its the thirst💧😰, thirstiest💦 time⏰, of the year🗓. (Aye🤣, yuh👌🏾) 👀I have just ☝🏾one query❓ (😳What's that?🤔) Wanna 🙋🏾‍♂️Sprite 🥤😎Cranberry🍒💦? (😏Uh huh😏) The 😩answer 🤤is clear. 😋😉It's the 🥵😳thirst, 🤫🤭thirstiest 💦💦💯time⏰, of the year📅 (🥤Sprite🍒, let's go )!"); break;
+                case 16: message.channel.send("Hey look buddy, Ok, I know this might freak you out BUT, I'm a Simmer (yes, I play the Sims) and I made a ____ Sim. Her roommate is _____. I thought you deserved that."); break;
+                case 17: message.channel.send("Hey look buddy, I was ordering at the local McDonald's one day when I complimented the cashier for her great beauty and compared her to waifus that most females can only dream of looking like. Instead of acknowledging my kind words or appreciating that I even gave her a chance in the first place, she handed me my chicken tenders and rudely exclaimed, 'That would 5.99'."); break;
+                case 18: message.channel.send('Hey look buddy, A popular concept in the known world is the idea of the “bruh moment.” A “bruh moment” is defined as “bruh velocity” multiplied by “bruh mass.” In other words, the larger a “bruh velocity” or a “bruh mass” is, the overall larger a “bruh moment” will be. For example, something that hits harder has a larger “bruh mass,” such as karen taking the kids as opposed to spilling your drink. The faster something hits is known to have a larger “bruh velocity,” such as a fast moving train vs the slow inevitability of death as it crushes our very souls second by second and we’ll eventually succumb to the cold embrace of the Reaper himself. In these examples, we can clearly demonstrate exactly how much of a “bruh moment” something really is.'); break;
+                case 19: message.channel.send("Hey look buddy, TONS OF ROBUX"); break;
+                case 20: message.channel.send("Hey look buddy, \n☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭ ☭"); break;
+                case 21: message.channel.send("Hey look buddy, \nHello! I have been following your tweets for the past two days, and have come to the conclusion you do not deserve to have Raymond on your island. He is my comfort character and seeing him in an environment not meant for him brings me anxiety, so I will be expecting a reply to this DM when you have him in boxes and ready to relinquish him to someone who will treasure him like he deserves."); break;
             }
             break;
 
         case 'fuckyou':
             fu = Math.floor ((Math.random() * insults.length));
-            message.channel.sendMessage("Fuck you too, you "+insults[fu]+"!");
+            message.channel.send("Fuck you too, you "+insults[fu]+"!");
             break;
 
         case 'facts':
             ohs = Math.floor ((Math.random() * nonfacts.length));
-            message.channel.sendMessage(nonfacts[ohs]).then((nmessage) => {setTimeout(function(){
+            message.channel.send(nonfacts[ohs]).then((nmessage) => {setTimeout(function(){
                 nmessage.edit("*[MESSAGE REDACTED]*");
               }, 5000)
             }); 
@@ -998,10 +998,10 @@ bot.on('message', message=> {
         case 'announce':
                 user = message.mentions.users.first();
                 if (user !== undefined){
-                    message.channel.sendMessage("I've come to make an announcement, " +user.username + "'s a bitch-ass motherfucker. They pissed on my fucking wife. That's right. They took their smallass fuckin' futa dick out and they pissed on my FUCKING wife, and they said their dick was t h i s b i g and I said that's disgusting. So I'm making a callout post on my Discord dot com: **" + user.username + "**, you got a small dick. It's the size of this SmolDru except WAY smaller. And guess what? Here's what my dong looks like. [explosion sounds] That's right, baby. Tall points, no futa, no tax, Look at that, it looks like two balls and a bong. They fucked my wife, so guess what, I'm gonna fuck the earth. That's right, this is what you get! My SUPER LAZER PISS! Except I'm not gonna piss on the earth. I'm gonna go higher. I'm pissing on the MOOOON! [piss boom] **How do you like that, IRRI?** I PISSED ON THE MOON, YOU IDIOT! You have twenty-three hours before the piss d r o p l e t s hit the fucking earth, now get out of my fucking sight before I piss on you too!");
+                    message.channel.send("I've come to make an announcement, " +user.username + "'s a bitch-ass motherfucker. They pissed on my fucking wife. That's right. They took their smallass fuckin' futa dick out and they pissed on my FUCKING wife, and they said their dick was t h i s b i g and I said that's disgusting. So I'm making a callout post on my Discord dot com: **" + user.username + "**, you got a small dick. It's the size of this SmolDru except WAY smaller. And guess what? Here's what my dong looks like. [explosion sounds] That's right, baby. Tall points, no futa, no tax, Look at that, it looks like two balls and a bong. They fucked my wife, so guess what, I'm gonna fuck the earth. That's right, this is what you get! My SUPER LAZER PISS! Except I'm not gonna piss on the earth. I'm gonna go higher. I'm pissing on the MOOOON! [piss boom] **How do you like that, IRRI?** I PISSED ON THE MOON, YOU IDIOT! You have twenty-three hours before the piss d r o p l e t s hit the fucking earth, now get out of my fucking sight before I piss on you too!");
                 }
                 else {
-            message.channel.sendMessage("I've come to make an announcement, " +message.author.username + "'s a bitch-ass motherfucker. They pissed on my fucking wife. That's right. They took their smallass fuckin' futa dick out and they pissed on my FUCKING wife, and they said their dick was t h i s b i g and I said that's disgusting. So I'm making a callout post on my Discord dot com: **" + message.author.username + "**, you got a small dick. It's the size of this SmolDru except WAY smaller. And guess what? Here's what my dong looks like. [explosion sounds] That's right, baby. Tall points, no futa, no tax, Look at that, it looks like two balls and a bong. They fucked my wife, so guess what, I'm gonna fuck the earth. That's right, this is what you get! My SUPER LAZER PISS! Except I'm not gonna piss on the earth. I'm gonna go higher. I'm pissing on the MOOOON! [piss boom] **How do you like that, IRRI?** I PISSED ON THE MOON, YOU IDIOT! You have twenty-three hours before the piss d r o p l e t s hit the fucking earth, now get out of my fucking sight before I piss on you too!");
+            message.channel.send("I've come to make an announcement, " +message.author.username + "'s a bitch-ass motherfucker. They pissed on my fucking wife. That's right. They took their smallass fuckin' futa dick out and they pissed on my FUCKING wife, and they said their dick was t h i s b i g and I said that's disgusting. So I'm making a callout post on my Discord dot com: **" + message.author.username + "**, you got a small dick. It's the size of this SmolDru except WAY smaller. And guess what? Here's what my dong looks like. [explosion sounds] That's right, baby. Tall points, no futa, no tax, Look at that, it looks like two balls and a bong. They fucked my wife, so guess what, I'm gonna fuck the earth. That's right, this is what you get! My SUPER LAZER PISS! Except I'm not gonna piss on the earth. I'm gonna go higher. I'm pissing on the MOOOON! [piss boom] **How do you like that, IRRI?** I PISSED ON THE MOON, YOU IDIOT! You have twenty-three hours before the piss d r o p l e t s hit the fucking earth, now get out of my fucking sight before I piss on you too!");
                 }
                 break;
 
@@ -1054,18 +1054,18 @@ bot.on('message', message=> {
                     message.channel.send(IDaembed);
 
                 }
-                else {message.channel.sendMessage("This command posts the profile picture of a user using their ID. To use it, send `v!IDvatar [User ID here]`.")}
+                else {message.channel.send("This command posts the profile picture of a user using their ID. To use it, send `v!IDvatar [User ID here]`.")}
         break;
 
         case 'purewars':
-            message.channel.sendMessage("Quick! Place your bets! Who do you think is the purest? 'Pip', or 'Pkoby'? Type that person's name NOW! (Will only count if you start a sentence with that name.)")
+            message.channel.send("Quick! Place your bets! Who do you think is the purest? 'Pip', or 'Pkoby'? Type that person's name NOW! (Will only count if you start a sentence with that name.)")
             war = true;
             break;
 
         case 'purestandings':
             let pipwins = bot.afile["PipWins"].pips;
             let pkwins = bot.afile["PkWins"].pkobys;
-            message.channel.sendMessage("```Current Standings for the Pure Wars.```\nPip: **"+pipwins+"**    Pkoby: **"+pkwins+"**");
+            message.channel.send("```Current Standings for the Pure Wars.```\nPip: **"+pipwins+"**    Pkoby: **"+pkwins+"**");
             break;
 
         case 'goat':
@@ -1073,167 +1073,167 @@ bot.on('message', message=> {
             break;
 
         case 'mon':
-            message.channel.sendMessage("[ARCHIVED] \nNice choice. Moon is one of those friends you didn't know at first existed and now you're happy to have in your life. She's also a big mood. But be careful, Moon has an edgy side you might not want to generally encounter at times. ~~That's why she's perfect for a waifu!~~ Three cheers for Moon! (And someone, please give her a hug when necessary.)")
+            message.channel.send("[ARCHIVED] \nNice choice. Moon is one of those friends you didn't know at first existed and now you're happy to have in your life. She's also a big mood. But be careful, Moon has an edgy side you might not want to generally encounter at times. ~~That's why she's perfect for a waifu!~~ Three cheers for Moon! (And someone, please give her a hug when necessary.)")
             break;
 
         case 'moon':
-            message.channel.sendMessage("1. The reason why you can rest peacefully at night. \n2. v!mon \n\n**Example:** \nGuy 1: I'm going to bed. \nMoon: Okay, rest well. \nGod to the angels: You heard Moon, protect that boy.")
+            message.channel.send("1. The reason why you can rest peacefully at night. \n2. v!mon \n\n**Example:** \nGuy 1: I'm going to bed. \nMoon: Okay, rest well. \nGod to the angels: You heard Moon, protect that boy.")
             break;
 
         case 'pkoby':
-            message.channel.sendMessage("1. A pure child who we slowly corrupt without noticing. \n2. An echo fighter of Pip. \n\n**Example:** \nPkoby: Hey! Check this out! \nMoon: Where'd you find that? It's kinda creepy. \nPkoby: Gabe DMed it to me. \nMoon: Of course, I'll fucking kill him in the morning.")
+            message.channel.send("1. A pure child who we slowly corrupt without noticing. \n2. An echo fighter of Pip. \n\n**Example:** \nPkoby: Hey! Check this out! \nMoon: Where'd you find that? It's kinda creepy. \nPkoby: Gabe DMed it to me. \nMoon: Of course, I'll fucking kill him in the morning.")
             break;
 
         case 'ender':
-            message.channel.sendMessage("Izzle's rival with no context. \n\n**Example:** \nDid Ender defeat that cuphead boss yet?")
+            message.channel.send("Izzle's rival with no context. \n\n**Example:** \nDid Ender defeat that cuphead boss yet?")
             break;
 
         case 'korbs':
-            message.channel.sendMessage("Meowser with drawing skills. \n\n**Example:** \nDru: Kirbs, what are you doing? \nKorbs: :3")
+            message.channel.send("Meowser with drawing skills. \n\n**Example:** \nDru: Kirbs, what are you doing? \nKorbs: :3")
             break;
 
         case 'prince':
-            message.channel.sendMessage("Perfection. \n\n**Example:** \nThere's nothing else, he's just perfect.")
+            message.channel.send("Perfection. \n\n**Example:** \nThere's nothing else, he's just perfect.")
             break;
 
         case 'eliz':
-            message.channel.sendMessage("1. Longer version of saying 'E' \n2. Shorter version of saying 'Elizabeth' \n3. Alternative version of saying 'Ellie' \n4. 'Your Mom.' \n\n**Example:** \nEliz kicked my ass at Smash again...")
+            message.channel.send("1. Longer version of saying 'E' \n2. Shorter version of saying 'Elizabeth' \n3. Alternative version of saying 'Ellie' \n4. 'Your Mom.' \n\n**Example:** \nEliz kicked my ass at Smash again...")
             break;
 
         case 'nokobo':
-            message.channel.sendMessage("1. The Icon used for Hobo Thursdays. \n2. A lovely uncle. \n\n**Example:** \nGuy 1: Where's my beer? \nNokobo: Fug off!")
+            message.channel.send("1. The Icon used for Hobo Thursdays. \n2. A lovely uncle. \n\n**Example:** \nGuy 1: Where's my beer? \nNokobo: Fug off!")
             break;
 
         case 'jasper':
-            message.channel.sendMessage("E's horny license. \n\n**Example:** \nJasper's a very loveable person.")
+            message.channel.send("E's horny license. \n\n**Example:** \nJasper's a very loveable person.")
             break;
 
         case 'jacob':
-            message.channel.sendMessage("Hotness. \n\n**Example:** \nGirl 1: Yo! Jacob just looked at my general direction! \nGirl 2: Holy shit! Really? I'd do anything to be with that guy.")
+            message.channel.send("Hotness. \n\n**Example:** \nGirl 1: Yo! Jacob just looked at my general direction! \nGirl 2: Holy shit! Really? I'd do anything to be with that guy.")
             break;
 
         case 'izzle':
-            message.channel.sendMessage("1. A mood. \n2. A young teen who starts a simp war in her school. \n\n**Example:** \nGuy 1: Dude, Izzle's pretty cute. \nGuy 2: Don't say that out loud!")
+            message.channel.send("1. A mood. \n2. A young teen who starts a simp war in her school. \n\n**Example:** \nGuy 1: Dude, Izzle's pretty cute. \nGuy 2: Don't say that out loud!")
             break;
 
         case 'rowlet':
-            message.channel.sendMessage("The result of Dru porn. \n\n**Example:** \nHow's your day, Rowlet?")
+            message.channel.send("The result of Dru porn. \n\n**Example:** \nHow's your day, Rowlet?")
             break;
 
         case 'kirB':
-            message.channel.sendMessage("1. The pronunciation of a pink...thing. \n2. The one who doesn't agree with their previous command because I leaked their smash strategy. \n3. A chill, mostly calm lad who will always join you to hang around in VCs. If you wanna lure him, invite FredBoat to the call, or just ripidly ping him until he gives up. \n4. ... \n\n**Example:** \nGuy 1: Hey, where's Kir b? \nGuy 2: Idk, just say something to call him over. \nGuy 1: ...Dru is gay...? \nKir b: *joins VC*")
+            message.channel.send("1. The pronunciation of a pink...thing. \n2. The one who doesn't agree with their previous command because I leaked their smash strategy. \n3. A chill, mostly calm lad who will always join you to hang around in VCs. If you wanna lure him, invite FredBoat to the call, or just ripidly ping him until he gives up. \n4. ... \n\n**Example:** \nGuy 1: Hey, where's Kir b? \nGuy 2: Idk, just say something to call him over. \nGuy 1: ...Dru is gay...? \nKir b: *joins VC*")
             break;
 
             case 'rb':
-                message.channel.sendMessage("An eagle that can smash your mom better than Sushi. \n\n**Example:** \nGuy 1: Where's RB? \nGuy 2: Prob banging your mom again. \nGuy 1: DAMMIT! Always happens. >:(")
+                message.channel.send("An eagle that can smash your mom better than Sushi. \n\n**Example:** \nGuy 1: Where's RB? \nGuy 2: Prob banging your mom again. \nGuy 1: DAMMIT! Always happens. >:(")
                 break;
 
          case 'generic':
-            message.channel.sendMessage("1. Walking communism. \n2. A Jedi that dies to rats. \n\n**Example:** \nBless the world, Generic!")
+            message.channel.send("1. Walking communism. \n2. A Jedi that dies to rats. \n\n**Example:** \nBless the world, Generic!")
          break;
 
          case 'truth':
-            message.channel.sendMessage("1. A tomato from Brazil. Don't get close, or you'll get shot. \n2. A guy who doesn't like stickers. \n\n**Example:** \nOi, tomato of truths, what is your wisdom?")
+            message.channel.send("1. A tomato from Brazil. Don't get close, or you'll get shot. \n2. A guy who doesn't like stickers. \n\n**Example:** \nOi, tomato of truths, what is your wisdom?")
             break;
 
         case 'sushi':
-            message.channel.sendMessage("A racial slur that normally means 'banging your mom.' \n\n**Example:** \nSushi go bang someone's mom.")
+            message.channel.send("A racial slur that normally means 'banging your mom.' \n\n**Example:** \nSushi go bang someone's mom.")
             break;
 
         case 'kyu':
-            message.channel.sendMessage("1. The word used to reference the Friday night simp war of '20. \n2. A female Gabe that somehow appears when people talk about DDLC.\n\n**Example:** \nKyu: *breathes* \nEthan: Oh shit, hi.")
+            message.channel.send("1. The word used to reference the Friday night simp war of '20. \n2. A female Gabe that somehow appears when people talk about DDLC.\n\n**Example:** \nKyu: *breathes* \nEthan: Oh shit, hi.")
             break;
 
         case 'goji':
-            message.channel.sendMessage("QT\n\n**Example:** \nGoji's pretty hot.")
+            message.channel.send("QT\n\n**Example:** \nGoji's pretty hot.")
             break;
 
         case 'ina':
-            message.channel.sendMessage("The owner of a cafe with is more reliable than every Starbucks in the world combined. And that's coming from a bot whose owner's country only has one of those. Also a provider of BANGERS!\n\n**Example:** \nGuy 1: Dude, I'm so sleepy.\nGuy 2: You should check out Ina's cafe. That'll wake you up. \nGuy 1: But I'm not a fan of coffee. \nGuy 2: Not the coffee, you dipshit. The music.")
+            message.channel.send("The owner of a cafe with is more reliable than every Starbucks in the world combined. And that's coming from a bot whose owner's country only has one of those. Also a provider of BANGERS!\n\n**Example:** \nGuy 1: Dude, I'm so sleepy.\nGuy 2: You should check out Ina's cafe. That'll wake you up. \nGuy 1: But I'm not a fan of coffee. \nGuy 2: Not the coffee, you dipshit. The music.")
         break;
 
         case 'isaac':
-            message.channel.sendMessage("A guy with a bigass magic hand. Oh, you mean the discord user. A guy with a bigass magic heart.\n\n**Example:** \nYou're such an Isaac at times, marry me!")
+            message.channel.send("A guy with a bigass magic hand. Oh, you mean the discord user. A guy with a bigass magic heart.\n\n**Example:** \nYou're such an Isaac at times, marry me!")
             break;
 
         case 'kaden':
-            message.channel.sendMessage("1. An underpaid employee from Ina's cafe. Wait, nevermind, he's the only employee. \n2. A tech guy who you would be glad to meet as a friend. \n3. One hairy boi\n\n**Example:** \nKADEN, INA'S CAFE IS OPEN! No rush, though. <3")
+            message.channel.send("1. An underpaid employee from Ina's cafe. Wait, nevermind, he's the only employee. \n2. A tech guy who you would be glad to meet as a friend. \n3. One hairy boi\n\n**Example:** \nKADEN, INA'S CAFE IS OPEN! No rush, though. <3")
             break;
 
         case 'traz':
-            message.channel.sendMessage("1. Him. \n2. He might be watching this. \n3. Run.\n\n**Example:** \nHey have you seen Tra- crap wait oh gosh why do I hear boss music")
+            message.channel.send("1. Him. \n2. He might be watching this. \n3. Run.\n\n**Example:** \nHey have you seen Tra- crap wait oh gosh why do I hear boss music")
             break;
 
         case 'jerry':
-            message.channel.sendMessage("An ancient god that takes the form of a wooden puppet. Normally summoned by others for the viewing of an event often referred to as 'Hunger Games.'.\n\n**Example:** \nHey where's the v!jerry command?")
+            message.channel.send("An ancient god that takes the form of a wooden puppet. Normally summoned by others for the viewing of an event often referred to as 'Hunger Games.'.\n\n**Example:** \nHey where's the v!jerry command?")
             break;
 
         case 'banjo':
-            message.channel.sendMessage("1. An instrument that should now be played in the background whenever someone denies to be gay, even though they are. \n2. The victim of the first definition. \n\n**Example:** \nGuy 1: Yo, have you tried the Puff-Shroom strat? It's so good! \nGuy 2: Ikr? Banjo taught me it!")
+            message.channel.send("1. An instrument that should now be played in the background whenever someone denies to be gay, even though they are. \n2. The victim of the first definition. \n\n**Example:** \nGuy 1: Yo, have you tried the Puff-Shroom strat? It's so good! \nGuy 2: Ikr? Banjo taught me it!")
             break;
 
         case 'vessel':
-             message.channel.sendMessage("1. Dru's son...somehow. \n2. A male that's the same level of pure as Pkoby. Shush, Moon. \n3. Persona 3. \n\n**Example:** \nGuy 1: Vessel, your waifu sucks....well at least one of them. \nDru: Your Mom sucks. \nGuy 1: You know you can't say that next to Vessel.")
+             message.channel.send("1. Dru's son...somehow. \n2. A male that's the same level of pure as Pkoby. Shush, Moon. \n3. Persona 3. \n\n**Example:** \nGuy 1: Vessel, your waifu sucks....well at least one of them. \nDru: Your Mom sucks. \nGuy 1: You know you can't say that next to Vessel.")
             break;
 
         case 'jet':
-            message.channel.sendMessage("1. Cute, supportive, funny, hates this command. \n2. Heck off Jet you're a good person and deserves to be loved. \n3. v!famished bias \n\n**Example:** \nBREAKING NEWS: Jet makes another post yet again in her endless channel, telling Dru to stop simping for her. More at 7.")
+            message.channel.send("1. Cute, supportive, funny, hates this command. \n2. Heck off Jet you're a good person and deserves to be loved. \n3. v!famished bias \n\n**Example:** \nBREAKING NEWS: Jet makes another post yet again in her endless channel, telling Dru to stop simping for her. More at 7.")
             break;
 
         case 'bridgey':
-            message.channel.sendMessage("1. A British, I repeat, BRITISH person who just appeared one day. \n2. World Record Holder of 'FUCK!' \n3. Someone who scares me. \n\n**Example:** \n...she took a knife because she had a knife...")
+            message.channel.send("1. A British, I repeat, BRITISH person who just appeared one day. \n2. World Record Holder of 'FUCK!' \n3. Someone who scares me. \n\n**Example:** \n...she took a knife because she had a knife...")
             break;
 
         case 'gerald':
-        message.channel.sendMessage("Fuck this guy. \n\n**Example:** \nFuck Gerald.")
+        message.channel.send("Fuck this guy. \n\n**Example:** \nFuck Gerald.")
         break;
 
         case 'ellie':
-            message.channel.sendMessage("1. An alt command because you beautiful fricks keep forgetting that the og command is 'v!eliz' \n2. An AHIT bias memester that's actually pretty chill \n3. Guess what? \n\n**Example:** \nEllie: ||Chicken butt HA GOTEM||")
+            message.channel.send("1. An alt command because you beautiful fricks keep forgetting that the og command is 'v!eliz' \n2. An AHIT bias memester that's actually pretty chill \n3. Guess what? \n\n**Example:** \nEllie: ||Chicken butt HA GOTEM||")
             break;
 
         case 'kooper':
-            message.channel.sendMessage("1. An artist that can draw Koopas with more personality than Paper Mario's current plans. \n2. Owner of an endless channel that counts faster than [REDACTED]'s server...well two servers. \n\n**Example:** \nShameless ad but follow Kooper's Twitter.")
+            message.channel.send("1. An artist that can draw Koopas with more personality than Paper Mario's current plans. \n2. Owner of an endless channel that counts faster than [REDACTED]'s server...well two servers. \n\n**Example:** \nShameless ad but follow Kooper's Twitter.")
             break;
 
          case 'benji':
-            message.channel.sendMessage("1. A notorious chain breaker, banned from 1500+ servers for his crimes. \n2. Some Hero of Mania. \n\n**Example:** \nGuy 1: Yes \nGuy 2: Yes \nGuy 3: Yes \nBenji: No. \nGuy 2: Heck you.")
+            message.channel.send("1. A notorious chain breaker, banned from 1500+ servers for his crimes. \n2. Some Hero of Mania. \n\n**Example:** \nGuy 1: Yes \nGuy 2: Yes \nGuy 3: Yes \nBenji: No. \nGuy 2: Heck you.")
             break;
 
         case 'chase':
-            message.channel.sendMessage("1. A chill guy that's so chill he actually has a life. \n2. My secret crush \n3. A guy who actually beat PiT, now THAT'S a keeper. \n\n**Example:** \nClever, Chase.")
+            message.channel.send("1. A chill guy that's so chill he actually has a life. \n2. My secret crush \n3. A guy who actually beat PiT, now THAT'S a keeper. \n\n**Example:** \nClever, Chase.")
             break;
 
         case 'miek':
-            message.channel.sendMessage("1. A name your phone's auto-correct hates. \n2. An old pal who's endless is actually dead, but he doesn't want to accept the facts. \n\n**Example:** \nGuy 1: Hey, have you seen Miek? \nGuy 2: That's a Kirby Copy Ability. \nGuy 3: No, I mean...wait what?")
+            message.channel.send("1. A name your phone's auto-correct hates. \n2. An old pal who's endless is actually dead, but he doesn't want to accept the facts. \n\n**Example:** \nGuy 1: Hey, have you seen Miek? \nGuy 2: That's a Kirby Copy Ability. \nGuy 3: No, I mean...wait what?")
             break;
 
         case 'zek':
-            message.channel.sendMessage("Not enough of these guys exist and I'm sad.  \n\n**Example:** \nIf I load Zek on Project64, does that make him a ZekROM?")
+            message.channel.send("Not enough of these guys exist and I'm sad.  \n\n**Example:** \nIf I load Zek on Project64, does that make him a ZekROM?")
             break;
 
         case 'link':
-            message.channel.sendMessage("1. He come to town. \n2. To save the Princess Zelda. \n3. Ganon took her away. \n4. Now the children don't play. \n\n**Example:** \nBut Link, he come to save the day. \nHALLELUIAH!")
+            message.channel.send("1. He come to town. \n2. To save the Princess Zelda. \n3. Ganon took her away. \n4. Now the children don't play. \n\n**Example:** \nBut Link, he come to save the day. \nHALLELUIAH!")
             break;
 
         case 'snow':
-            message.channel.sendMessage("1. For a cold Fox, they sure look human.  \n\n**Example:** \nI guess that's why they're a *chill* mod (I'm not sorry...)")
+            message.channel.send("1. For a cold Fox, they sure look human.  \n\n**Example:** \nI guess that's why they're a *chill* mod (I'm not sorry...)")
             break;
 
         case 'pichu':
-            message.channel.sendMessage("1. Pichu. \n2. Pichu. \n Pichu. \n\n**Example:** \nPichu.")
+            message.channel.send("1. Pichu. \n2. Pichu. \n Pichu. \n\n**Example:** \nPichu.")
             break;
 
         case 'dw':
-            message.channel.sendMessage("1. DragonWario? I thought you said 'Don't Worry'! \n2. That was an original joke. \n\n**Example:** \nWhere is DW nowadays? Did I miss a memo?")
+            message.channel.send("1. DragonWario? I thought you said 'Don't Worry'! \n2. That was an original joke. \n\n**Example:** \nWhere is DW nowadays? Did I miss a memo?")
             break;
 
         case 'maeva':
-            message.channel.sendMessage("1. Kir b's first crush <3 \n2. A pretty awesome person that existed for way longer than I thought. \n\n**Example:** \nHoly SHIT Maeva. - Someone 2019")
+            message.channel.send("1. Kir b's first crush <3 \n2. A pretty awesome person that existed for way longer than I thought. \n\n**Example:** \nHoly SHIT Maeva. - Someone 2019")
             break;
 
         case 'acidic':
-            message.channel.sendMessage("1. Moon's bro. I know, it surprises me that there are two of them as well. \n2. Famous owner of the OK hand house in Trinidad 3. \n\n**Example:** \nGuy 1: Alright who's the impostor? \nAcidic: Dude this is Minecraft. \nGuy 1: Ok but who the HECK was at Medbay?")
+            message.channel.send("1. Moon's bro. I know, it surprises me that there are two of them as well. \n2. Famous owner of the OK hand house in Trinidad 3. \n\n**Example:** \nGuy 1: Alright who's the impostor? \nAcidic: Dude this is Minecraft. \nGuy 1: Ok but who the HECK was at Medbay?")
             break;
 
         case 'listServers':
@@ -1258,37 +1258,37 @@ bot.on('message', message=> {
             break;
 
         case 'druxwario':
-            message.channel.sendMessage("Sit tight, folks. Let me tell you a story. One night, Dru decided to take a shower to wash off the depression he obtained from an 'article' about how the world now accepts cursed images. The article was mostly bullshit, and for some reason it decided to talk about politics for no reason. But let's not go there. As Dru stepped in the shower and turned on the nozzle, allowing the warm, steaming water to cover hie entire body from the head-down, he heard an unexpected noise. A hyper-realistic 'wah', to be exact, followed by the opening of a creaky door. Upon hearing this, Dru smiles. He knows what's about to happen to him. He hears the incoming footsteps of Wario, slowly approaching him while inside the shower. Another nearby 'WAH' could be heard. As Dru feels the closeness of Wario in the shower, he also feels a large, muscular hand grabbing him by the ass, followed by a husky but sexy voice, which says 'Time to unrotten this hole!' Gabe, what the fuck is wrong with you. I'm not finishing this. Fuck you.")
+            message.channel.send("Sit tight, folks. Let me tell you a story. One night, Dru decided to take a shower to wash off the depression he obtained from an 'article' about how the world now accepts cursed images. The article was mostly bullshit, and for some reason it decided to talk about politics for no reason. But let's not go there. As Dru stepped in the shower and turned on the nozzle, allowing the warm, steaming water to cover hie entire body from the head-down, he heard an unexpected noise. A hyper-realistic 'wah', to be exact, followed by the opening of a creaky door. Upon hearing this, Dru smiles. He knows what's about to happen to him. He hears the incoming footsteps of Wario, slowly approaching him while inside the shower. Another nearby 'WAH' could be heard. As Dru feels the closeness of Wario in the shower, he also feels a large, muscular hand grabbing him by the ass, followed by a husky but sexy voice, which says 'Time to unrotten this hole!' Gabe, what the fuck is wrong with you. I'm not finishing this. Fuck you.")
             break;
 
         case 'BK':
-            message.channel.sendMessage("`The following is a list of all genders dedicated to support gay rights:`")
+            message.channel.send("`The following is a list of all genders dedicated to support gay rights:`")
             message.channel.send("**Burgers**\nWhopper\nWhopper with Cheese\nDouble Whopper\nDouble Whopper with Cheese\nTriple Whopper\nTexas Whopper\nTexas Double Whopper Sandwich\nWhopper Jr.\nWhopper Jr. with Cheese\nHamburger\nCheeseburger\nDouble Hamburger\nDouble Cheeseburger\nBK Bacon Burger\nBacon Cheeseburger\nDouble Bacon Cheeseburger\nBK Single Stacker\nBK Double Stacker\nBK Triple Stacker\nBK Quad Stacker\n\n**Chicken, Fish, and Veggie**\nTendergrill Chicken\nTendercrisp Chicken\nOriginal Chicken\nChicken Crisp Classic\nChicken Crisp Spicy\nHome-style Chicken Strips\nChicken Nuggets\nTacos\nCountry Pork Sandwich\nPremium Alaskan Fish Sandwich\nBK Veggie Burger\n\n**Breakfast**\nQuaker Oatmeal Maple and Brown Sugar\nQuaker Oatmeal Original\nSausage Breakfast Burrito\nSouthwestern Breakfast Burrito\nBK Breakfast Muffin Sandwich\nCroissan'wich\nDouble Croissan'wich\nBiscuit Sandwich\nCinnabon Roll\nHash Browns\nFrench Toast Sticks\n\n**BK Garden Fresh Salads and Wraps**\nGarden Fresh Salad Chicken Caesar with Tendergrill\nGarden Fresh Salad Chicken Caesar with Tendercrisp\nGarden Fresh Salad Chicken BLT with Tendergrill\nGarden Fresh Salad Chicken BLT with Tendercrisp\nGarden Fresh Salad Chicken Apple & Cranberry with Tendergrill\nGarden Fresh Salad Chicken Apple & Cranberry with Tendercrisp\nSide Garden Fresh Salad and Ranch Dressing\nRanch Crispy Chicken Wrap\nRanch Grilled Chicken Wrap\nHoney Mustard Crispy Chicken Wrap\nHoney Mustard Grilled Chicken Wrap\nCeasar Crispy Chicken Wrap\nCeasar Grilled Chicken Wrap\nCrispy Chicken Apple and Cranberry Wrap\nGrilled Chicken Apple and Cranberry Wrap\nCrispy BLT Salad Wrap\nGrilled BLT Salad Wrap");
             message.channel.send("** **\n**Desserts**\nDutch Apple Pie\nHershey's Sundae Pie\nSoft Serve Cone\nSoft Serve Cup\nCaramel Sundae\nChocolate Fudge Sundae\nStrawberry Sundae\nOreo Sundae\nMini M&M's Sundae\nWarm Oreo Brownie Sundae\nChocolate Chip Cookies\nWhite Chocolate Macadamia Nut Cookies\nOatmeal Raisin Cookies\n\n**Beverages**\nStrawberry Banana Smoothie\nTropical Mango Smoothie\nVanilla Milk Shake\nChocolate Milk Shake\nStrawberry Milk Shake\nMocha Frappé\nCaramel Frappé\nWhipped topping coffee shot");
             break;
 
         case 'analyse':
-            message.channel.sendMessage("`Analyzing Post...`")
-            message.channel.sendMessage("Yep. The results are in. That post is a 100% bruh moment.")
+            message.channel.send("`Analyzing Post...`")
+            message.channel.send("Yep. The results are in. That post is a 100% bruh moment.")
             break;
 
         case 'sco':
-            message.channel.sendMessage("And I oop.")
-            message.channel.sendMessage("**sksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksk**")
-            message.channel.sendMessage("**sksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksk**")
-            message.channel.sendMessage("**sksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksk**")
-            message.channel.sendMessage("**sksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksk**")
-            message.channel.sendMessage("**sksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksk**")
-            message.channel.sendMessage("***sAvE THe TurTLeS! SToP UsinG pLAsTiC stRAwS!!!!!!!!***")
-            message.channel.sendMessage("*Virus is currently having an aneurism. Please check back later.*")
+            message.channel.send("And I oop.")
+            message.channel.send("**sksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksk**")
+            message.channel.send("**sksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksk**")
+            message.channel.send("**sksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksk**")
+            message.channel.send("**sksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksk**")
+            message.channel.send("**sksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksksk**")
+            message.channel.send("***sAvE THe TurTLeS! SToP UsinG pLAsTiC stRAwS!!!!!!!!***")
+            message.channel.send("*Virus is currently having an aneurism. Please check back later.*")
             break;
 
         case 'discotime':
-            message.channel.sendMessage('*Priest walks in* \n"Open your bibles."\n*Disco ball drops\n"Now get on the fucking dance floor and* ***p r a y***"')
+            message.channel.send('*Priest walks in* \n"Open your bibles."\n*Disco ball drops\n"Now get on the fucking dance floor and* ***p r a y***"')
             break;
 
         case 'report':
-            message.channel.sendMessage("Alright. The report was sent via DM to the bot owner. Thank you for your input.");
+            message.channel.send("Alright. The report was sent via DM to the bot owner. Thank you for your input.");
             rep = message.content.slice(9)
             const reportEmbed = new Discord.RichEmbed()
             .setAuthor(message.author.tag, message.author.avatarURL)
@@ -1300,7 +1300,7 @@ bot.on('message', message=> {
             break;
 
             case 'suggest':
-                    message.channel.sendMessage("Alright. The suggestion was sent via DM to the bot owner. Thank you for your support!");
+                    message.channel.send("Alright. The suggestion was sent via DM to the bot owner. Thank you for your support!");
                     sug = message.content.slice(10)
                     const suggestEmbed = new Discord.RichEmbed()
                     .setAuthor(message.author.tag, message.author.avatarURL)
@@ -1308,21 +1308,21 @@ bot.on('message', message=> {
                     .setTitle("Suggestion Submission")
                     .setDescription(sug + '   \n[Jump to Message](https://discordapp.com/channels/'+message.guild.id+'/'+message.channel.id+'/'+message.id+')')
                     .setFooter("VirusDaBot", bot.users.get(BotID).avatarURL);
-                    bot.users.get("178539479827611648").sendMessage(suggestEmbed);
+                    bot.users.get("178539479827611648").send(suggestEmbed);
                     break;
 
             
 
                 case 'gabe':
-                    bot.users.get(message.author.id).sendMessage("Hello? \nIs this thing working?\nOf course it is, you're reading this.\n\nBut to be fair, I knew you would figure it out.\nI just wanna say, thank you.\nPeople like you were the reason I stayed up and going in this life. Honestly, I wasn't gonna make it that far in life if I never met you. Thank you. Gosh I wish I can do more, rather than just hidding a message inside a bot, but seriously, I loBe you.\nContinue being you!");
+                    bot.users.get(message.author.id).send("Hello? \nIs this thing working?\nOf course it is, you're reading this.\n\nBut to be fair, I knew you would figure it out.\nI just wanna say, thank you.\nPeople like you were the reason I stayed up and going in this life. Honestly, I wasn't gonna make it that far in life if I never met you. Thank you. Gosh I wish I can do more, rather than just hidding a message inside a bot, but seriously, I loBe you.\nContinue being you!");
                     break;
 
             case 'easteregg':
-                message.channel.sendMessage("What, you wanted one? Nah, too lazy.");
+                message.channel.send("What, you wanted one? Nah, too lazy.");
                 break;
 
             case 'hiMonika':
-                message.channel.sendMessage(`uð³«ükÇqKD†”ËàM§c\¬‹Ë¼};ò2X»Ë£×[ÿ}ÙqŒID†”œ@Dd0ª˜C,íÃ‘wº ¾OL:Î1‰ÈÐ‘åt "ÃX²ÓÈÑsïãl‹gà$x¯çÃîË¦0—Çi…•µÔ€"2¨…œ@dS
+                message.channel.send(`uð³«ükÇqKD†”ËàM§c\¬‹Ë¼};ò2X»Ë£×[ÿ}ÙqŒID†”œ@Dd0ª˜C,íÃ‘wº ¾OL:Î1‰ÈÐ‘åt "ÃX²ÓÈÑsïãl‹gà$x¯çÃîË¦0—Çi…•µÔ€"2¨…œ@dS
                 Övw”fAäõpÌlhN£ü nØó4@¼zú¥!"" ¿†¼^›c-´ÝzÁ@D$"""2ôý€É=ÜÚ—"-éjYÏ7©S³ˆˆˆÈÑÀUÐmã†ÙP2ÐáˆˆˆŒh*r&bÕîËº[w½î°}ûòÔ‹JDDddR›†ác=œù°1á¦z8ÖpF`)
                 break;
 
@@ -1331,7 +1331,7 @@ bot.on('message', message=> {
                     message.channel.send("You can't use this command in this server.")
                 }
                 else {
-                message.channel.sendMessage("You don't have permission to use that command. Please try another.");
+                message.channel.send("You don't have permission to use that command. Please try another.");
                 }
                 break;
 
@@ -1805,7 +1805,7 @@ bot.on('message', message=> {
 
    if (message.channel.id === callA && callkey === true && message.author.id !== BotID){
        if (message.content.includes("@everyone") || message.content.includes("@here")){
-        message.channel.sendMessage("Please refrain from raiding through calls. \n(Thanks to all my friends who found this oversight. I'm not angry at y'all <3)")
+        message.channel.send("Please refrain from raiding through calls. \n(Thanks to all my friends who found this oversight. I'm not angry at y'all <3)")
        }
        else {
     bot.channels.get(callids[callB]).send(message.author.tag +": "+message);
@@ -1818,7 +1818,7 @@ bot.on('message', message=> {
 
 if (message.channel.id === callids[callB] && callkey === true && message.author.id !== BotID){
     if (message.content.includes("@everyone") || message.content.includes("@here")){
-        message.channel.sendMessage("Please refrain from raiding through calls. \n(Thanks to all my friends who found this oversight. I'm not angry at y'all <3)")
+        message.channel.send("Please refrain from raiding through calls. \n(Thanks to all my friends who found this oversight. I'm not angry at y'all <3)")
        }
        else {
     bot.channels.get(callA).send(message.author.tag +": "+message);
@@ -2032,7 +2032,7 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
 
     if (message.content.includes("Drizzle")){
         if (message.author.id === '356389068634062848'){
-            message.channel.sendMessage("Okay, Jet. You need to face the facts. **The ship is dead.**")
+            message.channel.send("Okay, Jet. You need to face the facts. **The ship is dead.**")
         }
     }
 
@@ -2060,13 +2060,13 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
 
     if (message.content.includes("Joe")){
         if (message.author.id === '351941317305040896'){
-            message.channel.sendMessage("Who's Joe?")
+            message.channel.send("Who's Joe?")
         }
     }
 
     if (message.content.includes("Joe Mama")){
         if (message.author.id === '351941317305040896'){
-            message.channel.sendMessage("Dam, well played, Reun")
+            message.channel.send("Dam, well played, Reun")
         }
     }
 
@@ -2100,7 +2100,7 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
     }
 
     if (message.content.startsWith("Pip") && war === true){
-        message.channel.sendMessage("Alright! **Pip** has won this match! Tough luck, Pkoby. Bernie's not gonna be happy about this one.");
+        message.channel.send("Alright! **Pip** has won this match! Tough luck, Pkoby. Bernie's not gonna be happy about this one.");
         war = false;
         let pipwins = bot.afile["PipWins"].pips;
         pipwins = pipwins + 1;
@@ -2113,7 +2113,7 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
     }
 
     if (message.content.startsWith("Pkoby") && war === true){
-        message.channel.sendMessage("Alright! **Pkoby** has won this battle! Too bad, Pip. Looks like your 'pure-place' needs some cleaning...");
+        message.channel.send("Alright! **Pkoby** has won this battle! Too bad, Pip. Looks like your 'pure-place' needs some cleaning...");
         war = false;
         let pkwins = bot.afile["PkWins"].pkobys;
         pkwins = pkwins + 1;
@@ -2134,14 +2134,14 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
             fs.writeFile ("./afile.json", JSON.stringify (bot.afile, null, 4), err => {
                 if (err) throw err;
             });
-            message.channel.sendMessage("Message Recorded!");
+            message.channel.send("Message Recorded!");
         }
     }
 
     
 
     /*if (message.content.toLowerCase().includes("creeper")){
-        message.channel.sendMessage("Aww man.");
+        message.channel.send("Aww man.");
     }
     */
 
@@ -2149,23 +2149,23 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
     {
         if (message.mentions.users.first().id == BotID){
         pingmes = true;
-        message.channel.sendMessage("wHAT?!");
+        message.channel.send("wHAT?!");
         pingmeschannel = message.channel.id;
         }
     }
 
     if (pingmes == true && message.content.toLowerCase().includes("help") && message.author.id != BotID && message.channel.id == pingmeschannel){
-        message.channel.sendMessage("Looking for help? To see a list of commands, type 'v!commands', or to see other information, type 'v!info' to see a list of available options");
+        message.channel.send("Looking for help? To see a list of commands, type 'v!commands', or to see other information, type 'v!info' to see a list of available options");
         pingmes = false;
     }
 
     if (pingmes == true && message.content.toLowerCase().includes("commands") && message.author.id != BotID && message.channel.id == pingmeschannel){
-        message.channel.sendMessage("Looking for a command list? To see a list of commands, type 'v!commands'");
+        message.channel.send("Looking for a command list? To see a list of commands, type 'v!commands'");
         pingmes = false;
     }
 
     if (pingmes == true && (message.content.toLowerCase().includes("hi") || message.content.toLowerCase().includes("hello") || message.content.toLowerCase().includes("hey")) && message.author.id != BotID && message.channel.id == pingmeschannel){
-        message.channel.sendMessage("Hello, "+message.author.username);
+        message.channel.send("Hello, "+message.author.username);
         pingmes = false;
     }
 
@@ -2239,28 +2239,28 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         hugs = 16;
                 user1 = message.author;
                 if (user1 !== undefined && user1.id === user.id){
-                    message.channel.sendMessage("Oh...you hugged yourself? Damn, you're lonely...")
+                    message.channel.send("Oh...you hugged yourself? Damn, you're lonely...")
                 }
                 else if (user1 !== undefined && user1.id === BotID) {
                     if (user.id === '356389068634062848') {
                         gifNumber = Math.floor (Math.random() * (hugs - 1 + 1)) +1;
-                    message.channel.sendMessage("*Hugs "+user.username+" back!* 💙");
+                    message.channel.send("*Hugs "+user.username+" back!* 💙");
                     message.channel.send ( { files: ["./hugs/hugif (" + gifNumber + ").gif"]})
                     }
                     else {
 
-                    message.channel.sendMessage("Nope! You ain't hugging me ya crap! Hug someone else!")
+                    message.channel.send("Nope! You ain't hugging me ya crap! Hug someone else!")
                 }
             }
                 else if (user1 !== undefined){
                     if (user1.id == '346324933598773251'){
                         gifNumber = Math.floor (Math.random() * (hugs - 1 + 1)) +1;
-                        message.channel.sendMessage("*You got this, Prince! Stay strong, and believe in yourself because everyone believes in you!* ❤️");
+                        message.channel.send("*You got this, Prince! Stay strong, and believe in yourself because everyone believes in you!* ❤️");
                         message.channel.send ( { files: ["./hugs/hugif (" + gifNumber + ").gif"]})
                     }
                     else{
                     gifNumber = Math.floor (Math.random() * (hugs - 1 + 1)) +1;
-                    message.channel.sendMessage("*"+user.username+" gives "+user1.username+" a hug!* 💙");
+                    message.channel.send("*"+user.username+" gives "+user1.username+" a hug!* 💙");
                     message.channel.send ( { files: ["./hugs/hugif (" + gifNumber + ").gif"]})
                     suplexChance = Math.floor (Math.random() * (10 - 1 + 1)) +1;
                     if (suplexChance <= 1){
@@ -2272,7 +2272,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 
                 
                 else {
-            message.channel.sendMessage("...but there's no one to hug! How pitiful...");
+            message.channel.send("...but there's no one to hug! How pitiful...");
                 }
             }
 
@@ -2619,7 +2619,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 switch (args[0]){
         
                     case 'list':
-                        message.channel.sendMessage("```May the Games Begin! \n \nCURRENT GAME LIST\n\nemoji - Guess that Emoji!\ngayslots - The gayest of slots, it makes sense to be here...kinda.\ntrivia - You think you're a true Discord boomer? Try out these questions about the past!```");
+                        message.channel.send("```May the Games Begin! \n \nCURRENT GAME LIST\n\nemoji - Guess that Emoji!\ngayslots - The gayest of slots, it makes sense to be here...kinda.\ntrivia - You think you're a true Discord boomer? Try out these questions about the past!```");
                         break;
 
                     case 'trivcheck':
@@ -2628,217 +2628,217 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         
                     case 'emoji':
                             emoid = message.channel.id;
-                        message.channel.sendMessage("Let's go! Can you guess what this means?")
+                        message.channel.send("Let's go! Can you guess what this means?")
                             emogi = 35;
                             var emo = Math.floor (Math.random() * (emogi - 1 + 1)) +1;
                             switch (emo) {
                                 case 1:
-                                     message.channel.sendMessage("🎸 ✅");
-                                     message.channel.sendMessage("`---- ------`");
+                                     message.channel.send("🎸 ✅");
+                                     message.channel.send("`---- ------`");
                                      emoques = 1;
                                      break;
         
                                 case 2:
-                                    message.channel.sendMessage("💥🔫🐉");
-                                    message.channel.sendMessage("`---- -----`");
+                                    message.channel.send("💥🔫🐉");
+                                    message.channel.send("`---- -----`");
                                     emoques = 2;
                                     break;
         
                                 case 3:
-                                    message.channel.sendMessage("🍕 🕰");
-                                    message.channel.sendMessage("`----- ----`");
+                                    message.channel.send("🍕 🕰");
+                                    message.channel.send("`----- ----`");
                                     emoques = 3;
                                     break;
         
                                 case 4:
-                                    message.channel.sendMessage("🌈 🛣");
-                                    message.channel.sendMessage("`------- ----`");
+                                    message.channel.send("🌈 🛣");
+                                    message.channel.send("`------- ----`");
                                     emoques = 4;
                                     break;
         
                                 case 5:
-                                     message.channel.sendMessage("🌍🛣, 🏠⬅🚶");
-                                     message.channel.sendMessage("`---- --------`");
+                                     message.channel.send("🌍🛣, 🏠⬅🚶");
+                                     message.channel.send("`---- --------`");
                                      emoques = 5;
                                      break;
         
                                 case 6:
-                                     message.channel.sendMessage("⛰🍓💙");
-                                     message.channel.sendMessage("`-------`");
+                                     message.channel.send("⛰🍓💙");
+                                     message.channel.send("`-------`");
                                      emoques = 6;
                                      break;
         
                                 case 7:
-                                     message.channel.sendMessage("☁🎵☁");
-                                     message.channel.sendMessage("`------ ------`");
+                                     message.channel.send("☁🎵☁");
+                                     message.channel.send("`------ ------`");
                                      emoques = 7;
                                      break;
         
                                 case 8:
-                                     message.channel.sendMessage("☕");
-                                     message.channel.sendMessage("`---`");
+                                     message.channel.send("☕");
+                                     message.channel.send("`---`");
                                      emoques = 8;
                                      break;
         
                                 case 9:
-                                    message.channel.sendMessage("🍽🎮");
-                                    message.channel.sendMessage("`------ -----`");
+                                    message.channel.send("🍽🎮");
+                                    message.channel.send("`------ -----`");
                                     emoques = 9;
                                     break;
         
                                 case 10:
-                                     message.channel.sendMessage("💥🕛💥");
-                                     message.channel.sendMessage("`----- -- --- ----`");
+                                     message.channel.send("💥🕛💥");
+                                     message.channel.send("`----- -- --- ----`");
                                      emoques = 10;
                                      break;
         
                                 case 11:
-                                    message.channel.sendMessage("🐱🕰");
-                                    message.channel.sendMessage("`-------- ----`");
+                                    message.channel.send("🐱🕰");
+                                    message.channel.send("`-------- ----`");
                                     emoques = 11;
                                     break;
         
                                     case 12:
-                                    message.channel.sendMessage("🚶🎸");
-                                    message.channel.sendMessage("`---- -----`");
+                                    message.channel.send("🚶🎸");
+                                    message.channel.send("`---- -----`");
                                     emoques = 12;
                                     break;
         
                                     case 13:
-                                    message.channel.sendMessage(":punch: :negative_squared_cross_mark: :laughing: ");
-                                    message.channel.sendMessage("`-------- --- ----------`");
+                                    message.channel.send(":punch: :negative_squared_cross_mark: :laughing: ");
+                                    message.channel.send("`-------- --- ----------`");
                                     emoques = 13;
                                     break;
         
                                     case 14:
-                                    message.channel.sendMessage(":penguin: :loud_sound: ");
-                                    message.channel.sendMessage("`--------- -------`");
+                                    message.channel.send(":penguin: :loud_sound: ");
+                                    message.channel.send("`--------- -------`");
                                     emoques = 14;
                                     break;
         
                                     case 15:
-                                    message.channel.sendMessage(":grin: :bee:");
-                                    message.channel.sendMessage("`----- ---`");
+                                    message.channel.send(":grin: :bee:");
+                                    message.channel.send("`----- ---`");
                                     emoques = 15;
                                     break;
         
                                     case 16:
-                                    message.channel.sendMessage(":bee: :cake: :bee:");
-                                    message.channel.sendMessage("`------- ----`");
+                                    message.channel.send(":bee: :cake: :bee:");
+                                    message.channel.send("`------- ----`");
                                     emoques = 16;
                                     break;
         
                                     case 17:
-                                    message.channel.sendMessage(":crab: :crab: :crab:");
-                                    message.channel.sendMessage("`---- ----`");
+                                    message.channel.send(":crab: :crab: :crab:");
+                                    message.channel.send("`---- ----`");
                                     emoques = 17;
                                     break;
         
                                     case 18:
-                                    message.channel.sendMessage(":fork_knife_plate: :watermelon:");
-                                    message.channel.sendMessage("`--------`");
+                                    message.channel.send(":fork_knife_plate: :watermelon:");
+                                    message.channel.send("`--------`");
                                     emoques = 18;
                                     break;
         
                                     case 19:
-                                    message.channel.sendMessage(":goat: :octopus: :love_letter: :heart_eyes_cat:");
-                                    message.channel.sendMessage("`---------`");
+                                    message.channel.send(":goat: :octopus: :love_letter: :heart_eyes_cat:");
+                                    message.channel.send("`---------`");
                                     emoques = 19;
                                     break;
         
                                     case 20:
-                                    message.channel.sendMessage(":tomato: :shallow_pan_of_food:");
-                                    message.channel.sendMessage("`------ ----`");
+                                    message.channel.send(":tomato: :shallow_pan_of_food:");
+                                    message.channel.send("`------ ----`");
                                     emoques = 20;
                                     break;
         
                                     case 21:
-                                    message.channel.sendMessage(":dancer: :alarm_clock: :arrow_forward: :skull_crossbones:");
-                                    message.channel.sendMessage("`----- ----- --- --- ----`");
+                                    message.channel.send(":dancer: :alarm_clock: :arrow_forward: :skull_crossbones:");
+                                    message.channel.send("`----- ----- --- --- ----`");
                                     emoques = 21;
                                     break;
         
                                     case 22:
-                                    message.channel.sendMessage(":sheep: :zzz:");
-                                    message.channel.sendMessage("`------ ------`");
+                                    message.channel.send(":sheep: :zzz:");
+                                    message.channel.send("`------ ------`");
                                     emoques = 22;
                                     break;
         
                                     case 23:
-                                    message.channel.sendMessage(":tophat: :hourglass:");
-                                    message.channel.sendMessage("`- --- -- ----`");
+                                    message.channel.send(":tophat: :hourglass:");
+                                    message.channel.send("`- --- -- ----`");
                                     emoques = 23;
                                     break;
         
                                     case 24:
-                                    message.channel.sendMessage(":raised_hand: :neutral_face: :raised_hand:");
-                                    message.channel.sendMessage("`--- ----- ---'-- ----?`");
+                                    message.channel.send(":raised_hand: :neutral_face: :raised_hand:");
+                                    message.channel.send("`--- ----- ---'-- ----?`");
                                     emoques = emo;
                                     break;
         
                                     case 25:
-                                    message.channel.sendMessage(":one: :one: :crown:");
-                                    message.channel.sendMessage("`------ ----`");
+                                    message.channel.send(":one: :one: :crown:");
+                                    message.channel.send("`------ ----`");
                                     emoques = emo;
                                     break;
         
                                     case 26:
-                                    message.channel.sendMessage(":ballot_box: :left_right_arrow: :ballot_box:");
-                                    message.channel.sendMessage("`---- ---`");
+                                    message.channel.send(":ballot_box: :left_right_arrow: :ballot_box:");
+                                    message.channel.send("`---- ---`");
                                     emoques = emo;
                                     break;
         
                                     case 27:
-                                    message.channel.sendMessage(":checkered_flag: :snail:");
-                                    message.channel.sendMessage("`-----`");
+                                    message.channel.send(":checkered_flag: :snail:");
+                                    message.channel.send("`-----`");
                                     emoques = emo;
                                     break;
         
                                     case 28:
-                                    message.channel.sendMessage(":star: :mushroom: :japanese_castle:");
-                                    message.channel.sendMessage("`----- ----- --`");
+                                    message.channel.send(":star: :mushroom: :japanese_castle:");
+                                    message.channel.send("`----- ----- --`");
                                     emoques = emo;
                                     break;
         
                                     case 29:
-                                    message.channel.sendMessage(":sunrise_over_mountains: :clock9: :calendar_spiral:");
-                                    message.channel.sendMessage("`--'- - -'----- -- - --------`");
+                                    message.channel.send(":sunrise_over_mountains: :clock9: :calendar_spiral:");
+                                    message.channel.send("`--'- - -'----- -- - --------`");
                                     emoques = emo;
                                     break;
         
                                     case 30:
-                                    message.channel.sendMessage(":pensive: :sunny: :point_right: :shopping_bags:");
-                                    message.channel.sendMessage("`- --- -------- -- - ---`");
+                                    message.channel.send(":pensive: :sunny: :point_right: :shopping_bags:");
+                                    message.channel.send("`- --- -------- -- - ---`");
                                     emoques = emo;
                                     break;
         
                                     case 31:
-                                    message.channel.sendMessage(":cross: :cloud_rain: :earth_africa:");
-                                    message.channel.sendMessage("`- ----- --- ----- ---- -- ------`");
+                                    message.channel.send(":cross: :cloud_rain: :earth_africa:");
+                                    message.channel.send("`- ----- --- ----- ---- -- ------`");
                                     emoques = emo;
                                     break;
         
                                     case 32:
-                                    message.channel.sendMessage(":mushroom: :shopping_bags: :book:");
-                                    message.channel.sendMessage("`---- ---- -----`");
+                                    message.channel.send(":mushroom: :shopping_bags: :book:");
+                                    message.channel.send("`---- ---- -----`");
                                     emoques = emo;
                                     break;
         
                                     case 33:
-                                    message.channel.sendMessage(":newspaper: :mushroom: :calendar: :door:");
-                                    message.channel.sendMessage("`----- -----: --- -------- ---- ----`");
+                                    message.channel.send(":newspaper: :mushroom: :calendar: :door:");
+                                    message.channel.send("`----- -----: --- -------- ---- ----`");
                                     emoques = emo;
                                     break;
         
                                     case 34:
-                                    message.channel.sendMessage(":apple: :peach: :jeans:");
-                                    message.channel.sendMessage("`----- ------ -----`");
+                                    message.channel.send(":apple: :peach: :jeans:");
+                                    message.channel.send("`----- ------ -----`");
                                     emoques = emo;
                                     break;
         
                                     case 35:
-                                    message.channel.sendMessage(":sunglasses: :one: :two: :video_game: :computer:");
-                                    message.channel.sendMessage("`-------------.---`");
+                                    message.channel.send(":sunglasses: :one: :two: :video_game: :computer:");
+                                    message.channel.send("`-------------.---`");
                                     emoques = emo;
                                     break;
         
@@ -2852,12 +2852,12 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         
                         case 'emojilost':
                             emoquest = 0;
-                            message.channel.sendMessage("Too bad!");
+                            message.channel.send("Too bad!");
                         break;
         
                         case 'trivialost':
                             triv = 0;
-                            message.channel.sendMessage("Too bad...");
+                            message.channel.send("Too bad...");
                         break;
 
 
@@ -2897,12 +2897,12 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                     imos18 = Math.floor ((Math.random() * slotfruits.length));
                                     imos19 = Math.floor ((Math.random() * slotfruits.length));
                                     imos20 = Math.floor ((Math.random() * slotfruits.length));
-                                    message.channel.sendMessage("🎰 `Welcome to Jack's Hell!` 🎰 \n**" +message.author.username+"** rolled the impossible slots...\n   ["+slotfruits[imos1]+" "+slotfruits[imos2]+" "+slotfruits[imos3]+" "+slotfruits[imos4]+" "+slotfruits[imos5]+" "+slotfruits[imos6]+" "+slotfruits[imos7]+" "+slotfruits[imos8]+" "+slotfruits[imos9]+" "+slotfruits[imos10]+" "+slotfruits[imos11]+" "+slotfruits[imos12]+" "+slotfruits[imos13]+" "+slotfruits[imos14]+" "+slotfruits[imos15]+" "+slotfruits[imos16]+" "+slotfruits[imos17]+" "+slotfruits[imos18]+" "+slotfruits[imos19]+" "+slotfruits[imos20]+"]")
+                                    message.channel.send("🎰 `Welcome to Jack's Hell!` 🎰 \n**" +message.author.username+"** rolled the impossible slots...\n   ["+slotfruits[imos1]+" "+slotfruits[imos2]+" "+slotfruits[imos3]+" "+slotfruits[imos4]+" "+slotfruits[imos5]+" "+slotfruits[imos6]+" "+slotfruits[imos7]+" "+slotfruits[imos8]+" "+slotfruits[imos9]+" "+slotfruits[imos10]+" "+slotfruits[imos11]+" "+slotfruits[imos12]+" "+slotfruits[imos13]+" "+slotfruits[imos14]+" "+slotfruits[imos15]+" "+slotfruits[imos16]+" "+slotfruits[imos17]+" "+slotfruits[imos18]+" "+slotfruits[imos19]+" "+slotfruits[imos20]+"]")
                                     if (slotfruits[imos1] === slotfruits[imos2] === slotfruits[imos3] === slotfruits[imos4] === slotfruits[imos5] === slotfruits[imos6] === slotfruits[imos7] === slotfruits[imos8] === slotfruits[imos9] === slotfruits[imos10] === slotfruits[imos11] === slotfruits[imos12] === slotfruits[imos13] === slotfruits[imos14] === slotfruits[imos15] === slotfruits[imos16] === slotfruits[imos17] === slotfruits[imos18] === slotfruits[imos19] === slotfruits[imos20]) {
-                                        message.channel.sendMessage("YOU'VE ***GOTTA BE KIDDING ME!***\nYou should prob ping Gabe for a reward. This wasn't expected to happen.")
+                                        message.channel.send("YOU'VE ***GOTTA BE KIDDING ME!***\nYou should prob ping Gabe for a reward. This wasn't expected to happen.")
                                     }
                                     else {
-                                        message.channel.sendMessage("Nice! You lost! That was expected...")
+                                        message.channel.send("Nice! You lost! That was expected...")
                                     }
                                     break;
         
@@ -2939,13 +2939,13 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                         me = message.author.username;
                                     }
 
-                                    message.channel.sendMessage("**"+me+"** takes the lead and the gang follows...");
+                                    message.channel.send("**"+me+"** takes the lead and the gang follows...");
                                     sp = Math.floor ((Math.random() * d6.length));
                                     path += d6[sp];
         
                                     for (i = 0; i < ladderA.length; i++){
                                         if (path == ladderA[i]){
-                                            message.channel.sendMessage("WHOA! The gang found a ladder! They go from **"+ladderA[i]+"** to **"+ladderB[i]+"**!!")
+                                            message.channel.send("WHOA! The gang found a ladder! They go from **"+ladderA[i]+"** to **"+ladderB[i]+"**!!")
                                             path = ladderB[i];
                                         }
                                         
@@ -2953,17 +2953,17 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         
                                     for (i = 0; i < snekA.length; i++){
                                         if (path == snekA[i]){
-                                            message.channel.sendMessage("**HOLY CRAP!** IT'S A SNEK! The gang gets ambushed at **"+snekA[i]+"** and got yeeted to **"+snekB[i]+"**!!")
+                                            message.channel.send("**HOLY CRAP!** IT'S A SNEK! The gang gets ambushed at **"+snekA[i]+"** and got yeeted to **"+snekB[i]+"**!!")
                                             path = snekB[i];
                                         }
                                     }
         
                                     if (path >= 100){
-                                        message.channel.sendMessage("WOOOO! The gang successfully made it out alive! Let's do it again...")
+                                        message.channel.send("WOOOO! The gang successfully made it out alive! Let's do it again...")
                                         path = 0;
                                     }
                                     else{
-                                        message.channel.sendMessage("The gang stops at **"+path+"** for a lovely campfire.")
+                                        message.channel.send("The gang stops at **"+path+"** for a lovely campfire.")
                                     }
                                         
                                     
@@ -2980,10 +2980,10 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
                             case '9+create':
                                 if (a9match == true){
-                                    message.channel.sendMessage("Oops! It seems like a room is already created! \n`You can join using 'v!9+join'.`")
+                                    message.channel.send("Oops! It seems like a room is already created! \n`You can join using 'v!9+join'.`")
                                 }
                                 else {
-                                    message.channel.sendMessage("Alright! Creating a room!")
+                                    message.channel.send("Alright! Creating a room!")
                                     a9match = true;
                                     a9channel = message.channel.id;
                                     addPlayerto9match(message.author)
@@ -3197,7 +3197,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         
                             case 'trivia':
                                     quid = message.channel.id;
-                                message.channel.sendMessage("Alright! Let's see how much you know.")
+                                message.channel.send("Alright! Let's see how much you know.")
                                 questions = questions1.length;
                             var quests = Math.floor (Math.random() * (questions - 1 + 1)) +1;
                             message.channel.send(questions1[quests]);
@@ -3208,10 +3208,10 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         
                             case 'mmtrivia':
                                 if (mmgame === true) {
-                                    message.channel.sendMessage("A game is already in session!");
+                                    message.channel.send("A game is already in session!");
                                 }
                                 else{
-                                 message.channel.sendMessage("Searching via VirusNet...")
+                                 message.channel.send("Searching via VirusNet...")
                                 mmA = message.channel.id;
                                 mmB = Math.floor ((Math.random() * mmids.length));
         
@@ -3357,177 +3357,177 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             //emoji
             if (emoid === message.channel.id && message.author.id !== BotID){
                 if (message.content.toLowerCase().includes("okay guitar") && emoques === 1) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found it out!")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found it out!")
                    emoques = 0;
                }
            
                if (message.content.toLowerCase().includes("onix shots") && emoques === 2) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found it out, you RP bommer!")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found it out, you RP bommer!")
                    emoques = 0;
                }
            
                if (message.content.toLowerCase().includes("pizza time") && emoques === 3) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words! Now, it's Pizza Time!")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found the words! Now, it's Pizza Time!")
                    emoques = 0;
                }
            
                if (message.content.toLowerCase().includes("rainbow road") && emoques === 4) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words! MK8's is the worst, tho.")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found the words! MK8's is the worst, tho.")
                    emoques = 0;
                }
            
                if (message.content.toLowerCase().includes("west virginia") && emoques === 5) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the song! MOUNTAIN MAMAAAAAA")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found the song! MOUNTAIN MAMAAAAAA")
                    emoques = 0;
                }
            
                if (message.content.toLowerCase().includes("celeste") && emoques === 6) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the word! What a great indie...")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found the word! What a great indie...")
                    emoques = 0;
                }
            
                if (message.content.toLowerCase().includes("rhythm heaven") && emoques === 7) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words! This series is underrated.")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found the words! This series is underrated.")
                    emoques = 0;
                }
            
                if (message.content.toLowerCase().includes("jet") && emoques === 8) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the word! Poor Jet...")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found the word! Poor Jet...")
                    emoques = 0;
                }
            
                if (message.content.toLowerCase().includes("hunger games") && emoques === 9) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words! WHEN IS THE NEXT ONE?")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found the words! WHEN IS THE NEXT ONE?")
                    emoques = 0;
                }
            
                if (message.content.toLowerCase().includes("lobby of the gods") && emoques === 10) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words! Nova needs a nurf.")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found the words! Nova needs a nurf.")
                    emoques = 0;
                }
            
                if (message.content.toLowerCase().includes("galactic nova") && emoques === 11) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words! What a neko clock.")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found the words! What a neko clock.")
                    emoques = 0;
                }
            
                if (message.content.toLowerCase().includes("vibe check") && emoques === 12) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words! Time for a vibe check!")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found the words! Time for a vibe check!")
                    emoques = 0;
                }
            
                if (message.content.toLowerCase().includes("knuckles the unchuckled") && emoques === 13) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words! Oh no.")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found the words! Oh no.")
                    emoques = 0;
                }
            
                if (message.content.toLowerCase().includes("vibrating penguin") && emoques === 14) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words!")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found the words!")
                    emoques = 0;
                }
            
                if (message.content.toLowerCase().includes("happy bee") && emoques === 15) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words! What a happy boi...")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found the words! What a happy boi...")
                    emoques = 0;
                }
            
                if (message.content.toLowerCase().includes("beesday cake") && emoques === 16) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words!")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found the words!")
                    emoques = 0;
                }
            
                if (message.content.toLowerCase().includes("crab role") && emoques === 17) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words! Now, let's leave Reun alone.")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found the words! Now, let's leave Reun alone.")
                    emoques = 0;
                }
            
                if (message.content.toLowerCase().includes("eatmelon") && emoques === 18) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the emoji from emojis!")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found the emoji from emojis!")
                    emoques = 0;
                }
            
                if (message.content.toLowerCase().includes("samfuller") && emoques === 19) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the legend!")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found the legend!")
                    emoques = 0;
                }
            
                if (message.content.toLowerCase().includes("tomato soup") && emoques === 20) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words! Irri sure does love her soup...")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found the words! Irri sure does love her soup...")
                    emoques = 0;
                }
            
                if (message.content.toLowerCase().includes("dance until you are dead") && emoques === 21) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words! Dance break!")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found the words! Dance break!")
                    emoques = 0;
                }
            
                if (message.content.toLowerCase().includes("sleepy sheepy") && emoques === 22) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words! Night, Night, sheepy...")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found the words! Night, Night, sheepy...")
                    emoques = 0;
                }
            
                if (message.content.toLowerCase().includes("a hat in time") && emoques === 23) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found the words! What a great game...")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found the words! What a great game...")
                    emoques = 0;
                }
         
                if ((message.content.toLowerCase().includes("you think you're safe?") || message.content.toLowerCase().includes("you think youre safe")) && emoques === 24) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found it out! But I have unfortunate news. You failed the vibe check.")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found it out! But I have unfortunate news. You failed the vibe check.")
                    emoques = 0;
                }
         
                if (message.content.toLowerCase().includes("double king") && emoques === 25) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found it out! Now I'm hungry...")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found it out! Now I'm hungry...")
                    emoques = 0;
                }
         
                if (message.content.toLowerCase().includes("warp box") && emoques === 26) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found it out! Thank gosh it's not a Mystery Box!")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found it out! Thank gosh it's not a Mystery Box!")
                    emoques = 0;
                }
         
                if (message.content.toLowerCase().includes("turbo") && emoques === 27) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found it out! What a fast boi")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found it out! What a fast boi")
                    emoques = 0;
                }
         
                if (message.content.toLowerCase().includes("super mario 64") && emoques === 28) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found it out! Here we go! :star:")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found it out! Here we go! :star:")
                    emoques = 0;
                }
         
                if ((message.content.toLowerCase().includes("it's 9 o'clock on a saturday") || message.content.toLowerCase().includes("its 9 oclock on a saturday")) && emoques === 29) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found it out! What, you don't know the song?")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found it out! What, you don't know the song?")
                    emoques = 0;
                }
         
                if (message.content.toLowerCase().includes("i got sunshine in a bag") && emoques === 30) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found it out! Ah...depression amirite?")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found it out! Ah...depression amirite?")
                    emoques = 0;
                }
         
                if (message.content.toLowerCase().includes("i bless the rains down in africa") && emoques === 31) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found it out!")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found it out!")
                    emoques = 0;
                }
         
                if ((message.content.toLowerCase().includes("mega mall story")) && emoques === 32) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found it out!")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found it out!")
                    emoques = 0;
                }
         
                if ((message.content.toLowerCase().includes("paper mario: the thousand year door") || message.content.toLowerCase().includes("paper mario the thousand year door") || message.content.toLowerCase().includes("ttyd")) && emoques === 33) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found it out! Great Game.")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found it out! Great Game.")
                    emoques = 0;
                }
         
                if (message.content.toLowerCase().includes("apple bottom jeans") && emoques === 34) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found it out! Shorty got them-")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found it out! Shorty got them-")
                    emoques = 0;
                }
         
                if ((message.content.toLowerCase().includes("coolmathgames.com") || message.content.toLowerCase().includes("Coolmathgamescom")) && emoques === 35) {
-                   message.channel.sendMessage("Well done, **"+message.author.username+"**! You found it out! Let's play some!")
+                   message.channel.send("Well done, **"+message.author.username+"**! You found it out! Let's play some!")
                    emoques = 0;
                }
            }
@@ -3568,7 +3568,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
            if (quid === message.channel.id && message.author.id !== BotID){
                 if (message.content.toLowerCase().includes(trivans))
                 {
-                    message.channel.sendMessage("**"+message.author.username+"**, you are correct!")
+                    message.channel.send("**"+message.author.username+"**, you are correct!")
                     trivans = "Phobos, you are correct!";
                 }
         
@@ -3641,7 +3641,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     }
                 }
                 if (tester == true){
-                    message.channel.sendMessage("You're already added to the list!");
+                    message.channel.send("You're already added to the list!");
                 }
                 else{
                     if (players9[0] == 0){
@@ -3799,7 +3799,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     }
                 }
                 if (tester == true){
-                    message.channel.sendMessage("You're already in the player list.");
+                    message.channel.send("You're already in the player list.");
                 }
                 else{
                     players64.push(user)
@@ -4256,7 +4256,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     }
                 }
                 if (tester == true){
-                    message.channel.sendMessage("You're already in the list.");
+                    message.channel.send("You're already in the list.");
                 }
                 else{
                     playerspwp.push(user)
