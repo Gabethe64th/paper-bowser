@@ -75,7 +75,7 @@ var activitylist = ["lmao who's Corona? Never heard of them.", "around", "as Ste
 
 bot.on('ready', () =>{
     console.log('Let er rip!');
-    bot.channels.get('607654317079396410').send("`VirusBot has been rebooted.`")
+    bot.channels.cache.get('607654317079396410').send("`VirusBot has been rebooted.`")
     thatone = Math.abs(Math.floor ((Math.random() * activitylist.length) -1));
     bot.user.setActivity(activitylist[thatone]);
 })
@@ -295,7 +295,7 @@ bot.on('message', message=> {
 
         case 'changeNick':
             if (args[1] != undefined){
-                bot.guilds.get(message.guild.id).member(BotID).nickname = (message.content.slice(13))
+                bot.guilds.cache.get(message.guild.id).member(BotID).nickname = (message.content.slice(13))
                 message.channel.send("A-OK!");
             }
             else (
@@ -819,7 +819,7 @@ bot.on('message', message=> {
                     message.channel.send("The call function has been blocked from this channel. Sorry!")
                 }
                 else {
-                bot.channels.get(callids[callB]).send("**Someone has called this channel! Who could it be...?**");
+                bot.channels.cache.get(callids[callB]).send("**Someone has called this channel! Who could it be...?**");
                 message.channel.send("**I caught something! Say hello!**");
                 callkey = true;
                 }
@@ -834,18 +834,18 @@ bot.on('message', message=> {
                 case 'hang':
                     if (callkey === true){
                         if (message.channel.id === callA) {
-                            bot.channels.get(callA).send("**Hanged up.**");
-                            bot.channels.get(callids[callB]).send("**The other party has hanged up the call!**");
+                            bot.channels.cache.get(callA).send("**Hanged up.**");
+                            bot.channels.cache.get(callids[callB]).send("**The other party has hanged up the call!**");
                             callkey = false;
                         }
                         else if (message.channel.id === callids[callB]){
-                            bot.channels.get(callA).send("**The other party has hanged up the call!**");
-                            bot.channels.get(callids[callB]).send("**Hanged up.**");
+                            bot.channels.cache.get(callA).send("**The other party has hanged up the call!**");
+                            bot.channels.cache.get(callids[callB]).send("**Hanged up.**");
                             callkey = false;
                         }
                         else {
-                            bot.channels.get(callA).send("**A third party has ended the call!**");
-                            bot.channels.get(callids[callB]).send("**A third party has ended the call!**");
+                            bot.channels.cache.get(callA).send("**A third party has ended the call!**");
+                            bot.channels.cache.get(callids[callB]).send("**A third party has ended the call!**");
                             callkey = false;
                         }
                     }
@@ -860,17 +860,17 @@ bot.on('message', message=> {
                     QA = Math.floor((Math.random() * questionchannels.length));
                     AQ = message.channel.id;
 
-                    while (message.guild.id == bot.channels.get(questionchannels[QA]).guild.id){
+                    while (message.guild.id == bot.channels.cache.get(questionchannels[QA]).guild.id){
                         QA = Math.floor((Math.random() * questionchannels.length));
                     }
 
-                    bot.channels.get(AQ).send("Question Sent! Let's await for an answer...");
+                    bot.channels.cache.get(AQ).send("Question Sent! Let's await for an answer...");
                     const questionembed = new Discord.RichEmbed()
                     .setAuthor(message.author.tag, message.author.avatarURL())
                     .setColor('#DC143C')
                     .addField("Incoming Question from this user!", "\n**Question:** "+questionmessage+"\n")
                     .setFooter("You can reply with 'v!sAns [answer]'")
-                    bot.channels.get(questionchannels[QA]).send(questionembed);
+                    bot.channels.cache.get(questionchannels[QA]).send(questionembed);
                     QQ = true;
 
                 break;
@@ -887,7 +887,7 @@ bot.on('message', message=> {
                         .setColor('#DC143C')
                         .addField("A question has been answered!", "\n**Question:** "+questionmessage+"\n\n**Answer:** "+answermessage+"\n")
                         
-                        bot.channels.get(AQ).send(answerembed);
+                        bot.channels.cache.get(AQ).send(answerembed);
                         message.channel.send("Answer Sent!")
                         QQ = false;
                     }
@@ -1420,18 +1420,18 @@ bot.on('message', message=> {
                 else if (message.mentions.members.size == 1){
                     pair1 = message.mentions.members.first();
                     
-                    uusers = bot.guilds.get(message.guild.id).members.array();
+                    uusers = bot.guilds.cache.get(message.guild.id).members.array();
                     uwusers = Math.floor ((Math.random() * uusers.length));
                     pair2 = bot.users.cache.get(uusers[uwusers].id).username;
                     
                     message.channel.send("*Reading the pair score of "+pair1.user.username+" and "+pair2+"...*")
                 }
                 else {
-                    uusers = bot.guilds.get(message.guild.id).members.array();
+                    uusers = bot.guilds.cache.get(message.guild.id).members.array();
                     uwusers = Math.floor ((Math.random() * uusers.length));
                     pair1 = bot.users.cache.get(uusers[uwusers].id).username;
 
-                    uusers = bot.guilds.get(message.guild.id).members.array();
+                    uusers = bot.guilds.cache.get(message.guild.id).members.array();
                     uwusers = Math.floor ((Math.random() * uusers.length));
                     pair2 = bot.users.cache.get(uusers[uwusers].id).username;
 
@@ -1528,7 +1528,7 @@ bot.on('message', message=> {
                     else{
                         vib = Math.abs( Math.floor (Math.random() * (vibesongs.length - 1)));
                         vcserver.queue.push(vibesongs[vib]);
-                        bot.channels.get("687702849479508036").send("`Attempting to play: "+vibenames[vib]+"`")
+                        bot.channels.cache.get("687702849479508036").send("`Attempting to play: "+vibenames[vib]+"`")
                         play(connection, message);
                     }
                 })
@@ -1567,7 +1567,7 @@ bot.on('message', message=> {
              if(!message.guild.voiceConnection)
                  message.member.voiceChannel.join().then(function(connection){
                      play(connection, message)
-                     bot.channels.get("687702849479508036").send("`Joined VC at "+message.guild.name+".`")
+                     bot.channels.cache.get("687702849479508036").send("`Joined VC at "+message.guild.name+".`")
                  })
              
 
@@ -1618,7 +1618,7 @@ bot.on('message', message=> {
 
                 if(message.member.voiceChannel){
                     message.member.voiceChannel.leave();
-                    bot.channels.get("687702849479508036").send("`Left VC at "+message.guild.name+".`")
+                    bot.channels.cache.get("687702849479508036").send("`Left VC at "+message.guild.name+".`")
                 }
                 
                 
@@ -1808,10 +1808,10 @@ bot.on('message', message=> {
         message.channel.send("Please refrain from raiding through calls. \n(Thanks to all my friends who found this oversight. I'm not angry at y'all <3)")
        }
        else {
-    bot.channels.get(callids[callB]).send(message.author.tag +": "+message);
+    bot.channels.cache.get(callids[callB]).send(message.author.tag +": "+message);
     if (message.attachments.first() != undefined){
         callattach = new Attachment (message.attachments.first().url);
-        bot.channels.get(callids[callB]).send(callattach);
+        bot.channels.cache.get(callids[callB]).send(callattach);
     }
 }
 }
@@ -1821,10 +1821,10 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
         message.channel.send("Please refrain from raiding through calls. \n(Thanks to all my friends who found this oversight. I'm not angry at y'all <3)")
        }
        else {
-    bot.channels.get(callA).send(message.author.tag +": "+message);
+    bot.channels.cache.get(callA).send(message.author.tag +": "+message);
     if (message.attachments.first() != undefined){        
         callattach = new Attachment (message.attachments.first().url);
-        bot.channels.get(callA).send(callattach);
+        bot.channels.cache.get(callA).send(callattach);
     }
 }
 }
@@ -2022,7 +2022,7 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
     }
 
     if (message.content.startsWith("@someone")){
-        uusers = bot.guilds.get(message.guild.id).members.array();
+        uusers = bot.guilds.cache.get(message.guild.id).members.array();
         uwusers = Math.floor ((Math.random() * uusers.length));
         thisone = bot.users.cache.get(uusers[uwusers].id);
 
@@ -3220,8 +3220,8 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                 }
         
         
-                                bot.channels.get(mmA).send("`Opponent found! Waiting for response... \n \n (You can type 'v!decline' to cancel the game.)`")
-                                bot.channels.get(mmids[mmB]).send("```This channel has been picked for a round of trivia! Do you accept? \n\n(Type 'v!accept to accept the challenge)\n(Type 'v!decline' to decline the challenge.)```");
+                                bot.channels.cache.get(mmA).send("`Opponent found! Waiting for response... \n \n (You can type 'v!decline' to cancel the game.)`")
+                                bot.channels.cache.get(mmids[mmB]).send("```This channel has been picked for a round of trivia! Do you accept? \n\n(Type 'v!accept to accept the challenge)\n(Type 'v!decline' to decline the challenge.)```");
                                 mmchat = true;
                             }
         
@@ -3233,14 +3233,14 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                 else {
                                 if (mmA !== undefined && mmids[mmB] !== undefined) {
                                     if (message.channel.id === mmids[mmB]){
-                                    bot.channels.get(mmA).send("`The second party has declined!`");
-                                    bot.channels.get(mmids[mmB]).send("`You have declined the challenge!`")
+                                    bot.channels.cache.get(mmA).send("`The second party has declined!`");
+                                    bot.channels.cache.get(mmids[mmB]).send("`You have declined the challenge!`")
                                     mmgame = false;
                                     mmchat = false;
                                 }
                                 else if (message.channel.id === mmA) {
-                                    bot.channels.get(mmA).send("`You have canceled the challenge!`");
-                                    bot.channels.get(mmids[mmB]).send("`Nevermind...the challenge was canceled`")
+                                    bot.channels.cache.get(mmA).send("`You have canceled the challenge!`");
+                                    bot.channels.cache.get(mmids[mmB]).send("`Nevermind...the challenge was canceled`")
                                     mmgame = false;
                                     mmchat = false;
                                 }
@@ -3252,8 +3252,8 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                             case 'accept':
                                 if (mmA !== undefined && mmids[mmB] !== undefined) {
                                     if (message.channel.id === mmids[mmB]){
-                                    bot.channels.get(mmA).send("`Challenge accepted! Let's begin!`");
-                                    bot.channels.get(mmids[mmB]).send("`Alright! Let's begin!`")  
+                                    bot.channels.cache.get(mmA).send("`Challenge accepted! Let's begin!`");
+                                    bot.channels.cache.get(mmids[mmB]).send("`Alright! Let's begin!`")  
                                     mmgame = true;
                                     mmnum = 0;
                                     nextQuestion();
@@ -3265,8 +3265,8 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                     message.channel.send("There's no match to end!")
                                 }
                                 else{
-                                    bot.channels.get(mmA).send("`The match has been canceled.`");
-                                    bot.channels.get(mmids[mmB]).send("`The match has been canceled.`");
+                                    bot.channels.cache.get(mmA).send("`The match has been canceled.`");
+                                    bot.channels.cache.get(mmids[mmB]).send("`The match has been canceled.`");
                                     mmchat = false;
                                     mmgame = false;
                                     mmnum = 11;
@@ -3290,19 +3290,19 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             }
         
             if (message.channel.id === mmA && mmchat === true && message.author.id !== BotID && !message.content.includes(mmoans[mmans])){
-                bot.channels.get(mmids[mmB]).send("[CHAT] "+message.author.tag +": "+message);
+                bot.channels.cache.get(mmids[mmB]).send("[CHAT] "+message.author.tag +": "+message);
             }
             
             if (message.channel.id === mmids[mmB] && mmchat === true && message.author.id !== BotID){
-                bot.channels.get(mmA).send("[CHAT] "+message.author.tag +": "+message);
+                bot.channels.cache.get(mmA).send("[CHAT] "+message.author.tag +": "+message);
             }
         
             function nextQuestion(){
             
                     if(mmnum < 10) {
                         mmpicked = Math.floor ((Math.random() * mmoquests.length));
-                        bot.channels.get(mmA).send(mmoquests[mmpicked]);
-                        bot.channels.get(mmids[mmB]).send(mmoquests[mmpicked]);
+                        bot.channels.cache.get(mmA).send(mmoquests[mmpicked]);
+                        bot.channels.cache.get(mmids[mmB]).send(mmoquests[mmpicked]);
                         mmans = mmpicked;
                     }
                 }
@@ -3311,13 +3311,13 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         
             if (message.content.toLowerCase().includes(mmoans[mmans]) && mmA !== undefined && mmids[mmB] !== undefined && mmgame === true) {
                 if (message.channel.id === mmA && message.author.id !== BotID) {
-                    bot.channels.get(mmA).send("**"+message.author.username+"** got the correct answer!")
-                    bot.channels.get(mmids[mmB]).send("**"+message.author.username+"** got the correct answer!")
+                    bot.channels.cache.get(mmA).send("**"+message.author.username+"** got the correct answer!")
+                    bot.channels.cache.get(mmids[mmB]).send("**"+message.author.username+"** got the correct answer!")
                     mmAscore++;
                 }
                 else if (message.channel.id === mmids[mmB] && message.author.id !== BotID) {
-                    bot.channels.get(mmA).send("**"+message.author.username+"** got the correct answer!")
-                    bot.channels.get(mmids[mmB]).send("**"+message.author.username+"** got the correct answer!")
+                    bot.channels.cache.get(mmA).send("**"+message.author.username+"** got the correct answer!")
+                    bot.channels.cache.get(mmids[mmB]).send("**"+message.author.username+"** got the correct answer!")
                     mmBscore++;
                 }
         
@@ -3327,23 +3327,23 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             }
         
             if (mmnum >= 10 && mmgame === true){
-                bot.channels.get(mmA).send("`The results are in! The challenge is over.`")
-                bot.channels.get(mmids[mmB]).send("`The results are in! The challenge is over.`")
+                bot.channels.cache.get(mmA).send("`The results are in! The challenge is over.`")
+                bot.channels.cache.get(mmids[mmB]).send("`The results are in! The challenge is over.`")
                 if (mmAscore > mmBscore) {
-                    bot.channels.get(mmA).send("`This channel wins!` :tada:")
-                    bot.channels.get(mmids[mmB]).send("`The opposing party wins...Too bad!`")
+                    bot.channels.cache.get(mmA).send("`This channel wins!` :tada:")
+                    bot.channels.cache.get(mmids[mmB]).send("`The opposing party wins...Too bad!`")
                 }
                 if (mmAscore < mmBscore) {
-                    bot.channels.get(mmA).send("`The opposing party wins...Too bad!`")
-                    bot.channels.get(mmids[mmB]).send("`This channel wins!` :tada:")
+                    bot.channels.cache.get(mmA).send("`The opposing party wins...Too bad!`")
+                    bot.channels.cache.get(mmids[mmB]).send("`This channel wins!` :tada:")
                 }
                 if (mmAscore === mmBscore) {
-                    bot.channels.get(mmA).send("`It's a draw! GG!`")
-                    bot.channels.get(mmids[mmB]).send("`It's a draw! GG!`")
+                    bot.channels.cache.get(mmA).send("`It's a draw! GG!`")
+                    bot.channels.cache.get(mmids[mmB]).send("`It's a draw! GG!`")
                 }
         
-                bot.channels.get(mmA).send("`The game has ended. Thanks for playing! Logging off...`")
-                bot.channels.get(mmids[mmB]).send("`The game has ended. Thanks for playing! Logging off...`")
+                bot.channels.cache.get(mmA).send("`The game has ended. Thanks for playing! Logging off...`")
+                bot.channels.cache.get(mmids[mmB]).send("`The game has ended. Thanks for playing! Logging off...`")
         
                 mmchat = false;
                 mmgame = false;
@@ -3695,13 +3695,13 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 }
                 checkPlayerAmount();
                 if (a9game == true){
-                bot.channels.get(a9channel).send("**"+players9[j]+"**, it's your turn!")
+                bot.channels.cache.get(a9channel).send("**"+players9[j]+"**, it's your turn!")
                 }
             }
 
             function addCard(card){
                 maintotal += card;
-                bot.channels.get(a9channel).send("A "+card+" card was added. \n`The total is now: "+maintotal+"`");
+                bot.channels.cache.get(a9channel).send("A "+card+" card was added. \n`The total is now: "+maintotal+"`");
                 //message.channel.send("A "+card+" card was added. \n`The total is now: "+maintotal+"`")
                 checkTotal();
             }
@@ -3782,7 +3782,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                                     o64liedeck += 10;
                                break;
                            }
-                        bot.channels.get(o64channel).send("**"+players64[dm].username+"** has claimed to place a **"+ln+".**\n`The total is now told to be: "+o64liedeck+".`")
+                        bot.channels.cache.get(o64channel).send("**"+players64[dm].username+"** has claimed to place a **"+ln+".**\n`The total is now told to be: "+o64liedeck+".`")
                         dm++;
                         maino64();
                        }
@@ -3823,7 +3823,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     dm = 0;
                 }
 
-                bot.channels.get(o64channel).send("It's **"+players64[dm].username+"'s** turn to pick a card...")
+                bot.channels.cache.get(o64channel).send("It's **"+players64[dm].username+"'s** turn to pick a card...")
                 tn = cards64[o64number];
                 o64truedeck = o64truedeck + tn;
                 bot.users.cache.get(players64[dm].id).send("You got a **"+tn+"!** \nNow...what do you tell everyone it is?")
@@ -3881,7 +3881,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 if (rpgui == 1){
                 for (i = 0; i < heroesname.length; i++){
                     //get names
-                    uusers = bot.guilds.get(message.guild.id).members.array();
+                    uusers = bot.guilds.cache.get(message.guild.id).members.array();
                     uwusers = Math.floor ((Math.random() * uusers.length));
                     heroesname[i] = bot.users.cache.get(uusers[uwusers].id).username;
                     
@@ -4160,7 +4160,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     case "Y":
                     case "y":
                         currenttype = "Yellow";
-                        bot.channels.get(pwpchannel).send("`The color has been changed to: "+currenttype+".`")
+                        bot.channels.cache.get(pwpchannel).send("`The color has been changed to: "+currenttype+".`")
                         choosingType = false;
                         chooseNextPlayer();
                     break;
@@ -4170,7 +4170,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     case "R":
                     case "r":
                         currenttype = "Red";
-                        bot.channels.get(pwpchannel).send("`The color has been changed to: "+currenttype+".`")
+                        bot.channels.cache.get(pwpchannel).send("`The color has been changed to: "+currenttype+".`")
                         choosingType = false;
                         chooseNextPlayer();
                     break;
@@ -4180,7 +4180,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     case "G":
                     case "g":
                         currenttype = "Green";
-                        bot.channels.get(pwpchannel).send("`The color has been changed to: "+currenttype+".`")
+                        bot.channels.cache.get(pwpchannel).send("`The color has been changed to: "+currenttype+".`")
                         choosingType = false;
                         chooseNextPlayer();
                     break;
@@ -4190,7 +4190,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     case "B":
                     case "b":
                         currenttype = "Blue";
-                        bot.channels.get(pwpchannel).send("`The color has been changed to: "+currenttype+".`")
+                        bot.channels.cache.get(pwpchannel).send("`The color has been changed to: "+currenttype+".`")
                         choosingType = false;
                         chooseNextPlayer();
                     break;
@@ -4216,8 +4216,8 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 if (checking == true){
                     
 
-                   // bot.channels.get(pwpchannel).send(othernum)
-                  //  bot.channels.get(pwpchannel).send(othertype)
+                   // bot.channels.cache.get(pwpchannel).send(othernum)
+                  //  bot.channels.cache.get(pwpchannel).send(othertype)
 
                     if (othernum == "W"){
                         Wild();
@@ -4274,11 +4274,11 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
             function displayDanger(){
                 if (danger == false){
-                    bot.channels.get(pwpchannel).send("**Everyone is now in the Danger Zone!**\n`Power Cards have been buffed!`");
+                    bot.channels.cache.get(pwpchannel).send("**Everyone is now in the Danger Zone!**\n`Power Cards have been buffed!`");
                     danger = true;
                 }
                 else {
-                    bot.channels.get(pwpchannel).send("**Everyone is now out of the Danger Zone!**\n`Power Cards have been nurfed.`");
+                    bot.channels.cache.get(pwpchannel).send("**Everyone is now out of the Danger Zone!**\n`Power Cards have been nurfed.`");
                     danger = false;
                 }
             }
@@ -4295,26 +4295,26 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     case "7":
                     case "8":
                     case "9":
-                        bot.channels.get(pwpchannel).send("A **"+othertype+" "+othernum+"** has been played.")
+                        bot.channels.cache.get(pwpchannel).send("A **"+othertype+" "+othernum+"** has been played.")
                     break;
                     case "D":
                     case "d":
-                        bot.channels.get(pwpchannel).send("A **"+othertype+" "+othernum+"** has been played.")
+                        bot.channels.cache.get(pwpchannel).send("A **"+othertype+" "+othernum+"** has been played.")
                         displayDanger();
                     break;
                     case "T":
                     case "t":
-                        bot.channels.get(pwpchannel).send("A **"+othertype+" "+othernum+"** has been played.")
+                        bot.channels.cache.get(pwpchannel).send("A **"+othertype+" "+othernum+"** has been played.")
                         pickUpTwo();
                     break;
                     case "X":
                     case "x":
-                        bot.channels.get(pwpchannel).send("A **"+othertype+" "+othernum+"** has been played.")
+                        bot.channels.cache.get(pwpchannel).send("A **"+othertype+" "+othernum+"** has been played.")
                         skipNextPlayer();
                     break;
                     case "R":
                     case "r":
-                        bot.channels.get(pwpchannel).send("A **"+othertype+" "+othernum+"** has been played.")
+                        bot.channels.cache.get(pwpchannel).send("A **"+othertype+" "+othernum+"** has been played.")
                         reverse();
                     break;
                 }
@@ -4325,7 +4325,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 if (danger == true){
                     thiscolor = Math.floor (Math.random() * typespwp.length);
                     currenttype = typespwp[thiscolor];
-                    bot.channels.get(pwpchannel).send("`CHAOS APPROACHES! The colour is now: "+currenttype+"!\nThe next player gets 4 cards!`")
+                    bot.channels.cache.get(pwpchannel).send("`CHAOS APPROACHES! The colour is now: "+currenttype+"!\nThe next player gets 4 cards!`")
                     displayCards();
                     if (pwpreverse == true){
                         pwpplayer--;
@@ -4349,7 +4349,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     chooseNextPlayer();
                 }
                 else{
-                    bot.channels.get(pwpchannel).send("**A WILD card has been played.**\nPlease specify your next colour.")
+                    bot.channels.cache.get(pwpchannel).send("**A WILD card has been played.**\nPlease specify your next colour.")
                     choosingType = true;
                 }
             }
@@ -4400,7 +4400,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
             function pickUpTwo(){
                 if (danger == true){
-                    bot.channels.get(pwpchannel).send("`DANGER'S IN! The next player picks up 4 cards!`")
+                    bot.channels.cache.get(pwpchannel).send("`DANGER'S IN! The next player picks up 4 cards!`")
                     if (pwpreverse == true){
                         pwpplayer--;
                         if (pwpplayer > 0 && playerspwp[pwpplayer] == undefined){
@@ -4423,7 +4423,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     }
                 }
                 else {
-                    bot.channels.get(pwpchannel).send("**The next player picks up 2 cards!**")
+                    bot.channels.cache.get(pwpchannel).send("**The next player picks up 2 cards!**")
                     if (pwpreverse == true){
                         pwpplayer--;
                         if (pwpplayer > 0 && playerspwp[pwpplayer] == undefined){
@@ -4472,13 +4472,13 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 thiscolor = Math.floor (Math.random() * typespwp.length);
                 currenttype = typespwp[thiscolor];
                 currentnum = "0";
-                bot.channels.get(pwpchannel).send("We'll begin with a **"+currenttype+" 0**.")
+                bot.channels.cache.get(pwpchannel).send("We'll begin with a **"+currenttype+" 0**.")
                 displayNextPwpPlayer();
             }
 
             function chooseNextPlayer(){
                 if (cardspwp[pwpplayer].length == 0){
-                    bot.channels.get(pwpchannel).send("`The game is now over.`\n**"+playerspwp[pwpplayer].username+" WINS!** :tada:")
+                    bot.channels.cache.get(pwpchannel).send("`The game is now over.`\n**"+playerspwp[pwpplayer].username+" WINS!** :tada:")
                     endPwp();
                 }
 
@@ -4504,13 +4504,13 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     pwpplayer = playerspwp.length - 1;
                 }
 
-                bot.channels.get(pwpchannel).send("It's **"+playerspwp[pwpplayer].username+"'s** turn!")
+                bot.channels.cache.get(pwpchannel).send("It's **"+playerspwp[pwpplayer].username+"'s** turn!")
             }
 
             function skipNextPlayer(){
                 if (danger == true){
 
-                    bot.channels.get(pwpchannel).send("`DANGER'S IN! Three players are skipped!`");
+                    bot.channels.cache.get(pwpchannel).send("`DANGER'S IN! Three players are skipped!`");
                     if (pwpreverse == true){
                         pwpplayer--;
                         if (pwpplayer > 0 && playerspwp[pwpplayer] == undefined){
@@ -4569,7 +4569,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 }
 
                 else {
-                    bot.channels.get(pwpchannel).send("**A player is skipped!**");
+                    bot.channels.cache.get(pwpchannel).send("**A player is skipped!**");
                     if (pwpreverse == true){
                         pwpplayer--;
                         if (pwpplayer > 0 && playerspwp[pwpplayer] == undefined){
@@ -4594,12 +4594,12 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 
             function reverse(){
                 if (danger == true){
-                    bot.channels.get(pwpchannel).send("`Randomly picking a player...`");
+                    bot.channels.cache.get(pwpchannel).send("`Randomly picking a player...`");
                     pwpplayer = Math.floor (Math.random() * playerspwp.length);
                     
                 }
                 else{
-                    bot.channels.get(pwpchannel).send("**The order of players have been flipped!**");
+                    bot.channels.cache.get(pwpchannel).send("**The order of players have been flipped!**");
                     if (pwpreverse == true){
                         pwpreverse = false;
                     }
