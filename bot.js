@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const { Client, Attachment, Message } = require('discord.js');
+const { Client, MessageAttachment, Message } = require('discord.js');
 const bot = new Discord.Client();
 
 
@@ -168,7 +168,7 @@ bot.on('message', message=> {
         
         case 'info':
             if(args[1] === 'version'){
-                const embed = new Discord.RichEmbed()
+                const embed = new Discord.MessageEmbed()
                 .setAuthor("Requested by "+message.author.username, message.author.avatarURL())
                 .setColor('#00FA9A')
                 .setTitle("Current Bot Version")
@@ -179,7 +179,7 @@ bot.on('message', message=> {
             else if(args[1] === 'nupdate'){
                 botup = "There are no current public plans for the next update. Please try again another time.";
                 
-                const embed = new Discord.RichEmbed()
+                const embed = new Discord.MessageEmbed()
                 .setAuthor("Requested by "+message.author.username, message.author.avatarURL())
                 .setColor('#FF00FF')
                 .setTitle("Upcoming Update Information")
@@ -193,7 +193,7 @@ bot.on('message', message=> {
                 //message.channel.send("There are **"+olds+"** oldie pictures in the folder so far! \n\nDo you have a picture you want to add to the command? Feel free to DM Gabe with your suggestion!");
             }
             else if(args[1] === 'changelog'){
-                const embed = new Discord.RichEmbed()
+                const embed = new Discord.MessageEmbed()
                 .setAuthor("Requested by "+message.author.username, message.author.avatarURL())
                 .setColor('#DC143C')
                 .setTitle("VirusBot "+version+" Changelog")
@@ -211,7 +211,7 @@ bot.on('message', message=> {
                 message.channel.send(embed);
             }
             else if(args[1] === 'bot'){
-                const embed = new Discord.RichEmbed()
+                const embed = new Discord.MessageEmbed()
                 .setAuthor("Requested by "+message.author.username, message.author.avatarURL())
                 .setColor('#00FF00')
                 .setTitle("Who am I?")
@@ -221,7 +221,7 @@ bot.on('message', message=> {
             }
             else {
                 _info = "Current info available: \n\n-version: The current version of the bot.\n-nupdate: Provides little information about the next upcoming update.\n-bot: Gives info on the bot. \n-oldies: Shows how many pictures are in the 'oldie' command.\n-changelog: See what new features got added to the bot! \n\n[Please leave a space between the command and the selected word.]\nEg. 'v!info bot'";
-                const embed = new Discord.RichEmbed()
+                const embed = new Discord.MessageEmbed()
                 .setAuthor("Requested by "+message.author.username, message.author.avatarURL())
                 .setColor('#00BFFF')
                 .setTitle("Information Command's Options")
@@ -263,7 +263,7 @@ bot.on('message', message=> {
             message.channel.send("To celebrate the birthday of a wonderful friend!")
             indexroll = 0;
             rollboll = true;
-            currentmoon = new Attachment(rollpics[0]);
+            currentmoon = new MessageAttachment(rollpics[0]);
             message.channel.send(currentmoon).then(message => {message.react("◀️");
         message.react("▶️");
         message.react("🔀"); 
@@ -368,7 +368,7 @@ bot.on('message', message=> {
         break;
 
         case 'me':
-            const embed = new Discord.RichEmbed()
+            const embed = new Discord.MessageEmbed()
                 .setAuthor("About You", message.author.avatarURL())
                 .setColor('#00BFFF')
                 .setTitle(message.author.username)
@@ -538,106 +538,106 @@ bot.on('message', message=> {
                 break;
 
         case 'moonuwu':
-                const attachment1 = new Attachment('https://cdn.discordapp.com/attachments/606957183900450864/634960062519050261/2019071723184300-BF19FBEA37724338D87F26F17A3B97B2_2.jpg');
+                const attachment1 = new MessageAttachment('https://cdn.discordapp.com/attachments/606957183900450864/634960062519050261/2019071723184300-BF19FBEA37724338D87F26F17A3B97B2_2.jpg');
                 message.channel.send(attachment1);
                 break;
 
         case 'sad':
-                const attachment2 = new Attachment('https://cdn.discordapp.com/attachments/606957047082123264/631320733808721931/EGXV4R3WkAIyAP5.png');
+                const attachment2 = new MessageAttachment('https://cdn.discordapp.com/attachments/606957047082123264/631320733808721931/EGXV4R3WkAIyAP5.png');
                 message.channel.send(attachment2);
                 break;
 
         case 'ajoke':
-                const attachment3 = new Attachment('https://cdn.discordapp.com/attachments/398526069910798348/635638676201668685/FB_IMG_1554240681853.jpg');
+                const attachment3 = new MessageAttachment('https://cdn.discordapp.com/attachments/398526069910798348/635638676201668685/FB_IMG_1554240681853.jpg');
                 message.channel.send(attachment3);
                 break;
 
         case 'buddy':
-                const attachment4 = new Attachment('https://cdn.discordapp.com/attachments/398526069910798348/635640325846728722/FB_IMG_1563678345828.jpg');
+                const attachment4 = new MessageAttachment('https://cdn.discordapp.com/attachments/398526069910798348/635640325846728722/FB_IMG_1563678345828.jpg');
                 message.channel.send(attachment4);
                 break;
 
         case 'clown2':
-                const attachment5 = new Attachment('https://cdn.discordapp.com/attachments/437799192035983370/635644513217413122/image0.png');
+                const attachment5 = new MessageAttachment('https://cdn.discordapp.com/attachments/437799192035983370/635644513217413122/image0.png');
                 message.channel.send("Go ahead. Take a seat. It's your time for an interview. \n")
                 message.channel.send(attachment5);
                 break;
 
         case 'thouthefuck':
-                const attachment6 = new Attachment('https://cdn.discordapp.com/attachments/635602329927811113/635651754377085044/image0.jpg');
+                const attachment6 = new MessageAttachment('https://cdn.discordapp.com/attachments/635602329927811113/635651754377085044/image0.jpg');
                 message.channel.send(attachment6);
                 break;
         
         case 'nice':
-                const attachment7 = new Attachment('https://cdn.discordapp.com/attachments/408750397675536404/601466819181805578/baca561.jpg');
+                const attachment7 = new MessageAttachment('https://cdn.discordapp.com/attachments/408750397675536404/601466819181805578/baca561.jpg');
                 message.channel.send(attachment7);
                 break;
 
         case 'dong':
-                const attachment8 = new Attachment('https://cdn.discordapp.com/attachments/607654317079396410/635844808635580426/z6n_7Qz8SlwW5uu7KjzVnz7rOnEhXbYBIj5IquOSkVI.jpg');
+                const attachment8 = new MessageAttachment('https://cdn.discordapp.com/attachments/607654317079396410/635844808635580426/z6n_7Qz8SlwW5uu7KjzVnz7rOnEhXbYBIj5IquOSkVI.jpg');
                  message.channel.send(attachment8);
                 break;
 
         case 'funky':
-                const attachment9 = new Attachment('https://media.discordapp.net/attachments/635602329927811113/635700121056837633/image0.png');
+                const attachment9 = new MessageAttachment('https://media.discordapp.net/attachments/635602329927811113/635700121056837633/image0.png');
                 message.channel.send(attachment9);
                 break;
 
         case 'toxicegg':
-                const attachment10 = new Attachment('https://cdn.discordapp.com/attachments/635602329927811113/635700840140767232/T_O_X_I_C.webm');
+                const attachment10 = new MessageAttachment('https://cdn.discordapp.com/attachments/635602329927811113/635700840140767232/T_O_X_I_C.webm');
                 message.channel.send(attachment10);
                 break;
 
         case 'egirl':
-                const attachment11 = new Attachment('https://cdn.discordapp.com/attachments/398526069910798348/635702342372818944/image0.png');
+                const attachment11 = new MessageAttachment('https://cdn.discordapp.com/attachments/398526069910798348/635702342372818944/image0.png');
                 message.channel.send(attachment11);
                 break;
 
         case 'WAHOO':
-                const attachment12 = new Attachment('https://cdn.discordapp.com/attachments/616764759106256913/635214611804717067/video0.mp4');
+                const attachment12 = new MessageAttachment('https://cdn.discordapp.com/attachments/616764759106256913/635214611804717067/video0.mp4');
                 message.channel.send(attachment12);
                 break;
 
         case 'famished':
                 message.channel.send("[ARCHIVED] \nOk, so you know those movies which has that ONE villain you love to hate, and then suddenly the villain joins the good side and now you're just straight up in love with the person? (Not LOVE love ofc cuz you can't be with a fictional character.) Meet Jet. \nJet's that kind of person you might be scared of at first, but as you get to meet them, you can't leave them alone. One of her 'special abilities' is that she can be an entire mood at times. She even had a nickname for it! She's also pretty tough and sarcastic, but the times she breaks out into a playful mood can be arguably considered to be pretty cute. (but ***DO NOT CALL HER CUTE***, or else you might end up with a gun pointed at your face.) She's no Izzle, no Moon, no Pip, nor an Irri. She's *Jet*, and I'm glad she's in the gang. Once a mood, always a mood!");
-                const attachment13 = new Attachment('https://cdn.discordapp.com/attachments/607654317079396410/638828874129604608/unknown.png');
+                const attachment13 = new MessageAttachment('https://cdn.discordapp.com/attachments/607654317079396410/638828874129604608/unknown.png');
                 message.channel.send(attachment13);
                 break;
 
         case 'whatcanIsay':
-                const attachment14 = new Attachment('https://66.media.tumblr.com/69f01a4c46e75a6bb4025125fe4c1d6a/tumblr_inline_p355yfsMQ61s1rco5_1280.gif');
+                const attachment14 = new MessageAttachment('https://66.media.tumblr.com/69f01a4c46e75a6bb4025125fe4c1d6a/tumblr_inline_p355yfsMQ61s1rco5_1280.gif');
                 message.channel.send(attachment14);
                 break;
 
         case 'clown':
-                const attachment15 = new Attachment('https://cdn.discordapp.com/attachments/455154217003384853/613906735937224704/FB_IMG_1565934985882.jpg');
+                const attachment15 = new MessageAttachment('https://cdn.discordapp.com/attachments/455154217003384853/613906735937224704/FB_IMG_1565934985882.jpg');
                 message.channel.send(attachment15);
                 break;
 
         case 'rock':
-            const attachment16 = new Attachment('http://pa1.narvii.com/6448/39ff33fbbd17386ffd3838a18d92de1b041f133a_00.gif');
+            const attachment16 = new MessageAttachment('http://pa1.narvii.com/6448/39ff33fbbd17386ffd3838a18d92de1b041f133a_00.gif');
             message.channel.send("GO KLAVIER!!");
             message.channel.send(attachment16);
             break;
 
         case 'laugh':
-            const attachment17 = new Attachment('https://cdn.discordapp.com/attachments/686423110198624266/707806244039295036/Laugh_1.mp4');
+            const attachment17 = new MessageAttachment('https://cdn.discordapp.com/attachments/686423110198624266/707806244039295036/Laugh_1.mp4');
                 message.channel.send(attachment17);
                 break;
 
                 case 'denyhug':
-                    const attachment18 = new Attachment('https://tenor.com/view/boy-punish-mad-pissed-off-slap-gif-14667643');
+                    const attachment18 = new MessageAttachment('https://tenor.com/view/boy-punish-mad-pissed-off-slap-gif-14667643');
                     message.channel.send("The hug was denied! Off with you, ya thot!");
                     message.channel.send(attachment18);
                     break;
 
         case 'imthisclose':
-                const attachment19 = new Attachment('https://cdn.discordapp.com/attachments/616765923491053671/716435153404035172/video0.mp4');
+                const attachment19 = new MessageAttachment('https://cdn.discordapp.com/attachments/616765923491053671/716435153404035172/video0.mp4');
                 message.channel.send(attachment19);
                 break;
 
         case 'diggy':
-                const attachment20 = new Attachment('https://cdn.discordapp.com/attachments/635683701987999804/716436252832039042/video0.mp4');
+                const attachment20 = new MessageAttachment('https://cdn.discordapp.com/attachments/635683701987999804/716436252832039042/video0.mp4');
                 message.channel.send(attachment20);
              break;
 
@@ -819,7 +819,7 @@ bot.on('message', message=> {
                     message.channel.send ( { files: ["./hugs/hugif (" + gifNumber + ").gif"]})
                     suplexChance = Math.floor (Math.random() * (10 - 1 + 1)) +1;
                     if (suplexChance <= 1){
-                        const suplex = new Attachment('https://cdn6.omidoo.com/sites/default/files/imagecache/1200x630/images/headline/201803/thesuplex2.jpg');
+                        const suplex = new MessageAttachment('https://cdn6.omidoo.com/sites/default/files/imagecache/1200x630/images/headline/201803/thesuplex2.jpg');
                         message.channel.send("But surprise! It turned into a hecking suplex!")
                         message.channel.send(suplex);
                     }
@@ -929,7 +929,7 @@ bot.on('message', message=> {
                     }
 
                     bot.channels.cache.get(AQ).send("Question Sent! Let's await for an answer...");
-                    const questionembed = new Discord.RichEmbed()
+                    const questionembed = new Discord.MessageEmbed()
                     .setAuthor(message.author.tag, message.author.avatarURL())
                     .setColor('#DC143C')
                     .addField("Incoming Question from this user!", "\n**Question:** "+questionmessage+"\n")
@@ -946,7 +946,7 @@ bot.on('message', message=> {
                     else{
                         answermessage = message.content.slice(7)
 
-                        const answerembed = new Discord.RichEmbed()
+                        const answerembed = new Discord.MessageEmbed()
                         .setAuthor(message.author.tag, message.author.avatarURL())
                         .setColor('#DC143C')
                         .addField("A question has been answered!", "\n**Question:** "+questionmessage+"\n\n**Answer:** "+answermessage+"\n")
@@ -1088,7 +1088,7 @@ bot.on('message', message=> {
                     gid = message.guild.id;
                 }
                 else{ gid = '[NOT VIEWABLE]'}
-                const serverembed = new Discord.RichEmbed()
+                const serverembed = new Discord.MessageEmbed()
                 .setAuthor("Requested by "+message.author.username, message.author.avatarURL())
                 .setColor('#00BFFF')
                 .setTitle(message.guild.name)
@@ -1105,7 +1105,7 @@ bot.on('message', message=> {
         case 'IDvatar':
                 if (args[1] != undefined){
                     Idget = args[1];
-                    const IDaembed = new Discord.RichEmbed()
+                    const IDaembed = new Discord.MessageEmbed()
                     .setAuthor("Avatar of user "+Idget)
                     .setColor('#00BFFF')
                     .setTitle(bot.users.cache.get(Idget).username)
@@ -1354,7 +1354,7 @@ bot.on('message', message=> {
         case 'report':
             message.channel.send("Alright. The report was sent via DM to the bot owner. Thank you for your input.");
             rep = message.content.slice(9)
-            const reportEmbed = new Discord.RichEmbed()
+            const reportEmbed = new Discord.MessageEmbed()
             .setAuthor(message.author.tag, message.author.avatarURL())
             .setColor(0xFF0000)
             .setTitle("Report Submission")
@@ -1366,7 +1366,7 @@ bot.on('message', message=> {
             case 'suggest':
                     message.channel.send("Alright. The suggestion was sent via DM to the bot owner. Thank you for your support!");
                     sug = message.content.slice(10)
-                    const suggestEmbed = new Discord.RichEmbed()
+                    const suggestEmbed = new Discord.MessageEmbed()
                     .setAuthor(message.author.tag, message.author.avatarURL())
                     .setColor(0xFF0000)
                     .setTitle("Suggestion Submission")
@@ -1707,7 +1707,7 @@ bot.on('message', message=> {
             //message.channel.send("``` 《《 VIRUS COMMANDS 》》 \n\nPAGE 1. \n\n────────\n\n☆ The following commands have to be prefaced with [ v! ] .\n\n-> General Commands:\ncommands[number] - Brings up that number's page of commands.\nhi - Says hello.\nbye - Says goodbye.\nhelp - Gives help.\ninfo - Gives info.\nping - Pings you!\nme - Gives information about the command-user. \ntodaysong - Posts Today's Song \n\n-> Fun Commands:\nlove - Virus loves you back!\nhug - Hug someone! \ncall - Call a random server! [To hang up, use 'v!hang'.]\ncount - Virus starts counting - let's see how far we can go!\ntimetorockwiththebiggitybuckbumble - Virus sings the best song known to man! (Do not do this in public channels.)\nbored - Virus will cure your boredom.\nfuckyou - Why the hate? \nfacts - Virus will tell you a fact, then redact it after a while. \nslot - Feeling lucky? Take a roll in the slot machine!\nimopsslots - Feeling MORE lucky? HA! This should kill the mood...\nvibecheck - Time for a vibe check. \ndruxwario - Virus will you a story about a heartwarming event. \nts - Virus will tell you a story. Follow the initial command with a number to read the next part of the story!\nweeb - Gets Virus excited!\njoe - Joe who? \ndiscotime - It's time to pray! \npurewars - Begin the Pure Wars! \npurestandings - Shows the current standings for the Pure Wars. \nboomerpass - Get the boomer-pass, but other people can steal it.\nboomerbreak - Throw away the boomer-pass!\ndead - Did you die?\ngamestop - What will you buy?\ngay - You're looking kinda fresh doe...\nnoswears - For the one dude who keeps on swearing\ngluck - Virus wishes you good luck!\nbluck - Now you're just a horrible person...\nanalyse - Analyses a post \nBK - A command that supports trans people. \nbottomtext - Virus provides you with a bottom-text - fresh off the iron!\nedgy - Sup, ma son? \nsco - Virus will act gay for a bit. \nheylook - Hey look buddy. \nannounce - Virus has a special announcement!\n\n──────\n\nPLEASE USE [ v!commands2 ] TO VIEW THE NEXT PAGE.```");
             message.channel.send("Gotcha! Posting the commands via DMs...");
             
-            const embed1 = new Discord.RichEmbed()
+            const embed1 = new Discord.MessageEmbed()
                 .setAuthor("Requested by "+message.author.username, message.author.avatarURL())
                 .setColor('#FF1493')
                 .setTitle("Commands - Page 1")
@@ -1741,7 +1741,7 @@ bot.on('message', message=> {
             
             //People and Image
             //message.channel.send("``` 《《 VIRUS COMMANDS 》》 \n\nPAGE 2. \n\n────────\n\n☆ The following commands have to be prefaced with [ v! ] .\n\n-> People Commands:\ndru - Do it Dru!\nmoon - Bring it in, Moon!\npkoby - The pure lad.\nkirB - Whoa, a Kirby?\nender - A wild Ender appears!\nkorbs - my boi korbs.\nprince - Please don't say the n word.\neliz - Where's Ellie Bean?\nnokobo - Some random boomer I know.\njasper - Hyper...critical?.\njacob - Hot lad.\nghost - Spoookkkkyyyyy.....\ngoat - What? An epic gamer? \nname - Just an ego booster. \nizzle - What happens if I say 'furry' here? \nethan - You all know who he is!\ncain - Channel-indeed. \nkevin - Everyone...bow? \nsnoop - Ugh, Persona...\njet - Pings Jet. That's all.\nrowlet - Oh my. \nirri - Save us Irri!\npip - The purest person. So, so pure.\nmimik - Who's that?\nreun - The best boy!\nknux - You don't have one yet?!\n\n-> Image Commands:\nclown - Virus will provide you with the most important item of clothing for a clown.\nclown2 - Virus will bring you up for an interview.\nbruh - Bruh.\nwtf - Reacts with a 'Wtf' picture. Most are offensive, do be careful.\nmoonuwu - Virus gives you a shiney uwu!\najoke - A joke is a joke, Budtard.\nbuddy - Ok, Buddy.\nwhatcanIsay - A magical gif. \noldie - Posts a picture from the Glory Days...\ndedmeme - Posts a dead meme from Gabe's one year old folder.\nsad - Virus will provide an image for the saddened.\nnice - Virus will react with a 'Nice' image. \ndong - Where's the dong? \nfunky - Funky got that sicko I need. \ntoxicegg - Dru, get out. \nWAHOO - Mario for the PS4 cancels KH3\negirl - SHUT UP, E-GIRL! \nthouthefuck - BY THE POPE!\n\n──────\n\nPLEASE USE [ v!commands3 ] TO VIEW THE NEXT PAGE.```")
-            const embed2 = new Discord.RichEmbed()
+            const embed2 = new Discord.MessageEmbed()
             .setAuthor("Requested by "+message.author.username, message.author.avatarURL())
                 .setColor('#FF1493')
                 .setTitle("Commands - Page 2")
@@ -1772,7 +1772,7 @@ bot.on('message', message=> {
            
             //Replies and Reactions
             //message.channel.send("``` 《《 VIRUS COMMANDS 》》 \n\nPAGE 3.\n\n────────\n\n☆ The following commands do not have to be prefaced with [ v! ] .\n\n-> Fun Commands:\nLET ROCK - Start a party!\nboomer - Shut up. This command can only be used if you have the boomer-pass (see Page 1).\nHOL UP - Virus will hold for you.\n\n-> User-Specific Commands:\nowo - uwu? - [ Only Izzle and Moon can use this command. ] \nDrizzle - Excuse me? - [ Only Jet can use this command. ]\nJoe - Joe Who? - [ Only Reun can use this command. ] \n\n────────\n\n☆ Adding the following reactions to any message will trigger Virus to send the correlated response!\n\n-> General Commands:\n:herb: - Join the support gang! (In case of spam, type 'v!herbbreak')\n\n-> User-Specific Commands:\njoystick - For the downed gamer. - [ This response can only be triggered by Gabe. ] \nguitar - Quick! Vibe Check. - [ This response can only be triggered by Snoop and Reun. ]\n\n────────\n\nEND OF COMMAND LIST.```");
-            const embed3 = new Discord.RichEmbed()
+            const embed3 = new Discord.MessageEmbed()
             .setAuthor("Requested by "+message.author.username, message.author.avatarURL())
                 .setColor('#FF1493')
                 .setTitle("Commands - Page 3")
@@ -1803,7 +1803,7 @@ bot.on('message', message=> {
                 
                 bot.users.cache.get(message.author.id).send(embed3);
             
-                    const embed4 = new Discord.RichEmbed()
+                    const embed4 = new Discord.MessageEmbed()
                     .setAuthor("Requested by "+message.author.username, message.author.avatarURL())
                         .setColor('#FF1493')
                         .setTitle("Commands - Page 4")
@@ -1826,7 +1826,7 @@ bot.on('message', message=> {
                         
                         bot.users.cache.get(message.author.id).send(embed4);
             
-                    const embed5 = new Discord.RichEmbed()
+                    const embed5 = new Discord.MessageEmbed()
                     .setAuthor("Requested by "+message.author.username, message.author.avatarURL())
                         .setColor('#FF1493')
                         .setTitle("Commands - Page 5")
@@ -1859,7 +1859,7 @@ bot.on('message', message=> {
     /*
     if (message.content.startsWith("bruh")) {
         if (message.author.id !== '437286707264749570' || message.author.id !== '613841370905444423'){
-        const attachment = new Attachment('https://media.discordapp.net/attachments/606957397826863195/631320823386341408/EGXRYZoU0AANBFT.png');
+        const attachment = new MessageAttachment('https://media.discordapp.net/attachments/606957397826863195/631320823386341408/EGXRYZoU0AANBFT.png');
         message.channel.send(attachment);
         }
     }
@@ -1874,7 +1874,7 @@ bot.on('message', message=> {
        else {
     bot.channels.cache.get(callids[callB]).send(message.author.tag +": "+message);
     if (message.attachments.first() != undefined){
-        callattach = new Attachment (message.attachments.first().url);
+        callattach = new MessageAttachment (message.attachments.first().url);
         bot.channels.cache.get(callids[callB]).send(callattach);
     }
 }
@@ -1887,7 +1887,7 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
        else {
     bot.channels.cache.get(callA).send(message.author.tag +": "+message);
     if (message.attachments.first() != undefined){        
-        callattach = new Attachment (message.attachments.first().url);
+        callattach = new MessageAttachment (message.attachments.first().url);
         bot.channels.cache.get(callA).send(callattach);
     }
 }
@@ -2158,7 +2158,7 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
     if (message.content.includes("boomer") && pass === message.author.id) {
 
         if (message.author.id !== '437286707264749570' || message.author.id !== '613841370905444423'){
-            const attachment = new Attachment('https://cdn.discordapp.com/attachments/398526069910798348/634885215994642459/boomer.png');
+            const attachment = new MessageAttachment('https://cdn.discordapp.com/attachments/398526069910798348/634885215994642459/boomer.png');
             message.channel.send(attachment);
         }
     }
@@ -2277,7 +2277,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             }
 
         if (emoji.name === "💰") {
-            stolenmeme = new Attachment (message.attachments.first().url);
+            stolenmeme = new MessageAttachment (message.attachments.first().url);
             message.channel.send("This is a message to alert that "+user.username+" has stolen "+message.author.username+"'s meme. No further action is required.");
             bot.users.cache.get(user.id).send(stolenmeme);
         }
@@ -2328,7 +2328,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     message.channel.send ( { files: ["./hugs/hugif (" + gifNumber + ").gif"]})
                     suplexChance = Math.floor (Math.random() * (10 - 1 + 1)) +1;
                     if (suplexChance <= 1){
-                        const suplex = new Attachment('https://cdn6.omidoo.com/sites/default/files/imagecache/1200x630/images/headline/201803/thesuplex2.jpg');
+                        const suplex = new MessageAttachment('https://cdn6.omidoo.com/sites/default/files/imagecache/1200x630/images/headline/201803/thesuplex2.jpg');
                         message.channel.send("But surprise! It turned into a hecking suplex!")
                         message.channel.send(suplex);
                     }}
@@ -2346,7 +2346,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     indexroll = 0;
                 }
                 else { indexroll++; }
-                currentmoon = new Attachment(rollpics[indexroll]);
+                currentmoon = new MessageAttachment(rollpics[indexroll]);
             message.channel.send(currentmoon).then(message => {message.react("◀️");
             message.react("▶️");
             message.react("🔀");
@@ -2360,7 +2360,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                     indexroll = rollpics.length - 1;
                 }
                 else { indexroll--; }
-                currentmoon = new Attachment(rollpics[indexroll]);
+                currentmoon = new MessageAttachment(rollpics[indexroll]);
             message.channel.send(currentmoon).then(message => {message.react("◀️");
             message.react("▶️");
             message.react("🔀");
@@ -2371,7 +2371,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             if (emoji.name == "🔀" && rollboll == true && currentroll == message.id){
                 message.delete();
                 indexroll = Math.floor(Math.random() * (rollpics.length -1))
-                currentmoon = new Attachment(rollpics[indexroll]);
+                currentmoon = new MessageAttachment(rollpics[indexroll]);
             message.channel.send(currentmoon).then(message => {message.react("◀️");
             message.react("▶️");
             message.react("🔀");
