@@ -142,7 +142,7 @@ async function createAPIMessage(interaction, content){
     .resolveData()
     .resolveFiles();
 
-    return ( ...apiMessage.data, files: apiMessage.files );
+    return { ...apiMessage.data, files: apiMessage.files };
 }
 
 bot.on('message', message=> {
