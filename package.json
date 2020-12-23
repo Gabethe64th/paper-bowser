@@ -1,28 +1,16 @@
 {
-
   "name": "Virus2",
-
   "description": "Example",
-
   "version": "1.0.0",
-
   "main": "bot.js",
-
   "scripts": {
-
     "start": "node bot.js"
-
   },
-
   "dependencies": {
-
     "discord.js": "^12.5.1",
     "ffmpeg": "0.0.4",
     "opusscript": "0.0.7",
-    "ytdl-core-discord": "^1.2.0",
-
-    "request": "2.81.0"
-
+    "request": "2.81.0",
+    "ytdl-core-discord": "^1.2.0"
   }
-
 }
