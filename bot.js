@@ -4712,15 +4712,10 @@ bot.on("message", async message => {
       .play(ytdl(song.url))
       .on("finish", () => {
         vibepicked = Math.floor(Math.random() * vibesongs.length);
-        songInfo = ytdl.getInfo(vibesongs[vibepicked]);
-
-        song = {
-            title: songInfo.videoDetails.title,
-            url: songInfo.videoDetails.video_url,
-       };
-        serverQueue.songs.push(song);
+        songInfo1 = "play" + vibesongs[vibepicked];
         serverQueue.songs.shift();
-        play(guild, serverQueue.songs[0]);
+        execute(songInfo1, serverQueue);
+        //play(guild, serverQueue.songs[0]);
       })
       .on("error", error => console.error(error));
     dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
