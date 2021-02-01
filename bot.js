@@ -4841,12 +4841,8 @@ bot.on("message", async message => {
       return;
   }
   
-  
-
-  async function play(guild, song) {
-    const serverQueue = queue.get(guild.id);
-    if (!song) {
-        vibepicked = Math.floor(Math.random() * vibesongs.length);
+  async function picksong(){
+    vibepicked = Math.floor(Math.random() * vibesongs.length);
         const songInfo = await ytdl.getInfo(vibesongs[vibepicked]);
         const song1 = {
           title: songInfo.videoDetails.title,
@@ -4857,6 +4853,12 @@ bot.on("message", async message => {
         console.log("Received as: "+song1.title+ " ("+song1.url+")");
         serverQueue.songs.push(song1);
         play(guild, song1);
+  }
+
+  function play(guild, song) {
+    const serverQueue = queue.get(guild.id);
+    if (!song) {
+        picksong();
     }
   
     const dispatcher = serverQueue.connection
