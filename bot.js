@@ -4856,15 +4856,7 @@ bot.on("message", async message => {
         
         console.log("Received as: "+song1.title+ " ("+song1.url+")");
         serverQueue.songs.push(song1);
-        const dispatcher = serverQueue.connection
-        .play(ytdl(song1.url))
-        .on("finish", () => {
-        serverQueue.songs.shift();
-        play(guild, serverQueue.songs[0]);
-      })
-      .on("error", error => console.error(error));
-        dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
-        serverQueue.textChannel.send(`Start playing: **${song1.title}**`);
+        
     }
   
     const dispatcher = serverQueue.connection
