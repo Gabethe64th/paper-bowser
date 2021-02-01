@@ -4845,13 +4845,14 @@ bot.on("message", async message => {
     const serverQueue = queue.get(guild.id);
     if (!song) {
         vibepicked = Math.floor(Math.random() * vibesongs.length);
-        ytdl.getInfo(vibesongs[vibepicked] ,{downloadURL: true}, 
+        song = ytdl.getInfo(vibesongs[vibepicked] ,{downloadURL: true}, 
         function(err, info){
             if (err) throw err;
             song = {
                 title: info.title,
                 url: info.video_url,
            };
+           return song;
         });
         
         serverQueue.songs.push(song);
