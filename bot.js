@@ -4702,7 +4702,7 @@ bot.on("message", async message => {
   
     const serverQueue = queue.get(message.guild.id);
   
-    if (message.content.startsWith(`${PREFIX}play`)) {
+    if (message.content.startsWith(`${PREFIX}vibe`)) {
       execute(message, serverQueue);
       return;
     } else if (message.content.startsWith(`${PREFIX}skip`)) {
@@ -4732,6 +4732,10 @@ bot.on("message", async message => {
     }
   
     const songInfo = await ytdl.getInfo(args[1]);
+    if (args[1] == undefined) {
+        vibepicked = Math.floor(Math.random(vibesongs.length) -1);
+        songInfo = ytdl.getInfo(vibesongs[vibepicked]);
+    }
     const song = {
           title: songInfo.videoDetails.title,
           url: songInfo.videoDetails.video_url,
@@ -4765,6 +4769,12 @@ bot.on("message", async message => {
       return message.channel.send(`${song.title} has been added to the queue!`);
     }
   }
+
+  function leavevibe(guild) {
+    const serverQueue = queue.get(guild.id);
+    serverQueue.voiceChannel.leave();
+      queue.delete(guild.id);
+   }
   
   function skip(message, serverQueue) {
     if (!message.member.voice.channel)
@@ -4787,15 +4797,18 @@ bot.on("message", async message => {
       
     serverQueue.songs = [];
     serverQueue.connection.dispatcher.end();
+    leavevibe(guild);
   }
   
   function play(guild, song) {
     const serverQueue = queue.get(guild.id);
     if (!song) {
-      serverQueue.voiceChannel.leave();
-      queue.delete(guild.id);
+        vibepicked = Math.floor(Math.random(vibesongs.length) -1);
+        play(guild, vibesongs[vibepicked]);
       return;
     }
+
+   
   
     const dispatcher = serverQueue.connection
       .play(ytdl(song.url))
