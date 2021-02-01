@@ -4619,6 +4619,18 @@ bot.on("message", async message => {
           title: songInfo.videoDetails.title,
           url: songInfo.videoDetails.video_url,
      };
+
+     while (song.title == undefined) {
+        vibepicked = Math.floor(Math.random() * vibesongs.length);
+        console.log("Got vibe number " + vibepicked + " aka "+ vibenames[vibepicked] + "("+vibesongs[vibepicked]+")");
+        //oh
+        songInfo = await ytdl.getInfo(vibesongs[vibepicked]);
+
+        var song = {
+            title: songInfo.videoDetails.title,
+            url: songInfo.videoDetails.video_url,
+       };
+     }
   
     if (!serverQueue) {
       const queueContruct = {
