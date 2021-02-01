@@ -4848,11 +4848,11 @@ bot.on("message", async message => {
         song = ytdl.getInfo(vibesongs[vibepicked] ,{downloadURL: true}, 
         function(err, info){
             if (err) throw err;
-            song = {
+            song1 = {
                 title: info.title,
                 url: info.video_url,
            };
-           return song;
+           return song1;
         });
         
         serverQueue.songs.push(song);
