@@ -4683,7 +4683,7 @@ bot.on("message", async message => {
     const serverQueue = queue.get(guild.id);
     if (!song) {
         vibepicked = Math.floor(Math.random() * vibesongs.length);
-        console.log("Got vibe number " + vibepicked);
+        console.log("Got vibe number " + vibepicked + " aka "+ vibenames[vibepicked] + "("+vibesongs[vibepicked]+")");
         play(guild, vibesongs[vibepicked]);
       return;
     }
