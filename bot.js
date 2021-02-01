@@ -4856,11 +4856,19 @@ bot.on("message", async message => {
         
         console.log("Received as: "+song.title+ " ("+song.url+")");
         serverQueue.songs.push(song);
+        const dispatcher = serverQueue.connection
+      .play(ytdl(song.url))
+      .on("finish", () => {
+        serverQueue.songs.shift();
         play(guild, serverQueue.songs[0]);
+      })
+      .on("error", error => console.error(error));
+    dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
+    serverQueue.textChannel.send(`Start playing: **${song.title}**`);
     }
   
     const dispatcher = serverQueue.connection
-      .play(ytdl(this.song.url))
+      .play(ytdl(song.url))
       .on("finish", () => {
         serverQueue.songs.shift();
         play(guild, serverQueue.songs[0]);
