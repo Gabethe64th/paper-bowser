@@ -4852,10 +4852,13 @@ bot.on("message", async message => {
                 title: info.title,
                 url: info.video_url,
            };
+           console.log("Attempting to add: "+song1.title);
            return song1;
         });
         
+        console.log("Received as: "+song.title+ " ("+song.url+")");
         serverQueue.songs.push(song);
+        console.log(serverQueue.songs);
         play(guild, serverQueue.songs[0]);
     }
   
