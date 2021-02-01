@@ -4837,7 +4837,7 @@ bot.on("message", async message => {
       
     serverQueue.songs = [];
     serverQueue.voiceChannel.leave();
-      queue.delete(guild.id);
+      queue.delete(message.guild.id);
       return;
   }
   
