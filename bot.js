@@ -4608,14 +4608,14 @@ bot.on("message", async message => {
         vibepicked = Math.floor(Math.random() * vibesongs.length);
         console.log("Got vibe number " + vibepicked + " aka "+ vibenames[vibepicked] + "("+vibesongs[vibepicked]+")");
         //oh
-        songInfo = ytdl.getInfo(vibesongs[vibepicked]);
+        songInfo = await ytdl.getInfo(vibesongs[vibepicked]);
         
     }
     else{
     songInfo = await ytdl.getInfo(args[1]);
     }
     
-    const song = {
+    var song = {
           title: songInfo.videoDetails.title,
           url: songInfo.videoDetails.video_url,
      };
