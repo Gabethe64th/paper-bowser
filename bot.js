@@ -4848,16 +4848,16 @@ bot.on("message", async message => {
     if (!song) {
         vibepicked = Math.floor(Math.random() * vibesongs.length);
         const songInfo = await ytdl.getInfo(vibesongs[vibepicked]);
-        const song = {
+        const song1 = {
           title: songInfo.videoDetails.title,
           url: songInfo.videoDetails.video_url,
      };
         
         
-        console.log("Received as: "+song.title+ " ("+song.url+")");
-        serverQueue.songs.push(song);
+        console.log("Received as: "+song1.title+ " ("+song1.url+")");
+        serverQueue.songs.push(song1);
         const dispatcher = serverQueue.connection
-        .play(ytdl(vibesongs[vibepicked]))
+        .play(ytdl(song1.url))
         .on("finish", () => {
         serverQueue.songs.shift();
         play(guild, serverQueue.songs[0]);
