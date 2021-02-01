@@ -4605,7 +4605,7 @@ bot.on("message", async message => {
     }
   
     if (args[1] == undefined) {
-        vibepicked = Math.floor(Math.random(vibesongs.length) -1);
+        vibepicked = Math.floor(Math.random() * vibesongs.length) -1;
         songInfo = ytdl.getInfo(vibesongs[vibepicked]);
     }
     else{
@@ -4679,7 +4679,7 @@ bot.on("message", async message => {
   function play(guild, song) {
     const serverQueue = queue.get(guild.id);
     if (!song) {
-        vibepicked = Math.floor(Math.random(vibesongs.length) -1);
+        vibepicked = Math.floor(Math.random() * vibesongs.length) -1;
         play(guild, vibesongs[vibepicked]);
       return;
     }
