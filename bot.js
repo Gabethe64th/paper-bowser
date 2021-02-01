@@ -4860,7 +4860,7 @@ bot.on("message", async message => {
     }
   
     const dispatcher = serverQueue.connection
-      .play(ytdl(song.url))
+      .play(ytdl(this.song.url))
       .on("finish", () => {
         serverQueue.songs.shift();
         play(guild, serverQueue.songs[0]);
