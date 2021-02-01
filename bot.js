@@ -4864,7 +4864,7 @@ bot.on("message", async message => {
       })
       .on("error", error => console.error(error));
         dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
-        serverQueue.textChannel.send(`Start playing: **${song.title}**`);
+        serverQueue.textChannel.send(`Start playing: **${song1.title}**`);
     }
   
     const dispatcher = serverQueue.connection
