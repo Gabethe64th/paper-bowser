@@ -4850,6 +4850,8 @@ bot.on("message", async message => {
               title: songInfo.videoDetails.title,
               url: songInfo.videoDetails.video_url,
          };
+        serverQueue.songs.push(song);
+        play(guild, serverQueue.songs[0]);
     }
   
     const dispatcher = serverQueue.connection
