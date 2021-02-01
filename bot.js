@@ -4847,15 +4847,7 @@ bot.on("message", async message => {
     const serverQueue = queue.get(guild.id);
     if (!song) {
         vibepicked = Math.floor(Math.random() * vibesongs.length);
-        ytdl.getBasicInfo(vibesongs[vibepicked] ,{downloadURL: true}, 
-        function(err, info){
-            if (err) throw err;
-            song = {
-                title: info.title,
-                url: info.video_url,
-           };
-           console.log("Attempting to add: "+song.title);
-        });
+        song = ytdl.getBasicInfo(vibesongs[vibepicked]);
         
         
         console.log("Received as: "+song.title+ " ("+song.url+")");
