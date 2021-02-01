@@ -4847,7 +4847,7 @@ bot.on("message", async message => {
     const serverQueue = queue.get(guild.id);
     if (!song) {
         vibepicked = Math.floor(Math.random() * vibesongs.length);
-        const songInfo = ytdl.getBasicInfo(vibesongs[vibepicked]);
+        const songInfo = ytdl(vibesongs[vibepicked]);
         const song = {
           title: songInfo.videoDetails.title,
           url: songInfo.videoDetails.video_url,
