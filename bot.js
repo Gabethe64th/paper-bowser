@@ -4841,8 +4841,12 @@ bot.on("message", async message => {
       return;
   }
   
-  async function picksong(serverQueue){
-    vibepicked = Math.floor(Math.random() * vibesongs.length);
+  
+
+  async function play(guild, song) {
+    const serverQueue = queue.get(guild.id);
+    if (!song) {
+        vibepicked = Math.floor(Math.random() * vibesongs.length);
         const songInfo = await ytdl.getInfo(vibesongs[vibepicked]);
         const song1 = {
           title: songInfo.videoDetails.title,
@@ -4850,41 +4854,11 @@ bot.on("message", async message => {
      };
         
         
-     if (!serverQueue) {
-        const queueContruct = {
-          textChannel: message.channel,
-          voiceChannel: voiceChannel,
-          connection: null,
-          songs: [],
-          volume: 5,
-          playing: true
-        };
-    
-        queue.set(message.guild.id, queueContruct);
-    
-        queueContruct.songs.push(song1);
-    
-        try {
-          var connection = await voiceChannel.join();
-          queueContruct.connection = connection;
-          play(message.guild, queueContruct.songs[0]);
-        } catch (err) {
-          console.log(err);
-          queue.delete(message.guild.id);
-          return message.channel.send(err);
-        }
-      } else {
+        console.log("Received as: "+song1.title+ " ("+song1.url+")");
         serverQueue.songs.push(song1);
-        return message.channel.send(`${song1.title} has been added to the queue!`);
-      }
-  }
-
-  function play(guild, song) {
-    const serverQueue = queue.get(guild.id);
-    if (!song) {
-        picksong(serverQueue);
+        play(guild, song1);
     }
-  
+    else {
     const dispatcher = serverQueue.connection
       .play(ytdl(song.url))
       .on("finish", () => {
@@ -4894,7 +4868,7 @@ bot.on("message", async message => {
       .on("error", error => console.error(error));
     dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
     serverQueue.textChannel.send(`Start playing: **${song.title}**`);
-  }
+  }}
         
 
 bot.login(process.env.BOT_TOKEN);
