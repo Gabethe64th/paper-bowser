@@ -4855,7 +4855,6 @@ bot.on("message", async message => {
                 url: info.video_url,
            };
            console.log("Attempting to add: "+song1.title);
-           return song1;
         });
         song = song1;
         
