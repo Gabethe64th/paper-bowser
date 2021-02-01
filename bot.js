@@ -4700,7 +4700,13 @@ bot.on("message", async message => {
       .play(ytdl(song.url))
       .on("finish", () => {
         vibepicked = Math.floor(Math.random() * vibesongs.length);
-        serverQueue.songs.push(vibesongs[vibepicked]);
+        songInfo = ytdl.getInfo(vibesongs[vibepicked]);
+
+        song = {
+            title: songInfo.videoDetails.title,
+            url: songInfo.videoDetails.video_url,
+       };
+        serverQueue.songs.push(song);
         serverQueue.songs.shift();
         play(guild, serverQueue.songs[0]);
       })
