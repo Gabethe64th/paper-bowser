@@ -4684,14 +4684,20 @@ bot.on("message", async message => {
     if (!song) {
         vibepicked = Math.floor(Math.random() * vibesongs.length);
         console.log("Got vibe number " + vibepicked + " aka "+ vibenames[vibepicked] + "("+vibesongs[vibepicked]+")");
-        play(guild, vibesongs[vibepicked]);
+        songInfo = await ytdl.getInfo(vibesongs[vibepicked]);
+
+        song = {
+            title: songInfo.videoDetails.title,
+            url: songInfo.videoDetails.video_url,
+       };
+        play(guild, song);
       return;
     }
 
    
   
     const dispatcher = serverQueue.connection
-      .play(ytdl(song))
+      .play(ytdl(song.url))
       .on("finish", () => {
         vibepicked = Math.floor(Math.random() * vibesongs.length);
         serverQueue.songs.push(vibesongs[vibepicked]);
