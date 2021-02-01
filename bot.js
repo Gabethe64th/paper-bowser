@@ -4606,7 +4606,7 @@ bot.on("message", async message => {
   
     if (args[1] == undefined) {
         vibepicked = Math.floor(Math.random() * vibesongs.length);
-        console.log("Got vibe number " + vibepicked + "\n aka "+ vibenames[vibepicked]);
+        console.log("Got vibe number " + vibepicked + " aka "+ vibenames[vibepicked] + "("+vibesongs[vibepicked]+")");
         //oh
         songInfo = ytdl.getInfo(vibesongs[vibepicked]);
         
