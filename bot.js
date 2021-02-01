@@ -4856,7 +4856,7 @@ bot.on("message", async message => {
         
         console.log("Received as: "+song1.title+ " ("+song1.url+")");
         serverQueue.songs.push(song1);
-        
+        play(guild, song1);
     }
   
     const dispatcher = serverQueue.connection
