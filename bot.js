@@ -4584,8 +4584,6 @@ bot.on("message", async message => {
     } else if (message.content.startsWith(`${PREFIX}stop`)) {
       stop(message, serverQueue);
       return;
-    } else {
-      message.channel.send("You need to enter a valid command!");
     }
   });
   
@@ -4711,11 +4709,8 @@ bot.on("message", async message => {
     const dispatcher = serverQueue.connection
       .play(ytdl(song.url))
       .on("finish", () => {
-        vibepicked = Math.floor(Math.random() * vibesongs.length);
-        songInfo1 = "play" + vibesongs[vibepicked];
         serverQueue.songs.shift();
-        execute(songInfo1, serverQueue);
-        //play(guild, serverQueue.songs[0]);
+        play(guild, serverQueue.songs[0]);
       })
       .on("error", error => console.error(error));
     dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
