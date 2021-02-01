@@ -4567,7 +4567,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 const ytdl = require("ytdl-core");
 
 const queue = new Map();
-const songInfo;
+var songInfo;
 
 bot.on("message", async message => {
     if (message.author.bot) return;
