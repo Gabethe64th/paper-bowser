@@ -4841,7 +4841,7 @@ bot.on("message", async message => {
       return;
   }
   
-  var song1;
+  
 
   function play(guild, song) {
     const serverQueue = queue.get(guild.id);
@@ -4850,13 +4850,13 @@ bot.on("message", async message => {
         ytdl.getInfo(vibesongs[vibepicked] ,{downloadURL: true}, 
         function(err, info){
             if (err) throw err;
-            song1 = {
+            song = {
                 title: info.title,
                 url: info.video_url,
            };
-           console.log("Attempting to add: "+song1.title);
+           console.log("Attempting to add: "+song.title);
         });
-        song = song1;
+        
         
         console.log("Received as: "+song.title+ " ("+song.url+")");
         serverQueue.songs.push(song);
