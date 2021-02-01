@@ -4676,7 +4676,7 @@ bot.on("message", async message => {
       
     serverQueue.songs = [];
     serverQueue.connection.dispatcher.end();
-    leavevibe(guild);
+    serverQueue.voiceChannel.leave();
   }
   
   function play(guild, song) {
@@ -4691,8 +4691,10 @@ bot.on("message", async message => {
    
   
     const dispatcher = serverQueue.connection
-      .play(ytdl(song.url))
+      .play(ytdl(song))
       .on("finish", () => {
+        vibepicked = Math.floor(Math.random() * vibesongs.length);
+        serverQueue.songs.push(vibesongs[vibepicked]);
         serverQueue.songs.shift();
         play(guild, serverQueue.songs[0]);
       })
