@@ -4841,11 +4841,13 @@ bot.on("message", async message => {
       return;
   }
   
+  var song1;
+
   function play(guild, song) {
     const serverQueue = queue.get(guild.id);
     if (!song) {
         vibepicked = Math.floor(Math.random() * vibesongs.length);
-        song = ytdl.getInfo(vibesongs[vibepicked] ,{downloadURL: true}, 
+        ytdl.getInfo(vibesongs[vibepicked] ,{downloadURL: true}, 
         function(err, info){
             if (err) throw err;
             song1 = {
@@ -4855,10 +4857,10 @@ bot.on("message", async message => {
            console.log("Attempting to add: "+song1.title);
            return song1;
         });
+        song = song1;
         
         console.log("Received as: "+song.title+ " ("+song.url+")");
         serverQueue.songs.push(song);
-        console.log(serverQueue.songs);
         play(guild, serverQueue.songs[0]);
     }
   
