@@ -1563,136 +1563,8 @@ bot.on('message', message=> {
 
 
             
-
-            case 'vibe':
-                message.channel.send("There seems to be an unknown error happening within Virus' YouTube Downloader core. As such, this command is disabled for the time being. I'm deeply sorry for this, and will try the fix the issue as soon as possible.");
-
-                break;
-                    /*
-            case 'vibe':
-
-
-            function play(connection, message){
-                var vcserver = vcservers[message.guild.id];
-
-                vcserver.dispatcher = connection.playStream(ytdl(vcserver.queue[0], {filter: "audioonly"}));
-
-                vcserver.np = vcserver.queue[0]
-                vcserver.queue.shift();
-
-                vcserver.dispatcher.on("end", function(){
-                    if(vcserver.queue[0]){
-                        play(connection, message);
-                    }
-                    else{
-                        vib = Math.abs( Math.floor (Math.random() * (vibesongs.length - 1)));
-                        vcserver.queue.push(vibesongs[vib]);
-                        bot.channels.cache.get("687702849479508036").send("`Attempting to play: "+vibenames[vib]+"`")
-                        play(connection, message);
-                    }
-                })
-
-
-            }
-
-
-
-             if(!message.member.voiceChannel){
-                 message.channel.send("You aren't in a VC!");
-             } 
-
-             if(!vcservers[message.guild.id])
-                 vcservers[message.guild.id] = {
-                     queue: [],
-                     np: ""
-                 }
-             
-
-             var vcserver = vcservers[message.guild.id];
-
-             if (!args[1]){
-                vib = Math.floor (Math.random() * (vibesongs.length - 1));
-                message.channel.send("A song has been queued!")
-                vcserver.queue.push(vibesongs[vib])
-             }
-             else{
-                 if (!isNaN(args[1]) && (args[1] <= (vibesongs.length - 1) && args[1] >= 0)){
-                     message.channel.send("`"+ vibenames[args[1]] + "` has been queued. It will play after.")
-                     vcserver.queue.push(vibesongs[args[1]]);
-                 }
-             }
-             
-
-             if(!message.guild.voiceConnection)
-                 message.member.voiceChannel.join().then(function(connection){
-                     play(connection, message)
-                     bot.channels.cache.get("687702849479508036").send("`Joined VC at "+message.guild.name+".`")
-                 })
-             
-
-
-            break;
-
-            case 'vibeskip':
-                var vcserver = vcservers[message.guild.id];
-                    if(vcserver.dispatcher)
-                        vcserver.dispatcher.end();
-                        message.channel.send("Skipping...");
-                    
-
-            break;
-
-            case 'vibelist':
-                 message.channel.send("A temporary list can be found here: \nhttps://docs.google.com/document/d/15QwnXZMmdnPFPPa_P9ASwMUzjoiIlRoedVZwRskfgKo/edit?usp=sharing")
-            break;
-
-            case 'vibecount':
-                if (vibesongs.length == vibenames.length){
-                    message.channel.send("Everything seems ok! \n(Songs: "+vibesongs.length+")")
-                }
-                else{
-                    message.channel.send("Something's off...\n(Songs: "+vibesongs.length+" Names: "+vibenames.length+")")
-                }
-            break;
-
-
-            case 'vibeend':
-            case 'vibend':
-            case 'vibestop':
-                var vcserver = vcservers[message.guild.id];
-                if(message.guild.voiceConnection){
-                    for (var i = vcserver.queue.length - 1; i >= 0; i--){
-                        vcserver.queue.splice(i, 1);
-                    }
-
-                    vcserver.dispatcher.end();
-                    message.channel.send("I'm outta here!");
-                    
-                }
-
-                if(message.guild.connection){
-                    vcserver.dispatcher.destroy();
-                    message.guild.voiceConnection.disconnect();
-                }
-
-                if(message.member.voiceChannel){
-                    message.member.voiceChannel.leave();
-                    bot.channels.cache.get("687702849479508036").send("`Left VC at "+message.guild.name+".`")
-                }
-                
-                
-            break;
-
-            case 'vibenp':
-            case 'np':
-                
-                var vcserver = vcservers[message.guild.id];
-                indexname = vibesongs.indexOf(vcserver.np)
-                message.channel.send("Now Playing: \n `"+vibenames[indexname]+"`")
-                
-               // message.channel.send("Sorry! This command still needs more work.")
-            break;
-            */
+            
+            
 
                 
 
@@ -4695,6 +4567,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
 const ytdl = require("ytdl-core");
 
 const queue = new Map();
+const songInfo;
 
 bot.on("message", async message => {
     if (message.author.bot) return;
@@ -4731,11 +4604,14 @@ bot.on("message", async message => {
       );
     }
   
-    const songInfo = await ytdl.getInfo(args[1]);
     if (args[1] == undefined) {
         vibepicked = Math.floor(Math.random(vibesongs.length) -1);
         songInfo = ytdl.getInfo(vibesongs[vibepicked]);
     }
+    else{
+    songInfo = await ytdl.getInfo(args[1]);
+    }
+    
     const song = {
           title: songInfo.videoDetails.title,
           url: songInfo.videoDetails.video_url,
