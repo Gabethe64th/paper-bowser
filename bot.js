@@ -4696,7 +4696,7 @@ const ytdl = require("ytdl-core");
 
 const queue = new Map();
 
-client.on("message", async message => {
+bot.on("message", async message => {
     if (message.author.bot) return;
     if (!message.content.startsWith(PREFIX)) return;
   
