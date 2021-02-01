@@ -4841,7 +4841,7 @@ bot.on("message", async message => {
       return;
   }
   
-  async function picksong(){
+  async function picksong(serverQueue){
     vibepicked = Math.floor(Math.random() * vibesongs.length);
         const songInfo = await ytdl.getInfo(vibesongs[vibepicked]);
         const song1 = {
@@ -4850,15 +4850,39 @@ bot.on("message", async message => {
      };
         
         
-        console.log("Received as: "+song1.title+ " ("+song1.url+")");
+     if (!serverQueue) {
+        const queueContruct = {
+          textChannel: message.channel,
+          voiceChannel: voiceChannel,
+          connection: null,
+          songs: [],
+          volume: 5,
+          playing: true
+        };
+    
+        queue.set(message.guild.id, queueContruct);
+    
+        queueContruct.songs.push(song1);
+    
+        try {
+          var connection = await voiceChannel.join();
+          queueContruct.connection = connection;
+          play(message.guild, queueContruct.songs[0]);
+        } catch (err) {
+          console.log(err);
+          queue.delete(message.guild.id);
+          return message.channel.send(err);
+        }
+      } else {
         serverQueue.songs.push(song1);
-        play(guild, song1);
+        return message.channel.send(`${song1.title} has been added to the queue!`);
+      }
   }
 
   function play(guild, song) {
     const serverQueue = queue.get(guild.id);
     if (!song) {
-        picksong();
+        picksong(serverQueue);
     }
   
     const dispatcher = serverQueue.connection
