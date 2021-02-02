@@ -4846,7 +4846,7 @@ bot.on("message", async message => {
 
   function vibenp(message){
       var npmessage;
-      const serverQueue = queue.get(message.guild.id);
+      serverQueue = queue.get(message.guild.id);
       song = serverQueue.songs[0];
 
       if (serverQueue == undefined){
