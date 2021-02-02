@@ -4849,11 +4849,11 @@ bot.on("message", async message => {
       const serverQueue = queue.get(message.guild.id);
       song = serverQueue.songs[0];
 
-      if (!serverQueue){
+      if (serverQueue == undefined){
           message.channel.send("There's no queue!")
       } else {
       
-      if(!song){
+      if(song == undefined){
           npmessage = "`Unavailable. Try vibing first!`"
       }
       else {
