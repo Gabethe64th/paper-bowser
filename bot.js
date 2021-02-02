@@ -4850,10 +4850,10 @@ bot.on("message", async message => {
       
 
       if (serverQueue == undefined){
-          message.channel.send("There's no queue!")
+          message.channel.send("There's no queue! Try vibing first!")
       } else {
         song = serverQueue.songs[0];
-        
+
       if(song == undefined){
           npmessage = "`Unavailable. Try vibing first!`"
       }
@@ -4878,7 +4878,7 @@ bot.on("message", async message => {
      };
         
         
-        console.log("Received as: "+song1.title+ " ("+song1.url+")");
+        //console.log("Received as: "+song1.title+ " ("+song1.url+")");
         serverQueue.songs.push(song1);
         play(guild, song1);
     }
