@@ -4847,12 +4847,13 @@ bot.on("message", async message => {
   function vibenp(message){
       var npmessage;
       serverQueue = queue.get(message.guild.id);
-      song = serverQueue.songs[0];
+      
 
       if (serverQueue == undefined){
           message.channel.send("There's no queue!")
       } else {
-      
+        song = serverQueue.songs[0];
+        
       if(song == undefined){
           npmessage = "`Unavailable. Try vibing first!`"
       }
@@ -4890,7 +4891,7 @@ bot.on("message", async message => {
       })
       .on("error", error => console.error(error));
     dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
-    serverQueue.textChannel.send(`Start playing: **${song.title}**`);
+    console.log(`Start playing: ${song.title} (${song.url})`);
   }}
         
 
