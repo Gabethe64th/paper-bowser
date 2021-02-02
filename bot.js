@@ -4711,7 +4711,10 @@ bot.on("message", async message => {
     } else if (message.content.startsWith(`${PREFIX}vibe`)) {
         vibe(message, serverQueue);
         return;
-      }
+    } else if (message.content.startsWith(`${PREFIX}np`)) {
+        vibenp(message);
+        return;
+    }
   });
   
   async function execute(message, serverQueue) {
@@ -4839,6 +4842,26 @@ bot.on("message", async message => {
     serverQueue.voiceChannel.leave();
       queue.delete(message.guild.id);
       return;
+  }
+
+  function vibenp(message){
+      var npmessage;
+      const serverQueue = queue.get(guild.id);
+      song = serverQueue.songs[0];
+
+      if (!serverQueue){
+          message.channel.send("There's no queue!")
+      } else {
+      
+      if(!song){
+          npmessage = "`Unavailable. Try vibing first!`"
+      }
+      else {
+          npmessage = "Currently Playing: **" + song.title + "**";
+      }
+
+      serverQueue.textChannel.send(npmessage);
+    }
   }
   
   
