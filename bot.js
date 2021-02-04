@@ -733,9 +733,6 @@ bot.on('message', message=> {
             message.channel.send(message.createdTimestamp);
             break;
 
-        case 'bored':
-            message.channel.send("https://cdn.discordapp.com/attachments/558815026241339423/576124245055242250/owo.mp4 \nGo ahead. Enjoy. It's the full movie.")
-            break;
 
         case 'oldie':
             
@@ -1161,8 +1158,8 @@ bot.on('message', message=> {
             message.channel.send("1. The Icon used for Hobo Thursdays. \n2. A lovely uncle. \n\n**Example:** \nGuy 1: Where's my beer? \nNokobo: Fug off!")
             break;
 
-        case 'jasper':
-            message.channel.send("E's horny license. \n\n**Example:** \nJasper's a very loveable person.")
+        case 'lucy':
+            message.channel.send("E's horny license. \n\n**Example:** \nLucy's a very loveable person.")
             break;
 
         case 'jacob':
@@ -1234,7 +1231,7 @@ bot.on('message', message=> {
             break;
 
         case 'jet':
-            message.channel.send("1. Cute, supportive, funny, hates this command. \n2. Heck off Jet you're a good person and deserves to be loved. \n3. v!famished bias \n\n**Example:** \nBREAKING NEWS: Jet makes another post yet again in her endless channel, telling Dru to stop simping for her. More at 7.")
+            message.channel.send("1. Supportive, funny, hates this command. \n2. Heck off Jet you're a good person and deserves to be loved. \n3. v!famished bias \n\n**Example:** \nBREAKING NEWS: Jet makes another post yet again in her endless channel, telling Dru to stop simping for her. More at 7.")
             break;
 
         case 'bridgey':
@@ -1770,7 +1767,6 @@ bot.on('message', message=> {
                 .addField('\u200b', '\u200b')
                 .addField('**Media Commands** 📷', 'Commands that show pics/vids.')
                 .addField('\u200b', '\u200b')
-                .addField('• bored', 'Cures boredom!', true)
                 .addField('• clown', 'Put these on.', true)
                 .addField('• clown2', 'Please sit down.', true)
                 .addField('• bruh', 'Bruh.', true)
@@ -1862,7 +1858,7 @@ bot.on('message', message=> {
         message.channel.send("Please refrain from raiding through calls. \n(Thanks to all my friends who found this oversight. I'm not angry at y'all <3)")
        }
        else {
-    bot.channels.cache.get(callids[callB]).send(message.author.tag +": "+message);
+    bot.channels.cache.get(callids[callB]).send(message.author.tag +": "+message.cleanContent);
     if (message.attachments.first() != undefined){
         callattach = new MessageAttachment (message.attachments.first().url);
         bot.channels.cache.get(callids[callB]).send(callattach);
@@ -1875,7 +1871,7 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
         message.channel.send("Please refrain from raiding through calls. \n(Thanks to all my friends who found this oversight. I'm not angry at y'all <3)")
        }
        else {
-    bot.channels.cache.get(callA).send(message.author.tag +": "+message);
+    bot.channels.cache.get(callA).send(message.author.tag +": "+message.cleanContent);
     if (message.attachments.first() != undefined){        
         callattach = new MessageAttachment (message.attachments.first().url);
         bot.channels.cache.get(callA).send(callattach);
