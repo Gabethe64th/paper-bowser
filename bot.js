@@ -10,7 +10,7 @@ const PREFIX = 'v!';
 //const channel = client.channels.find('roleplay-off-topic', channelName)
 //channel.send(message)
 
-var version = 'Version 1.8.7 [BETA]';
+var version = 'Version 1.8.71 [BETA]';
 var pass;
 var int, key = 0;
 /*
@@ -224,6 +224,12 @@ bot.on('message', message=> {
                 message.channel.send(embed);
             }
         break;    
+
+        case 'post':
+            if (args[1] != undefined){
+                bot.channels.cache.get('636573475993288734').send(message.content.slice(7));
+            }
+        break;
 
         
         case 'love':
