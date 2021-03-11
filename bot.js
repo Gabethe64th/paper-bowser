@@ -62,7 +62,7 @@ var currentmoon;
 var dewtext = ["£","€","=","#","+","×","Ω","%","Г","&",":","$","(",")","-","[","]","^","°","¬","<",">","÷","§","¤","}"];
 var engtext = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var uengtext = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-var rollpics = ["https://cdn.discordapp.com/attachments/695110863379497001/696501140354760774/unknown.png", "https://cdn.discordapp.com/attachments/686423110198624266/717798022532300841/unknown.png", "https://cdn.discordapp.com/attachments/695110863379497001/717907054806827018/unknown.png", "https://cdn.discordapp.com/attachments/620081595382235186/718934147044737054/Screenshot_20200606-135454.png","https://cdn.discordapp.com/attachments/620081595382235186/718934148659806299/You_whore.png", "https://cdn.discordapp.com/attachments/620081595382235186/718934148953407583/Screenshot_20200606-135344.png","https://cdn.discordapp.com/attachments/620081595382235186/718934149691473991/Screenshot_20200606-135205.png","https://cdn.discordapp.com/attachments/620081595382235186/718934149255397516/Screenshot_20200606-135314.png", "https://cdn.discordapp.com/attachments/620081595382235186/719072360896135218/unknown-2.png", "https://cdn.discordapp.com/attachments/620081595382235186/719075268123164762/Screenshot_20200607-022812.png", "https://cdn.discordapp.com/attachments/620081595382235186/719078620575825940/20200607_024046_0000.png", "https://cdn.discordapp.com/attachments/720005685156249647/720007395299819580/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720008238694924398/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720012018785976400/Big_SA_Icon.png", "https://cdn.discordapp.com/attachments/720005685156249647/720012456105345074/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720033161014149183/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720012665984122930/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720013320706457600/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720013402604306533/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720013629503569940/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720014097696948234/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720014476232884284/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720014717531324536/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720015710004445205/uwu.png", "https://cdn.discordapp.com/attachments/720005685156249647/720015872487456768/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720016501532524584/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720016678330695690/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720017325788758056/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720017949846667344/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720019752797601893/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720030320472228011/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720030454945677352/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720030594607874048/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720031598937899098/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720033618256330762/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720034408232386691/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720035275816042636/IMG_20190501_143514.png", "https://cdn.discordapp.com/attachments/720005685156249647/720035797717221426/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720037281200734298/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720037684176748655/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720038452912980070/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720039261470195712/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720039831006347284/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720041391014674472/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720042218752180334/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720043612393701520/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720045001035219004/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720045662527422526/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720046289806557226/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720049566157766747/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720057100729843843/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720057863090733076/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720059164969402388/unknown.png", "https://cdn.discordapp.com/attachments/587417183932645376/713293823966707722/Hannah_and_Summer_redraw.png", "https://cdn.discordapp.com/attachments/587417183932645376/711654470945210368/Dewdrop_and_Simon.png", "https://media.discordapp.net/attachments/587417183932645376/708465804466847804/Its_not_that_bad.png?width=502&height=473", "https://cdn.discordapp.com/attachments/720005685156249647/720715987917209630/Doki_doki.png", "https://cdn.discordapp.com/attachments/720005685156249647/720716513132150874/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720717364303495379/20200327_180808.png", "https://cdn.discordapp.com/attachments/720005685156249647/720718183660650577/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720721412901437520/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/720722256803659807/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/721394146463449149/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/721394431449890826/2020041423593300-02CB906EA538A35643C1E1484C4B947D.jpg", "https://cdn.discordapp.com/attachments/720005685156249647/721394788556865606/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/721395844838064158/2020050219002500-02CB906EA538A35643C1E1484C4B947D.jpg", "https://cdn.discordapp.com/attachments/720005685156249647/721398831035711548/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/721401359282339840/unknown.png", "https://cdn.discordapp.com/attachments/628395853958217738/721428894854676490/unknown.png", "https://cdn.discordapp.com/attachments/720005685156249647/721508656688005190/unknown.png"];
+var rollpics = ["https://cdn.discordapp.com/attachments/616765923491053671/819108384787398666/video0.mp4", "https://cdn.discordapp.com/attachments/616765923491053671/817443426084585482/video0.mp4", "https://cdn.discordapp.com/attachments/650890589000433675/816713132130959433/smol.mp4", "https://cdn.discordapp.com/attachments/374677483804557313/816824655931375686/ZBXPV-8e2ixoWFSj.mp4", "https://cdn.discordapp.com/attachments/680963945234038901/815817563492843580/video0.mp4", "https://cdn.discordapp.com/attachments/680963945234038901/815816605610934303/video0.mp4", "https://cdn.discordapp.com/attachments/616765923491053671/815091717358616616/video0.mp4", "https://cdn.discordapp.com/attachments/616765923491053671/814411865730842675/video0.mp4", "https://video.twimg.com/ext_tw_video/1336429563119869953/pu/vid/640x640/w5SXtVoP8CJsifL0.mp4?tag=10", "https://video.twimg.com/ext_tw_video/1365545306046271488/pu/vid/1280x720/dDqp5ASVyVrPULE5.mp4?tag=10", "https://video.twimg.com/ext_tw_video/1365716059702112260/pu/vid/576x576/SCh4JQInS4_-maxE.mp4?tag=10", "https://video.twimg.com/ext_tw_video/1366134054572204038/pu/vid/640x628/8_lyMM6_RcQSFRco.mp4?tag=10", "https://video.twimg.com/ext_tw_video/1366802382361878528/pu/vid/1280x720/hgJcIvJOjenIzqDq.mp4?tag=10", "https://video.twimg.com/ext_tw_video/1357845829726269441/pu/vid/640x480/vGwgz4muO2NFQ2dF.mp4?tag=12", "https://video.twimg.com/ext_tw_video/1349507060594049029/pu/vid/640x640/eJgYo3a3yjqilOmv.mp4?tag=10", "https://video.twimg.com/ext_tw_video/1353044420220874752/pu/vid/640x634/5ZlddXZ1McvNHR48.mp4?tag=10", "https://video.twimg.com/ext_tw_video/1355219711865151488/pu/vid/1280x720/49GB-RW6cz-oYbSF.mp4?tag=10", "https://video.twimg.com/ext_tw_video/1355219313381281802/pu/vid/640x640/tFxl4DwVvtXGEgnc.mp4?tag=10", "https://video.twimg.com/ext_tw_video/1356814686096936961/pu/vid/640x640/dGB8qusurlkk4KgO.mp4?tag=12", "https://video.twimg.com/ext_tw_video/1358116924446699520/pu/vid/640x640/676PGeNprpL0x8WX.mp4?tag=12", "https://video.twimg.com/ext_tw_video/1361479572269789184/pu/vid/640x360/2mN3eC1pdWX7Ont-.mp4?tag=10", "https://cdn.discordapp.com/attachments/631891669184151592/810995549200187443/prison_shippers.mp4", "https://cdn.discordapp.com/attachments/631891669184151592/810995548143747112/youre_brown.mp4", "https://cdn.discordapp.com/attachments/631891669184151592/810995542171451433/madbattle.mp4", "https://cdn.discordapp.com/attachments/631891669184151592/810995537225711626/no.mp4", "https://cdn.discordapp.com/attachments/631891669184151592/810995531860934666/rosa_dance.mp4", "https://cdn.discordapp.com/attachments/631891669184151592/804714911543853056/video0_1.mp4", "https://cdn.discordapp.com/attachments/631891669184151592/804714907395424316/video0_3.mp4", "https://cdn.discordapp.com/attachments/631891669184151592/804714906976911410/video0_2.mp4", "https://cdn.discordapp.com/attachments/616765923491053671/803005470612520980/video0.mp4", "https://cdn.discordapp.com/attachments/616765923491053671/803035546430734366/video0.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/802959686461554718/video0_-_2021-01-24T125225.597.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/798636186180255794/video0.mp4", "https://cdn.discordapp.com/attachments/631891669184151592/802341081655410719/video0_3.mp4", "https://cdn.discordapp.com/attachments/631891669184151592/802341079881482240/video0.mov", "https://cdn.discordapp.com/attachments/631891669184151592/802341076537966623/video0_2.mp4", "https://cdn.discordapp.com/attachments/631891669184151592/802341065402744863/wad-1.mp4", "https://cdn.discordapp.com/attachments/631891669184151592/802341063477690388/video0_5.mp4", "https://cdn.discordapp.com/attachments/631891669184151592/802341041352343613/video0_4.mp4", "https://cdn.discordapp.com/attachments/631891669184151592/801275074162065419/YODA_NO.mp4", "https://cdn.discordapp.com/attachments/631891669184151592/801275068663332894/video0_1.mp4", "https://video.twimg.com/ext_tw_video/1356633795861053446/pu/vid/640x360/ZshDekzr0keQbsgt.mp4?tag=10", "https://cdn.discordapp.com/attachments/783686275110535218/800047146890952784/video070.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/799755939124084756/video0_-_2021-01-14T125649.025.mp4", "https://cdn.discordapp.com/attachments/609985878689054748/799649890824880178/video0-682.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/799285209111592970/Dadbattle.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/796529603887235132/so_theres_this_thing_in_pokemon.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/796543339633049600/video0-163.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/796595964772089887/angrydrip.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/796607059151552523/gwgsvs.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/796622304532627476/video0.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/796680949818458142/video0-13-2.mov", "https://cdn.discordapp.com/attachments/182553078384295937/796730085239029821/video0_10.mp4", "https://video.twimg.com/ext_tw_video/1345780096154517504/pu/vid/1272x720/qq1qtZZcKHz9ncrF.mp4?tag=10", "https://cdn.discordapp.com/attachments/182553078384295937/793746591735349249/video0.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/790740169496985620/theres-nothing-for-me-here-so-i-will-disappear.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/788960656245391420/1_5100340639720014063.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/789674860297060372/680040_sensacja-o.mp4", "https://cdn.discordapp.com/attachments/783686275110535218/788770583604101130/Shitpost_para_status_dog_wins.mp4", "https://cdn.discordapp.com/attachments/783686275110535218/786272848314368050/Shitpost_Status.mp4", "https://cdn.discordapp.com/attachments/783686275110535218/785967554416869447/NOT_Shitpost_status_again.mp4", "https://cdn.discordapp.com/attachments/783686275110535218/785523892881195078/Shitpost_Status.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731596169150474/redditsave.com-blm-19lebn2ehtk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731582614208522/redditsave.com-the_sex-j7jz5yq13nk61-360.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731559054671932/redditsave.com-vape_nic_suck_dic-md3641nldok61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731536325476392/redditsave.com-chese-bzq9h37fsnk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731507140853790/redditsave.com-horny_joseph-9ksvc857rpk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731480113545226/redditsave.com-ayo-b90kjwny9qk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731456855867422/redditsave.com-an_interesting_title-m2q6ifbyfpk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731434659217438/redditsave.com-shut_up_youre_ruining_his_flow-f9wmshkjjrk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731414090350662/6yeuKUZV53hZ6o1r.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731391504547860/redditsave.com-pov_youre_straight-teorsg8lhhk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731367206420542/redditsave.com-big_round_ovals-0zcxvfa6jfk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731343219195924/redditsave.com-he_do_be_moss-17oyn2egdhk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731320955699200/redditsave.com-_-3x8ln5w1dgk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731305357213746/redditsave.com-f_r_o_g-ydjm3bk5pik61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731283463602186/redditsave.com-stfu_bitch_im_the_baby-10nav3jcqjk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731259132837989/redditsave.com-boom-l7widl700lk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731241641934918/redditsave.com-its_time_to_stop-ahzl8islugk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731220964278293/redditsave.com-me_when-2jhiwc9qhfk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731201196261427/redditsave.com-lol_xd_tictoek_bed-4phjsob7ygk61-360.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731173258002432/redditsave.com-white_boy_on_the_beat-vpw9gdebn8k61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731154433966151/redditsave.com-homie_had_the_right_idea-mgmaihk3bck61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731142975520798/redditsave.com-anime_girls-lc2tv0potck61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731124629110814/redditsave.com-baseden-su2ij4igsbk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731110910328862/redditsave.com-hello_and_welcome-d6ihw0mj9dk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731092479377408/redditsave.com-hold_up-odua4shuzck61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731080697708604/redditsave.com-wholesome_100-yxwrskahdak61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813392640753270834/video0_11.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813392598759899166/video2.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813392549988270091/X_A7XInrs4qREONj.mp4", "https://cdn.discordapp.com/attachments/819609676978323496/819620305236525056/redditsave.com-new_epic_drawing-ub7cgdj6bxk61.mp4", "https://cdn.discordapp.com/attachments/819609676978323496/819620320163528736/redditsave.com-help_me-biqr0l5qpuk61.mp4", "https://cdn.discordapp.com/attachments/819609676978323496/819620346424328242/redditsave.com_stickmin-5jhts55k5dm61.mp4", "https://cdn.discordapp.com/attachments/819609676978323496/819620425222586370/redditsave.com-chicken_trick_be_speed-5sal3yudv7k61-360.mp4", "https://cdn.discordapp.com/attachments/819609676978323496/819620470352773160/redditsave.com-g_r_o_o_v_i_n-56axm3vzk3k61.mp4", "https://cdn.discordapp.com/attachments/819609676978323496/819620516800364575/redditsave.com-a-kwjkuwmi38k61.mp4", "https://cdn.discordapp.com/attachments/819609676978323496/819620596958101504/redditsave.com-wwwletmesliceoffyourdickcom-i54l0g9wr7k61.mp4", "https://cdn.discordapp.com/attachments/819609676978323496/819620727102636052/redditsave.com-_-nn3pxehplhj61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813392506309312512/vzrcs_90nyrJLvUS.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813392468095008798/video0.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813392394439491634/video0_-_2021-01-24T133423.470.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813392298057924658/redditsave.com-good_cut-njzxqod276g61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813392262838878269/redditsave.com-hmm_yes_very_safe-gxjd2p3rg6g61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813392114897256448/1359155850636644356-480x480.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813392044725764126/redditsave.com-title-8ttvsvoxhth61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813391941059608596/dIuvKfra-OJtqe34.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813391909460377640/redditsave.com-do_it-bck5jpgxjwh61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813391880909094972/redditsave.com-reverse_card-nro9ll738xh61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813391844846862366/redditsave.com-man_went_from_horny_to_terrified_real_quick-jsym1292obh61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813391820703924275/redditsave.com-luigi_moment-t6w43ijp37i61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813391786163568680/redditsave.com-shitposting-nz8xbi0g53i61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813391750331629568/Df4plpzIF0AsXMwF.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813391731994263562/LYVp9tqW7ZX9widt.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813391714961326130/wCtuWUmBS62xprt4.mp4", "https://cdn.discordapp.com/attachments/242285927056015361/635974118289833994/8PCek4N8CMIK_x1a.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/810707133603119154/AMOGUS.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/809967837556768768/tired_of_amogus.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/783782265381584896/Untitled.mp4", "https://cdn.discordapp.com/attachments/499684048390848523/775485626174275604/FlashBang.mp4", "https://cdn.discordapp.com/attachments/765014721886814229/774264046374617088/v09044820000bu46oaj00jhjn13l3bgg.mov", "https://cdn.discordapp.com/attachments/680963945234038901/774128711133560842/video0.mp4", "https://cdn.discordapp.com/attachments/680963945234038901/774130514017386506/video0.mp4", "https://cdn.discordapp.com/attachments/680963945234038901/774131533397229588/video0.mp4", "https://cdn.discordapp.com/attachments/680963945234038901/774132121194594304/video0.mp4", "https://cdn.discordapp.com/attachments/680963945234038901/774132314644938802/video0.mp4", "https://cdn.discordapp.com/attachments/680963945234038901/774133303745052692/video0.mp4", "https://cdn.discordapp.com/attachments/680963945234038901/774133995754749982/video0.mov", "https://video.twimg.com/ext_tw_video/1323714809771286530/pu/vid/640x640/Eh0jxqlnEKYWIkcq.mp4?tag=10", "https://cdn.discordapp.com/attachments/680963945234038901/774135161776242688/video0-319.mp4", "https://cdn.discordapp.com/attachments/680963945234038901/774135693949665310/video0_2.mov", "https://cdn.discordapp.com/attachments/680963945234038901/774136985744703498/video0.mp4", "https://cdn.discordapp.com/attachments/263161542697156608/768434856131821568/drunken_sailor.mov", "https://video.twimg.com/ext_tw_video/1315116803773943810/pu/vid/640x634/MRMNLBrYwXR3ZzN_.mp4?tag=10", "https://cdn.discordapp.com/attachments/732805819313160283/767830106780467250/video0.mov", "https://cdn.discordapp.com/attachments/732805819313160283/767247720188215296/video0.mov", "https://cdn.discordapp.com/attachments/732805819313160283/766735270195888128/video0.mp4", "https://cdn.discordapp.com/attachments/732805819313160283/765702976869892136/video0.mp4", "https://cdn.discordapp.com/attachments/296056831514509312/761740566458400768/video0.mp4", "https://cdn.discordapp.com/attachments/732805819313160283/762096602608959499/video1.mp4", "https://cdn.discordapp.com/attachments/732805819313160283/761374735749480468/video2.mp4", "https://cdn.discordapp.com/attachments/732805819313160283/761374735195570216/video1.mp4", "https://cdn.discordapp.com/attachments/732805819313160283/761374734540603442/video0.mp4", "https://cdn.discordapp.com/attachments/732805819313160283/760622277154177084/video0.mp4", "https://cdn.discordapp.com/attachments/562324705357594642/758828192458604574/video0.mp4", "https://cdn.discordapp.com/attachments/732805819313160283/751021110266560545/video0.mp4", "https://video.twimg.com/ext_tw_video/1297891554917588995/pu/vid/1088x656/lDiRzum-8Q5YxNop.mp4?tag=10", "https://video.twimg.com/ext_tw_video/1295955099961790465/pu/vid/640x480/HRQp-ZP4sHXjMQKR.mp4?tag=10", "https://cdn.discordapp.com/attachments/732805819313160283/744255165716234451/video0.mp4", "https://cdn.discordapp.com/attachments/732805819313160283/743578361317818438/video0.mp4", "https://cdn.discordapp.com/attachments/732805819313160283/743196520471592970/video0.mov", "https://video.twimg.com/ext_tw_video/1291464836224876545/pu/vid/640x640/KA2JqG4j2kXpLeXe.mp4?tag=10", "https://cdn.discordapp.com/attachments/732805819313160283/740129234067914792/video0.mp4", "https://cdn.discordapp.com/attachments/732805819313160283/739466011782283264/video0.mp4", "https://cdn.discordapp.com/attachments/710832025329860608/726716352550928394/Walnut.mp4", "https://cdn.discordapp.com/attachments/227912785290330113/737823835675426867/pillow.mp4", "https://cdn.discordapp.com/attachments/732805819313160283/736989942822993960/video0.mp4", "https://cdn.discordapp.com/attachments/592773318545899520/815305430687285248/redditsave.com-gustavo-3f1oia0u7tj61.mp4", "https://cdn.discordapp.com/attachments/592773318545899520/813635588044881981/redditsave.com-what_did_he_say-r8a197894vi61.mp4", "https://cdn.discordapp.com/attachments/592773318545899520/806978296746344468/video0.mp4", "https://cdn.discordapp.com/attachments/592773318545899520/806976050960531456/video0.mov", "https://cdn.discordapp.com/attachments/182553078384295937/783770243431923752/chocolate_fountain.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/782837006521860106/RPReplay_Final1604535632.mov", "https://cdn.discordapp.com/attachments/182553078384295937/783932221542236170/video0.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/783921584107814932/video0-18-1.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/784030506697883668/video0.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/783982756715429900/video0-14.mp4", "https://cdn.discordapp.com/attachments/819609676978323496/819625580156158013/redditsave.com-imagine_being_briish_bruv-0nlvlmdtwlj61.mp4", "https://cdn.discordapp.com/attachments/819609676978323496/819625642076536882/redditsave.com-wholesome-zbnmi4bm3ij61.mp4"];
 var activitylist = ["lmao who's Corona? Never heard of them.", "around", "as Steve", "Hello, Jet :)", "rootin' tootin' and shootin'", "big iron on his hip."]
 
 
@@ -259,8 +259,7 @@ bot.on('message', message=> {
             message.channel.send("Clean up the confetti! This command was fun, but now it's time to say goodbye. The command still exists, but its code will be used for something else soon. Thanks for the support!")
             break;
 
-        case 'ImageLoadTester':
-            message.channel.send("To celebrate the birthday of a wonderful friend!")
+        case 'shitpostStatus':
             indexroll = 0;
             rollboll = true;
             currentmoon = new MessageAttachment(rollpics[0]);
@@ -1565,132 +1564,6 @@ bot.on('message', message=> {
 
             
 
-            
-                    /*
-            case 'vibe':
-
-
-            function play(connection, message){
-                var vcserver = vcservers[message.guild.id];
-
-                vcserver.dispatcher = connection.playStream(ytdl(vcserver.queue[0], {filter: "audioonly"}));
-
-                vcserver.np = vcserver.queue[0]
-                vcserver.queue.shift();
-
-                vcserver.dispatcher.on("end", function(){
-                    if(vcserver.queue[0]){
-                        play(connection, message);
-                    }
-                    else{
-                        vib = Math.abs( Math.floor (Math.random() * (vibesongs.length - 1)));
-                        vcserver.queue.push(vibesongs[vib]);
-                        bot.channels.cache.get("687702849479508036").send("`Attempting to play: "+vibenames[vib]+"`")
-                        play(connection, message);
-                    }
-                })
-
-
-            }
-
-
-
-             if(!message.member.voiceChannel){
-                 message.channel.send("You aren't in a VC!");
-             } 
-
-             if(!vcservers[message.guild.id])
-                 vcservers[message.guild.id] = {
-                     queue: [],
-                     np: ""
-                 }
-             
-
-             var vcserver = vcservers[message.guild.id];
-
-             if (!args[1]){
-                vib = Math.floor (Math.random() * (vibesongs.length - 1));
-                message.channel.send("A song has been queued!")
-                vcserver.queue.push(vibesongs[vib])
-             }
-             else{
-                 if (!isNaN(args[1]) && (args[1] <= (vibesongs.length - 1) && args[1] >= 0)){
-                     message.channel.send("`"+ vibenames[args[1]] + "` has been queued. It will play after.")
-                     vcserver.queue.push(vibesongs[args[1]]);
-                 }
-             }
-             
-
-             if(!message.guild.voiceConnection)
-                 message.member.voiceChannel.join().then(function(connection){
-                     play(connection, message)
-                     bot.channels.cache.get("687702849479508036").send("`Joined VC at "+message.guild.name+".`")
-                 })
-             
-
-
-            break;
-
-            case 'vibeskip':
-                var vcserver = vcservers[message.guild.id];
-                    if(vcserver.dispatcher)
-                        vcserver.dispatcher.end();
-                        message.channel.send("Skipping...");
-                    
-
-            break;
-
-            case 'vibelist':
-                 message.channel.send("A temporary list can be found here: \nhttps://docs.google.com/document/d/15QwnXZMmdnPFPPa_P9ASwMUzjoiIlRoedVZwRskfgKo/edit?usp=sharing")
-            break;
-
-            case 'vibecount':
-                if (vibesongs.length == vibenames.length){
-                    message.channel.send("Everything seems ok! \n(Songs: "+vibesongs.length+")")
-                }
-                else{
-                    message.channel.send("Something's off...\n(Songs: "+vibesongs.length+" Names: "+vibenames.length+")")
-                }
-            break;
-
-
-            case 'vibeend':
-            case 'vibend':
-            case 'vibestop':
-                var vcserver = vcservers[message.guild.id];
-                if(message.guild.voiceConnection){
-                    for (var i = vcserver.queue.length - 1; i >= 0; i--){
-                        vcserver.queue.splice(i, 1);
-                    }
-
-                    vcserver.dispatcher.end();
-                    message.channel.send("I'm outta here!");
-                    
-                }
-
-                if(message.guild.connection){
-                    vcserver.dispatcher.destroy();
-                    message.guild.voiceConnection.disconnect();
-                }
-
-                if(message.member.voiceChannel){
-                    message.member.voiceChannel.leave();
-                    bot.channels.cache.get("687702849479508036").send("`Left VC at "+message.guild.name+".`")
-                }
-                
-                
-            break;
-
-            case 'vibenp':
-            case 'np':
-                
-                var vcserver = vcservers[message.guild.id];
-                indexname = vibesongs.indexOf(vcserver.np)
-                message.channel.send("Now Playing: \n `"+vibenames[indexname]+"`")
-                
-               // message.channel.send("Sorry! This command still needs more work.")
-            break;
-            */
 
                 
 
@@ -2545,22 +2418,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         var slotfruits = ["🍎", "🍐", "🍊", "🍋", "🍇", "🍓", "🍒"];
         //dicegame
         var d6 = [1, 2, 3, 4, 5, 6];
-        var d8 = [1, 2, 3, 4, 5, 6, 7, 8];
-        var d10 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-        var d12 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-        var d20 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
-        var high = 0;
-        var highname = "Virus";
-        var dgid;
-        var int, dgprogress = 0;
-        var player1name;
-        var player2name;
-        var int, player1score = 0;
-        var int, player2score = 0;
-        var p1die;
-        var p2die;
-        var int, rounds;
-        var int, roundcounter = 0;
+
         //mmtrivia
         var mmoquests = ["`What is the name of the game that is featured on a Nintendo Switch, contains Mario sfx, but is NOT from Nintendo?`", "`Who is the composer of Megalovania?`", "`What was the text which normally appeared with the dancing roach meme?`" , "`Who once roleplayed as a Novakid?`" , "`Fill in the blanks: 'For his neutral special, Mario wields ____'`" , "`Fill in the blanks: 'Hey all, _____ ____.'`" , "`What's the name of the Mario spinoff that has Pac-Man as a playable character?`" , "`Is Pip pure?`" , "`True or False: Moon once had a username called 'Mooncake Festival' in Nintendo Discord.`" , "`True or False: The 3DS game: Super Mario 3D Land has a feature that asks you to take a break every once in a while.`" , "`Who is Irri's wife?`" , "`What is the name of the teacher in Chapter 3 of Parappa the Rapper 2?`" , "`What is the name of the fictional character both Korbs and Name are in love with?`" , "`What is the name of the command which requires you to get 10 fruits in a row to win?`" , "`Relating to jokes like 'Joe', 'Yuri', and 'Ligma', which joke is the LEAST offensive to the victim?`" , "`In the show 'Hazbin Hotel' which character is a crossdresser?`" , "`Jasmin is an OC from whom?`" , "`Who is the ONLY discord user that can hug VirusBot, with the bot hugging them back?`" , "`Which cartoon show has a theme song with the lyrics 'No time for relaxation'?`" , "`True or False: Reun has the ability to manage the Roleplay community.`"];
         var mmoans = ["just shapes and beats", "toby fox", "hoes mad", "snoop", "fire", "scott here", "mario kart arcade gp", "yes", "false", "true", "cain", "guru ant", "mym", "imposslots", "updog", "angel dust", "izzle", "jet", "sonic x", "true"];
