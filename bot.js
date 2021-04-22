@@ -724,7 +724,7 @@ bot.on('message', message=> {
             break;
 
         case 'name':
-            message.channel.send("1. A word people use for tech advice. \n2. A Sonic-loving madlass who should be hugged. \n3. nhentai.org (Don't press this.) \n\n**Example:** \nGuy 1: NAAAAAAAAAAAME SOP RTING HENTAI \nName: no.")
+            message.channel.send("1. A word people use for tech advice. \n2. A Sonic-loving madlass who should be hugged. \n3. nhentai.org (Don't search this.) \n\n**Example:** \nGuy 1: NAAAAAAAAAAAME STOP RTING HENTAI \nName: no.")
             break;
 
         case 'todaysong':
