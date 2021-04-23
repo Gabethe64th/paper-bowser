@@ -407,24 +407,6 @@ bot.on('message', message=> {
             message.channel.send("He say ma te ulla eh");
             message.channel.send('Ey!');
             break;
-
-        case 'dru':
-            message.channel.send("A horny/somewhat confused stickman who now has the form of an anime man. Everyone basically knows who Dru is nowadays either by his old form, 'The Galactic Nova' or his new form, 'That guy who draws pretty good'. He's also a Twitter boomer. \n\n**Example:** \nGuy 1: Hey, have you seen Dru's new drawing? \nGuy 2: Indeed I have! He draws so good! \nGuy 1: I know, right? I want Maki to step on me. \nGuy 2: Okay pal that's enough of you.");
-            break
-
-        case 'dyst':
-            message.channel.send("A former person of the community who made the 24/7 music stream that started it all. Now, he's just a laughing stock that triggers a few people just by saying his nickname. He also ruined Minish Cap with peanut butter. \n\n**Example:** \nGuy 1: Hey, what happened to Dys? \nGuy 2: Gone. Reduced to atoms. \nGuy 1: Why? \nAll Mods: Ah shit, here we go again.");
-            
-            break
-
-        case 'cain':
-            message.channel.send("Reni's Mom (along with a few others). Also feared by many for...whatever reason.\n\n**Example:** \nReni: MOOOOOOOOOOOOM! \nCain: whAT?! \nReni: hi. \nCain: Hello.");
-            break
-
-        case 'snoop':
-            message.channel.send("A scientific experiment gone wrong that escaped from his lab after he destroyed it to pieces. No, I'm not talking about Mewtwo. This one's a persona weeb, and loves to hunt down simps for fun. (Despite being one for SCP-173) \n\n**Example:** \nGuy 1: *breathes* \nSnoop: *busts down door* SIMP! *nukes island*");
-            break;
-
         
         case 'jcount':
             let jc = bot.afile["JojoCount"].jCount;
@@ -451,11 +433,6 @@ bot.on('message', message=> {
                 }
             break;
 
-            
-        case 'irri':
-                message.channel.send("A fucking STALLION of a man that decided to take up the responsibilities of leading a server full of 1000+ people after the virgin Dys was banned. This absolute chad is also a best friend to many people, and is basically a walking Skillshare.com. \n\n**Example:** \nGuy 1: Hey, I need some help to draw a hand. Can anyone help? \nGuy 2: Ask Irri. \nGuy 1: Isn't he currently busy in a server of 500+ people? \nIrri: You called?");
-                break;
-
         case 'gamestop':
             message.channel.send(message.author.username + " in GameStop! \nWhat will they buy?")
             break;
@@ -473,22 +450,6 @@ bot.on('message', message=> {
                 message.channel.send(message.author.username + ' do be looking kinda fresh doe 😳')
                 }
                 break;
-
-        case 'mimik':
-                message.channel.send("Some Pokemon who dislikes off-topic in rp. \n\n**Example:** \nArrow: (no, don't no that.) \nMimik: You've fucking crossed the line.");
-                break;
-
-        case 'reun':
-            message.channel.send("[ARCHIVED] \nDon't worry, "+ message.author.username+". You're as fucked as the rest of "+message.channel.name+" if you ask who Joe is. To save yourself, please post an rp cap into <#396838771108085760> so we can either all laugh or all remind Reun that he has a fucking job as a rp manager. (Also please, don't swear in off topic. You did? What's wrong with you?) In all seriousness, I love this boi, and he's prob my fav bro to ever exist...or fav sis? :O! **PLOT TWIST!**");
-            break;
-
-        case 'reni':
-                message.channel.send("A cute and loveable person who's afraid to share their wonderful ideas to everyone. Previously known as 'Mimik' or 'Reun', and if he changes his name once more I swear to gosh I'm just gonna rename this command to 'v!silvester' and call it a day. \n\n**Example:** \nReni: Hey, Red or Purple? \nJet: Purple. Purple fits a lot more with your stuff. \nReni: But...blood isn't purple. \nJet: what")
-            break;
-
-        case 'phobos':
-            message.channel.send("Some weird clone that took over Jet some time ago. The difference between these two is that one wants to kill you less than the other (Also some other noticeable things, but I can't say them rn.). \n\n**Example:** \nSnoop: Hello. \nJet: Fuck off. \n\n**One week later...**\nSnoop: Hello. \nPho: Hi, Snoop. Now fuck off.")
-            break;
         
         case 'gluck':
             message.channel.send('All the best! 🌿');
@@ -717,14 +678,6 @@ bot.on('message', message=> {
         
         case 'weeb':
             message.channel.send('⣿⣿⣿⣿⣿⣿⡷⣯⢿⣿⣷⣻⢯⣿⡽⣻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⠸⣿⣿⣆⠹⣿⣿⢾⣟⣯⣿⣿⣿⣿⣿⣿⣽⣻⣿⣿⣿⣿⣿⣿⣿⣿⣷⡌\n⣿⣿⣿⣿⣿⣿⣻⣽⡿⣿⣎⠙⣿⣞⣷⡌⢻⣟⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣿⣿⣿⣿⣿⣿⡄⠹⣿⣿⡆⠻⣿⣟⣯⡿⣽⡿⣿⣿⣿⣿⣽⡷⣯⣿⣿⣿⣿⣿⣿⣿⣿⣿\n⣿⣿⣿⣿⣿⣿⣟⣷⣿⣿⣿⡀⠹⣟⣾⣟⣆⠹⣯⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢠⡘⣿⣿⡄⠉⢿⣿⣽⡷⣿⣻⣿⣿⣿⣿⡝⣷⣯⢿⣿⣿⣿⣿⣿⣿⣿\n⣿⣿⣿⣿⣿⣿⣯⢿⣾⢿⣿⡄⢄⠘⢿⣞⡿⣧⡈⢷⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣧⠘⣿⣷⠈⣦⠙⢿⣽⣷⣻⣽⣿⣿⣿⣿⣌⢿⣯⢿⣿⣿⣿⣿⣿⣿\n⣿⣿⣿⣿⣿⣿⣟⣯⣿⢿⣿⡆⢸⡷⡈⢻⡽⣷⡷⡄⠻⣽⣿⣿⡿⣿⣿⣿⣿⣿⣿⣷⣿⣿⣿⣿⣏⢰⣯⢷⠈⣿⡆⢹⢷⡌⠻⡾⢋⣱⣯⣿⣿⣿⣿⡆⢻⡿⣿⣿⣿⣿⡟⣿\n⣿⣿⣿⣿⣿⣿⡎⣿⢾⡿⣿⡆⢸⣽⢻⣄⠹⣷⣟⣿⣄⠹⣟⣿⣿⣟⣿⣿⣿⣿⣿⣿⣽⣿⣿⣿⡇⢸⣯⣟⣧⠘⣷⠈⡯⠛⢀⡐⢾⣟⣷⣻⣿⣿⣿⡿⡌⢿⣻⣿⣿⣿⣿⡌\n⣿⣿⣿⣿⣿⣿⣧⢸⡿⣟⣿⡇⢸⣯⣟⣮⢧⡈⢿⣞⡿⣦⠘⠏⣹⣿⣽⢿⣿⣿⣿⣿⣯⣿⣿⣿⡇⢸⣿⣿⣾⡆⠹⢀⣠⣾⣟⣷⡈⢿⣞⣯⢿⣿⣿⣿⢷⠘⣯⣿⣿⣿⣿⣷\n⣿⣿⣿⣿⣿⣿⣿⡈⣿⢿⣽⡇⠘⠛⠛⠛⠓⠓⠈⠛⠛⠟⠇⢀⢿⣻⣿⣯⢿⣿⣿⣿⣷⢿⣿⣿⠁⣾⣿⣿⣿⣧⡄⠇⣹⣿⣾⣯⣿⡄⠻⣽⣯⢿⣻⣿⣿⡇⢹⣾⣿⣿⣿⣿\n⣿⣿⣿⣿⣿⣿⣿⡇⢹⣿⡽⡇⢸⣿⣿⣿⣿⣿⣞⣆⠰⣶⣶⡄⢀⢻⡿⣯⣿⡽⣿⣿⣿⢯⣟⡿⢀⣿⣿⣿⣿⣿⣧⠐⣸⣿⣿⣷⣿⣿⣆⠹⣯⣿⣻⣿⣿⣿⢀⣿⢿⣿⣿⣿\n⣿⣿⣿⣿⣿⣿⣿⣿⠘⣯⡿⡇⢸⣿⣿⣿⣿⣿⣿⣿⣧⡈⢿⣳⠘⡄⠻⣿⢾⣽⣟⡿⣿⢯⣿⡇⢸⣿⣿⣿⣿⣿⣿⡀⢾⣿⣿⣿⣿⣿⣿⣆⠹⣾⣷⣻⣿⡿⡇⢸⣿⣿⣿⣿\n⣿⣿⣿⣿⣿⣿⣿⣿⡇⢹⣿⠇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⠻⡇⢹⣆⠹⣟⣾⣽⣻⣟⣿⣽⠁⣾⣿⣿⣿⣿⣿⣿⣇⣿⣿⠿⠛⠛⠉⠙⠋⢀⠁⢘⣯⣿⣿⣧⠘⣿⣿⣿⣿\n⣿⣿⣿⣿⣿⣿⣿⣿⣿⡈⣿⡃⢼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡙⠌⣿⣆⠘⣿⣞⡿⣞⡿⡞⢠⣿⣿⣿⣿⣿⡿⠛⠉⠁⢀⣀⣠⣤⣤⣶⣶⣶⡆⢻⣽⣞⡿⣷⠈⣿⣻⣿⣿\n⣿⣿⣿⣿⣿⣿⣿⣿⡿⠃⠘⠁⠉⠉⠉⠉⠉⠉⠉⠉⠉⠙⠛⠛⢿⣄⢻⣿⣧⠘⢯⣟⡿⣽⠁⣾⣿⣿⣿⣿⣿⡃⢀⢀⠘⠛⠿⢿⣻⣟⣯⣽⣻⣵⡀⢿⣯⣟⣿⢀⣿⣽⣿⣿\n⣿⣿⣿⣟⣿⣿⣿⣿⣶⣶⡆⢀⣿⣾⣿⣾⣷⣿⣶⠿⠚⠉⢀⢀⣤⣿⣷⣿⣿⣷⡈⢿⣻⢃⣼⣿⣿⣿⣿⣻⣿⣿⣿⡶⣦⣤⣄⣀⡀⠉⠛⠛⠷⣯⣳⠈⣾⡽⣾⢀⣿⢾⣿⣿\n⣿⢿⣿⣿⣻⣿⣿⣿⣿⣿⡿⠐⣿⣿⣿⣿⠿⠋⠁⢀⢀⣤⣾⣿⣿⣿⣿⣿⣿⣿⣿⣌⣥⣾⡿⣿⣿⣷⣿⣿⢿⣷⣿⣿⣟⣾⣽⣳⢯⣟⣶⣦⣤⡾⣟⣦⠘⣿⢾⡁⢺⣿⣿⣿\n⣿⣻⣿⣿⡷⣿⣿⣿⣿⣿⡗⣦⠸⡿⠋⠁⢀⢀⣠⣴⢿⣿⣽⣻⢽⣾⣟⣷⣿⣟⣿⣿⣿⣳⠿⣵⣧⣼⣿⣿⣿⣿⣿⣾⣿⣿⣿⣿⣿⣽⣳⣯⣿⣿⣿⣽⢀⢷⣻⠄⠘⣯⣿⣿\n⣿⢷⣻⣿⣿⣷⣻⣿⣿⣿⡷⠛⣁⢀⣀⣤⣶⣿⣛⡿⣿⣮⣽⡻⣿⣮⣽⣻⢯⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⢀⢸⣿⢀⡆⣿⣿⣿\n⠸⣟⣯⣿⣿⣷⢿⣽⣿⣿⣷⣿⣷⣆⠹⣿⣶⣯⠿⣿⣶⣟⣻⢿⣷⣽⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢀⣯⣟⢀⡇⢼⣿⣿\n⣇⠹⣟⣾⣻⣿⣿⢾⡽⣿⣿⣿⣿⣿⣆⢹⣶⣿⣻⣷⣯⣟⣿⣿⣽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢀⡿⡇⢸⡇⢸⣿⡇\n⣿⣆⠹⣷⡻⣽⣿⣯⢿⣽⣻⣿⣿⣿⣿⣆⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠛⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⢸⣿⠇⣼⡇⢸⡿⢠\n⡙⠾⣆⠹⣿⣦⠛⣿⢯⣷⢿⡽⣿⣿⣿⣿⣆⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠎⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⢀⣿⣾⣣⡿⡇⢸⢃⣾\n⣿⣷⡌⢦⠙⣿⣿⣌⠻⣽⢯⣿⣽⣻⣿⣿⣿⣧⠩⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⢰⢣⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠃⢀⢀⢿⣞⣷⢿⡇⠉⣼⣿\n⣿⣽⣆⠹⣧⠘⣿⣿⡷⣌⠙⢷⣯⡷⣟⣿⣿⣿⣷⡀⡹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣈⠃⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⢀⣴⡧⢀⠸⣿⡽⣿⢀⣾⣿⣿\n⢻⣽⣿⡄⢻⣷⡈⢿⣿⣿⢧⢀⠙⢿⣻⡾⣽⣻⣿⣿⣄⠌⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠛⢁⣰⣾⣟⡿⢀⡄⢿⣟⣿⢀⣿⣿⣿\n⡄⢿⣿⣷⢀⠹⣟⣆⠻⣿⣿⣆⢀⣀⠉⠻⣿⡽⣯⣿⣿⣷⣈⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⢀⣠⠘⣯⣷⣿⡟⢀⢆⠸⣿⡟⢸⣿⣿⣿\n⣷⡈⢿⣿⣇⢱⡘⢿⣷⣬⣙⠿⣧⠘⣆⢀⠈⠻⣷⣟⣾⢿⣿⣆⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⣠⡞⢡⣿⢀⣿⣿⣿⠇⡄⢸⡄⢻⡇⣼⣿⣿⣿\n⣿⣷⡈⢿⣿⡆⢣⡀⠙⢾⣟⣿⣿⣷⡈⠂⠘⣦⡈⠿⣯⣿⢾⣿⣆⠙⠻⠿⠿⠿⠿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⢋⣠⣾⡟⢠⣿⣿⢀⣿⣿⡟⢠⣿⢈⣧⠘⢠⣿⣿⣿⣿\n⣿⣿⣿⣄⠻⣿⡄⢳⡄⢆⡙⠾⣽⣿⣿⣆⡀⢹⡷⣄⠙⢿⣿⡾⣿⣆⢀⡀⢀⢀⢀⢀⢀⢀⢀⢀⢀⢀⢀⢀⣀⣠⣴⡿⣯⠏⣠⣿⣿⡏⢸⣿⡿⢁⣿⣿⢀⣿⠆⢸⣿⣿⣿⣿\n⣿⣿⣿⣿⣦⡙⣿⣆⢻⡌⢿⣶⢤⣉⣙⣿⣷⡀⠙⠽⠷⠄⠹⣿⣟⣿⣆⢙⣋⣤⣤⣤⣄⣀⢀⢀⢀⢀⣾⣿⣟⡷⣯⡿⢃⣼⣿⣿⣿⠇⣼⡟⣡⣿⣿⣿⢀⡿⢠⠈⣿⣿⣿⡟\n⣿⣿⣿⣿⣿⣷⣮⣿⣿⣿⡌⠁⢤⣤⣤⣤⣬⣭⣴⣶⣶⣶⣆⠈⢻⣿⣿⣆⢻⣿⣿⣿⣿⣿⣿⣷⣶⣤⣌⣉⡘⠛⠻⠶⣿⣿⣿⣿⡟⣰⣫⣴⣿⣿⣿⣿⠄⣷⣿⠆⢻⣿⣿⡇')
-            break;
-
-        case 'ghost':
-            message.channel.send("A guy who will calmly check your health to see if you are both mentally and emotionally stable, then will fucking grab you and punch the shit out of you to Mars while fire erupts from his fucking fists. There, I described two of his main pfps: Senko and Terry. But this doesn't fully describe who Ghost is. In all honesty, he's just a friend you can laugh at dumb shit with, and with the help of Discord VCs and his crappy modem, you can do that in 33674399dB! \n\n**Example:** \nThe latest Ghost review was a good read.")
-            break;
-
-        case 'name':
-            message.channel.send("1. A word people use for tech advice. \n2. A Sonic-loving madlass who should be hugged. \n3. nhentai.org (Don't search this.) \n\n**Example:** \nGuy 1: NAAAAAAAAAAAME STOP RTING HENTAI \nName: no.")
             break;
 
         case 'todaysong':
@@ -1034,14 +987,6 @@ bot.on('message', message=> {
             }); 
             break;
 
-        case 'ethan':
-            message.channel.send("1. The kid named 'cheese' in the sentence: 'I fucking love cheese.'\n2. A word Dru can say to avoid Kyu's horniness. \n\n**Example:**\nKyu: Hi Dru. \nDru: ETHAN! \nKyu: ...what? \nEthan: What?")
-            break;
-
-        case 'pip':
-            message.channel.send("1. A type of post that is pure in every way\n2. A Roleplayer/DnD Player/Storyteller/Game Dev(?)/Sailor Moon Fan/Purist that can cleanse your sins from discord just by clicking on her channel. \n\n**Example:**\nGuy 1: My eyes are burning! \nGuy 2: Here, have a pip post from Pip. \nGuy 1: Oooh, that's nice, but how does it out the fire?")
-            break;
-
         case 'boomerpass':
             pass = message.author.id;
             message.react('👍')
@@ -1127,6 +1072,58 @@ bot.on('message', message=> {
             message.channel.send("```Current Standings for the Pure Wars.```\nPip: **"+pipwins+"**    Pkoby: **"+pkwins+"**");
             break;
 
+        case 'dru':
+            message.channel.send("1. The guy who fills in the quota for a server femboy. \n2. Some good artist guy or smth I dunno, never met him. \n3. A rebel who pisses off his boyfriend by not sleeping at 2AM EST (Caribbean) \n4. Mother of a puntable son. \n\n**Example:** \nEveryone: We need this command to be more gay to suit Dru better. \nGabe: I don't think there are enough words in the English vocabulary to describe how gay Dru is.");
+            break;
+    
+        case 'dys':
+            message.channel.send("1. A former person of the community who made the 24/7 music stream that started it all. Now, he's just a laughing stock that triggers a few people just by saying his nickname. He also ruined Minish Cap with peanut butter. \n2. Jojo villain who owns a stand named 'Grooma'. \n\n**Example:** \nGuy 1: Hey, what happened to Dys? \nGuy 2: Gone. Reduced to atoms. \nGuy 1: Why? \nAll Mods: Ah shit, here we go again.");
+            break;
+    
+        case 'cain':
+            message.channel.send("Reni's Mom (along with a few others). Also feared by many for...whatever reason.\n\n**Example:** \nReni: MOOOOOOOOOOOOM! \nCain: whAT?! \nReni: hi. \nCain: Hello.");
+            break;
+    
+        case 'snoop':
+            message.channel.send("A scientific experiment gone wrong that escaped from his lab after he destroyed it to pieces. No, I'm not talking about Mewtwo, he's worse. This one's a shitposting weeb, and loves to hunt down simps for fun. (Despite being one for SCP-173) \n\n**Example:** \nGuy 1: *breathes* \nSnoop: *nukes island*");
+            break;
+    
+        case 'ethan':
+            message.channel.send("1. The kid named 'cheese' in the sentence: 'I fucking love cheese.'\n2. Living proof that Banjo is gay and Gabe is black. \n\n**Example:**\nYou don't need one. He's right behind you.")
+            break;
+    
+        case 'pip':
+            message.channel.send("1. A type of post that is pure in every way\n2. A Roleplayer/DnD Player/Storyteller/Game Dev(?)/Sailor Moon Fan/Purist that can cleanse your sins from discord just by clicking on her channel. \n\n**Example:**\nGuy 1: My eyes are burning! \nGuy 2: Here, have a pip post from Pip. \nGuy 1: Oooh, that's nice, but how does it out the fire?")
+            break;
+    
+        case 'irri':
+            message.channel.send("A fucking STALLION of a man that decided to take up the responsibilities of leading a server full of 1000+ people after the virgin Dys was banned. This absolute chad is also a best friend to many people, and is basically a walking Skillshare.com. \n\n**Example:** \nGuy 1: Hey, I need some help to draw a hand. Can anyone help? \nGuy 2: Ask Irri. \nGuy 1: Isn't he currently busy in a server of 500+ people? \nIrri: You called?");
+            break;
+    
+        case 'mimik':
+            message.channel.send("Some Pokemon who dislikes off-topic in rp. \n\n**Example:** \nArrow: (no, don't no that.) \nMimik: You've fucking crossed the line.");
+            break;
+    
+        case 'reun':
+            message.channel.send("[ARCHIVED] \nDon't worry, "+ message.author.username+". You're as fucked as the rest of "+message.channel.name+" if you ask who Joe is. To save yourself, please post an rp cap into <#396838771108085760> so we can either all laugh or all remind Reun that he has a fucking job as a rp manager. (Also please, don't swear in off topic. You did? What's wrong with you?) In all seriousness, I love this boi, and he's prob my fav bro to ever exist...or fav sis? :O! **PLOT TWIST!**");
+            break;
+    
+        case 'reni':
+            message.channel.send("A fucking great and loveable person who's afraid to share their wonderful ideas to everyone. Previously known as 'Mimik' or 'Reun', and if he changes his name once more I swear to gosh I'm just gonna rename this command to 'v!silvester' and call it a day. \n\n**Example:** \nReni: Hey, Red or Purple? \nJet: Purple. Purple fits a lot more with your stuff. \nReni: But...blood isn't purple. \nJet: what")
+            break;
+    
+        case 'phobos':
+            message.channel.send("Some weird clone that took over Jet some time ago. The difference between these two is that one wants to kill you less than the other (Also some other noticeable things, but I can't say them rn.). \n\n**Example:** \nSnoop: Hello. \nJet: Fuck off. \n\n**One week later...**\nSnoop: Hello. \nPho: Hi, Snoop. Now fuck off.")
+            break;
+    
+        case 'ghost':
+            message.channel.send("1. He's a friend you laugh at dumb shit with! \n2. Proud owner of Cheems (With Cheems TWOOO in development). \n3. The maintenance guy whenever Dru fucking breaks in VC again. \n4. Has a PPP, which means in total he has 5 Ps. \n5. Guy with the highest 'FUCK' count in any VC \n6. Rising Tackle. \n7. The one who fucking beat Kirby and doesn't even talk about the lore. \n8. The only one with 8 definitions.\n9. The only one with 9 definitions. \n10. Male senko. \n\n**Example:** \nGhost: Hey Gabe \nGabe: What? \nGhost: Life is like a sandwich... \nGabe: *leaves*")
+            break;
+        
+        case 'name':
+            message.channel.send("1. A nickname that still stands to this day because literally NO ONE says 'frontier' instead. \n2. A Sonic/Okayu-loving madlass who should be hugged. \n3. nhentai.org (Don't search this.) \n\n**Example:** \nGuy 1: NAAAAAAAAAAAME STOP RTING HENTAI \nName: no.")
+            break;
+
         case 'goat':
             message.channel.send("Wario, but sexy. \n\n**Example:** \nGuy 1: I wanna Mount Wario. \nGuy 2: You mean 'Mount Goat'? \nGuy 1: Yeah, that too. \nIrri: ...what?")
             break;
@@ -1172,7 +1169,7 @@ bot.on('message', message=> {
             break;
 
         case 'izzle':
-            message.channel.send("1. A mood. \n2. A young teen who starts a simp war in her school. \n\n**Example:** \nGuy 1: Dude, Izzle's pretty cute. \nGuy 2: Don't say that out loud!")
+            message.channel.send("1. A girl, I hope. \n2. A young teen who starts a simp war in both her school and her twitter page. \n\n**Example:** \nGuy 1: Dude, Izzle's pretty cute. \nGuy 2: Don't say that out loud! You'll explode the school a second time! \nGuy 1: This is an online clas-")
             break;
 
         case 'rowlet':
@@ -1180,12 +1177,14 @@ bot.on('message', message=> {
             break;
 
         case 'kirB':
+        case 'kirb':
+        case 'kir':
             message.channel.send("1. The pronunciation of a pink...thing. \n2. The one who doesn't agree with their previous command because I leaked their smash strategy. \n3. A chill, mostly calm lad who will always join you to hang around in VCs. If you wanna lure him, invite FredBoat to the call, or just ripidly ping him until he gives up. \n4. ... \n\n**Example:** \nGuy 1: Hey, where's Kir b? \nGuy 2: Idk, just say something to call him over. \nGuy 1: ...Dru is gay...? \nKir b: *joins VC*")
             break;
 
-            case 'rb':
-                message.channel.send("An eagle that can smash your mom better than Sushi. \n\n**Example:** \nGuy 1: Where's RB? \nGuy 2: Prob banging your mom again. \nGuy 1: DAMMIT! Always happens. >:(")
-                break;
+        case 'rb':
+            message.channel.send("An eagle that can smash your mom better than Sushi. \n\n**Example:** \nGuy 1: Where's RB? \nGuy 2: Prob banging your mom again. \nGuy 1: DAMMIT! Always happens. >:(")
+            break;
 
          case 'generic':
             message.channel.send("1. Walking communism. \n2. A Jedi that dies to rats. \n\n**Example:** \nBless the world, Generic!")
@@ -1220,7 +1219,7 @@ bot.on('message', message=> {
             break;
 
         case 'traz':
-            message.channel.send("1. Him. \n2. He might be watching this. \n3. Run.\n\n**Example:** \nHey have you seen Tra- crap wait oh gosh why do I hear boss music")
+            message.channel.send("1. One of the best stickmen I've even seen. Maybe the only one. 2. Him. \n3. He might be watching this. \n4. Run.\n\n**Example:** \nHey have you seen Tra- crap wait oh gosh why do I hear boss music")
             break;
 
         case 'jerry':
@@ -1232,7 +1231,7 @@ bot.on('message', message=> {
             break;
 
         case 'vessel':
-             message.channel.send("1. Dru's son...somehow. \n2. A male that's the same level of pure as Pkoby. Shush, Moon. \n3. Persona 3. \n\n**Example:** \nGuy 1: Vessel, your waifu sucks....well at least one of them. \nDru: Your Mom sucks. \nGuy 1: You know you can't say that next to Vessel.")
+             message.channel.send("1. Dru's son...somehow. \n2. A male that's the same level of pure as Pkoby, but we corrupt too. Shush, Moon. \n3. Persona 5. \n\n**Example:** \nGuy 1: Vessel, your waifu sucks....well at least one of them. \nDru: Your Mom sucks. \nGuy 1: You know you can't say that next to Vessel.")
             break;
 
         case 'jet':
@@ -1686,7 +1685,7 @@ bot.on('message', message=> {
                         .addField('\u200b', '\u200b')
                         .addField('**Personal Commands** 👤', 'Commands about friends, for friends.')
                         .addField('\u200b', '\u200b')
-                        .addField('The following people have their own commands:', '• dru\n• moon\n• pkoby\n• kirB\n• ender\n• korbs\n• prince\n• eliz\n• nokobo\n• jasper\n• jacob\n• ghost\n• goat\n• name\n• izzle\n• ethan\n• cain\n• kyu\n• sushi\n• goji\n• snoop\n• jet\n• rowlet\n• irri\n• pip\n• mimik\n• reun\n• knux\n• dyst\n• reni\n• rb\n• generic\n• truth\n• ina\n• isaac\n• kaden\n• traz\n• jerry\n• vessel\n• banjo\n• bridgey', true)
+                        .addField('The following people have their own commands:', '• dru\n• moon\n• pkoby\n• kirB\n• ender\n• korbs\n• prince\n• eliz\n• nokobo\n• jasper\n• jacob\n• ghost\n• goat\n• name\n• izzle\n• ethan\n• cain\n• kyu\n• sushi\n• goji\n• snoop\n• jet\n• rowlet\n• irri\n• pip\n• mimik\n• reun\n• knux\n• dys\n• reni\n• rb\n• generic\n• truth\n• ina\n• isaac\n• kaden\n• traz\n• jerry\n• vessel\n• banjo\n• bridgey', true)
                         .setFooter("VirusDaBot", bot.users.cache.get(BotID).avatarURL());
                         
                         bot.users.cache.get(message.author.id).send(embed4);
