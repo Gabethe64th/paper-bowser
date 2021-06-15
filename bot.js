@@ -1231,7 +1231,7 @@ bot.on('message', message=> {
             break;
 
         case 'vessel':
-             message.channel.send("1. Dru's son...somehow. \n2. A male that's the same level of pure as Pkoby, but we corrupt too. Shush, Moon. \n3. Persona 5. \n\n**Example:** \nGuy 1: Vessel, your waifu sucks....well at least one of them. \nDru: Your Mom sucks. \nGuy 1: You know you can't say that next to Vessel.")
+             message.channel.send("1. Dru's son...somehow. \n3. Persona 5. \n\n**Example:** \nVessel: Your waifu sucks....well at least one of them. \nGuy 1: Your Mom sucks. \nVessel: Yes, he does.")
             break;
 
         case 'jet':
