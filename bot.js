@@ -10,7 +10,7 @@ const PREFIX = 'v!';
 //const channel = client.channels.find('roleplay-off-topic', channelName)
 //channel.send(message)
 
-var version = 'Version 1.8.71 [BETA]';
+var version = 'Version 1.8.98 [BETA]';
 var pass;
 var int, key = 0;
 /*
@@ -42,10 +42,10 @@ const fs = require("fs");
 //const ytdl = require("ytdl-core");
 bot.afile = require ("./afile.json");
 const BotID = '634502800872833033';
-var word1 = ["Kir b", "TruthTomato", "Name", "Dru", "Irri", "Poochy", "Mario", "Luigi", "Reni", "Cain", "Sayori", "Ghost", "Yuri", "Knux", "Y'all", "Sonic", "Minecraft", "Ellie", "Sushi", "Izzle", "Moon", "Obama", "An undying passion for hentai is why Name", "Gabe", "The mastermind named Irri", "Your wife", "Dru is laughing because Izzle", "It turns out that Cain", "Unfortunate news, Kevin", "I've come to make an announcement. Moon", "After performing an Animal Crossing 100% speedrun, Ellie", "My waifu", "You can't attend the Smash tourney because Knux", "ARE YOU OK? Well you won't be now because Ghost", "Terry", "What's that noise? Oh. Snoop", "Everytime I close my eyes, Jet", "Shrek", "Call me a liar, but Jimbo", "This disgraceful bitch", "A simp", "I can't believe that Kir b", "Hold the phone, Snoop", "You don't have time to defeat me because Reni", "The fuck, Korbs"];
-var word2 = ["is", "is gonna be", "is about to be", "is thinking of", "wants to be", "is officially", "will be"];
-var word3 = ["hecking", "fucking", "playing", "imitating", "buying", "promoting", "sponsoring", "hanging out with", "having a crush on", "fighting", "smashing", "buying a Mario Amiibo for", "reporting", "warning Irri about", "banning", "dying for", "taking a shower with"];
-var word4 = ["h", "you", "Kir b", "TruthTomato", "the big iron on Truth's hip", "Moonlite, the pussy destroyer", "Raid Shadow Legends", "Name", "Dru", "Irri", "Poochy", "Jet", "Mario", "Luigi", "Reni", "Obama", "free coochie", "the 15% discount from GEICO", "some gamer", "an e-girl...the horny shit.", "the man in Lego City", "Cheems", "some simp called Dru", "both Izzle and Moon", "Cain", "Sayori", "Ghost", "Yuri", "Knux", "Y'all", "Sonic", "Minecraft", "me", "gay", "something inappropriate", "Spider-Man", "here", "Celeste", "a hat in time", "a perv", "Squidward", "communism", "Ellie", "Sushi", "Izzle", "Moon", "Moon's oddly advertised dick", "Ellie's will to be a god", "Dru, but not really", "Izzle, and Gabe agrees", "Virus, but Virus doesn't care", "Dys, but thank god he's gone", "Earthbound", "Gabe, and he hates you for that", "Monika, but she refuses", "Monika, who sang a song for them", "Nutella, but that's gay", "a gay guy", "a freaking bag", "Generic", "Jet, but she'll most likely sue you before it happens", "Name, but that's a crime", "Dru, but [sexual joke here]", "Barry...wait. Who's Barry?", "a loli", "Snoop, who screams during the event", "Arrowsden, but it didnt work", "Link, the princess", "Gabe, but he loves them too much for that to happen", "Irri, but please, buy Mother 3", "your reality", "the n word", "Vessel, but why would that happen", "us for soup", "TwoSoup", "Reni, but I don't recommend it"];
+var word1 = ["Kir b", "TruthTomato", "Ah shit, Chez", "Chez", "Sunlite", "Hold up, Sunlite", "Name", "Dru", "Irri", "Poochy", "Mario", "Luigi", "Reni", "Cain", "Sayori", "Ghost", "Yuri", "Knux", "Y'all", "Sonic", "Minecraft", "Ellie", "Sushi", "Izzle", "Moon", "Obama", "An undying passion for hentai is why Name", "Gabe", "The mastermind named Irri", "Your wife", "Dru is laughing because Izzle", "It turns out that Cain", "Unfortunate news, Kevin", "I've come to make an announcement. Moon", "After performing an Animal Crossing 100% speedrun, Ellie", "My waifu", "You can't attend the Smash tourney because Knux", "ARE YOU OK? Well you won't be now because Ghost", "Terry", "What's that noise? Oh. Snoop", "Everytime I close my eyes, Jet", "Shrek", "Call me a liar, but Jimbo", "This disgraceful bitch", "A simp", "I can't believe that Kir b", "Hold the phone, Snoop", "You don't have time to defeat me because Reni", "The fuck, Korbs"];
+var word2 = ["is", "is gonna be", "is about to be", "is thinking of", "wants to be", "is officially", "will be", "plans to be", "dreams of"];
+var word3 = ["hecking", "fucking", "playing", "imitating", "buying", "promoting", "sponsoring", "hanging out with", "having a crush on", "fighting", "smashing", "buying a Mario Amiibo for", "reporting", "warning Irri about", "dominating", "sussing out", "banning", "dying for", "taking a shower with"];
+var word4 = ["h", "you", "Kir b", "TruthTomato", "the big iron on Truth's hip", "Moonlite, the pussy destroyer", "Raid Shadow Legends", "Name", "Dru", "Irri", "Poochy", "Jet", "Mario", "Luigi", "Reni", "Obama", "free coochie", "the 15% discount from GEICO", "some gamer", "an e-girl...the horny shit.", "the man in Lego City", "Cheems", "some simp called Dru", "both Izzle and Moon", "Cain", "Sayori", "Ghost", "Yuri", "Knux", "Y'all", "Sonic", "Chez", "Sunlite", "Sunlite. We better run", "Minecraft", "me", "gay", "something inappropriate", "Spider-Man", "here", "Celeste", "a hat in time", "a perv", "Squidward", "communism", "Ellie", "Sushi", "Izzle", "Moon", "Moon's oddly advertised dick", "Ellie's will to be a god", "Dru, but not really", "Izzle, and Gabe agrees", "Virus, but Virus doesn't care", "Dys, but thank god he's gone", "Earthbound", "Gabe, and he hates you for that", "Monika, but she refuses", "Monika, who sang a song for them", "Nutella, but that's gay", "a gay guy", "a freaking bag", "Generic", "Jet, but she'll most likely sue you before it happens", "Name, but that's a crime", "Dru, but [sexual joke here]", "Barry...wait. Who's Barry?", "a loli", "Snoop, who screams during the event", "Arrowsden, but it didnt work", "Link, the princess", "Gabe, but he loves them too much for that to happen", "Irri, but please, buy Mother 3", "your reality", "the n word", "Vessel, but why would that happen", "us for soup", "TwoSoup", "Reni, but I don't recommend it"];
 var choicemes = ["I pick ", "Gonna go with ", "I'll go with ","Definitely, ","I'll personally go with "]
 var fighter1, fighter2;
 var fighter1hp = 100, fighter2hp = 100;
@@ -73,7 +73,7 @@ bot.on('ready', () =>{
     thatone = Math.abs(Math.floor ((Math.random() * activitylist.length) -1));
     bot.user.setActivity(activitylist[thatone]);
 
-    bot.api.applications(bot.user.id).guilds('606955931145732111').commands.post({
+    bot.api.applications(bot.user.id).commands.post({
         data: {
             name: "hello",
             description: "Replies with Hello World...?"
@@ -1121,7 +1121,7 @@ bot.on('message', message=> {
             break;
         
         case 'name':
-            message.channel.send("1. A nickname that still stands to this day because literally NO ONE says 'frontier' instead. \n2. A Sonic/Okayu-loving madlass who should be hugged. \n3. nhentai.org (Don't search this.) \n\n**Example:** \nGuy 1: NAAAAAAAAAAAME STOP RTING HENTAI \nName: no.")
+            message.channel.send("1. A nickname that still stands to this day because literally NO ONE says 'frontier' instead. \n2. A Sonic/Hololive-loving madlass who should be hugged. \n3. nhentai.org (Don't search this.) \n\n**Example:** \nGuy 1: NAAAAAAAAAAAME STOP RTING HENTAI \nName: no.")
             break;
 
         case 'goat':
@@ -1133,7 +1133,7 @@ bot.on('message', message=> {
             break;
 
         case 'moon':
-            message.channel.send("1. The reason why you can rest peacefully at night. \n2. v!mon \n\n**Example:** \nGuy 1: I'm going to bed. \nMoon: Okay, rest well. \nGod to the angels: You heard Moon, protect that boy.")
+            message.channel.send("1. The reason why you can rest peacefully at night. \n2. An epic waifu who fills Gabe with love and joy <3\n3. v!mon \n\n**Example:** \nGuy 1: I'm going to bed. \nMoon: Okay, rest well. \nGod to the angels: You heard Moon, protect that boy.")
             break;
 
         case 'pkoby':
@@ -1292,6 +1292,18 @@ bot.on('message', message=> {
 
         case 'acidic':
             message.channel.send("1. Moon's bro. I know, it surprises me that there are two of them as well. \n2. Famous owner of the OK hand house in Trinidad 3. \n\n**Example:** \nGuy 1: Alright who's the impostor? \nAcidic: Dude this is Minecraft. \nGuy 1: Ok but who the HECK was at Medbay?")
+            break;
+
+        case 'chez':
+            message.channel.send("1. A guy that provides as much chaotic energy as a cat on steroids.\n2. Official rival of Gabe. \n3. Sunlite's Bitch. \n\n**Example:** \nGabe: Alright Chez, I've had enough of your tomfoolery. Sunlite, go dominate him.")
+            break;
+
+        case 'sunlite':
+            message.channel.send("1. Someone that's too horny for their own good.\n2. Another VC sleeper! Watch out, Gabe! \n3. Chez's Bitch. \n\n**Example:** \nUnfortunately, a friend was killed by Sunlite because they tried to snatch a snack from her. They saw it coming.")
+            break;
+
+        case 'rahen':
+            message.channel.send("Certified Bird Lover.\n\n**Example:** \nCheck out today's bird of the day in her channel!")
             break;
 
         case 'listServers':
@@ -1685,7 +1697,7 @@ bot.on('message', message=> {
                         .addField('\u200b', '\u200b')
                         .addField('**Personal Commands** 👤', 'Commands about friends, for friends.')
                         .addField('\u200b', '\u200b')
-                        .addField('The following people have their own commands:', '• dru\n• moon\n• pkoby\n• kirB\n• ender\n• korbs\n• prince\n• eliz\n• nokobo\n• jasper\n• jacob\n• ghost\n• goat\n• name\n• izzle\n• ethan\n• cain\n• kyu\n• sushi\n• goji\n• snoop\n• jet\n• rowlet\n• irri\n• pip\n• mimik\n• reun\n• knux\n• dys\n• reni\n• rb\n• generic\n• truth\n• ina\n• isaac\n• kaden\n• traz\n• jerry\n• vessel\n• banjo\n• bridgey', true)
+                        .addField('A good list of people both have a few commands that define whoever the command is named after. More commands come after time, so if you do not have one yet, you might soon! Make sure to DM Gabe to remind him.', true)
                         .setFooter("VirusDaBot", bot.users.cache.get(BotID).avatarURL());
                         
                         bot.users.cache.get(message.author.id).send(embed4);
