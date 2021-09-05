@@ -3508,7 +3508,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
                 ycp = innercardpile[y];
                 onegone = false;
                 for (i = 0; i < icp.length; i++){
-                    if (message == icp[i]){
+                    if (message.content == icp[i]){
                         jazz = icp[i]
                         addCard(jazz)
                         pos = i;
