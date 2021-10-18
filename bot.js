@@ -1072,7 +1072,7 @@ bot.on('message', message=> {
             break;
 
         case 'dru':
-            message.channel.send("1. The guy who fills in the quota for a server femboy. \n2. Some good artist guy or smth I dunno, never met him. \n3. A rebel who pisses off his boyfriend by not sleeping at 2AM EST (Caribbean) \n4. Mother of a puntable son. \n\n**Example:** \nEveryone: We need this command to be more gay to suit Dru better. \nGabe: I don't think there are enough words in the English vocabulary to describe how gay Dru is.");
+            message.channel.send("1. The guy who fills in the quota for a server femboy. \n2. Some good artist guy or smth I dunno, never met him. \n3. A rebel who pisses off his girlfriend by not sleeping at 2AM EST (Caribbean) \n4. Mother of a puntable daughter. \n\n**Example:** \nEveryone: We need this command to be more gay to suit Dru better. \nGabe: I don't think there are enough words in the English vocabulary to describe how gay Dru is.");
             break;
     
         case 'dys':
@@ -1116,7 +1116,7 @@ bot.on('message', message=> {
             break;
     
         case 'ghost':
-            message.channel.send("1. He's a friend you laugh at dumb shit with! \n2. Proud owner of Cheems (With Cheems TWOOO in development). \n3. The maintenance guy whenever Dru fucking breaks in VC again. \n4. Has a PPP, which means in total he has 5 Ps. \n5. Guy with the highest 'FUCK' count in any VC \n6. Rising Tackle. \n7. The one who fucking beat Kirby and doesn't even talk about the lore. \n8. The only one with 8 definitions.\n9. The only one with 9 definitions. \n10. Male senko. \n\n**Example:** \nGhost: Hey Gabe \nGabe: What? \nGhost: Life is like a sandwich... \nGabe: *leaves*")
+            message.channel.send("1. A friend you laugh at dumb shit with! \n2. Proud owner of Cheems (With Cheems TWOOO in development). \n3. The maintenance guy whenever Dru fucking breaks in VC again. \n4. Has a PPP, which means in total she has 5 Ps. \n5. Dude with the highest 'FUCK' count in any VC \n6. Rising Tackle. \n7. The one who fucking beat Kirby and doesn't even talk about the lore. \n8. The only one with 8 definitions.\n9. The only one with 9 definitions. \n10. Waifu material. \n\n**Example:** \nGhost: Hey Gabe \nGabe: What? \nGhost: Life is like a sandwich... \nGabe: *leaves*")
             break;
         
         case 'name':
