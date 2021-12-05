@@ -1121,6 +1121,7 @@ bot.on('message', message=> {
         
         case 'name':
             message.channel.send("1. A nickname that still stands to this day because literally NO ONE says 'frontier' instead. \n2. A Sonic/Hololive-loving madlass who should be hugged. \n3. nhentai.org (Don't search this.) \n\n**Example:** \nGuy 1: NAAAAAAAAAAAME STOP RTING HENTAI \nName: no.")
+            message.channel.send("https://cdn.discordapp.com/attachments/606957183900450864/917052604004057148/wowName.jpg");
             break;
 
         case 'goat':
