@@ -493,7 +493,7 @@ bot.on('message', message=> {
             break;
 
         case 'knux':
-                message.channel.send("An artist in training that likes woke music and is a great companion to all. Unless you're some bitch to the community, which in that case, seek medical help. \n\n**Example:** \nGuy 1: Yo dude. I read your message. \nGuy 2: Ye, so did Knux. He even gave a heart-warming response. \nGuy 1: Oshit he did? Damn that guy's good.");
+                message.channel.send("1. An artist in training that likes woke music and is a great companion to all. Unless you're some bitch to the community, which in that case, seek medical help. \n2. lancer delta rune \n\n**Example:** \nGuy 1: Yo dude. I read your message. \nGuy 2: Ye, so did Knux. He even gave a heart-warming response. \nGuy 1: Oshit he did? Damn that guy's good.");
                 break;
 
         case 'moonuwu':
@@ -1135,8 +1135,8 @@ bot.on('message', message=> {
             message.channel.send("1. The reason why you can rest peacefully at night. \n2. An epic waifu who fills Gabe with love and joy <3\n3. v!mon \n\n**Example:** \nGuy 1: I'm going to bed. \nMoon: Okay, rest well. \nGod to the angels: You heard Moon, protect that boy.")
             break;
 
-        case 'pkoby':
-            message.channel.send("1. A pure child who we slowly corrupt without noticing. \n2. An echo fighter of Pip. \n\n**Example:** \nPkoby: Hey! Check this out! \nMoon: Where'd you find that? It's kinda creepy. \nPkoby: Gabe DMed it to me. \nMoon: Of course, I'll fucking kill him in the morning.")
+        case 'kori':
+            message.channel.send("1. Hoarder of dungeon crawler games. Her collection grows `endless`. \n2. Someone who takes advantage of her F-Bomb ablities ever since she turned 18. \n\n**Example:** \nKori: Hey! Check this out! \nMoon: Where'd you find that? It's kinda creepy. \nKori: Gabe DMed it to me. \nMoon: Of course, I'll fucking kill him in the morning.")
             break;
 
         case 'ender':
