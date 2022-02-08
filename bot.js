@@ -829,6 +829,9 @@ bot.on('message', message=> {
                 if (message.channel.id === '338046744849809408') {
                     message.channel.send("The call function has been blocked from this channel. Sorry!")
                 }
+                else if (callB == undefined){
+                    message.channel.send("**Hmm, there's nothing but static here. Try again?**")
+                }
                 else {
                 bot.channels.cache.get(callids[callB]).send("**Someone has called this channel! Who could it be...?**");
                 message.channel.send("**I caught something! Say hello!**");
