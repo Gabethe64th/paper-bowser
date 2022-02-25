@@ -1082,7 +1082,7 @@ bot.on('message', message=> {
             break;
 
         case 'dru':
-            message.channel.send("1. The guy who fills in the quota for a server femboy. \n2. Some good artist guy or smth I dunno, never met him. \n3. A rebel who pisses off his girlfriend by not sleeping at 2AM EST (Caribbean) \n4. Mother of a puntable daughter. \n\n**Example:** \nEveryone: We need this command to be more gay to suit Dru better. \nGabe: I don't think there are enough words in the English vocabulary to describe how gay Dru is.");
+            message.channel.send("1. The guy who fills in the quota for a server femboy. \n2. Some good artist guy or smth I dunno, never met him. \n3. Deliverer of Maki content. \n4. Someone who nyas too often when you hit them with a stick. \n\n**Example:** \nEveryone: We need this command to be more gay to suit Dru better. \nGabe: I don't think there are enough words in the English vocabulary to describe how gay Dru is.");
             break;
     
         case 'dys':
@@ -1126,11 +1126,11 @@ bot.on('message', message=> {
             break;
     
         case 'ghost':
-            message.channel.send("1. A friend you laugh at dumb shit with! \n2. Proud owner of Cheems (With Cheems TWOOO in development). \n3. The maintenance guy whenever Dru fucking breaks in VC again. \n4. Has a PPP, which means in total she has 5 Ps. \n5. Dude with the highest 'FUCK' count in any VC \n6. Rising Tackle. \n7. The one who fucking beat Kirby and doesn't even talk about the lore. \n8. The only one with 8 definitions.\n9. The only one with 9 definitions. \n10. Waifu material. \n\n**Example:** \nGhost: Hey Gabe \nGabe: What? \nGhost: Life is like a sandwich... \nGabe: *leaves*")
+            message.channel.send("1. A friend you laugh at dumb shit with! \n2. Proud owner of Cheems (With Cheems TWOOO in development). \n3. Lizard and snek lover \n4. Has a PPP, which means in total she has 5 Ps. \n5. Dude with the highest 'FUCK' count in any VC \n6. Rising Tackle. \n7. The one who fucking beat Kirby and doesn't even talk about the lore. \n8. The only one with 8 definitions.\n9. The only one with 9 definitions. \n10. Waifu material. \n\n**Example:** \nGhost: Hey Gabe \nGabe: What? \nGhost: Life is like a sandwich... \nGabe: *leaves*")
             break;
         
         case 'name':
-            message.channel.send("1. A nickname that still stands to this day because literally NO ONE says 'frontier' instead. \n2. A Sonic/Hololive-loving madlass who should be hugged. \n3. nhentai.org (Don't search this.) \n\n**Example:** \nGuy 1: NAAAAAAAAAAAME STOP RTING HENTAI \nName: no.")
+            message.channel.send("1. A nickname that still stands to this day because literally NO ONE says 'frontier' instead. \n2. A Sonic/Hololive/Genshin-loving madlass who should be hugged. \n3. gelbooru.com (Don't search this.) \n\n**Example:** \nGuy 1: NAAAAAAAAAAAME STOP RTING HENTAI \nName: no.")
             message.channel.send("https://cdn.discordapp.com/attachments/606957183900450864/917052604004057148/wowName.jpg");
             break;
 
@@ -1241,7 +1241,7 @@ bot.on('message', message=> {
             break;
 
         case 'vessel':
-             message.channel.send("1. Dru's daughter...somehow. \n3. Persona 5. \n\n**Example:** \nVessel: Your waifu sucks....well at least one of them. \nGuy 1: Your Mom sucks. \nVessel: Yes, he does.")
+             message.channel.send("1. A well known...unknown lass \n3. Persona 5. \n\n**Example:** \nVessel: Your waifu sucks....well at least one of them. \nGuy 1: Your Mom sucks. \nVessel: Yes, she does.")
             break;
 
         case 'jet':
