@@ -387,7 +387,7 @@ bot.on('message', message=> {
         break;
 
         case 'nsfw':
-            message.channel.send("What the absolute fuck is wrong with you? Looking up porn on Discord? Kindly re-think your life choices.");
+            message.channel.send("What the absolute fuck is wrong with you? Looking up porn on Discord?? Kindly re-think your life choices.");
         break;
 
         case 'timetorockwiththebiggitybuckbumble':
