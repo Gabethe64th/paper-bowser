@@ -1966,10 +1966,6 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
         message.channel.send("General Kenobi. You are a bold one");
     }
 
-    if (message.content.includes("owo")) {
-        if (message.author.id === '485252094509449237' || message.author.id === '536306768351985670')
-        message.channel.send('UwU *nuzzles you*');
-    }
 
     if (message.content.startsWith("@someone")){
         uusers = bot.guilds.cache.get(message.guild.id).members.array();
@@ -1979,12 +1975,6 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
         message.channel.send("<@"+thisone.id+">");
     }
 
-
-    if (message.content.includes("Drizzle")){
-        if (message.author.id === '356389068634062848'){
-            message.channel.send("Okay, Jet. You need to face the facts. **The ship is dead.**")
-        }
-    }
 
     if (message.content.includes("RIP AND TEAR")){
         if (message.author.id === '356389068634062848'){
@@ -2008,17 +1998,7 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
         
     }
 
-    if (message.content.includes("Joe")){
-        if (message.author.id === '351941317305040896'){
-            message.channel.send("Who's Joe?")
-        }
-    }
-
-    if (message.content.includes("Joe Mama")){
-        if (message.author.id === '351941317305040896'){
-            message.channel.send("Dam, well played, Reun")
-        }
-    }
+    
 
     if ((message.author.id === "536306768351985670" || message.author.id === "485252094509449237") && (trail === 1)){
         message.channel.send("https://cdn.discordapp.com/attachments/635591464201486366/638214220915408907/unknown_5.png")
@@ -2075,18 +2055,6 @@ if (message.channel.id === callids[callB] && callkey === true && message.author.
         });
     }
     
-    if (message.content.startsWith("__Today's Song")){
-        if (message.author.id === '178539479827611648'){
-            tdmessage = message.toString();
-            bot.afile ["TodaySong"] = {
-                today_song: tdmessage
-            }
-            fs.writeFile ("./afile.json", JSON.stringify (bot.afile, null, 4), err => {
-                if (err) throw err;
-            });
-            message.channel.send("Message Recorded!");
-        }
-    }
 
     
 
@@ -2117,33 +2085,8 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
     if(user.bot) return;
     const {message, emoji} = messageReaction;
     
-    if (emoji.name === "🌿") {
-        if (user.id === '178539479827611648') {
-        //message.channel.send(user.username)
-        key = 1;
-        message.channel.send("We're all here for you, **" + message.author.username + "**! Best of luck, and don't give up!")
-        //message.channel.send('People in the session: '+user.username).then((message) => {message.edit(user.username);});
-        }
-        if(user.id === message.author.id && key === 1 || key === 0){
-            message.channel.send('**'+ user.username + "** has joi- Wait. You're supporting yourself?! How sweet! ♥");
-        }
-        if (user.id !== message.author.id && (key === 1 || key === 0)){
-            
-            message.channel.send('**'+ user.username + '** has joined the support gang! 💙');
-        }
-        }
         
         
-
-        if (emoji.name === "🎸") {
-            if (user.id === '350802851964125184') {
-            
-            message.channel.send("Snoop has requested <@"+message.author.id+"> for a vibe check! Prob because the post he reacted to was not epic. 🎸")
-            }
-            else if (user.id === '351941317305040896') {
-                message.channel.send("Reun has requested <@"+message.author.id+"> for a vibe check! Why? REASONS ARE UNNECESSARY! 🎸")
-            }
-            }
 
         if (emoji.name === "💰") {
             stolenmeme = new MessageAttachment (message.attachments.first().url);
