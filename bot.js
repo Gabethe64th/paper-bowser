@@ -41,10 +41,10 @@ const fs = require("fs");
 //const ytdl = require("ytdl-core");
 bot.afile = require ("./afile.json");
 const BotID = '634502800872833033';
-var word1 = ["Kir b", "TruthTomato", "Ah shit, Chez", "Chez", "Sunlite", "Hold up, Sunlite", "Name", "Dru", "Irri", "Poochy", "Mario", "Luigi", "Reni", "Cain", "Sayori", "Ghost", "Yuri", "Knux", "Y'all", "Sonic", "Minecraft", "Ellie", "Sushi", "Ozzy", "Moon", "Obama", "An undying passion for hentai is why Name", "Gabe", "The mastermind named Irri", "Your wife", "Dru is laughing because Ozzy", "It turns out that Cain", "Unfortunate news, Kevin", "I've come to make an announcement. Moon", "After performing an Animal Crossing 100% speedrun, Ellie", "My waifu", "You can't attend the Smash tourney because Knux", "ARE YOU OK? Well you won't be now because Ghost", "Terry", "What's that noise? Oh. Snoop", "Everytime I close my eyes, Jet", "Shrek", "Call me a liar, but Jimbo", "This disgraceful bitch", "A simp", "I can't believe that Kir b", "Hold the phone, Snoop", "You don't have time to defeat me because Reni", "The fuck, Korbs"];
+var word1 = ["Kir b", "TruthTomato", "Ah shit, Chez", "Chez", "Sunlite", "Hold up, Sunlite", "Shuu", "Irri", "Poochy", "Mario", "Luigi", "Reni", "Cain", "Sayori", "Ghost", "Yuri", "Knux", "Y'all", "Sonic", "Minecraft", "Ellie", "Sushi", "Ozzy", "Moon", "Obama", "An undying passion for genshin is why Shuu", "Gabe", "The mastermind named Irri", "Your wife", "It turns out that Cain", "Unfortunate news, Kevin", "I've come to make an announcement. Moon", "After performing an Animal Crossing 100% speedrun, Ellie", "My waifu", "You can't attend the Smash tourney because Knux", "ARE YOU OK? Well you won't be now because Ghost", "Terry", "What's that noise? Oh. Snoop", "Everytime I close my eyes, Jet", "Shrek", "Call me a liar, but Jimbo", "This disgraceful bitch", "A simp", "I can't believe that Kir b", "Hold the phone, Snoop", "You don't have time to defeat me because Reni", "The fuck, Korbs"];
 var word2 = ["is", "is gonna be", "is about to be", "is thinking of", "wants to be", "is officially", "will be", "plans to be", "dreams of"];
 var word3 = ["hecking", "fucking", "playing", "imitating", "buying", "promoting", "sponsoring", "hanging out with", "having a crush on", "fighting", "smashing", "buying a Mario Amiibo for", "reporting", "warning Irri about", "dominating", "sussing out", "banning", "dying for", "taking a shower with"];
-var word4 = ["h", "you", "Kir b", "TruthTomato", "the big iron on Truth's hip", "Moonlite, the pussy destroyer", "Raid Shadow Legends", "Name", "Dru", "Irri", "Poochy", "Jet", "Mario", "Luigi", "Reni", "Obama", "free coochie", "the 15% discount from GEICO", "some gamer", "an e-girl...the horny shit.", "the man in Lego City", "Cheems", "some simp called Dru", "both Ozzy and Moon", "Cain", "Sayori", "Ghost", "Yuri", "Knux", "Y'all", "Sonic", "Chez", "Sunlite", "Sunlite. We better run", "Minecraft", "me", "gay", "something inappropriate", "Spider-Man", "here", "Celeste", "a hat in time", "a perv", "Squidward", "communism", "Ellie", "Sushi", "Ozzy", "Moon", "Moon's oddly advertised dick", "Ellie's will to be a god", "Dru, but not really", "Ozzy, and Gabe agrees", "Virus, but Virus doesn't care", "Dys, but thank god he's gone", "Earthbound", "Gabe, and he hates you for that", "Monika, but she refuses", "Monika, who sang a song for them", "Nutella, but that's gay", "a gay guy", "a freaking bag", "Generic", "Jet, but she'll most likely sue you before it happens", "Name, but that's a crime", "Dru, but [sexual joke here]", "Barry...wait. Who's Barry?", "a loli", "Snoop, who screams during the event", "Arrowsden, but it didnt work", "Link, the princess", "Gabe, but he loves them too much for that to happen", "Irri, but please, buy Mother 3", "your reality", "the n word", "Vessel, but why would that happen", "us for soup", "TwoSoup", "Reni, but I don't recommend it"];
+var word4 = ["h", "you", "Kir b", "TruthTomato", "the big iron on Truth's hip", "Moonlite, the pussy destroyer", "Raid Shadow Legends", "Shuu", "Irri", "Poochy", "Jet", "Mario", "Luigi", "Reni", "Obama", "free coochie", "the 15% discount from GEICO", "some gamer", "an e-girl...the horny shit.", "the man in Lego City", "Cheems", "both Ozzy and Moon", "Cain", "Sayori", "Ghost", "Yuri", "Knux", "Y'all", "Sonic", "Chez", "Sunlite", "Sunlite. We better run", "Minecraft", "me", "gay", "something inappropriate", "Spider-Man", "here", "Celeste", "a hat in time", "a perv", "Squidward", "communism", "Ellie", "Sushi", "Ozzy", "Moon", "Moon's oddly advertised dick", "Ellie's will to be a god", "Virus, but Virus doesn't care", "Dys, but thank god he's gone", "Earthbound", "Gabe, and he hates you for that", "Monika, but she refuses", "Monika, who sang a song for them", "Nutella, but that's gay", "a gay guy", "a freaking bag", "Generic", "Jet, but she'll most likely sue you before it happens", "Shuu, but that's a crime", "Barry...wait. Who's Barry?", "Snoop, who screams during the event", "Arrowsden, but it didnt work", "Link, the princess", "Gabe, but he loves them too much for that to happen", "Irri, but please, buy Mother 3", "your reality", "the n word", "Vessel, but why would that happen", "us for soup", "TwoSoup", "Reni, but I don't recommend it"];
 var choicemes = ["I pick ", "Gonna go with ", "I'll go with ","Definitely, ","I'll personally go with "]
 var fighter1, fighter2;
 var fighter1hp = 100, fighter2hp = 100;
@@ -62,7 +62,7 @@ var dewtext = ["£","€","=","#","+","×","Ω","%","Г","&",":","$","(",")","-"
 var engtext = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var uengtext = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 var rollpics = ["https://cdn.discordapp.com/attachments/616765923491053671/819108384787398666/video0.mp4", "https://cdn.discordapp.com/attachments/616765923491053671/817443426084585482/video0.mp4", "https://cdn.discordapp.com/attachments/650890589000433675/816713132130959433/smol.mp4", "https://cdn.discordapp.com/attachments/374677483804557313/816824655931375686/ZBXPV-8e2ixoWFSj.mp4", "https://cdn.discordapp.com/attachments/680963945234038901/815817563492843580/video0.mp4", "https://cdn.discordapp.com/attachments/680963945234038901/815816605610934303/video0.mp4", "https://cdn.discordapp.com/attachments/616765923491053671/815091717358616616/video0.mp4", "https://cdn.discordapp.com/attachments/616765923491053671/814411865730842675/video0.mp4", "https://video.twimg.com/ext_tw_video/1336429563119869953/pu/vid/640x640/w5SXtVoP8CJsifL0.mp4?tag=10", "https://video.twimg.com/ext_tw_video/1365545306046271488/pu/vid/1280x720/dDqp5ASVyVrPULE5.mp4?tag=10", "https://video.twimg.com/ext_tw_video/1365716059702112260/pu/vid/576x576/SCh4JQInS4_-maxE.mp4?tag=10", "https://video.twimg.com/ext_tw_video/1366134054572204038/pu/vid/640x628/8_lyMM6_RcQSFRco.mp4?tag=10", "https://video.twimg.com/ext_tw_video/1366802382361878528/pu/vid/1280x720/hgJcIvJOjenIzqDq.mp4?tag=10", "https://video.twimg.com/ext_tw_video/1357845829726269441/pu/vid/640x480/vGwgz4muO2NFQ2dF.mp4?tag=12", "https://video.twimg.com/ext_tw_video/1349507060594049029/pu/vid/640x640/eJgYo3a3yjqilOmv.mp4?tag=10", "https://video.twimg.com/ext_tw_video/1353044420220874752/pu/vid/640x634/5ZlddXZ1McvNHR48.mp4?tag=10", "https://video.twimg.com/ext_tw_video/1355219711865151488/pu/vid/1280x720/49GB-RW6cz-oYbSF.mp4?tag=10", "https://video.twimg.com/ext_tw_video/1355219313381281802/pu/vid/640x640/tFxl4DwVvtXGEgnc.mp4?tag=10", "https://video.twimg.com/ext_tw_video/1356814686096936961/pu/vid/640x640/dGB8qusurlkk4KgO.mp4?tag=12", "https://video.twimg.com/ext_tw_video/1358116924446699520/pu/vid/640x640/676PGeNprpL0x8WX.mp4?tag=12", "https://video.twimg.com/ext_tw_video/1361479572269789184/pu/vid/640x360/2mN3eC1pdWX7Ont-.mp4?tag=10", "https://cdn.discordapp.com/attachments/631891669184151592/810995549200187443/prison_shippers.mp4", "https://cdn.discordapp.com/attachments/631891669184151592/810995548143747112/youre_brown.mp4", "https://cdn.discordapp.com/attachments/631891669184151592/810995542171451433/madbattle.mp4", "https://cdn.discordapp.com/attachments/631891669184151592/810995537225711626/no.mp4", "https://cdn.discordapp.com/attachments/631891669184151592/810995531860934666/rosa_dance.mp4", "https://cdn.discordapp.com/attachments/631891669184151592/804714911543853056/video0_1.mp4", "https://cdn.discordapp.com/attachments/631891669184151592/804714907395424316/video0_3.mp4", "https://cdn.discordapp.com/attachments/631891669184151592/804714906976911410/video0_2.mp4", "https://cdn.discordapp.com/attachments/616765923491053671/803005470612520980/video0.mp4", "https://cdn.discordapp.com/attachments/616765923491053671/803035546430734366/video0.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/802959686461554718/video0_-_2021-01-24T125225.597.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/798636186180255794/video0.mp4", "https://cdn.discordapp.com/attachments/631891669184151592/802341081655410719/video0_3.mp4", "https://cdn.discordapp.com/attachments/631891669184151592/802341079881482240/video0.mov", "https://cdn.discordapp.com/attachments/631891669184151592/802341076537966623/video0_2.mp4", "https://cdn.discordapp.com/attachments/631891669184151592/802341065402744863/wad-1.mp4", "https://cdn.discordapp.com/attachments/631891669184151592/802341063477690388/video0_5.mp4", "https://cdn.discordapp.com/attachments/631891669184151592/802341041352343613/video0_4.mp4", "https://cdn.discordapp.com/attachments/631891669184151592/801275074162065419/YODA_NO.mp4", "https://cdn.discordapp.com/attachments/631891669184151592/801275068663332894/video0_1.mp4", "https://video.twimg.com/ext_tw_video/1356633795861053446/pu/vid/640x360/ZshDekzr0keQbsgt.mp4?tag=10", "https://cdn.discordapp.com/attachments/783686275110535218/800047146890952784/video070.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/799755939124084756/video0_-_2021-01-14T125649.025.mp4", "https://cdn.discordapp.com/attachments/609985878689054748/799649890824880178/video0-682.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/799285209111592970/Dadbattle.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/796529603887235132/so_theres_this_thing_in_pokemon.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/796543339633049600/video0-163.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/796595964772089887/angrydrip.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/796607059151552523/gwgsvs.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/796622304532627476/video0.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/796680949818458142/video0-13-2.mov", "https://cdn.discordapp.com/attachments/182553078384295937/796730085239029821/video0_10.mp4", "https://video.twimg.com/ext_tw_video/1345780096154517504/pu/vid/1272x720/qq1qtZZcKHz9ncrF.mp4?tag=10", "https://cdn.discordapp.com/attachments/182553078384295937/793746591735349249/video0.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/790740169496985620/theres-nothing-for-me-here-so-i-will-disappear.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/788960656245391420/1_5100340639720014063.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/789674860297060372/680040_sensacja-o.mp4", "https://cdn.discordapp.com/attachments/783686275110535218/788770583604101130/Shitpost_para_status_dog_wins.mp4", "https://cdn.discordapp.com/attachments/783686275110535218/786272848314368050/Shitpost_Status.mp4", "https://cdn.discordapp.com/attachments/783686275110535218/785967554416869447/NOT_Shitpost_status_again.mp4", "https://cdn.discordapp.com/attachments/783686275110535218/785523892881195078/Shitpost_Status.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731596169150474/redditsave.com-blm-19lebn2ehtk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731582614208522/redditsave.com-the_sex-j7jz5yq13nk61-360.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731559054671932/redditsave.com-vape_nic_suck_dic-md3641nldok61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731536325476392/redditsave.com-chese-bzq9h37fsnk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731507140853790/redditsave.com-horny_joseph-9ksvc857rpk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731480113545226/redditsave.com-ayo-b90kjwny9qk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731456855867422/redditsave.com-an_interesting_title-m2q6ifbyfpk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731434659217438/redditsave.com-shut_up_youre_ruining_his_flow-f9wmshkjjrk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731414090350662/6yeuKUZV53hZ6o1r.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731391504547860/redditsave.com-pov_youre_straight-teorsg8lhhk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731367206420542/redditsave.com-big_round_ovals-0zcxvfa6jfk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731343219195924/redditsave.com-he_do_be_moss-17oyn2egdhk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731320955699200/redditsave.com-_-3x8ln5w1dgk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731305357213746/redditsave.com-f_r_o_g-ydjm3bk5pik61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731283463602186/redditsave.com-stfu_bitch_im_the_baby-10nav3jcqjk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731259132837989/redditsave.com-boom-l7widl700lk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731241641934918/redditsave.com-its_time_to_stop-ahzl8islugk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731220964278293/redditsave.com-me_when-2jhiwc9qhfk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731201196261427/redditsave.com-lol_xd_tictoek_bed-4phjsob7ygk61-360.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731173258002432/redditsave.com-white_boy_on_the_beat-vpw9gdebn8k61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731154433966151/redditsave.com-homie_had_the_right_idea-mgmaihk3bck61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731142975520798/redditsave.com-anime_girls-lc2tv0potck61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731124629110814/redditsave.com-baseden-su2ij4igsbk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731110910328862/redditsave.com-hello_and_welcome-d6ihw0mj9dk61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731092479377408/redditsave.com-hold_up-odua4shuzck61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/816731080697708604/redditsave.com-wholesome_100-yxwrskahdak61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813392640753270834/video0_11.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813392598759899166/video2.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813392549988270091/X_A7XInrs4qREONj.mp4", "https://cdn.discordapp.com/attachments/819609676978323496/819620305236525056/redditsave.com-new_epic_drawing-ub7cgdj6bxk61.mp4", "https://cdn.discordapp.com/attachments/819609676978323496/819620320163528736/redditsave.com-help_me-biqr0l5qpuk61.mp4", "https://cdn.discordapp.com/attachments/819609676978323496/819620346424328242/redditsave.com_stickmin-5jhts55k5dm61.mp4", "https://cdn.discordapp.com/attachments/819609676978323496/819620425222586370/redditsave.com-chicken_trick_be_speed-5sal3yudv7k61-360.mp4", "https://cdn.discordapp.com/attachments/819609676978323496/819620470352773160/redditsave.com-g_r_o_o_v_i_n-56axm3vzk3k61.mp4", "https://cdn.discordapp.com/attachments/819609676978323496/819620516800364575/redditsave.com-a-kwjkuwmi38k61.mp4", "https://cdn.discordapp.com/attachments/819609676978323496/819620596958101504/redditsave.com-wwwletmesliceoffyourdickcom-i54l0g9wr7k61.mp4", "https://cdn.discordapp.com/attachments/819609676978323496/819620727102636052/redditsave.com-_-nn3pxehplhj61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813392506309312512/vzrcs_90nyrJLvUS.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813392468095008798/video0.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813392394439491634/video0_-_2021-01-24T133423.470.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813392298057924658/redditsave.com-good_cut-njzxqod276g61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813392262838878269/redditsave.com-hmm_yes_very_safe-gxjd2p3rg6g61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813392114897256448/1359155850636644356-480x480.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813392044725764126/redditsave.com-title-8ttvsvoxhth61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813391941059608596/dIuvKfra-OJtqe34.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813391909460377640/redditsave.com-do_it-bck5jpgxjwh61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813391880909094972/redditsave.com-reverse_card-nro9ll738xh61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813391844846862366/redditsave.com-man_went_from_horny_to_terrified_real_quick-jsym1292obh61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813391820703924275/redditsave.com-luigi_moment-t6w43ijp37i61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813391786163568680/redditsave.com-shitposting-nz8xbi0g53i61.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813391750331629568/Df4plpzIF0AsXMwF.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813391731994263562/LYVp9tqW7ZX9widt.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/813391714961326130/wCtuWUmBS62xprt4.mp4", "https://cdn.discordapp.com/attachments/242285927056015361/635974118289833994/8PCek4N8CMIK_x1a.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/810707133603119154/AMOGUS.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/809967837556768768/tired_of_amogus.mp4", "https://cdn.discordapp.com/attachments/758417502328979487/783782265381584896/Untitled.mp4", "https://cdn.discordapp.com/attachments/499684048390848523/775485626174275604/FlashBang.mp4", "https://cdn.discordapp.com/attachments/765014721886814229/774264046374617088/v09044820000bu46oaj00jhjn13l3bgg.mov", "https://cdn.discordapp.com/attachments/680963945234038901/774128711133560842/video0.mp4", "https://cdn.discordapp.com/attachments/680963945234038901/774130514017386506/video0.mp4", "https://cdn.discordapp.com/attachments/680963945234038901/774131533397229588/video0.mp4", "https://cdn.discordapp.com/attachments/680963945234038901/774132121194594304/video0.mp4", "https://cdn.discordapp.com/attachments/680963945234038901/774132314644938802/video0.mp4", "https://cdn.discordapp.com/attachments/680963945234038901/774133303745052692/video0.mp4", "https://cdn.discordapp.com/attachments/680963945234038901/774133995754749982/video0.mov", "https://video.twimg.com/ext_tw_video/1323714809771286530/pu/vid/640x640/Eh0jxqlnEKYWIkcq.mp4?tag=10", "https://cdn.discordapp.com/attachments/680963945234038901/774135161776242688/video0-319.mp4", "https://cdn.discordapp.com/attachments/680963945234038901/774135693949665310/video0_2.mov", "https://cdn.discordapp.com/attachments/680963945234038901/774136985744703498/video0.mp4", "https://cdn.discordapp.com/attachments/263161542697156608/768434856131821568/drunken_sailor.mov", "https://video.twimg.com/ext_tw_video/1315116803773943810/pu/vid/640x634/MRMNLBrYwXR3ZzN_.mp4?tag=10", "https://cdn.discordapp.com/attachments/732805819313160283/767830106780467250/video0.mov", "https://cdn.discordapp.com/attachments/732805819313160283/767247720188215296/video0.mov", "https://cdn.discordapp.com/attachments/732805819313160283/766735270195888128/video0.mp4", "https://cdn.discordapp.com/attachments/732805819313160283/765702976869892136/video0.mp4", "https://cdn.discordapp.com/attachments/296056831514509312/761740566458400768/video0.mp4", "https://cdn.discordapp.com/attachments/732805819313160283/762096602608959499/video1.mp4", "https://cdn.discordapp.com/attachments/732805819313160283/761374735749480468/video2.mp4", "https://cdn.discordapp.com/attachments/732805819313160283/761374735195570216/video1.mp4", "https://cdn.discordapp.com/attachments/732805819313160283/761374734540603442/video0.mp4", "https://cdn.discordapp.com/attachments/732805819313160283/760622277154177084/video0.mp4", "https://cdn.discordapp.com/attachments/562324705357594642/758828192458604574/video0.mp4", "https://cdn.discordapp.com/attachments/732805819313160283/751021110266560545/video0.mp4", "https://video.twimg.com/ext_tw_video/1297891554917588995/pu/vid/1088x656/lDiRzum-8Q5YxNop.mp4?tag=10", "https://video.twimg.com/ext_tw_video/1295955099961790465/pu/vid/640x480/HRQp-ZP4sHXjMQKR.mp4?tag=10", "https://cdn.discordapp.com/attachments/732805819313160283/744255165716234451/video0.mp4", "https://cdn.discordapp.com/attachments/732805819313160283/743578361317818438/video0.mp4", "https://cdn.discordapp.com/attachments/732805819313160283/743196520471592970/video0.mov", "https://video.twimg.com/ext_tw_video/1291464836224876545/pu/vid/640x640/KA2JqG4j2kXpLeXe.mp4?tag=10", "https://cdn.discordapp.com/attachments/732805819313160283/740129234067914792/video0.mp4", "https://cdn.discordapp.com/attachments/732805819313160283/739466011782283264/video0.mp4", "https://cdn.discordapp.com/attachments/710832025329860608/726716352550928394/Walnut.mp4", "https://cdn.discordapp.com/attachments/227912785290330113/737823835675426867/pillow.mp4", "https://cdn.discordapp.com/attachments/732805819313160283/736989942822993960/video0.mp4", "https://cdn.discordapp.com/attachments/592773318545899520/815305430687285248/redditsave.com-gustavo-3f1oia0u7tj61.mp4", "https://cdn.discordapp.com/attachments/592773318545899520/813635588044881981/redditsave.com-what_did_he_say-r8a197894vi61.mp4", "https://cdn.discordapp.com/attachments/592773318545899520/806978296746344468/video0.mp4", "https://cdn.discordapp.com/attachments/592773318545899520/806976050960531456/video0.mov", "https://cdn.discordapp.com/attachments/182553078384295937/783770243431923752/chocolate_fountain.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/782837006521860106/RPReplay_Final1604535632.mov", "https://cdn.discordapp.com/attachments/182553078384295937/783932221542236170/video0.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/783921584107814932/video0-18-1.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/784030506697883668/video0.mp4", "https://cdn.discordapp.com/attachments/182553078384295937/783982756715429900/video0-14.mp4", "https://cdn.discordapp.com/attachments/819609676978323496/819625580156158013/redditsave.com-imagine_being_briish_bruv-0nlvlmdtwlj61.mp4", "https://cdn.discordapp.com/attachments/819609676978323496/819625642076536882/redditsave.com-wholesome-zbnmi4bm3ij61.mp4", "https://cdn.discordapp.com/attachments/628395853958217738/819634059062935552/Big_Bill_Hells.mp4"];
-var activitylist = ["lmao who's Corona? They suck.", "around", "as Steve", "Hello, Jet :)", "A Final Announcement! (v!v2announce)", "rootin' tootin' and shootin'", "v3 ain't a thing.", "Did you vaccinate yet?", "Full of typos since 2019!", "The Ded Name Master.", "9+ with Knux", "You either bipolar or bisexual. I'm binary.", "v!help (Or v!commands for ACTUAL help.)", "as a broken YouTube player", "say 'Hello There', I dare you.", "Anyone remember v!o64?", "Minecraft", "Sonic Mania", "Celeste", "Among Us", "Madness Combat (Goated)", "A Hat In Time", "In...a few servers", "Go, Man, Go!", "Is Gabe sleeping again?!", "v!oldies STILL doesn't work!", "New episodes every Sunday!", "Good Morning...or not. Was never programmed with a clock.", "Still Alive.", "Super Mario 64", "pls.", "big iron on his hip."]
+var activitylist = ["around", "as Steve", "Hello, Jet.", "A Final Announcement! (v!v2announce)", "rootin' tootin' and shootin'", "v3 ain't a thing.", "Did you vaccinate yet?", "Full of typos since 2019!", "The Ded Name Master.", "9+ with Knux", "You either bipolar or bisexual. I'm binary.", "v!help (Or v!commands for ACTUAL help.)", "as a broken YouTube player", "say 'Hello There', I dare you.", "Anyone remember v!o64?", "Minecraft", "Sonic Mania", "Celeste", "Among Us", "Madness Combat (Goated)", "A Hat In Time", "In...a few servers", "Go, Man, Go!", "Is Gabe sleeping again?!", "v!oldies STILL doesn't work!", "New episodes every Sunday!", "Good Morning...or not. Was never programmed with a clock.", "Still Alive.", "Super Mario 64", "pls.", "big iron on his hip.", "Tape cannot fix."]
 
 
 
@@ -1006,10 +1006,10 @@ bot.on('message', message=> {
         case 'announce':
                 user = message.mentions.users.first();
                 if (user !== undefined){
-                    message.channel.send("I've come to make an announcement, " +user.username + "'s a bitch-ass motherfucker. They pissed on my fucking wife. That's right. They took their smallass fuckin' futa dick out and they pissed on my FUCKING wife, and they said their dick was t h i s b i g and I said that's disgusting. So I'm making a callout post on my Discord dot com: **" + user.username + "**, you got a small dick. It's the size of this SmolDru except WAY smaller. And guess what? Here's what my dong looks like. [explosion sounds] That's right, baby. Tall points, no futa, no tax, Look at that, it looks like two balls and a bong. They fucked my wife, so guess what, I'm gonna fuck the earth. That's right, this is what you get! My SUPER LAZER PISS! Except I'm not gonna piss on the earth. I'm gonna go higher. I'm pissing on the MOOOON! [piss boom] **How do you like that, IRRI?** I PISSED ON THE MOON, YOU IDIOT! You have twenty-three hours before the piss d r o p l e t s hit the fucking earth, now get out of my fucking sight before I piss on you too!");
+                    message.channel.send("I've come to make an announcement, " +user.username + "'s a bitch-ass motherfucker. They pissed on my fucking wife. That's right. They took their smallass fuckin' futa dick out and they pissed on my FUCKING wife, and they said their dick was t h i s b i g and I said that's disgusting. So I'm making a callout post on my Discord dot com: **" + user.username + "**, you got a small dick. It's the size of this walnut except WAY smaller. And guess what? Here's what my dong looks like. [explosion sounds] That's right, baby. Tall points, no futa, no tax, Look at that, it looks like two balls and a bong. They fucked my wife, so guess what, I'm gonna fuck the earth. That's right, this is what you get! My SUPER LAZER PISS! Except I'm not gonna piss on the earth. I'm gonna go higher. I'm pissing on the MOOOON! [piss boom] **How do you like that, IRRI?** I PISSED ON THE MOON, YOU IDIOT! You have twenty-three hours before the piss d r o p l e t s hit the fucking earth, now get out of my fucking sight before I piss on you too!");
                 }
                 else {
-            message.channel.send("I've come to make an announcement, " +message.author.username + "'s a bitch-ass motherfucker. They pissed on my fucking wife. That's right. They took their smallass fuckin' futa dick out and they pissed on my FUCKING wife, and they said their dick was t h i s b i g and I said that's disgusting. So I'm making a callout post on my Discord dot com: **" + message.author.username + "**, you got a small dick. It's the size of this SmolDru except WAY smaller. And guess what? Here's what my dong looks like. [explosion sounds] That's right, baby. Tall points, no futa, no tax, Look at that, it looks like two balls and a bong. They fucked my wife, so guess what, I'm gonna fuck the earth. That's right, this is what you get! My SUPER LAZER PISS! Except I'm not gonna piss on the earth. I'm gonna go higher. I'm pissing on the MOOOON! [piss boom] **How do you like that, IRRI?** I PISSED ON THE MOON, YOU IDIOT! You have twenty-three hours before the piss d r o p l e t s hit the fucking earth, now get out of my fucking sight before I piss on you too!");
+            message.channel.send("I've come to make an announcement, " +message.author.username + "'s a bitch-ass motherfucker. They pissed on my fucking wife. That's right. They took their smallass fuckin' futa dick out and they pissed on my FUCKING wife, and they said their dick was t h i s b i g and I said that's disgusting. So I'm making a callout post on my Discord dot com: **" + message.author.username + "**, you got a small dick. It's the size of this walnut except WAY smaller. And guess what? Here's what my dong looks like. [explosion sounds] That's right, baby. Tall points, no futa, no tax, Look at that, it looks like two balls and a bong. They fucked my wife, so guess what, I'm gonna fuck the earth. That's right, this is what you get! My SUPER LAZER PISS! Except I'm not gonna piss on the earth. I'm gonna go higher. I'm pissing on the MOOOON! [piss boom] **How do you like that, IRRI?** I PISSED ON THE MOON, YOU IDIOT! You have twenty-three hours before the piss d r o p l e t s hit the fucking earth, now get out of my fucking sight before I piss on you too!");
                 }
                 break;
 
@@ -1076,9 +1076,6 @@ bot.on('message', message=> {
             message.channel.send("```Current Standings for the Pure Wars.```\nPip: **"+pipwins+"**    Pkoby: **"+pkwins+"**");
             break;
 
-        case 'dru':
-            message.channel.send("1. The guy who fills in the quota for a server femboy. \n2. Some good artist guy or smth I dunno, never met him. \n3. Deliverer of Maki content. \n4. Someone who nyas too often when you hit them with a stick. \n\n**Example:** \nEveryone: We need this command to be more gay to suit Dru better. \nGabe: I don't think there are enough words in the English vocabulary to describe how gay Dru is.");
-            break;
     
         case 'dys':
             message.channel.send("1. A former person of the community who made the 24/7 music stream that started it all. Now, he's just a laughing stock that triggers a few people just by saying his nickname. He also ruined Minish Cap with peanut butter. \n2. Jojo villain who owns a stand named 'Grooma'. \n\n**Example:** \nGuy 1: Hey, what happened to Dys? \nGuy 2: Gone. Reduced to atoms. \nGuy 1: Why? \nAll Mods: Ah shit, here we go again.");
@@ -1121,13 +1118,17 @@ bot.on('message', message=> {
             break;
     
         case 'ghost':
-            message.channel.send("1. A friend you laugh at dumb shit with! \n2. Proud owner of Cheems (With Cheems TWOOO in development). \n3. Lizard and snek lover \n4. Has a PPP, which means in total she has 5 Ps. \n5. Dude with the highest 'FUCK' count in any VC \n6. Rising Tackle. \n7. The one who fucking beat Kirby and doesn't even talk about the lore. \n8. The only one with 8 definitions.\n9. The only one with 9 definitions. \n10. Waifu material. \n\n**Example:** \nGhost: Hey Gabe \nGabe: What? \nGhost: Life is like a sandwich... \nGabe: *leaves*")
+            message.channel.send("1. A friend you laugh at dumb shit with! \n2. Proud owner of Cheems (With Cheems TWOOO in development...I think). \n3. Lizard and snek lover \n4. Has a PPP, which means in total she has 5 Ps. \n5. Dude with the highest 'FUCK' count in any VC \n6. Rising Tackle. \n7. The one who fucking beat Kirby and doesn't even talk about the lore. \n8. The only one with 8 definitions.\n9. The only one with 9 definitions. \n10. Waifu material. \n\n**Example:** \nGhost: Hey Gabe \nGabe: What? \nGhost: Life is like a sandwich... \nGabe: *leaves*")
             break;
         
         case 'name':
-            message.channel.send("1. A nickname that still stands to this day because literally NO ONE says 'frontier' instead. \n2. A Sonic/Hololive/Genshin-loving madlass who should be hugged. \n3. gelbooru.com (Don't search this.) \n\n**Example:** \nGuy 1: NAAAAAAAAAAAME STOP RTING HENTAI \nName: no.")
+            message.channel.send("[ARCHIVED] \n\n1. A nickname that still stands to this day because literally NO ONE says 'frontier' instead. \n2. A Sonic/Hololive/Genshin-loving madlass who should be hugged. \n3. gelbooru.com (Don't search this.) \n\n**Example:** \nGuy 1: NAAAAAAAAAAAME STOP RTING HENTAI \nName: no.")
             message.channel.send("https://cdn.discordapp.com/attachments/606957183900450864/917052604004057148/wowName.jpg");
             break;
+
+        case 'shuu':
+            message.channel.send("J-just ask her yourself. \n\n**Example:**");
+        break;
 
         case 'goat':
             message.channel.send("Wario, but sexy. \n\n**Example:** \nGuy 1: I wanna Mount Wario. \nGuy 2: You mean 'Mount Goat'? \nGuy 1: Yeah, that too. \nIrri: ...what?")
@@ -1150,7 +1151,7 @@ bot.on('message', message=> {
             break;
 
         case 'korbs':
-            message.channel.send("Meowser with drawing skills. \n\n**Example:** \nDru: Kirbs, what are you doing? \nKorbs: :3")
+            message.channel.send("Meowser with drawing skills. \n\n**Example:** \nIrri: Kirbs, what are you doing? \nKorbs: :3")
             break;
 
         case 'prince':
@@ -1177,14 +1178,11 @@ bot.on('message', message=> {
             message.channel.send("[ARCHIVED, No new command] \n1. A girl, I hope. \n2. A young teen who starts a simp war in both her school and her twitter page. \n\n**Example:** \nGuy 1: Dude, Izzle's pretty cute. \nGuy 2: Don't say that out loud! You'll explode the school a second time! \nGuy 1: This is an online clas-")
             break;
 
-        case 'rowlet':
-            message.channel.send("The result of Dru porn. \n\n**Example:** \nHow's your day, Rowlet?")
-            break;
 
         case 'kirB':
         case 'kirb':
         case 'kir':
-            message.channel.send("1. The pronunciation of a pink...thing. \n2. The one who doesn't agree with their previous command because I leaked their smash strategy. \n3. A chill, mostly calm lad who will always join you to hang around in VCs. If you wanna lure him, invite FredBoat to the call, or just ripidly ping him until he gives up. \n4. ... \n\n**Example:** \nGuy 1: Hey, where's Kir b? \nGuy 2: Idk, just say something to call him over. \nGuy 1: ...Dru is gay...? \nKir b: *joins VC*")
+            message.channel.send("1. The pronunciation of a pink...thing. \n2. The one who doesn't agree with their previous command because I leaked their smash strategy. \n3. A chill, mostly calm lad who will always join you to hang around in VCs. If you wanna lure him, invite FredBoat to the call, or just ripidly ping him until he gives up. \n4. ... \n\n**Example:** \nGuy 1: Hey, where's Kir b? \nGuy 2: Idk, just say something to call him over. \nGuy 1: ...So Splatoon 3's Salmon Run- \nKir b: *joins VC*")
             break;
 
         case 'rb':
@@ -1240,7 +1238,7 @@ bot.on('message', message=> {
             break;
 
         case 'jet':
-            message.channel.send("1. Supportive, funny, hates this command. \n2. Heck off Jet you're a good person and deserves to be loved. \n3. v!famished bias \n\n**Example:** \nBREAKING NEWS: Jet makes another post yet again in her endless channel, telling Dru to stop simping for her. More at 7.")
+            message.channel.send("1. Supportive, funny, hates this command. \n2. Heck off Jet you're a good person and deserves to be loved. \n3. v!famished bias \n\n**Example:** \nBREAKING NEWS: Jet makes another post yet again in her endless channel. More at 7.")
             break;
 
         case 'bridgey':
@@ -1330,10 +1328,6 @@ bot.on('message', message=> {
 
         case 'edgy':
             message.channel.send("SUP MA SON\nSUP MA MA\nSON THE HEDGE\n**OW THE EDGE** :knife:")
-            break;
-
-        case 'druxwario':
-            message.channel.send("Sit tight, folks. Let me tell you a story. One night, Dru decided to take a shower to wash off the depression he obtained from an 'article' about how the world now accepts cursed images. The article was mostly bullshit, and for some reason it decided to talk about politics for no reason. But let's not go there. As Dru stepped in the shower and turned on the nozzle, allowing the warm, steaming water to cover hie entire body from the head-down, he heard an unexpected noise. A hyper-realistic 'wah', to be exact, followed by the opening of a creaky door. Upon hearing this, Dru smiles. He knows what's about to happen to him. He hears the incoming footsteps of Wario, slowly approaching him while inside the shower. Another nearby 'WAH' could be heard. As Dru feels the closeness of Wario in the shower, he also feels a large, muscular hand grabbing him by the ass, followed by a husky but sexy voice, which says 'Time to unrotten this hole!' Gabe, what the fuck is wrong with you. I'm not finishing this. Fuck you.")
             break;
 
         case 'BK':
@@ -1586,7 +1580,6 @@ bot.on('message', message=> {
 
         case 'commands':
             //General and Fun
-            //message.channel.send("``` 《《 VIRUS COMMANDS 》》 \n\nPAGE 1. \n\n────────\n\n☆ The following commands have to be prefaced with [ v! ] .\n\n-> General Commands:\ncommands[number] - Brings up that number's page of commands.\nhi - Says hello.\nbye - Says goodbye.\nhelp - Gives help.\ninfo - Gives info.\nping - Pings you!\nme - Gives information about the command-user. \ntodaysong - Posts Today's Song \n\n-> Fun Commands:\nlove - Virus loves you back!\nhug - Hug someone! \ncall - Call a random server! [To hang up, use 'v!hang'.]\ncount - Virus starts counting - let's see how far we can go!\ntimetorockwiththebiggitybuckbumble - Virus sings the best song known to man! (Do not do this in public channels.)\nbored - Virus will cure your boredom.\nfuckyou - Why the hate? \nfacts - Virus will tell you a fact, then redact it after a while. \nslot - Feeling lucky? Take a roll in the slot machine!\nimopsslots - Feeling MORE lucky? HA! This should kill the mood...\nvibecheck - Time for a vibe check. \ndruxwario - Virus will you a story about a heartwarming event. \nts - Virus will tell you a story. Follow the initial command with a number to read the next part of the story!\nweeb - Gets Virus excited!\njoe - Joe who? \ndiscotime - It's time to pray! \npurewars - Begin the Pure Wars! \npurestandings - Shows the current standings for the Pure Wars. \nboomerpass - Get the boomer-pass, but other people can steal it.\nboomerbreak - Throw away the boomer-pass!\ndead - Did you die?\ngamestop - What will you buy?\ngay - You're looking kinda fresh doe...\nnoswears - For the one dude who keeps on swearing\ngluck - Virus wishes you good luck!\nbluck - Now you're just a horrible person...\nanalyse - Analyses a post \nBK - A command that supports trans people. \nbottomtext - Virus provides you with a bottom-text - fresh off the iron!\nedgy - Sup, ma son? \nsco - Virus will act gay for a bit. \nheylook - Hey look buddy. \nannounce - Virus has a special announcement!\n\n──────\n\nPLEASE USE [ v!commands2 ] TO VIEW THE NEXT PAGE.```");
             message.channel.send("Gotcha! Posting the commands via DMs...");
             
             const embed1 = new Discord.MessageEmbed()
@@ -1622,7 +1615,6 @@ bot.on('message', message=> {
                 bot.users.cache.get(message.author.id).send(embed1);
             
             //People and Image
-            //message.channel.send("``` 《《 VIRUS COMMANDS 》》 \n\nPAGE 2. \n\n────────\n\n☆ The following commands have to be prefaced with [ v! ] .\n\n-> People Commands:\ndru - Do it Dru!\nmoon - Bring it in, Moon!\npkoby - The pure lad.\nkirB - Whoa, a Kirby?\nender - A wild Ender appears!\nkorbs - my boi korbs.\nprince - Please don't say the n word.\neliz - Where's Ellie Bean?\nnokobo - Some random boomer I know.\njasper - Hyper...critical?.\njacob - Hot lad.\nghost - Spoookkkkyyyyy.....\ngoat - What? An epic gamer? \nname - Just an ego booster. \nizzle - What happens if I say 'furry' here? \nethan - You all know who he is!\ncain - Channel-indeed. \nkevin - Everyone...bow? \nsnoop - Ugh, Persona...\njet - Pings Jet. That's all.\nrowlet - Oh my. \nirri - Save us Irri!\npip - The purest person. So, so pure.\nmimik - Who's that?\nreun - The best boy!\nknux - You don't have one yet?!\n\n-> Image Commands:\nclown - Virus will provide you with the most important item of clothing for a clown.\nclown2 - Virus will bring you up for an interview.\nbruh - Bruh.\nwtf - Reacts with a 'Wtf' picture. Most are offensive, do be careful.\nmoonuwu - Virus gives you a shiney uwu!\najoke - A joke is a joke, Budtard.\nbuddy - Ok, Buddy.\nwhatcanIsay - A magical gif. \noldie - Posts a picture from the Glory Days...\ndedmeme - Posts a dead meme from Gabe's one year old folder.\nsad - Virus will provide an image for the saddened.\nnice - Virus will react with a 'Nice' image. \ndong - Where's the dong? \nfunky - Funky got that sicko I need. \ntoxicegg - Dru, get out. \nWAHOO - Mario for the PS4 cancels KH3\negirl - SHUT UP, E-GIRL! \nthouthefuck - BY THE POPE!\n\n──────\n\nPLEASE USE [ v!commands3 ] TO VIEW THE NEXT PAGE.```")
             const embed2 = new Discord.MessageEmbed()
             .setAuthor("Requested by "+message.author.username, message.author.avatarURL())
                 .setColor('#FF1493')
@@ -1697,7 +1689,6 @@ bot.on('message', message=> {
                         .addField('• boomerbreak', 'Throw away the pass', true)
                         .addField('• list', 'Enter the VirusGames!', true)
                         .addField('• ts', 'Tells a story.', true)
-                        .addField('• druxwario', 'What the hell even is this?', true)
                         .addField('• generate', 'Get a cool sentence!', true)
                         .addField('\u200b', '\u200b')
                         .addField('**Personal Commands** 👤', 'Commands about friends, for friends.')
@@ -2362,7 +2353,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         var d6 = [1, 2, 3, 4, 5, 6];
 
         //mmtrivia
-        var mmoquests = ["`What is the name of the game that is featured on a Nintendo Switch, contains Mario sfx, but is NOT from Nintendo?`", "`Who is the composer of Megalovania?`", "`What was the text which normally appeared with the dancing roach meme?`" , "`Who once roleplayed as a Novakid?`" , "`Fill in the blanks: 'For his neutral special, Mario wields ____'`" , "`Fill in the blanks: 'Hey all, _____ ____.'`" , "`What's the name of the Mario spinoff that has Pac-Man as a playable character?`" , "`Is Pip pure?`" , "`True or False: Moon once had a username called 'Mooncake Festival' in Nintendo Discord.`" , "`True or False: The 3DS game: Super Mario 3D Land has a feature that asks you to take a break every once in a while.`" , "`Who is Irri's wife?`" , "`What is the name of the teacher in Chapter 3 of Parappa the Rapper 2?`" , "`What is the name of the fictional character both Korbs and Name are in love with?`" , "`What is the name of the command which requires you to get 10 fruits in a row to win?`" , "`Relating to jokes like 'Joe', 'Yuri', and 'Ligma', which joke is the LEAST offensive to the victim?`" , "`In the show 'Hazbin Hotel' which character is a crossdresser?`" , "`Jasmin is an OC from whom?`" , "`Who is the ONLY discord user that can hug VirusBot, with the bot hugging them back?`" , "`Which cartoon show has a theme song with the lyrics 'No time for relaxation'?`" , "`True or False: Reun has the ability to manage the Roleplay community.`"];
+        var mmoquests = ["`What is the name of the game that is featured on a Nintendo Switch, contains Mario sfx, but is NOT from Nintendo?`", "`Who is the composer of Megalovania?`", "`What was the text which normally appeared with the dancing roach meme?`" , "`Who once roleplayed as a Novakid?`" , "`Fill in the blanks: 'For his neutral special, Mario wields ____'`" , "`Fill in the blanks: 'Hey all, _____ ____.'`" , "`What's the name of the Mario spinoff that has Pac-Man as a playable character?`" , "`Is Pip pure?`" , "`True or False: Moon once had a username called 'Mooncake Festival' in Nintendo Discord.`" , "`True or False: The 3DS game: Super Mario 3D Land has a feature that asks you to take a break every once in a while.`" , "`Who is Irri's wife?`" , "`What is the name of the teacher in Chapter 3 of Parappa the Rapper 2?`" , "`What is the name of the fictional character both Korbs and Shuu are in love with?`" , "`What is the name of the command which requires you to get 10 fruits in a row to win?`" , "`Relating to jokes like 'Joe', 'Yuri', and 'Ligma', which joke is the LEAST offensive to the victim?`" , "`In the show 'Hazbin Hotel' which character is a crossdresser?`" , "`Jasmin is an OC from whom?`" , "`Who is the ONLY discord user that can hug VirusBot, with the bot hugging them back?`" , "`Which cartoon show has a theme song with the lyrics 'No time for relaxation'?`" , "`True or False: Reun has the ability to manage the Roleplay community.`"];
         var mmoans = ["just shapes and beats", "toby fox", "hoes mad", "snoop", "fire", "scott here", "mario kart arcade gp", "yes", "false", "true", "cain", "guru ant", "mym", "imposslots", "updog", "angel dust", "izzle", "jet", "sonic x", "true"];
         var mmids = ["636573475993288734", "635683701987999804", "634821648385572883", "640725111397285888", "607676160234618889"];
         var mmA;
@@ -2375,8 +2366,8 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         var int, mmAscore = 0;
         var int, mmBscore = 0;
         //trivia
-        questions1 = ["Who posts daily questions in their endless channel?", "Who is/was associated with the song 'Captain Save A Hoe'?", "What's the second song in Week 6 of Friday Night Funkin'?", "What adjective would you call Banjo to ruin his day?", "Which FEH character does Gabe hate?", "Which Fire Emblem character is known as Dru's waifu?", "March 10th is the day of which video game character?", "Are you epic?", "In Super Mario Galaxy (Wii version only), deleting the model of a certain item will completely crash the game. What's that item?", "Mario Party 3 is for which Nintendo Console?", "Ice Climbers first appeared in which Smash game?", "Who has an OC that's capable of destroying the world?", "The 'Ruler of the Rhythm' event is mainly hosted by whom?", "In the UK, the word 'Color' a spelt with a...?", "Who's fantasy world contains a creature made by Ghost?", "Is Name cute?", "Which Rhythm Heaven game is on the Wii?", "What is the name of the fan-made song that plays on the anti-piracy screen of Mario Party DS?", "Which polygon has eight fantastic sides and eight awesome angles?"]
-        answers1 = ["jet", "ethan", "roses", "gay", "loki", "lyn", "mario", "yes", "mushroom", "64", "melee", "everyone", "knux", "u", "dru", "yes", "fever", "piracy is no party", "octagon"]
+        questions1 = ["Who posts daily questions in their endless channel?", "Who is/was associated with the song 'Captain Save A Hoe'?", "What's the second song in Week 6 of Friday Night Funkin'?", "What adjective would you call Banjo to ruin his day?", "Which FEH character does Gabe hate?", "March 10th is the day of which video game character?", "Are you epic?", "In Super Mario Galaxy (Wii version only), deleting the model of a certain item will completely crash the game. What's that item?", "Mario Party 3 is for which Nintendo Console?", "Ice Climbers first appeared in which Smash game?", "Who has an OC that's capable of destroying the world?", "The 'Ruler of the Rhythm' event is mainly hosted by whom?", "In the UK, the word 'Color' a spelt with a...?", "Is Shuu cute?", "Which Rhythm Heaven game is on the Wii?", "What is the name of the fan-made song that plays on the anti-piracy screen of Mario Party DS?", "Which polygon has eight fantastic sides and eight awesome angles?"]
+        answers1 = ["jet", "ethan", "roses", "gay", "loki", "mario", "yes", "mushroom", "64", "melee", "everyone", "knux", "u", "yes", "fever", "piracy is no party", "octagon"]
 
         //snek
         ladderA = [2, 7, 8, 15, 21, 28, 36, 51, 71, 78, 87];
@@ -2445,7 +2436,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         var guessgame = false;
 
         //rpg
-        var heroesname = ["???", "???", "???", "???"];
+        var heroesname = ["???1", "???2", "???3", "???4"];
         var heroesclass = ["WARRIOR", "MAGE", "HEALER", "TANK"]
         var rpgmyt = "Meet Your Team!"
         var heroesdata = []
@@ -2453,7 +2444,7 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
         var heroesmp = [1, 1, 1, 1];
         var heroesmaxmp = [1, 1, 1, 1];
         var heroesmaxhp = [1, 1, 1, 1];
-        var rpgbosses = ["Chi", "Nightmare", "Mistake", "Terror", "King's Toilet", "Superman 64", "Twin Woods", "JoyCon's Drift", "Lagswitch", "Stan", "Broken TV"];
+        var rpgbosses = ["Nightmare", "Mistake", "Terror", "King's Toilet", "Superman 64", "Twin Woods", "JoyCon's Drift", "Lagswitch", "Stan", "Broken TV"];
         var rpgbosshp = 1;
         var rpgmaxbosshp;
         var rpgbosscurrent;   
@@ -4487,217 +4478,6 @@ bot.on('messageReactionAdd', (messageReaction, user) => {
             
         }
         );
-        
-        
-const ytdl = require("ytdl-core");
-
-const queue = new Map();
-
-bot.on("message", async message => {
-    if (message.author.bot) return;
-    if (!message.content.startsWith(PREFIX)) return;
-  
-    const serverQueue = queue.get(message.guild.id);
-  
-    if (message.content.startsWith(`${PREFIX}play`)) {
-      execute(message, serverQueue);
-      return;
-    } else if (message.content.startsWith(`${PREFIX}skip`)) {
-      skip(message, serverQueue);
-      return;
-    } else if (message.content.startsWith(`${PREFIX}stop`)) {
-      stop(message, serverQueue);
-      return;
-    } else if (message.content.startsWith(`${PREFIX}vibe`)) {
-        vibe(message, serverQueue);
-        return;
-    } else if (message.content.startsWith(`${PREFIX}np`)) {
-        vibenp(message);
-        return;
-    }
-  });
-  
-  async function execute(message, serverQueue) {
-    const args = message.content.split(" ");
-  
-    const voiceChannel = message.member.voice.channel;
-    if (!voiceChannel)
-      return message.channel.send(
-        "You need to be in a voice channel to play music!"
-      );
-    const permissions = voiceChannel.permissionsFor(message.client.user);
-    if (!permissions.has("CONNECT") || !permissions.has("SPEAK")) {
-      return message.channel.send(
-        "I need the permissions to join and speak in your voice channel!"
-      );
-    }
-  
-    const songInfo = await ytdl.getInfo(args[1]);
-    const song = {
-          title: songInfo.videoDetails.title,
-          url: songInfo.videoDetails.video_url,
-     };
-  
-    if (!serverQueue) {
-      const queueContruct = {
-        textChannel: message.channel,
-        voiceChannel: voiceChannel,
-        connection: null,
-        songs: [],
-        volume: 5,
-        playing: true
-      };
-  
-      queue.set(message.guild.id, queueContruct);
-  
-      queueContruct.songs.push(song);
-  
-      try {
-        var connection = await voiceChannel.join();
-        queueContruct.connection = connection;
-        play(message.guild, queueContruct.songs[0]);
-      } catch (err) {
-        console.log(err);
-        queue.delete(message.guild.id);
-        return message.channel.send(err);
-      }
-    } else {
-      serverQueue.songs.push(song);
-      return message.channel.send(`${song.title} has been added to the queue!`);
-    }
-  }
-
-
-  async function vibe(message, serverQueue) {
-    const args = message.content.split(" ");
-  
-    const voiceChannel = message.member.voice.channel;
-    if (!voiceChannel)
-      return message.channel.send(
-        "You need to be in a voice channel to play music!"
-      );
-    const permissions = voiceChannel.permissionsFor(message.client.user);
-    if (!permissions.has("CONNECT") || !permissions.has("SPEAK")) {
-      return message.channel.send(
-        "I need the permissions to join and speak in your voice channel!"
-      );
-    }
-  
-    if (args[1] != undefined && !isNaN(args[1]) && (args[1] > -1 || args[1] < (vibesongs.length - 1))){
-        vibepicked = args[1];
-    } else {
-        vibepicked = Math.floor(Math.random() * vibesongs.length);
-    }
-    
-    const songInfo = await ytdl.getInfo(vibesongs[vibepicked]);
-    const song = {
-          title: songInfo.videoDetails.title,
-          url: songInfo.videoDetails.video_url,
-     };
-  
-    if (!serverQueue) {
-      const queueContruct = {
-        textChannel: message.channel,
-        voiceChannel: voiceChannel,
-        connection: null,
-        songs: [],
-        volume: 5,
-        playing: true
-      };
-  
-      queue.set(message.guild.id, queueContruct);
-  
-      queueContruct.songs.push(song);
-  
-      try {
-        var connection = await voiceChannel.join();
-        queueContruct.connection = connection;
-        play(message.guild, queueContruct.songs[0]);
-      } catch (err) {
-        console.log(err);
-        queue.delete(message.guild.id);
-        return message.channel.send(err);
-      }
-    } else {
-      serverQueue.songs.push(song);
-      return message.channel.send(`${song.title} has been added to the queue!`);
-    }
-  }
-  
-  function skip(message, serverQueue) {
-    if (!message.member.voice.channel)
-      return message.channel.send(
-        "You have to be in a voice channel to stop the music!"
-      );
-    if (!serverQueue)
-      return message.channel.send("There is no song that I could skip!");
-    serverQueue.connection.dispatcher.end();
-  }
-  
-  function stop(message, serverQueue) {
-    if (!message.member.voice.channel)
-      return message.channel.send(
-        "You have to be in a voice channel to stop the music!"
-      );
-      
-    if (!serverQueue)
-      return message.channel.send("There is no song that I could stop!");
-      
-    serverQueue.songs = [];
-    serverQueue.voiceChannel.leave();
-      queue.delete(message.guild.id);
-      return;
-  }
-
-  function vibenp(message){
-      var npmessage;
-      serverQueue = queue.get(message.guild.id);
-      
-
-      if (serverQueue == undefined){
-          message.channel.send("There's no queue! Try vibing first!")
-      } else {
-        song = serverQueue.songs[0];
-
-      if(song == undefined){
-          npmessage = "`Unavailable. Try vibing first!`"
-      }
-      else {
-          npmessage = "Currently Playing: **" + song.title + "**";
-      }
-
-      serverQueue.textChannel.send(npmessage);
-    }
-  }
-  
-  
-
-  async function play(guild, song) {
-    const serverQueue = queue.get(guild.id);
-    if (!song) {
-        vibepicked = Math.floor(Math.random() * vibesongs.length);
-        const songInfo = await ytdl.getInfo(vibesongs[vibepicked]);
-        const song1 = {
-          title: songInfo.videoDetails.title,
-          url: songInfo.videoDetails.video_url,
-     };
-        
-        
-        //console.log("Received as: "+song1.title+ " ("+song1.url+")");
-        serverQueue.songs.push(song1);
-        play(guild, song1);
-    }
-    else {
-    const dispatcher = serverQueue.connection
-      .play(ytdl(song.url))
-      .on("finish", () => {
-        serverQueue.songs.shift();
-        play(guild, serverQueue.songs[0]);
-      })
-      .on("error", error => console.error(error));
-    dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
-    console.log(`Start playing: ${song.title} (${song.url})`);
-  }}
         
 
 bot.login(process.env.BOT_TOKEN);
